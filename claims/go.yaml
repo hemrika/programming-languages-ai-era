@@ -113,6 +113,7 @@ claims:
     polarity: negative
     source: go-src-002
     notes: Effective Go acknowledges the verbosity of the error idiom while defending its visibility benefits.
+    counters: [go-010]
 
   - id: go-012
     claim: pkg.go.dev provides a central documentation index for Go modules with versioned package documentation.
@@ -143,6 +144,7 @@ claims:
     polarity: negative
     source: go-src-011
     notes: The Go FAQ describes the design tradeoff that prefers simplicity over advanced type-system features.
+    counters: [go-001, go-007]
 
   - id: go-015
     claim: gopls is the official Go language server, maintained by the Go team, providing a focused and fast semantic model over the Language Server Protocol.
@@ -163,3 +165,36 @@ claims:
     polarity: positive
     source: go-src-002
     notes: Effective Go's Concurrency section frames goroutines plus channels as the canonical model; under greenfield framing this remains the forward-default concurrency story for new Go services.
+
+  - id: go-017
+    claim: Go's deliberate type-system minimalism - no sum types, late generics arrival in 1.18, no enums - limits expressiveness for domains that benefit from richer type-level modeling such as exhaustive case analysis or refinement-style invariants.
+    dimension: machine_cognition
+    criterion: type_system_strength
+    evidence_type: official_documentation
+    confidence: high
+    polarity: negative
+    source: go-src-011
+    notes: The Go FAQ documents intentional omission of features such as sum types, inheritance, and exceptions to keep the language small; generics arrived only in Go 1.18, narrowing modeling vocabulary relative to ML- or Rust-family alternatives.
+    counters: [go-001, go-007, go-009]
+
+  - id: go-018
+    claim: Go's explicit error-return idiom shifts error-handling burden onto every call site, producing repetitive `if err != nil` boilerplate without language-level support for railway-style composition or typed error hierarchies until errors.Is/As patterns layered on later.
+    dimension: human_cognition
+    criterion: expressiveness
+    evidence_type: official_documentation
+    confidence: high
+    polarity: negative
+    source: go-src-002
+    notes: Effective Go documents the explicit error-return convention; the lack of try/Result-style sugar and reliance on errors.Is/As wrapping reflects design choices that trade composability for explicitness.
+    counters: [go-010]
+
+  - id: go-019
+    claim: "Go's CSP-style channels are powerful but easy to misuse: deadlocks, goroutine leaks, and context-cancellation propagation are recurrent operational hazards that the language does not prevent statically, despite the memory model's formal specification."
+    dimension: runtime_ecosystem
+    criterion: concurrency_model
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: go-src-005
+    notes: The Go Memory Model specifies synchronization conditions but does not prevent goroutine leaks or deadlocks; the runtime ships goroutine-leak-detection tooling externally because static prevention is out of language scope.
+    counters: [go-005, go-016]

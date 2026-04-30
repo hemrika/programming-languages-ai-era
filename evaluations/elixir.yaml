@@ -15,7 +15,7 @@ scores:
     confidence: medium
     justification: >
       Historically dynamic, with Dialyzer providing partial static analysis; set-theoretic types in development could raise this score over time.
-    supporting_claims: [elixir-005, elixir-006, elixir-007]
+    supporting_claims: [elixir-005, elixir-006, elixir-007, elixir-016]
 
   ai_agent_operability:
     score: 3
@@ -29,7 +29,7 @@ scores:
     confidence: medium
     justification: >
       BEAM's concurrency, fault tolerance, and hot-upgrade story are unique and production-proven, with Phoenix LiveView's server-driven streaming primitives mapping well onto real-time AI-augmented UIs; the broader library ecosystem is narrower than mainstream alternatives.
-    supporting_claims: [elixir-001, elixir-002, elixir-003, elixir-004, elixir-008, elixir-009, elixir-011, elixir-014]
+    supporting_claims: [elixir-001, elixir-002, elixir-003, elixir-004, elixir-008, elixir-009, elixir-011, elixir-014, elixir-017, elixir-018]
 
   strategic_viability:
     score: 3

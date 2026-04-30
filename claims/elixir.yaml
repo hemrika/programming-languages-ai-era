@@ -53,6 +53,7 @@ claims:
     polarity: negative
     source: elixir-src-001
     notes: The Elixir introduction explicitly identifies Elixir as a dynamic language.
+    counters: [elixir-006]
 
   - id: elixir-006
     claim: Dialyzer applies success-typing analysis to detect type discrepancies in Erlang and Elixir code.
@@ -153,3 +154,36 @@ claims:
     polarity: positive
     source: elixir-src-012
     notes: The elixir-lang/elixir CHANGELOG documents the per-release evolution; reframed under greenfield framing as forward ecosystem velocity.
+
+  - id: elixir-016
+    claim: Set-theoretic types in Elixir are still in research/early-adoption phase across multiple minor releases; production benefit is forward-looking rather than presently available, so the static-analysis gap relative to typed languages remains today.
+    dimension: machine_cognition
+    criterion: type_system_strength
+    evidence_type: official_documentation
+    confidence: high
+    polarity: negative
+    source: elixir-src-009
+    notes: The Elixir blog series on set-theoretic types describes a multi-release rollout still in progress; greenfield projects today receive only partial benefit from incremental type-system landings.
+    counters: [elixir-007, elixir-013]
+
+  - id: elixir-017
+    claim: Phoenix LiveView's server-driven rendering ties the front-end lifecycle to a stateful WebSocket process, increasing memory footprint per connected client and complicating horizontal scaling for high-fanout AI-streaming workloads relative to stateless HTTP architectures.
+    dimension: runtime_ecosystem
+    criterion: deployment_model
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: elixir-src-007
+    notes: Phoenix LiveView documentation describes per-client process state and WebSocket lifetime; while BEAM tolerates very many lightweight processes, the operational profile differs from stateless HTTP and imposes real-time-affinity constraints on scaling architecture.
+    counters: [elixir-009, elixir-014]
+
+  - id: elixir-018
+    claim: BEAM's strengths in fault tolerance and concurrency come at a cost in numerical and CPU-bound workloads; the runtime's per-process scheduling and lack of SIMD-style primitives make it a poor fit for inference-heavy AI workloads without offloading via NIFs or external services.
+    dimension: runtime_ecosystem
+    criterion: performance_ceiling
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: elixir-src-002
+    notes: Erlang/OTP system principles describe BEAM's process model optimized for IO-bound and supervised concurrency; numerical workloads typically rely on Nx with EXLA backends or NIFs for acceleration.
+    counters: [elixir-001, elixir-002, elixir-004]

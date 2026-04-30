@@ -43,6 +43,7 @@ claims:
     polarity: negative
     source: cpp-src-005
     notes: The MSRC post explicitly states the ~70% figure across Microsoft products written largely in C and C++.
+    counters: [cpp-002, cpp-003, cpp-013]
 
   - id: cpp-005
     claim: The Chromium project reports that approximately 70 percent of its high-severity security bugs are memory-safety bugs.
@@ -53,6 +54,7 @@ claims:
     polarity: negative
     source: cpp-src-006
     notes: Chromium's memory-safety page reports the proportion of high-severity bugs that are memory-safety issues.
+    counters: [cpp-002, cpp-003, cpp-013]
 
   - id: cpp-006
     claim: The U.S. National Security Agency recommends shifting from memory-unsafe programming languages including C and C++ to memory-safe languages.
@@ -63,6 +65,7 @@ claims:
     polarity: negative
     source: cpp-src-007
     notes: NSA's Cybersecurity Information Sheet on Software Memory Safety names C and C++ as memory-unsafe.
+    counters: [cpp-001, cpp-013]
 
   - id: cpp-007
     claim: The U.S. Office of the National Cyber Director recommends use of memory-safe programming languages and cites C and C++ as memory-unsafe.
@@ -73,6 +76,7 @@ claims:
     polarity: negative
     source: cpp-src-008
     notes: The 2024 ONCD report Back to the Building Blocks calls out C and C++ as memory-unsafe.
+    counters: [cpp-001, cpp-013]
 
   - id: cpp-008
     claim: Google reports that Android memory-safety vulnerabilities declined as new native code shifted away from C and C++ to memory-safe languages.
@@ -83,6 +87,7 @@ claims:
     polarity: negative
     source: cpp-src-009
     notes: The Google Security Blog reports the decline while noting correlation does not imply causation.
+    counters: [cpp-013]
 
   - id: cpp-009
     claim: C++20 modules are designed as a replacement for header-based inclusion, addressing weak boundaries from textual #include semantics.
@@ -113,6 +118,7 @@ claims:
     polarity: negative
     source: cpp-src-001
     notes: ISO/IEC 14882:2020 retains undefined behavior as a category that constrains static reasoning.
+    counters: [cpp-001, cpp-002, cpp-010]
 
   - id: cpp-012
     claim: cppreference.com provides a community-maintained reference for C++ language and library features.
@@ -133,3 +139,36 @@ claims:
     polarity: positive
     source: cpp-src-012
     notes: NVIDIA's CUDA C++ Programming Guide, AMD's HIP/ROCm documentation, the Khronos SYCL specification, and Intel's oneAPI all foreground C++ as the primary host language; under greenfield framing this is a forward production-relevance property a new accelerator project would inherit today.
+
+  - id: cpp-014
+    claim: Accelerator C++ dialects (CUDA C++, HIP, SYCL, oneAPI) diverge from ISO C++ in language extensions, runtime APIs, and supported standard-library subsets; portability across vendors is incomplete and code targeting one accelerator typically requires modification for another.
+    dimension: runtime_ecosystem
+    criterion: ecosystem_viability
+    evidence_type: official_documentation
+    confidence: high
+    polarity: negative
+    source: cpp-src-012
+    notes: The CUDA C++ Programming Guide enumerates host/device language differences, restricted standard-library subsets on device code, and CUDA-specific runtime APIs; analogous divergences exist for HIP, SYCL, and oneAPI, so cross-vendor accelerator portability remains a manual porting concern.
+    counters: [cpp-013]
+
+  - id: cpp-015
+    claim: C++20 modules adoption across compilers and build systems remains incomplete; toolchain support varies by compiler version and build system, so the modules-replace-headers benefit is not yet broadly realizable for cross-vendor greenfield projects.
+    dimension: machine_cognition
+    criterion: refactorability
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: cpp-src-011
+    notes: cppreference's C++20 modules entry tracks compiler support and known issues; build-system integration (CMake, MSBuild) ships modules support gradually, leaving header-based inclusion the practical default in many toolchains.
+    counters: [cpp-002, cpp-009]
+
+  - id: cpp-016
+    claim: The C++ Core Guidelines and ISO standardization provide curated guidance, but adoption is voluntary across compilers and codebases; static analyzers and lint configurations vary widely, so greenfield projects must build internal discipline to realize the guidelines' safety benefits.
+    dimension: human_cognition
+    criterion: readability
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: cpp-src-004
+    notes: The C++ Core Guidelines are advisory; conformance tooling (clang-tidy, cppcheck, Microsoft GSL) is opt-in and configuration-dependent, leaving uniform adoption to project-level decisions.
+    counters: [cpp-003]

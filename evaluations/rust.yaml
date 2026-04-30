@@ -22,14 +22,14 @@ scores:
     confidence: medium
     justification: >
       Rust has strong compiler feedback, mature tooling, and rust-analyzer's deep semantic-model integration over LSP, though repair loops can be complex.
-    supporting_claims: [rust-004, rust-009, rust-010, rust-021]
+    supporting_claims: [rust-004, rust-009, rust-010, rust-021, rust-025]
 
   runtime_ecosystem:
     score: 4
     confidence: high
     justification: >
       Rust has strong performance, safety, and tooling, with Tokio as a production-grade async runtime and a growing accelerator/ML ecosystem (wgpu, candle, burn) extending forward production-relevance into AI-systems work.
-    supporting_claims: [rust-001, rust-008, rust-011, rust-017, rust-022, rust-023]
+    supporting_claims: [rust-001, rust-008, rust-011, rust-017, rust-022, rust-023, rust-026]
 
   strategic_viability:
     score: 5

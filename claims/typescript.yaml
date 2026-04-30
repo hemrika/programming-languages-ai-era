@@ -53,6 +53,7 @@ claims:
     polarity: negative
     source: typescript-src-008
     notes: The Handbook explicitly states that any disables further type checking for that value.
+    counters: [typescript-001, typescript-002, typescript-016]
 
   - id: typescript-006
     claim: TypeScript ships a language service that powers editor features such as completions, hovers, and rename refactoring.
@@ -83,6 +84,7 @@ claims:
     polarity: negative
     source: typescript-src-009
     notes: ECMA-262 defines the runtime semantics that persist after TypeScript type erasure.
+    counters: [typescript-001]
 
   - id: typescript-009
     claim: The npm registry distributes TypeScript packages and is the largest software package distribution channel by package count.
@@ -143,6 +145,7 @@ claims:
     polarity: negative
     source: typescript-src-008
     notes: The Handbook documents that any silently propagates without further checking, undermining local correctness reasoning.
+    counters: [typescript-003]
 
   - id: typescript-015
     claim: The TypeScript Language Server exposes an incremental semantic model that returns symbol references, type information, and refactoring suggestions to editor and agent clients via the Language Server Protocol.
@@ -163,3 +166,25 @@ claims:
     polarity: positive
     source: typescript-src-013
     notes: The TypeScript 4.9 release notes document the satisfies operator and its narrowing-friendly semantics; a recent example of incremental type-system improvement.
+
+  - id: typescript-017
+    claim: TypeScript's type system is intentionally not sound; type assertions, function bivariance in some positions, and unchecked casts allow runtime values to diverge from their declared types.
+    dimension: machine_cognition
+    criterion: type_system_strength
+    evidence_type: official_documentation
+    confidence: high
+    polarity: negative
+    source: typescript-src-014
+    notes: The TypeScript design goals explicitly state the type system is not sound and trade soundness for productivity in interop with JavaScript; this means static guarantees can be voided at runtime even without explicit any.
+    counters: [typescript-001, typescript-002, typescript-003, typescript-016]
+
+  - id: typescript-018
+    claim: TypeScript types are erased at compile time and have no runtime representation, so structural-type guarantees do not survive boundary crossings such as JSON parsing, third-party API responses, or dynamic plugin loading without runtime validation.
+    dimension: runtime_ecosystem
+    criterion: performance_predictability
+    evidence_type: official_documentation
+    confidence: high
+    polarity: negative
+    source: typescript-src-001
+    notes: The TypeScript Handbook describes type erasure during compilation; runtime data validation requires libraries such as zod or io-ts that re-encode the type at runtime.
+    counters: [typescript-001, typescript-003]

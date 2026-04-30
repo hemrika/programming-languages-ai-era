@@ -100,3 +100,17 @@ sources:
     year: 2022
     url: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-9.html
     notes: Documents the satisfies operator added in TypeScript 4.9, an incremental type-system improvement preserving narrowing.
+
+  - id: typescript-src-014
+    title: TypeScript Wiki - TypeScript Design Goals
+    publisher: Microsoft
+    type: official_documentation
+    url: https://github.com/microsoft/TypeScript/wiki/TypeScript-Design-Goals
+    notes: Documents TypeScript design goals including the explicit non-goal of soundness in the type system.
+
+  - id: typescript-src-014
+    title: TypeScript Wiki - TypeScript Design Goals
+    publisher: Microsoft
+    type: official_documentation
+    url: https://github.com/microsoft/TypeScript/wiki/TypeScript-Design-Goals
+    notes: Documents TypeScript design goals including the explicit non-goal of soundness in the type system.

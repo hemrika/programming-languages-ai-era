@@ -83,6 +83,7 @@ claims:
     polarity: negative
     source: mojo-src-008
     notes: The Modular blog announces standard-library open-sourcing while Modular remains the sole governing entity.
+    counters: [mojo-001, mojo-007, mojo-009, mojo-015]
 
   - id: mojo-009
     claim: Modular open-sourced the Mojo standard library while retaining the compiler under proprietary terms.
@@ -103,6 +104,7 @@ claims:
     polarity: negative
     source: mojo-src-010
     notes: The Mojo roadmap and sharp edges page documents pre-1.0 instability and unfinished features.
+    counters: [mojo-001, mojo-015]
 
   - id: mojo-011
     claim: The Mojo language tour walks through value semantics and parameterized types as core constructs.
@@ -123,6 +125,7 @@ claims:
     polarity: negative
     source: mojo-src-001
     notes: The Mojo Manual's recent introduction implies a small training-data footprint relative to incumbent languages.
+    counters: [mojo-001]
 
   - id: mojo-013
     claim: Mojo's MLIR-based compilation pipeline targets heterogeneous hardware with explicit GPU primitives, supporting portable kernels across NVIDIA, AMD, and other accelerator backends through Modular's MAX engine.
@@ -153,3 +156,25 @@ claims:
     polarity: positive
     source: mojo-src-012
     notes: The Mojo changelog documents the rate of language and standard-library changes; reframed under greenfield framing as forward ecosystem velocity, balanced against pre-1.0 stability concerns recorded in mojo-010.
+
+  - id: mojo-016
+    claim: Mojo's MLIR-targeted hardware portability depends on Modular's MAX engine and proprietary compiler components; vendor concentration limits portability assurances under greenfield framing where alternative MLIR-targeting compilers cannot fully substitute.
+    dimension: runtime_ecosystem
+    criterion: ecosystem_viability
+    evidence_type: official_documentation
+    confidence: high
+    polarity: negative
+    source: mojo-src-008
+    notes: Modular's open-sourcing announcement covers the standard library while the compiler and MAX engine remain proprietary; portability claims are conditional on Modular continuing to ship and support backends.
+    counters: [mojo-002, mojo-007, mojo-013]
+
+  - id: mojo-017
+    claim: "Mojo's Python compatibility is partial: many CPython idioms (dynamic class manipulation, metaclasses, monkey patching) interact with Mojo's compile-time and ownership model in ways the documentation flags as still-evolving, undermining the drop-in Python-superset framing for greenfield projects."
+    dimension: runtime_ecosystem
+    criterion: interop
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: mojo-src-010
+    notes: The Mojo roadmap and sharp-edges document enumerates current Python compatibility gaps; some Python features are not yet implemented or behave differently, so cross-language code reuse is not seamless today.
+    counters: [mojo-001, mojo-006]

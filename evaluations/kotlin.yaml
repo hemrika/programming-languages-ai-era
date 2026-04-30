@@ -15,7 +15,7 @@ scores:
     confidence: medium
     justification: >
       Strong static typing and JetBrains-grade tooling support refactoring and analysis, though type inference complexity and slower compiles limit the ceiling.
-    supporting_claims: [kotlin-001, kotlin-002, kotlin-003, kotlin-010]
+    supporting_claims: [kotlin-001, kotlin-002, kotlin-003, kotlin-010, kotlin-017]
 
   ai_agent_operability:
     score: 4
@@ -29,11 +29,11 @@ scores:
     confidence: high
     justification: >
       JVM runtime maturity plus full Java interop gives Kotlin access to a deep, production-grade ecosystem; coroutines and Flow provide a coherent concurrency model for backpressure-aware data pipelines.
-    supporting_claims: [kotlin-005, kotlin-006, kotlin-007, kotlin-014]
+    supporting_claims: [kotlin-005, kotlin-006, kotlin-007, kotlin-014, kotlin-018, kotlin-019]
 
   strategic_viability:
     score: 4
     confidence: medium
     justification: >
       Strong Android adoption and growing server-side use, with Kotlin Multiplatform now stable across JVM/Android/iOS/JS/Native targets expanding the forward cross-platform reach, balanced against single-vendor (JetBrains) roadmap dependence.
-    supporting_claims: [kotlin-008, kotlin-009, kotlin-012, kotlin-015]
+    supporting_claims: [kotlin-008, kotlin-009, kotlin-012, kotlin-015, kotlin-020]

@@ -113,6 +113,7 @@ claims:
     polarity: negative
     source: java-src-009
     notes: The Gradle User Manual positions Gradle as an alternative to Maven, and both remain widely used in the JVM ecosystem.
+    counters: [java-010]
 
   - id: java-012
     claim: Java's class-based, single-inheritance object model is defined by the Java Language Specification.
@@ -133,6 +134,7 @@ claims:
     polarity: negative
     source: java-src-003
     notes: JEP 395 explicitly motivates records as a remedy to plain-data-class boilerplate.
+    counters: [java-002, java-005]
 
   - id: java-014
     claim: The Eclipse JDT Language Server (Eclipse JDT.LS) provides a Language Server Protocol implementation for Java that exposes the JDT semantic model to editors and agent tooling.
@@ -153,3 +155,36 @@ claims:
     polarity: positive
     source: java-src-013
     notes: JEP 453 documents structured concurrency for JDK 21 as preview, building on virtual threads to simplify error handling and cancellation.
+
+  - id: java-016
+    claim: Java's six-month JEP cadence ships features as preview or incubator across multiple releases before stabilizing, slowing real-world adoption of forward features for production projects that pin to LTS releases.
+    dimension: strategic_viability
+    criterion: ecosystem_velocity
+    evidence_type: official_governance_documentation
+    confidence: high
+    polarity: negative
+    source: java-src-007
+    notes: The OpenJDK release model documents the preview/incubator progression and LTS cadence; structured concurrency (JEP 453) and pattern-matching for switch (JEPs 406, 420, 427, 433, 441) illustrate multi-release stabilization paths that delay LTS availability.
+    counters: [java-007, java-015]
+
+  - id: java-017
+    claim: Java's class-based, single-inheritance object model and reliance on interfaces with default methods rather than first-class composition make some forms of code reuse verbose; mixin-style composition is achievable only through layered patterns.
+    dimension: human_cognition
+    criterion: expressiveness
+    evidence_type: language_specification
+    confidence: medium
+    polarity: negative
+    source: java-src-001
+    notes: The Java Language Specification defines single-class inheritance; default methods and the Diamond rule create patterns rather than direct composition primitives, increasing ceremony for crosscutting reuse.
+    counters: [java-012]
+
+  - id: java-018
+    claim: Java's long-term backward compatibility commitment slows removal of legacy APIs and deprecated mechanisms, producing a large standard library surface where modern (records, sealed types) and legacy (raw types, Vector, Date) idioms coexist, raising cognitive load on greenfield code review.
+    dimension: human_cognition
+    criterion: conceptual_economy
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: java-src-011
+    notes: The Java Compatibility Guide preserves API stability across releases; deprecated-but-not-removed APIs in the standard library mean greenfield codebases still encounter legacy idioms in dependencies and tutorials.
+    counters: [java-008]

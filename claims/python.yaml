@@ -13,6 +13,7 @@ claims:
     polarity: negative
     source: python-src-001
     notes: The Language Reference's data model establishes that types are properties of objects, not variables, limiting what can be inferred without runtime observation.
+    counters: [python-003, python-016]
 
   - id: python-002
     claim: PEP 484 type hints are not enforced at runtime by the Python interpreter.
@@ -23,6 +24,7 @@ claims:
     polarity: negative
     source: python-src-002
     notes: PEP 484 explicitly states that the proposal does not introduce runtime type checking.
+    counters: [python-003, python-006, python-007]
 
   - id: python-003
     claim: PEP 484 defines an optional, gradual static type-hint syntax for Python.
@@ -153,6 +155,7 @@ claims:
     polarity: negative
     source: python-src-001
     notes: The Language Reference's execution model implies that type-related failures occur during runtime evaluation rather than at parse time.
+    counters: [python-014]
 
   - id: python-016
     claim: Python's typing system has advanced through a sustained sequence of typing PEPs - PEP 484 (hints), PEP 526 (variable annotations), PEP 544 (Protocols), PEP 612 (ParamSpec), PEP 646 (TypeVarTuple), PEP 692 (TypedDict kwargs), PEP 695 (type parameter syntax) - landing across multiple recent versions.
@@ -183,3 +186,25 @@ claims:
     polarity: positive
     source: python-src-015
     notes: The typeshed project and pyright/Pylance bundle stubs for the standard library and many third-party packages, supporting AI-tooling integration.
+
+  - id: python-019
+    claim: Python's PEP 484 type hints rely on external checkers (mypy, pyright) in CI/editor tooling rather than runtime enforcement, so type errors only surface where the toolchain is configured and run.
+    dimension: ai_agent_operability
+    criterion: fast_feedback_loops
+    evidence_type: language_specification
+    confidence: high
+    polarity: negative
+    source: python-src-002
+    notes: PEP 484 explicitly states type hints are not enforced by the runtime and are advisory; production gaps emerge when checkers are skipped, misconfigured, or omitted from CI.
+    counters: [python-003, python-016, python-006, python-007]
+
+  - id: python-020
+    claim: Python's typing PEP cadence (484, 526, 544, 612, 646, 692, 695) means well-typed code requires a recent CPython and checker; older runtimes and many published libraries lack stub coverage, fragmenting the practical static-analysis benefit across the dependency graph.
+    dimension: machine_cognition
+    criterion: type_system_strength
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: python-src-015
+    notes: typeshed acknowledges incomplete coverage of the third-party ecosystem; many libraries ship without inline annotations or stub packages, so a project's effective static guarantee depends on dependency-graph annotation density.
+    counters: [python-016, python-018]

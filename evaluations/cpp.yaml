@@ -8,14 +8,14 @@ scores:
     confidence: medium
     justification: >
       C++ has sharp edges, undefined behavior, and historical complexity; modern subsets are cleaner, but real-world codebases mix many eras and idioms.
-    supporting_claims: [cpp-003]
+    supporting_claims: [cpp-003, cpp-016]
 
   machine_cognition:
     score: 3
     confidence: medium
     justification: >
       Mature analyzers exist, but template metaprogramming, macros, and weak modularity obscure structure from tools and AI systems.
-    supporting_claims: [cpp-002, cpp-009, cpp-010, cpp-011]
+    supporting_claims: [cpp-002, cpp-009, cpp-010, cpp-011, cpp-015]
 
   ai_agent_operability:
     score: 2
@@ -29,7 +29,7 @@ scores:
     confidence: medium
     justification: >
       C++ retains a production-grade compiler toolchain (Clang, GCC, MSVC), ABI stability, deep OS and hardware integration, and broad library availability - all greenfield-relevant ecosystem properties independent of legacy installed-base credit. The dominant accelerator stacks (CUDA, ROCm/HIP, SYCL, oneAPI) primarily target C++ today, extending the forward production-relevance into AI-systems work.
-    supporting_claims: [cpp-004, cpp-005, cpp-008, cpp-013]
+    supporting_claims: [cpp-004, cpp-005, cpp-008, cpp-013, cpp-014]
 
   strategic_viability:
     score: 2

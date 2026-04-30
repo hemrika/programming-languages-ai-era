@@ -15,7 +15,7 @@ scores:
     confidence: medium
     justification: >
       TypeScript provides strong tooling and static analysis, with the satisfies operator and ongoing type-system improvements continuing to advance verification velocity, though JavaScript runtime semantics remain.
-    supporting_claims: [typescript-001, typescript-002, typescript-003, typescript-004, typescript-005, typescript-010, typescript-016]
+    supporting_claims: [typescript-001, typescript-002, typescript-003, typescript-004, typescript-005, typescript-010, typescript-016, typescript-017]
 
   ai_agent_operability:
     score: 5
@@ -29,7 +29,7 @@ scores:
     confidence: high
     justification: >
       The npm distribution channel is broad and active, with mature deployment options across browser, Node, Deno, Bun, and edge runtimes. Under greenfield framing the legacy JavaScript inheritance is not credited as an ecosystem advantage; what remains is a high-velocity package distribution channel suitable for new projects.
-    supporting_claims: [typescript-008, typescript-009]
+    supporting_claims: [typescript-008, typescript-009, typescript-018]
 
   strategic_viability:
     score: 4

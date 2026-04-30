@@ -28,6 +28,38 @@ def load_claims_index(lang: str) -> dict:
             index[cid] = dim
     return index
 
+def validate_claims_counters(lang: str) -> tuple[list[str], int]:
+    """Validate the optional `counters:` field on each claim in claims/<lang>.yaml.
+
+    When present, `counters` must be a list of strings, and each ID must
+    resolve to a claim in the SAME language's claims file.
+    Returns (errors, counters_links_validated).
+    """
+    path = CLAIMS_DIR / f"{lang}.yaml"
+    errors: list[str] = []
+    if not path.exists():
+        return errors, 0
+    data = yaml.safe_load(path.read_text(encoding="utf-8"))
+    ids = {c.get("id") for c in (data.get("claims", []) or []) if c.get("id")}
+    links = 0
+    for claim in data.get("claims", []) or []:
+        if "counters" not in claim:
+            continue
+        counters = claim["counters"]
+        cid = claim.get("id")
+        if not isinstance(counters, list):
+            errors.append(f"claims/{lang}.yaml::{cid}: counters must be a list")
+            continue
+        for ref in counters:
+            if not isinstance(ref, str):
+                errors.append(f"claims/{lang}.yaml::{cid}: counters entry must be a string, got {type(ref).__name__}")
+                continue
+            if ref not in ids:
+                errors.append(f"claims/{lang}.yaml::{cid}: counters references unknown id {ref}")
+                continue
+            links += 1
+    return errors, links
+
 def validate_file(path: Path) -> tuple[list[str], int, int]:
     """Validate a single evaluation file. Returns (errors, dims_validated, claim_refs_valid)."""
     errors = []
@@ -89,6 +121,19 @@ def validate_file(path: Path) -> tuple[list[str], int, int]:
 
 def main():
     failed = False
+
+    # Validate counters: field across all claim files (same-language reference resolution).
+    total_counters_links = 0
+    for path in sorted(CLAIMS_DIR.glob("*.yaml")):
+        lang = path.stem
+        errors, links = validate_claims_counters(lang)
+        if errors:
+            failed = True
+            print(f"{path.relative_to(ROOT).as_posix()} (counters):")
+            for error in errors:
+                print(f"  - {error}")
+        total_counters_links += links
+
     for path in sorted(EVAL_DIR.glob("*.yaml")):
         errors, dims_validated, claim_refs_valid = validate_file(path)
         if errors:
@@ -103,7 +148,7 @@ def main():
     if failed:
         sys.exit(1)
 
-    print("All evaluations valid.")
+    print(f"All evaluations valid. {total_counters_links} counters links validated.")
 
 if __name__ == "__main__":
     main()

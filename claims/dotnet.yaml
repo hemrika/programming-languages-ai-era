@@ -113,6 +113,7 @@ claims:
     polarity: negative
     source: dotnet-src-010
     notes: MSBuild's surface area introduces project-system complexity that affects agent operability.
+    counters: [dotnet-010]
 
   - id: dotnet-012
     claim: Nullable reference types are an opt-in feature configured per project rather than enabled by default in older codebases.
@@ -123,6 +124,7 @@ claims:
     polarity: negative
     source: dotnet-src-003
     notes: The nullable reference types specification documents the per-context opt-in model.
+    counters: [dotnet-003]
 
   - id: dotnet-013
     claim: C# is governed openly through the dotnet/csharplang repository where language proposals and specifications are hosted.
@@ -153,3 +155,36 @@ claims:
     polarity: positive
     source: dotnet-src-012
     notes: The .NET release lifecycle page documents the yearly major release cadence and the LTS designations; under greenfield framing this is a forward ecosystem-velocity signal.
+
+  - id: dotnet-016
+    claim: .NET's annual major releases include breaking changes between major versions and frequent runtime/library deprecations; pinning to LTS still requires migration work each LTS cycle, slowing adoption of new language and runtime features.
+    dimension: strategic_viability
+    criterion: backward_compatibility
+    evidence_type: official_governance_documentation
+    confidence: medium
+    polarity: negative
+    source: dotnet-src-012
+    notes: The .NET release lifecycle documents LTS/STS cadence; major-version breaking-change tracking pages enumerate API removals and behavioral changes per release, signaling a non-trivial migration tax.
+    counters: [dotnet-015]
+
+  - id: dotnet-017
+    claim: Roslyn's semantic-model API exposes C# program structure but the analyzer/source-generator surface area has performance and incremental-compilation caveats, and many published libraries do not ship analyzers, limiting practical agent-leverage on dependency code.
+    dimension: ai_agent_operability
+    criterion: fast_feedback_loops
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: dotnet-src-006
+    notes: The Roslyn SDK documentation discusses analyzer performance and IDE responsiveness considerations; the practical leverage on third-party code depends on whether dependency authors ship analyzers or annotations.
+    counters: [dotnet-006, dotnet-007, dotnet-014]
+
+  - id: dotnet-018
+    claim: ECMA-334 and ECMA-335 standardization is a positive governance signal but in practice the language and runtime evolve through Microsoft's GitHub repositories ahead of ECMA revisions; greenfield projects depend on Microsoft's reference implementation rather than the standard text for current behavior.
+    dimension: strategic_viability
+    criterion: governance_quality
+    evidence_type: official_governance_documentation
+    confidence: medium
+    polarity: negative
+    source: dotnet-src-001
+    notes: ECMA-334 6th edition lags the C# language version implemented in current Roslyn; standardization is preserved but the canonical implementation reference is the dotnet/csharplang and dotnet/runtime repositories.
+    counters: [dotnet-001, dotnet-002, dotnet-013]

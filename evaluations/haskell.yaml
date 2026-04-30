@@ -29,7 +29,7 @@ scores:
     confidence: medium
     justification: >
       GHC is mature and capable, but library coverage is narrower and deployment patterns less standardized than mainstream alternatives.
-    supporting_claims: [haskell-003, haskell-008, haskell-011]
+    supporting_claims: [haskell-003, haskell-008, haskell-011, haskell-015]
 
   strategic_viability:
     score: 3

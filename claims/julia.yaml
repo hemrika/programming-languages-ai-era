@@ -73,6 +73,7 @@ claims:
     polarity: negative
     source: julia-src-007
     notes: The Types chapter documents that Julia is dynamic and that annotations are optional.
+    counters: [julia-006, julia-013]
 
   - id: julia-008
     claim: Julia ships a built-in package manager Pkg with project-based environments and reproducible manifests.
@@ -113,6 +114,7 @@ claims:
     polarity: negative
     source: julia-src-004
     notes: The Julia 1.9 highlights post explicitly motivates native code caching as a remedy to TTFX latency.
+    counters: [julia-004]
 
   - id: julia-012
     claim: Julia's central numerical-computing focus narrows its general-purpose future fit relative to broader-domain languages such as Python.
@@ -123,6 +125,7 @@ claims:
     polarity: negative
     source: julia-src-003
     notes: The SIAM Review paper foregrounds technical computing as Julia's primary domain; reframed under greenfield framing as a constraint on future general-purpose fit rather than an installed-base claim.
+    counters: [julia-001, julia-003]
 
   - id: julia-013
     claim: Julia treats type annotations as inputs to its inference and dispatch system rather than as enforcement boundaries.
@@ -143,3 +146,25 @@ claims:
     polarity: positive
     source: julia-src-011
     notes: The JuliaGPU site documents CUDA.jl, AMDGPU.jl, Metal.jl, and oneAPI.jl as first-class accelerator backends.
+
+  - id: julia-015
+    claim: Julia's multiple-dispatch composition can produce method ambiguity errors and unexpected dispatch through package interactions; debugging tools (such as Test.detect_ambiguities and method tables) lag the language complexity, raising operability cost in package-heavy graphs.
+    dimension: human_cognition
+    criterion: local_reasoning
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: julia-src-002
+    notes: The Julia Manual chapter on Methods documents method ambiguity warnings and dispatch resolution; cross-package method definitions can produce surprising dispatch behavior that requires manual ambiguity detection.
+    counters: [julia-002, julia-003]
+
+  - id: julia-016
+    claim: Julia's type-stability discipline must be hand-maintained because the language permits methods that return different concrete types depending on argument values; performance regressions from accidental type instability are not reported by the compiler as errors.
+    dimension: machine_cognition
+    criterion: static_analyzability
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: julia-src-006
+    notes: The Julia Performance Tips chapter recommends @code_warntype and @inferred for type-stability checking; the language does not statically reject type-unstable code, so performance correctness depends on disciplined profiling.
+    counters: [julia-006, julia-013]

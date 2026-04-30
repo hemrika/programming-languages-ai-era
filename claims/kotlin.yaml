@@ -163,3 +163,47 @@ claims:
     polarity: positive
     source: kotlin-src-014
     notes: JetBrains documents an official LSP for Kotlin alongside the community implementation; under greenfield framing this is a forward AI-tooling integration property usable by agents today.
+
+  - id: kotlin-017
+    claim: Kotlin's null safety is bypassable via Java-interop platform types where the compiler cannot infer nullability, weakening the guarantee at JVM boundaries.
+    dimension: machine_cognition
+    criterion: type_system_strength
+    evidence_type: official_documentation
+    confidence: high
+    polarity: negative
+    source: kotlin-src-001
+    notes: Kotlin's null-safety documentation describes platform types T! that bypass static null checks when calling Java code, leaving the guarantee dependent on annotations or runtime checks at JVM interop boundaries.
+    counters: [kotlin-001, kotlin-013]
+
+  - id: kotlin-018
+    claim: Kotlin Multiplatform's non-JVM targets (Kotlin/Native, Kotlin/JS, Kotlin/Wasm) have less mature library coverage and tooling than the JVM target, fragmenting the cross-platform promise in practice.
+    dimension: runtime_ecosystem
+    criterion: deployment_model
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: kotlin-src-007
+    notes: The Kotlin Multiplatform documentation distinguishes target maturity tiers; Kotlin/Native and Kotlin/Wasm continue to evolve compiler, memory model, and library surface, narrowing the practical shared surface relative to JVM-first projects.
+    counters: [kotlin-007, kotlin-015]
+
+  - id: kotlin-019
+    claim: Kotlin coroutines depend on a separate kotlinx.coroutines library version closely tied to compiler versions and on disciplined scope management; misuse of GlobalScope or detached launches can defeat structured-concurrency guarantees.
+    dimension: runtime_ecosystem
+    criterion: concurrency_model
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: kotlin-src-006
+    notes: The Coroutines Guide warns against GlobalScope and emphasizes that structured concurrency requires programmer discipline; coroutine library is versioned alongside the compiler and not part of the standard library proper.
+    counters: [kotlin-006, kotlin-014]
+
+  - id: kotlin-020
+    claim: Kotlin's strong Android positioning ties its forward strategic momentum to Google's mobile platform; shifts in Android tooling priorities (Compose, KSP) directly shape Kotlin's roadmap, narrowing platform diversification for greenfield non-mobile projects.
+    dimension: strategic_viability
+    criterion: institutional_support
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: kotlin-src-008
+    notes: The Android Kotlin developer page positions Kotlin as the preferred Android language; the deep Android coupling means Kotlin's strategic trajectory is partly hostage to Google's Android investment, asymmetric for non-mobile use cases.
+    counters: [kotlin-008, kotlin-012]

@@ -29,7 +29,7 @@ scores:
     confidence: low
     justification: >
       Library coverage is minimal compared with Python or C++ and production deployment patterns are not yet broadly established, but MLIR-based heterogeneous-hardware portability through MAX is an emerging forward ecosystem-viability property.
-    supporting_claims: [mojo-002, mojo-005, mojo-006, mojo-007, mojo-013]
+    supporting_claims: [mojo-002, mojo-005, mojo-006, mojo-007, mojo-013, mojo-016, mojo-017]
 
   strategic_viability:
     score: 4

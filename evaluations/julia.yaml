@@ -8,14 +8,14 @@ scores:
     confidence: medium
     justification: >
       Concise and expressive for numerical work, but multiple dispatch and the dynamic-with-annotations style require non-trivial mental-model shifts, and behavior often depends on combinations of method definitions distributed across packages.
-    supporting_claims: [julia-002]
+    supporting_claims: [julia-002, julia-015]
 
   machine_cognition:
     score: 3
     confidence: medium
     justification: >
       Dynamic at heart and multiple-dispatch resolution complicates static inference, though optional type annotations help local analysis.
-    supporting_claims: [julia-006, julia-007, julia-013]
+    supporting_claims: [julia-006, julia-007, julia-013, julia-016]
 
   ai_agent_operability:
     score: 2

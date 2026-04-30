@@ -22,7 +22,7 @@ scores:
     confidence: medium
     justification: >
       Fast incremental builds, strong diagnostics, and Roslyn's semantic-model API for analyzers and code fixes support agent workflows, though project-system quirks and a smaller training-data footprint than TypeScript or Python create friction.
-    supporting_claims: [dotnet-006, dotnet-010, dotnet-011, dotnet-014]
+    supporting_claims: [dotnet-006, dotnet-010, dotnet-011, dotnet-014, dotnet-017]
 
   runtime_ecosystem:
     score: 4
@@ -36,4 +36,4 @@ scores:
     confidence: high
     justification: >
       Microsoft's tight alignment between .NET and AI tooling is a structural tailwind, with a predictable annual major-release cadence and LTS designations supporting forward planning. Open-source mindshare remains smaller than the JVM or Node ecosystems.
-    supporting_claims: [dotnet-001, dotnet-013, dotnet-015]
+    supporting_claims: [dotnet-001, dotnet-013, dotnet-015, dotnet-016, dotnet-018]

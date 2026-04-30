@@ -29,11 +29,11 @@ scores:
     confidence: medium
     justification: >
       Production-grade on Apple platforms with strong tooling and performance; concurrency primitives include async/await, structured concurrency, actors, and distributed actors (SE-0336/0344). Server-side Swift on Linux (SwiftNIO, Vapor, AWS Lambda runtime) is increasingly viable, though ecosystem depth still lags mainstream backend languages.
-    supporting_claims: [swift-003, swift-004, swift-008, swift-009, swift-015]
+    supporting_claims: [swift-003, swift-004, swift-008, swift-009, swift-015, swift-016, swift-018]
 
   strategic_viability:
     score: 3
     confidence: medium
     justification: >
       Durable demand within Apple's ecosystem, with limited evidence of broad cross-platform adoption to date.
-    supporting_claims: [swift-006, swift-010, swift-011, swift-013]
+    supporting_claims: [swift-006, swift-010, swift-011, swift-013, swift-017]

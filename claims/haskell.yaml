@@ -43,6 +43,7 @@ claims:
     polarity: negative
     source: haskell-src-008
     notes: The GHC extensions chapter documents many extensions whose combined use complicates a single canonical Haskell dialect.
+    counters: [haskell-001, haskell-002, haskell-003]
 
   - id: haskell-005
     claim: Liquid Haskell adds refinement types to Haskell that support compile-time logical specifications about program values.
@@ -73,6 +74,7 @@ claims:
     polarity: negative
     source: haskell-src-005
     notes: Stack's documentation establishes it as a Cabal alternative, contributing to Haskell build-tool fragmentation.
+    counters: [haskell-006]
 
   - id: haskell-008
     claim: Hackage is the central package repository for Haskell open-source libraries.
@@ -103,6 +105,7 @@ claims:
     polarity: negative
     source: haskell-src-009
     notes: The Haskell Report's lazy semantics chapter underpins the well-known complexity of reasoning about evaluation order.
+    counters: [haskell-001]
 
   - id: haskell-011
     claim: GHC provides time and heap profilers for diagnosing performance behavior under lazy evaluation.
@@ -123,6 +126,7 @@ claims:
     polarity: negative
     source: haskell-src-001
     notes: The Haskell Report's class system and kind system are well-known sources of conceptual difficulty for new learners.
+    counters: [haskell-002, haskell-005]
 
   - id: haskell-013
     claim: GHC is governed openly through the Glasgow Haskell Compiler project with public release notes for each version.
@@ -143,3 +147,14 @@ claims:
     polarity: positive
     source: haskell-src-011
     notes: The haskell/haskell-language-server repository documents HLS as the recommended LSP-based developer environment for Haskell; under greenfield framing this is a forward AI-tooling integration property.
+
+  - id: haskell-015
+    claim: Haskell's lazy-by-default evaluation creates thunks that can accumulate into space leaks invisible at the type level; reasoning about strictness requires explicit annotations (bang patterns, seq, deepseq) that fragment idiomatic code.
+    dimension: runtime_ecosystem
+    criterion: performance_predictability
+    evidence_type: language_specification
+    confidence: high
+    polarity: negative
+    source: haskell-src-001
+    notes: The Haskell 2010 Language Report defines non-strict semantics; the practical consequence - space leaks and need for strictness annotations - means runtime memory behavior cannot be inferred from types alone.
+    counters: [haskell-001, haskell-002]

@@ -8,14 +8,14 @@ scores:
     confidence: high
     justification: >
       Go's small language surface, explicit style, and rigorously simple semantics make code unusually easy to read and maintain at scale.
-    supporting_claims: [go-008, go-009, go-010, go-011]
+    supporting_claims: [go-008, go-009, go-010, go-011, go-018]
 
   machine_cognition:
     score: 4
     confidence: medium
     justification: >
       Go has static typing, regular syntax, and good tooling, but less expressive type-level modeling than Rust or ML-family languages.
-    supporting_claims: [go-001, go-002, go-006, go-007, go-014]
+    supporting_claims: [go-001, go-002, go-006, go-007, go-014, go-017]
 
   ai_agent_operability:
     score: 5
@@ -29,7 +29,7 @@ scores:
     confidence: high
     justification: >
       Go is strong for backend services, infrastructure, concurrency, and deployment, with the goroutine + channel CSP-style model still the canonical concurrency story for new services.
-    supporting_claims: [go-005, go-016]
+    supporting_claims: [go-005, go-016, go-019]
 
   strategic_viability:
     score: 4

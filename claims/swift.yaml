@@ -113,6 +113,7 @@ claims:
     polarity: negative
     source: swift-src-011
     notes: The Apple Developer Swift landing page emphasizes Apple platforms, with non-Apple ecosystems addressed only via separate efforts; reframed under greenfield framing as a forward platform-fit concern.
+    counters: [swift-010]
 
   - id: swift-012
     claim: Swift code is designed for safety, with optionals and explicit error handling reducing common runtime hazards.
@@ -153,3 +154,36 @@ claims:
     polarity: positive
     source: swift-src-013
     notes: SE-0336 introduces distributed actor isolation; SE-0344 adds the runtime; the feature ships in the Swift toolchain and the Distributed module.
+
+  - id: swift-016
+    claim: Swift Concurrency (async/await, actors, distributed actors) requires Apple-platform runtime support and is gated by deployment-target version, limiting forward portability for non-Apple greenfield projects pinned to older OS or Linux toolchains.
+    dimension: runtime_ecosystem
+    criterion: concurrency_model
+    evidence_type: official_documentation
+    confidence: high
+    polarity: negative
+    source: swift-src-004
+    notes: The Swift Concurrency documentation lists deployment target requirements; Swift 5.5+ async features depend on runtime libraries that are version-gated on Apple platforms and require recent toolchains on Linux.
+    counters: [swift-003, swift-015]
+
+  - id: swift-017
+    claim: Swift Evolution is open in process but proposal acceptance and implementation prioritization remain Apple-led; community proposals lacking Apple-platform sponsorship advance more slowly, asymmetrically shaping the language toward Apple-first concerns.
+    dimension: strategic_viability
+    criterion: governance_quality
+    evidence_type: official_governance_documentation
+    confidence: medium
+    polarity: negative
+    source: swift-src-006
+    notes: The Swift Evolution README documents the proposal review process; in practice Apple engineers chair core teams and many accepted proposals are implemented by Apple, with cross-platform features lagging.
+    counters: [swift-006, swift-013]
+
+  - id: swift-018
+    claim: Server-side Swift on Linux (SwiftNIO, Vapor) lags Apple-platform feature availability and runtime-library stability; greenfield non-Apple deployments face slower toolchain updates and a thinner library ecosystem than Apple-platform projects.
+    dimension: runtime_ecosystem
+    criterion: library_maturity
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: swift-src-009
+    notes: Vapor's documentation tracks supported Swift versions on Linux; the Linux toolchain release schedule typically follows Apple-platform releases with a delay, and many Apple-platform frameworks (UIKit, SwiftUI, Foundation extensions) are not portable.
+    counters: [swift-008, swift-009]

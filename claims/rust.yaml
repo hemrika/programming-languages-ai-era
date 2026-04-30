@@ -113,6 +113,7 @@ claims:
     polarity: negative
     source: rust-src-008
     notes: Rust safety claims must distinguish safe Rust from unsafe Rust.
+    counters: [rust-001, rust-002, rust-003, rust-005]
 
   - id: rust-012
     claim: Rust unsafe functions and traits define extra safety conditions that the compiler does not check.
@@ -123,6 +124,7 @@ claims:
     polarity: negative
     source: rust-src-009
     notes: Unsafe boundaries weaken automatic reasoning and require documentation/review.
+    counters: [rust-001, rust-002, rust-006]
 
   - id: rust-013
     claim: Rust editions allow backwards-incompatible language changes to be introduced opt-in while existing crates remain on older editions.
@@ -203,6 +205,7 @@ claims:
     polarity: negative
     source: rust-src-001
     notes: The Rust Book explicitly notes that ownership takes time to get used to.
+    counters: [rust-002, rust-005]
 
   - id: rust-021
     claim: rust-analyzer is the official Rust language server, providing inlay hints, type-aware completions, and a deep semantic model exposed via the Language Server Protocol.
@@ -243,3 +246,25 @@ claims:
     polarity: positive
     source: rust-src-018
     notes: The rust-lang/rfcs repository and the Project Goals process are public artifacts of the Rust governance cadence; reframed under greenfield framing as forward ecosystem velocity.
+
+  - id: rust-025
+    claim: Rust's compile times remain a recognized friction point for large workspaces; full incremental rebuilds are improving but cold builds and macro-heavy crates still produce slow agent feedback loops compared to Go or Java.
+    dimension: ai_agent_operability
+    criterion: fast_feedback_loops
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: rust-src-005
+    notes: The Cargo Book and Rust Project Goals continue to track compile-time as a deliberate optimization target; macro-heavy crates and monomorphization expansion increase build cost in dependency graphs.
+    counters: [rust-021]
+
+  - id: rust-026
+    claim: Rust's async model splits the ecosystem across runtimes (Tokio, async-std, smol) with incompatible executor APIs, fragmenting library compatibility and forcing greenfield projects to commit to one runtime's effect surface.
+    dimension: runtime_ecosystem
+    criterion: concurrency_model
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: rust-src-017
+    notes: Tokio's documentation acknowledges runtime-specific entry points; libraries written against one async runtime often do not run on another, creating ecosystem fragmentation around async/await effects.
+    counters: [rust-023]
