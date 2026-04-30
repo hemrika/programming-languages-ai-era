@@ -2,7 +2,7 @@
 
 ## Method
 
-All scores reflect framework v0.1, draft evaluations as of 2026-04-30 under the **greenfield framing** documented in `framework/evaluation-framework.md`. Installed base, existing code volume, and incumbent gravity are not scored as advantages; languages are credited for forward-looking properties (governance, future fit, AI-training representation, ecosystem velocity, library maturity for new projects). Weighted score uses framework weights: Human cognition 20%, Machine cognition 25%, AI-agent operability 25%, Runtime/ecosystem 20%, Strategic viability 10%. Scores are 1-5 per the rubric in `framework/scoring-rubric.md`. Justifications draw on the per-language claims under `claims/` and the cross-cutting lens reading in `lens-analysis.md`.
+All scores reflect framework v0.1, draft evaluations as of 2026-04-30 under the **greenfield framing** documented in `framework/evaluation-framework.md`. Installed base, existing code volume, and incumbent gravity are not scored as advantages; languages are credited for forward-looking properties (governance, future fit, AI-training representation, ecosystem velocity, library maturity for new projects). The framework distinguishes **ecosystem viability** (forward production-readiness today: deployment, observability, integration with non-language systems such as databases, OS, hardware, accelerators) from **ecosystem velocity** (the forward rate of language and library improvement). Both are forward-looking and both are credited; legacy installed-base scope is not. Weighted score uses framework weights: Human cognition 20%, Machine cognition 25%, AI-agent operability 25%, Runtime/ecosystem 20%, Strategic viability 10%. Scores are 1-5 per the rubric in `framework/scoring-rubric.md`. Justifications draw on the per-language claims under `claims/` and the cross-cutting lens reading in `lens-analysis.md`.
 
 These are draft scores intended to be falsifiable by the underlying claims, not final verdicts. They will move as evidence is added or revised.
 
@@ -23,7 +23,7 @@ These are draft scores intended to be falsifiable by the underlying claims, not 
 | Haskell     | 3  | 5  | 2  | 3  | 3  | 3.25 |
 | Julia       | 3  | 3  | 2  | 3  | 3  | 2.75 |
 | Mojo        | 3  | 3  | 2  | 2  | 4  | 2.65 |
-| C++         | 2  | 3  | 2  | 3  | 2  | 2.45 |
+| C++         | 2  | 3  | 2  | 4  | 2  | 2.65 |
 
 HC = Human cognition, MC = Machine cognition, AO = AI-agent operability, RE = Runtime and ecosystem, SV = Strategic viability.
 
@@ -35,17 +35,17 @@ Three clusters emerge under greenfield framing.
 
 **Middle tier (3.0-3.99 weighted).** Python, Swift, Java, Zig, Elixir, Haskell. Each has either a structural strength offset by an operability or ecosystem weakness (Haskell, Zig, Elixir) or carried a legacy premium that no longer applies (Java, Python on strategic viability). Modern-typed languages with no installed-base story (Zig) sit alongside modernized incumbents whose forward-looking case is narrower than their historic position suggested (Java).
 
-**Lower tier (< 3.0 weighted).** Julia, Mojo, C++. C++ drops sharply under greenfield framing: the runtime/ecosystem and strategic-viability scores both lose their installed-base premium, leaving the documented memory-safety pressure (Microsoft, Chromium, Android, NSA, ONCD) as the dominant signal. Mojo rises slightly because AI-native design is exactly the forward bet the framework now credits, though ecosystem narrowness keeps the overall score low. Julia's narrow numerical-computing focus remains the binding constraint.
+**Lower tier (< 3.0 weighted).** Julia, Mojo, C++. Julia's narrow numerical-computing focus remains the binding constraint. Mojo and C++ tie at 2.65: Mojo because AI-native design is exactly the forward bet the framework credits, even as ecosystem narrowness keeps the overall score low; C++ because under greenfield framing the production-grade compiler ecosystem and hardware integration retain runtime/ecosystem credit, but documented memory-safety pressure (Microsoft, Chromium, Android, NSA, ONCD) dominates strategic viability and human-cognition scores.
 
 ## Headline findings
 
-1. **Greenfield framing reshuffles the bottom of the matrix more than the top.** The top three (Go, TypeScript, Rust) hold their positions because their cases were already forward-looking. C++ drops 0.6 points and falls to the bottom of the matrix. Java drops 0.3 points. Python drops out of the top tier. Mojo rises slightly.
+1. **Greenfield framing reshuffles the bottom of the matrix more than the top.** The top three (Go, TypeScript, Rust) hold their positions because their cases were already forward-looking. C++ drops 0.4 points overall: legacy installed-base credit is removed from strategic viability, but the production-grade C++ compiler toolchain, ABI/OS/hardware integration, and library availability remain credited as forward ecosystem-viability properties. Java loses the legacy adoption premium on strategic viability while retaining the JVM's forward-looking runtime credit. Python drops out of the top tier. Mojo rises slightly.
 
 2. **No language sweeps.** The highest weighted score (Go, 4.45) reflects breadth, not domination. Every top-tier language has at least one structural weakness - Rust's learning curve, TypeScript's runtime semantics, Go's deliberate abstraction limits.
 
 3. **AI-agent operability is the most discriminating dimension.** It separates Go and TypeScript from Haskell and C++ even when the underlying language quality is comparable on other axes. Operability captures fast feedback, deterministic tooling, clear diagnostics, and shallow project structure - properties that compound for agents.
 
-4. **Strategic viability and runtime/ecosystem are correlated but no longer dominated by incumbency.** Under greenfield framing, both dimensions credit forward-looking signals (ecosystem velocity, AI-training-corpus density, governance, future fit) rather than installed code volume. Python keeps a strong runtime/ecosystem score because ML-domain library velocity is forward-relevant; C++ does not because its remaining forward signal on this axis is dominated by safety pressure.
+4. **Strategic viability and runtime/ecosystem are correlated but no longer dominated by incumbency.** Under greenfield framing, both dimensions credit forward-looking signals (ecosystem velocity, AI-training-corpus density, governance, future fit, ecosystem viability) rather than installed code volume. Python keeps a strong runtime/ecosystem score because ML-domain library velocity is forward-relevant; C++ keeps a strong runtime/ecosystem score because its production toolchain and hardware integration are forward-relevant; both lose strategic-viability credit that previously came from installed base.
 
 5. **Verification leaders do not automatically lead overall.** Haskell scores 5 on machine cognition but 2 on AI-agent operability. The framework's weighting reflects a position that verification *and* operability must both be present for AI-era advantage.
 
@@ -66,3 +66,4 @@ This overview is intentionally compressed. For the reasoning behind any cell:
 - Several languages (Mojo, Zig, Julia) are evolving rapidly; scores reflect a 2026-04-30 snapshot.
 - The framework weights themselves are a working assumption. A reasonable reader could weight runtime/ecosystem higher (favoring Python) or AI-agent operability higher (favoring Go, TypeScript). The matrix is robust to small weight perturbations but not to large ones.
 - Greenfield framing is itself a deliberate choice. Teams whose primary task is *maintaining* large incumbent estates should re-weight: legacy gravity reappears as an advantage in that question, and the matrix above will under-credit Java, Python, and C++ for that purpose.
+- The framework distinguishes ecosystem viability (forward production-readiness) from ecosystem velocity (forward rate of improvement). Legacy installed-base scope is not credited in either case; production realities a new project inherits today (compiler toolchains, ABI, deployment, observability, accelerator integration) are.

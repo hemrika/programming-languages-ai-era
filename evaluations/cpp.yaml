@@ -25,10 +25,10 @@ scores:
     supporting_claims: [cpp-012]
 
   runtime_ecosystem:
-    score: 3
+    score: 4
     confidence: medium
     justification: >
-      C++ retains the highest practical performance ceiling and strong cross-platform reach for new systems work, but under greenfield framing the documented memory-safety vulnerability rates (Microsoft, Chromium, Android) directly downgrade security posture and library maturity is no longer credited as a legacy moat.
+      C++ retains a production-grade compiler toolchain (Clang, GCC, MSVC), ABI stability, deep OS and hardware integration, and broad library availability - all greenfield-relevant ecosystem properties independent of legacy installed-base credit.
     supporting_claims: [cpp-004, cpp-005, cpp-008]
 
   strategic_viability:

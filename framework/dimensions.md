@@ -50,7 +50,8 @@ Criteria:
 - performance predictability
 - deployment model
 - interop
-- library maturity (do the libraries you need exist for new projects, not the volume of legacy code in this language)
+- library maturity (the libraries a new project needs exist and are usable, not the volume of legacy code in this language)
+- ecosystem viability (forward-looking production-readiness: deployment story, observability, integration with non-language systems such as databases, OS, hardware, and accelerators; evaluated as a property a greenfield project can lean on today, distinct from legacy installed-base gravity)
 - tooling maturity
 - security posture
 - concurrency model

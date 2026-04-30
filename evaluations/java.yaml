@@ -28,7 +28,7 @@ scores:
     score: 4
     confidence: high
     justification: >
-      The JVM is among the most production-proven runtimes, with mature concurrency (virtual threads), portable bytecode, and well-organized package distribution via Maven Central. Under greenfield framing, the legacy installed-base premium is removed; what remains is a high-quality but not category-leading platform for new projects.
+      The JVM is a production-grade target with mature concurrency primitives (virtual threads), portable bytecode and verifier, deep observability and profiling, and well-organized package distribution via Maven Central. These are forward-looking ecosystem-viability properties a greenfield project can lean on today, evaluated independently of any legacy installed-base credit.
     supporting_claims: [java-006, java-009, java-010]
 
   strategic_viability:
