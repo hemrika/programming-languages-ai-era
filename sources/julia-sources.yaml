@@ -1,0 +1,82 @@
+language: Julia
+description: >
+  Source registry for atomic claims in claims/julia.yaml. Each entry resolves a
+  julia-src-NNN identifier referenced by an atomic claim's `source` field to a
+  primary source: the Julia Language Manual, the foundational SIAM Review paper,
+  or Julia release blog posts. Per the methodology in
+  outputs/evidence-backed-research-execution-plan.md.
+
+sources:
+  - id: julia-src-001
+    title: The Julia Language Manual - Introduction
+    publisher: The Julia Language project
+    type: official_documentation
+    url: https://docs.julialang.org/en/v1/manual/getting-started/
+    notes: Introduces Julia as a high-level, high-performance dynamic language for technical computing.
+
+  - id: julia-src-002
+    title: The Julia Language Manual - Methods (multiple dispatch)
+    publisher: The Julia Language project
+    type: official_documentation
+    url: https://docs.julialang.org/en/v1/manual/methods/
+    notes: Documents multiple dispatch as the central paradigm of Julia.
+
+  - id: julia-src-003
+    title: Julia - A Fresh Approach to Numerical Computing
+    authors: [Bezanson, Jeff, Edelman, Alan, Karpinski, Stefan, Shah, Viral B.]
+    publisher: SIAM Review
+    type: academic_paper
+    year: 2017
+    url: https://doi.org/10.1137/141000671
+    notes: Foundational Julia paper describing the design and rationale for multiple dispatch and dynamic typing with type inference.
+
+  - id: julia-src-004
+    title: Julia 1.9 Highlights
+    publisher: The Julia Language project
+    type: official_documentation
+    year: 2023
+    url: https://julialang.org/blog/2023/04/julia-1.9-highlights/
+    notes: Release blog announcing Julia 1.9 with native code caching that reduces time-to-first-execution.
+
+  - id: julia-src-005
+    title: Julia 1.10 Highlights
+    publisher: The Julia Language project
+    type: official_documentation
+    year: 2023
+    url: https://julialang.org/blog/2023/12/julia-1.10-highlights/
+    notes: Release blog announcing Julia 1.10 with parser rewrite and further performance improvements.
+
+  - id: julia-src-006
+    title: The Julia Language Manual - Performance Tips
+    publisher: The Julia Language project
+    type: official_documentation
+    url: https://docs.julialang.org/en/v1/manual/performance-tips/
+    notes: Documents performance idioms including type stability for high-performance Julia code.
+
+  - id: julia-src-007
+    title: The Julia Language Manual - Types
+    publisher: The Julia Language project
+    type: official_documentation
+    url: https://docs.julialang.org/en/v1/manual/types/
+    notes: Documents Julia's type system, including parametric types and type annotations used by inference.
+
+  - id: julia-src-008
+    title: Pkg.jl Documentation
+    publisher: The Julia Language project
+    type: official_tooling_documentation
+    url: https://pkgdocs.julialang.org/
+    notes: Documents Julia's built-in package manager Pkg with project-based environments and reproducible manifests.
+
+  - id: julia-src-009
+    title: The Julia Language Manual - Calling C and Fortran Code
+    publisher: The Julia Language project
+    type: official_documentation
+    url: https://docs.julialang.org/en/v1/manual/calling-c-and-fortran-code/
+    notes: Documents Julia's first-class FFI to C and Fortran libraries.
+
+  - id: julia-src-010
+    title: The Julia Language Manual - Multi-threading
+    publisher: The Julia Language project
+    type: official_documentation
+    url: https://docs.julialang.org/en/v1/manual/multi-threading/
+    notes: Documents Julia's task-based threading and parallelism support.
