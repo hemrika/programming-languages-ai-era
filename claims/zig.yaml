@@ -1,25 +1,125 @@
 language: Zig
+status: draft
+updated: 2026-04-30
+verification_status: web_verified_initial_pass
+
 claims:
   - id: zig-001
-    claim: Zig has no hidden control flow or allocations, supporting local reasoning and predictable performance.
+    claim: Zig is designed to have no hidden control flow, no hidden memory allocations, and no operator overloading.
+    dimension: human_cognition
     criterion: local_reasoning
-    evidence_type: structural
+    evidence_type: language_specification
     confidence: high
     polarity: positive
-    source: [zigref]
+    source: zig-src-002
+    notes: The Why Zig page enumerates these design principles as core to Zig's explicitness.
 
   - id: zig-002
-    claim: Zig lacks compile-time memory-safety guarantees comparable to Rust's borrow checker.
-    criterion: security_posture
-    evidence_type: structural
+    claim: Zig requires memory allocators to be passed explicitly to functions that allocate.
+    dimension: machine_cognition
+    criterion: semantic_clarity
+    evidence_type: language_specification
     confidence: high
-    polarity: negative
-    source: [zigref]
+    polarity: positive
+    source: zig-src-009
+    notes: The allocator chapter documents the explicit-allocator pattern across the standard library.
 
   - id: zig-003
-    claim: Pre-1.0 status creates language and stdlib churn that affects AI-agent operability.
-    criterion: ai_agent_operability
-    evidence_type: structural
+    claim: Zig provides a unified comptime mechanism for compile-time evaluation that subsumes generics, conditional compilation, and macro-style metaprogramming.
+    dimension: machine_cognition
+    criterion: type_system_strength
+    evidence_type: language_specification
+    confidence: high
+    polarity: positive
+    source: zig-src-006
+    notes: The comptime chapter documents compile-time evaluation as a unifying mechanism.
+
+  - id: zig-004
+    claim: Zig provides first-class C interoperability including direct import of C headers via @cImport.
+    dimension: runtime_ecosystem
+    criterion: interop
+    evidence_type: language_specification
+    confidence: high
+    polarity: positive
+    source: zig-src-007
+    notes: The C interop section documents @cImport and ABI-compatible C function calling.
+
+  - id: zig-005
+    claim: Zig treats cross-compilation as a first-class use case supported out of the box.
+    dimension: runtime_ecosystem
+    criterion: deployment_model
+    evidence_type: language_specification
+    confidence: high
+    polarity: positive
+    source: zig-src-008
+    notes: The Zig overview foregrounds cross-compilation as a design priority.
+
+  - id: zig-006
+    claim: Zig is pre-1.0 and continues to evolve language and standard-library surface across releases.
+    dimension: strategic_viability
+    criterion: backward_compatibility
+    evidence_type: official_documentation
+    confidence: high
+    polarity: negative
+    source: zig-src-005
+    notes: The Zig 0.13 release notes confirm continued pre-1.0 evolution.
+
+  - id: zig-007
+    claim: Zig is stewarded by the Zig Software Foundation, a non-profit organization.
+    dimension: strategic_viability
+    criterion: governance_quality
+    evidence_type: official_governance_documentation
+    confidence: high
+    polarity: positive
+    source: zig-src-010
+    notes: The ZSF About page identifies the foundation's role in stewarding Zig development.
+
+  - id: zig-008
+    claim: Zig 0.12 introduced a new package manager and build-system improvements.
+    dimension: ai_agent_operability
+    criterion: dependency_clarity
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: zig-src-004
+    notes: The 0.12.0 release notes document package manager and build system changes.
+
+  - id: zig-009
+    claim: Zig does not provide compile-time memory-safety guarantees comparable to Rust's borrow checker.
+    dimension: runtime_ecosystem
+    criterion: security_posture
+    evidence_type: language_specification
+    confidence: high
+    polarity: negative
+    source: zig-src-002
+    notes: The Why Zig page positions Zig differently from Rust on memory-safety guarantees.
+
+  - id: zig-010
+    claim: Zig's pre-1.0 standard library and language churn affect agent-generated code that depends on stable surface area.
+    dimension: ai_agent_operability
+    criterion: code_generation_robustness
+    evidence_type: official_documentation
     confidence: medium
     polarity: negative
-    source: [zigref]
+    source: zig-src-005
+    notes: Continued release-note breakage between 0.11, 0.12, and 0.13 illustrates ongoing churn.
+
+  - id: zig-011
+    claim: Zig's language reference is published as official project documentation alongside the compiler.
+    dimension: machine_cognition
+    criterion: semantic_clarity
+    evidence_type: language_specification
+    confidence: high
+    polarity: positive
+    source: zig-src-001
+    notes: The Zig Language Reference is the authoritative description of language semantics.
+
+  - id: zig-012
+    claim: Zig 0.11 advanced the self-hosted compiler effort that replaces the legacy C++ stage1 compiler.
+    dimension: runtime_ecosystem
+    criterion: tooling_maturity
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: zig-src-003
+    notes: The 0.11.0 release notes document self-hosted-compiler progress.
