@@ -1,0 +1,17 @@
+language: Rust
+claims:
+  - id: rust-001
+    claim: Rust’s ownership and borrowing model catches many memory-management errors at compile time.
+    criterion: security_posture
+    evidence_type: structural
+    confidence: high
+    polarity: positive
+    source: pending
+
+  - id: rust-002
+    claim: Rust’s compiler diagnostics provide strong feedback for repair loops.
+    criterion: error_message_quality
+    evidence_type: structural
+    confidence: medium
+    polarity: positive
+    source: pending

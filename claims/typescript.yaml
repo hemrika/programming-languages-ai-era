@@ -1,0 +1,9 @@
+language: TypeScript
+claims:
+  - id: typescript-001
+    claim: TypeScript improves JavaScript maintainability by adding static typing and editor tooling.
+    criterion: machine_cognition
+    evidence_type: structural
+    confidence: high
+    polarity: positive
+    source: pending

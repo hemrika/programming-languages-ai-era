@@ -1,0 +1,17 @@
+language: Python
+claims:
+  - id: python-001
+    claim: Python’s dynamic typing weakens static analyzability by default.
+    criterion: static_analyzability
+    evidence_type: structural
+    confidence: high
+    polarity: negative
+    source: pending
+
+  - id: python-002
+    claim: Python’s AI and data ecosystem creates strong strategic viability.
+    criterion: strategic_viability
+    evidence_type: ecosystem
+    confidence: high
+    polarity: positive
+    source: pending
