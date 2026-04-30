@@ -12,7 +12,7 @@ Languages whose structure makes program properties machine-checkable.
 | Moderate | Kotlin, TypeScript, .NET, Swift, Java, Go, Zig |
 | Weak | Python, Elixir, Julia, C++, Mojo (early) |
 
-Pure verification ranking is led by Haskell and Rust. Rust's mature ecosystem and operability give it the strategically dominant position; Haskell remains valuable as an upper-bound reference and in domains where formal-methods cost is justified.
+Pure verification ranking is led by Haskell and Rust. Rust's mature ecosystem and operability give it the strategically dominant position; Haskell remains valuable as an upper-bound reference and in domains where formal-methods cost is justified. Mojo is included with caution: its compile-time parameter and ownership posture is structurally favorable for proof tooling, but the verification ecosystem has not yet caught up with the language's design.
 
 ## 2. Agentic development advantage
 
@@ -51,16 +51,16 @@ Languages that allow expressing more behavior in fewer lines without compromisin
 | Weak | Go, Java, C++ |
 | Mixed | Mojo (designed for compression but unproven), Zig (deliberately low compression for legibility) |
 
-Compression is double-edged. Go's intentional weakness on this lens is part of its agent-friendliness story — there is less hidden behavior an agent must reconstruct from context. Haskell's strength contributes to its verification advantage but raises learning cost for both humans and AI completion.
+Compression is double-edged. Go's intentional weakness on this lens is part of its agent-friendliness story - there is less hidden behavior an agent must reconstruct from context. Haskell's strength contributes to its verification advantage but raises learning cost for both humans and AI completion.
 
 ## Reading across the lenses
 
 No single language wins all four. The strongest cross-lens profiles in this set:
 
-- **Rust.** Strong on verification and safety; moderate on agentic and abstraction. Greenfield momentum in systems and infrastructure is the forward-looking signal.
-- **TypeScript.** Strong on agentic; moderate on verification, safety, and abstraction. Modern typed-language credit comes from the gradual-typing layer, not the underlying JavaScript runtime.
-- **Kotlin.** Strong on safety and abstraction; moderate on verification and agentic. JVM interop is incidental — the greenfield case rests on null-safety, sealed types, and coroutines.
-- **Go.** Strong on agentic; moderate on safety; deliberately weak on abstraction. Convention-driven tooling produces a uniquely low-friction agent profile for new services.
+- **Rust.** Strong on verification and safety; moderate on agentic and abstraction. Greenfield momentum in systems and infrastructure is the forward-looking signal. The Rust ML/accelerator ecosystem (wgpu, candle, burn) and Tokio's production-grade async runtime extend this position into AI-systems work.
+- **TypeScript.** Strong on agentic; moderate on verification, safety, and abstraction. Modern typed-language credit comes from the gradual-typing layer, not the underlying JavaScript runtime. The `satisfies` operator and incremental Language Service semantic model reinforce the AI-tooling integration story.
+- **Kotlin.** Strong on safety and abstraction; moderate on verification and agentic. JVM interop is incidental - the greenfield case rests on null-safety, sealed types, coroutines, and Flow, with Kotlin Multiplatform now stable across JVM/Android/iOS/JS/Native targets as a forward cross-platform bet.
+- **Go.** Strong on agentic; moderate on safety; deliberately weak on abstraction. Convention-driven tooling (gofmt, gopls, the integrated go command) produces a uniquely low-friction agent profile for new services.
 
 The strongest greenfield positions (verification + agentic + safety) cluster around Rust, TypeScript, and Kotlin.
 
@@ -68,18 +68,35 @@ The strongest greenfield positions (verification + agentic + safety) cluster aro
 
 Three cases where the lenses pull in different directions are worth flagging:
 
-- **Python.** Maximum ecosystem (forward-relevant in ML/data); weak verification; weak safety. The framework's central question for Python is whether AI-era pressure on verification erodes its position faster than gradual typing rebuilds it.
-- **Haskell.** Maximum verification; weak agentic. Strong static structure does not transfer into AI-era dominance without operability and ecosystem.
-- **Mojo.** Designed for the future but currently weak on every lens except potential. The lens analysis is a useful counterfactual: what if AI-native design were sufficient by itself? The current evidence says it is not — but under greenfield framing, the AI-native bet is exactly the kind of forward-looking property the framework credits.
+- **Python.** Maximum ecosystem (forward-relevant in ML/data); weak verification; weak safety. The framework's central question for Python is whether AI-era pressure on verification erodes its position faster than the gradual-typing PEP cadence (PEP 484, 526, 544, 612, 646, 692, 695) and the typed-stub ecosystem (typeshed, pyright) rebuild it. The annual PEP 602 release cadence is a forward velocity signal in the same direction.
+- **Haskell.** Maximum verification; weak agentic. Strong static structure does not transfer into AI-era dominance without operability and ecosystem - though the Haskell Language Server has narrowed the operability gap somewhat.
+- **Mojo.** Designed for the future but currently weak on every lens except potential. The lens analysis is a useful counterfactual: what if AI-native design were sufficient by itself? The current evidence says it is not - but under greenfield framing, the AI-native bet (MLIR, ownership, hardware-portable compilation, fast release cadence) is exactly the kind of forward-looking property the framework credits, and Mojo accordingly sits at the same weighted score as C++ at the bottom of the matrix despite radically different lens profiles.
+
+## A note on C++ under recalibrated greenfield framing
+
+C++ presents the cleanest case for separating two distinct forward-looking properties from legacy gravity. The recalibrated runtime/ecosystem score (4) credits production-grade compiler toolchains (Clang, GCC, MSVC), ABI stability, OS and hardware integration, and the fact that the dominant accelerator stacks (CUDA, ROCm/HIP, SYCL, oneAPI) all primarily target C++ as their host language. These are forward ecosystem-viability properties a greenfield C++ project would inherit today - distinct from any legacy-installed-base credit. The strategic-viability score (2) reflects the safety pressure (NSA, ONCD, MSRC, Chromium, Android) that is the dominant active forward signal pushing new projects away. The two scores together produce a 2.65 weighted total: the same tier as Mojo, for very different reasons, with C++ exposed on safety and Mojo exposed on operability and adoption stage.
 
 ## Implications for portfolio thinking
 
 For a team selecting languages across a portfolio of AI-era greenfield projects, this lens analysis suggests:
 
-- **Default for greenfield application work.** TypeScript or Kotlin — strong on agentic and abstraction with reasonable safety.
-- **Default for systems, infrastructure, security-sensitive.** Rust — pays the operability cost for verification and safety gains.
-- **Default for data, AI/ML, scripting.** Python — accepting the verification gap but leveraging ecosystem velocity in ML.
-- **Default for fault-tolerant distributed systems.** Elixir — operability cost accepted for runtime properties no other language matches.
-- **Default for AI-native compute kernels (forward bet).** Mojo — accepting current ecosystem narrowness for hardware-portable performance, with active risk management.
+- **Default for greenfield application work.** TypeScript or Kotlin - strong on agentic and abstraction with reasonable safety.
+- **Default for systems, infrastructure, security-sensitive.** Rust - pays the operability cost for verification and safety gains, with a credible accelerator/ML path emerging.
+- **Default for data, AI/ML, scripting.** Python - accepting the verification gap but leveraging ecosystem velocity in ML and the steady typing-PEP cadence.
+- **Default for fault-tolerant distributed systems.** Elixir - operability cost accepted for runtime properties no other language matches; LiveView is a credible substrate for real-time AI-augmented UIs.
+- **Default for AI-native compute kernels (forward bet).** Mojo - accepting current ecosystem narrowness for hardware-portable performance, with active risk management around fast release cadence and single-vendor governance.
+- **Default for accelerator host code where C++ is unavoidable.** C++ - explicitly accepting the safety penalty in exchange for the production toolchain and accelerator ecosystem.
 
 No language is a default for *everything*. The framework's central output is that AI-era language choice becomes more domain-sensitive, not less.
+
+## Corpus note
+
+The claim corpus underlying this analysis has been expanded along five forward-driven axes that reflect the greenfield framing:
+
+1. **AI-tooling integration.** Language servers, semantic-model APIs, and analyzer/code-fix infrastructures usable by editors and agents (TypeScript Language Service, Roslyn, JDT.LS, Kotlin LSP, pyright/Pylance + typeshed, rust-analyzer, gopls, sourcekit-lsp, HLS).
+2. **Hardware-aware design.** Accelerator targeting and heterogeneous compilation (Mojo MLIR/MAX, JuliaGPU, Rust wgpu/candle/burn, C++ CUDA/ROCm/SYCL/oneAPI, Zig cross-compilation across embedded/RISC-V/WASM).
+3. **Concurrency model fit.** Language-level concurrency primitives suited to AI-era workloads (Java structured concurrency JEP 453, Go goroutines+channels, Phoenix LiveView/PubSub, Swift distributed actors, Kotlin Flow, Rust Tokio).
+4. **Verification velocity.** The rate of formal-methods or static-analysis improvement (Python typing PEPs, TypeScript `satisfies`, Mojo compile-time-parameters + ownership, Elixir set-theoretic types research).
+5. **Ecosystem velocity.** Forward language-and-library evolution cadence (Java JEP cadence, Rust RFC + Project Goals, Mojo changelog cadence, Zig roadmap, Python annual cadence per PEP 602, Kotlin Multiplatform momentum, .NET annual major releases, Elixir release cadence).
+
+Per-claim detail lives in `claims/<language>.yaml`; per-source documentation lives in `sources/<language>-sources.yaml`.
