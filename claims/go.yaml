@@ -1,9 +1,145 @@
 language: Go
+status: draft
+updated: 2026-04-30
+verification_status: web_verified_initial_pass
+
 claims:
   - id: go-001
-    claim: Go’s simple syntax and fast tooling support reliable AI-agent repair loops.
-    criterion: ai_agent_operability
-    evidence_type: structural
+    claim: Go's language specification is intentionally small and uses a regular grammar with a limited number of keywords.
+    dimension: machine_cognition
+    criterion: syntax_regularity
+    evidence_type: language_specification
+    confidence: high
+    polarity: positive
+    source: go-src-001
+    notes: The specification documents a compact set of keywords and a regular grammar.
+
+  - id: go-002
+    claim: Go enforces a single canonical source-code formatting through the gofmt tool.
+    dimension: machine_cognition
+    criterion: syntax_regularity
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: go-src-010
+    notes: gofmt rewrites Go source into a canonical layout, eliminating style debates and aiding diff stability.
+
+  - id: go-003
+    claim: The go command provides a single tool for build, test, formatting, vetting, dependency management, and documentation.
+    dimension: ai_agent_operability
+    criterion: fast_feedback_loops
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: go-src-003
+    notes: The cmd/go documentation enumerates the integrated subcommands.
+
+  - id: go-004
+    claim: Go modules use minimum version selection to determine dependency versions.
+    dimension: ai_agent_operability
+    criterion: dependency_clarity
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: go-src-004
+    notes: The Go modules reference defines minimum version selection as the algorithm for resolving versions.
+
+  - id: go-005
+    claim: Go provides goroutines and channels as language-level concurrency primitives.
+    dimension: runtime_ecosystem
+    criterion: concurrency_model
+    evidence_type: language_specification
+    confidence: high
+    polarity: positive
+    source: go-src-001
+    notes: The specification defines goroutines (go statement) and channels as first-class language constructs.
+
+  - id: go-006
+    claim: The Go memory model specifies the synchronization conditions under which memory operations are observed across goroutines.
+    dimension: machine_cognition
+    criterion: semantic_clarity
+    evidence_type: official_reference
+    confidence: high
+    polarity: positive
+    source: go-src-005
+    notes: The Go Memory Model document defines happens-before guarantees for concurrent code.
+
+  - id: go-007
+    claim: Go 1.18 added generics in the form of type parameters on functions and types.
+    dimension: machine_cognition
+    criterion: type_system_strength
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: go-src-006
+    notes: The Go 1.18 release notes document the introduction of type parameters.
+
+  - id: go-008
+    claim: Go 1.22 changed for-loop variable scoping so that each iteration creates a fresh variable, eliminating a common closure-capture bug.
+    dimension: human_cognition
+    criterion: error_visibility
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: go-src-007
+    notes: The Go 1.22 release notes describe the per-iteration loop variable change.
+
+  - id: go-009
+    claim: Go intentionally omits language features such as exceptions and inheritance to keep the language small.
+    dimension: human_cognition
+    criterion: conceptual_economy
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: go-src-011
+    notes: The Go FAQ explicitly explains the design philosophy of feature minimalism.
+
+  - id: go-010
+    claim: Go uses explicit error return values rather than exceptions for ordinary error handling.
+    dimension: human_cognition
+    criterion: error_visibility
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: go-src-002
+    notes: Effective Go documents the convention that errors are values returned alongside results.
+
+  - id: go-011
+    claim: Go's repeated use of explicit error-return idioms increases code volume relative to exception-based languages.
+    dimension: human_cognition
+    criterion: expressiveness
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: go-src-002
+    notes: Effective Go acknowledges the verbosity of the error idiom while defending its visibility benefits.
+
+  - id: go-012
+    claim: pkg.go.dev provides a central documentation index for Go modules with versioned package documentation.
+    dimension: ai_agent_operability
+    criterion: dependency_clarity
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: go-src-009
+    notes: The pkg.go.dev about page documents its role as the canonical Go ecosystem documentation site.
+
+  - id: go-013
+    claim: The 2024 H1 Go Developer Survey reports high satisfaction with Go among self-identified Go developers.
+    dimension: strategic_viability
+    criterion: adoption_base
+    evidence_type: developer_survey
     confidence: medium
     polarity: positive
-    source: [donovan2015go, gostd]
+    source: go-src-008
+    notes: The Go team publishes the Go Developer Survey annually, drawing responses from active Go users.
+
+  - id: go-014
+    claim: Go's deliberately limited type system constrains expressiveness compared to richer systems such as those of Rust or Haskell.
+    dimension: machine_cognition
+    criterion: type_system_strength
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: go-src-011
+    notes: The Go FAQ describes the design tradeoff that prefers simplicity over advanced type-system features.

@@ -1,0 +1,88 @@
+language: Go
+description: >
+  Source registry for atomic claims in claims/go.yaml. Each entry resolves a
+  go-src-NNN identifier referenced by an atomic claim's `source` field to a
+  primary source: official documentation, language specification, or
+  reproducible empirical work. Per the methodology in
+  outputs/evidence-backed-research-execution-plan.md.
+
+sources:
+  - id: go-src-001
+    title: The Go Programming Language Specification
+    publisher: The Go Authors
+    type: language_specification
+    url: https://go.dev/ref/spec
+    notes: Defines Go syntax, semantics, and the language's intentionally small surface area.
+
+  - id: go-src-002
+    title: Effective Go
+    publisher: The Go Authors
+    type: official_documentation
+    url: https://go.dev/doc/effective_go
+    notes: Documents idiomatic Go style, including formatting, error handling, and concurrency patterns.
+
+  - id: go-src-003
+    title: cmd/go - The Go command
+    publisher: The Go Authors
+    type: official_tooling_documentation
+    url: https://pkg.go.dev/cmd/go
+    notes: Documents the standard go command including build, test, fmt, vet, and module commands.
+
+  - id: go-src-004
+    title: Go Modules Reference
+    publisher: The Go Authors
+    type: official_tooling_documentation
+    url: https://go.dev/ref/mod
+    notes: Defines module versioning, the go.mod file, and minimum version selection for dependencies.
+
+  - id: go-src-005
+    title: The Go Memory Model
+    publisher: The Go Authors
+    type: official_reference
+    url: https://go.dev/ref/mem
+    notes: Specifies the conditions under which memory operations are observed across goroutines.
+
+  - id: go-src-006
+    title: Go 1.18 Release Notes
+    publisher: The Go Authors
+    type: official_documentation
+    year: 2022
+    url: https://go.dev/doc/go1.18
+    notes: Documents the addition of generics (type parameters) to Go.
+
+  - id: go-src-007
+    title: Go 1.22 Release Notes
+    publisher: The Go Authors
+    type: official_documentation
+    year: 2024
+    url: https://go.dev/doc/go1.22
+    notes: Documents the per-iteration loop variable semantics fix shipped in Go 1.22.
+
+  - id: go-src-008
+    title: Go Developer Survey 2024 H1 Results
+    publisher: The Go Team / Google
+    type: developer_survey
+    year: 2024
+    url: https://go.dev/blog/survey2024-h1-results
+    notes: Annual survey of self-identified Go developers reporting tooling satisfaction and language usage.
+
+  - id: go-src-009
+    title: pkg.go.dev - Documentation for the Go ecosystem
+    publisher: The Go Authors
+    type: official_tooling_documentation
+    url: https://pkg.go.dev/about
+    notes: Centralized documentation index for Go modules with versioned, machine-generated package docs.
+
+  - id: go-src-010
+    title: gofmt command
+    publisher: The Go Authors
+    type: official_tooling_documentation
+    url: https://pkg.go.dev/cmd/gofmt
+    notes: Documents the canonical formatting tool that enforces a single official Go style.
+
+  - id: go-src-011
+    title: Go FAQ - Why does Go not have feature X?
+    publisher: The Go Authors
+    type: official_documentation
+    url: https://go.dev/doc/faq
+    notes: Documents the design rationale behind Go's intentionally small feature set.
