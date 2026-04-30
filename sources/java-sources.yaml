@@ -89,3 +89,18 @@ sources:
     type: official_documentation
     url: https://docs.oracle.com/en/java/javase/21/migrate/
     notes: Documents Java's longstanding emphasis on backward source and binary compatibility across releases.
+
+  - id: java-src-012
+    title: Eclipse JDT Language Server
+    publisher: Eclipse Foundation
+    type: official_tooling_documentation
+    url: https://github.com/eclipse-jdtls/eclipse.jdt.ls
+    notes: Documents the JDT Language Server, the LSP implementation that exposes the Eclipse JDT semantic model to editors and agent tooling for Java.
+
+  - id: java-src-013
+    title: JEP 453 - Structured Concurrency (Preview)
+    publisher: OpenJDK
+    type: official_governance_documentation
+    year: 2023
+    url: https://openjdk.org/jeps/453
+    notes: Introduces structured concurrency as a preview API that treats groups of related tasks as a single unit of work, atop virtual threads.

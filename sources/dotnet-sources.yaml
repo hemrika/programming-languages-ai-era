@@ -85,3 +85,10 @@ sources:
     type: official_tooling_documentation
     url: https://learn.microsoft.com/dotnet/csharp/roslyn-sdk/source-generators-overview
     notes: Documents Roslyn source generators that synthesize C# code at compile time.
+
+  - id: dotnet-src-012
+    title: .NET Release Lifecycle
+    publisher: Microsoft Learn
+    type: official_documentation
+    url: https://learn.microsoft.com/dotnet/core/releases-and-support
+    notes: Documents the .NET release cadence with annual major versions and LTS designations on even-numbered releases.

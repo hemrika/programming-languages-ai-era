@@ -79,3 +79,10 @@ sources:
     type: official_governance_documentation
     url: https://ziglang.org/zsf/
     notes: Documents the non-profit foundation that stewards Zig's development.
+
+  - id: zig-src-011
+    title: Zig Roadmap and Release Notes Index
+    publisher: Zig Software Foundation
+    type: official_governance_documentation
+    url: https://ziglang.org/download/
+    notes: Aggregates Zig release notes documenting steady pre-1.0 evolution toward 1.0; complements the per-release notes already cited.

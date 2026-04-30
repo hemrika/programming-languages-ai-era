@@ -133,3 +133,13 @@ claims:
     polarity: positive
     source: haskell-src-002
     notes: The GHC User's Guide and project artifacts establish a public, versioned governance trail.
+
+  - id: haskell-014
+    claim: The Haskell Language Server (HLS) is the official LSP-based tooling for Haskell, providing a unified semantic model exposing GHC type information, hovers, completions, and code actions to editors and agents.
+    dimension: ai_agent_operability
+    criterion: fast_feedback_loops
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: haskell-src-011
+    notes: The haskell/haskell-language-server repository documents HLS as the recommended LSP-based developer environment for Haskell; under greenfield framing this is a forward AI-tooling integration property.

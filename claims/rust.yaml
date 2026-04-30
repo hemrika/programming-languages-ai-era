@@ -203,3 +203,43 @@ claims:
     polarity: negative
     source: rust-src-001
     notes: The Rust Book explicitly notes that ownership takes time to get used to.
+
+  - id: rust-021
+    claim: rust-analyzer is the official Rust language server, providing inlay hints, type-aware completions, and a deep semantic model exposed via the Language Server Protocol.
+    dimension: ai_agent_operability
+    criterion: fast_feedback_loops
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: rust-src-015
+    notes: The rust-analyzer manual documents the LSP-based semantic model, inlay hints, and IDE integrations; under greenfield framing this is a forward AI-tooling integration property.
+
+  - id: rust-022
+    claim: Rust has a growing accelerator and ML ecosystem - wgpu for cross-platform GPU compute, Hugging Face's candle for ML inference, and the burn deep learning framework - giving greenfield AI-systems work a credible Rust path.
+    dimension: runtime_ecosystem
+    criterion: ecosystem_viability
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: rust-src-016
+    notes: wgpu, candle, and burn are documented at their respective project pages; this is forward production-relevant ecosystem viability for AI/ML in Rust greenfield projects.
+
+  - id: rust-023
+    claim: Tokio is the dominant async runtime for Rust, providing a production-grade work-stealing scheduler, IO reactor, and timer wheel for async/await code.
+    dimension: runtime_ecosystem
+    criterion: concurrency_model
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: rust-src-017
+    notes: The Tokio tutorial and runtime documentation describe its work-stealing scheduler and ecosystem position as the canonical Rust async runtime.
+
+  - id: rust-024
+    claim: Rust's RFC process and the published roadmap-style "Rust Project Goals" document a public, structured process for prioritizing language and ecosystem investments.
+    dimension: strategic_viability
+    criterion: ecosystem_velocity
+    evidence_type: official_governance_documentation
+    confidence: high
+    polarity: positive
+    source: rust-src-018
+    notes: The rust-lang/rfcs repository and the Project Goals process are public artifacts of the Rust governance cadence; reframed under greenfield framing as forward ecosystem velocity.

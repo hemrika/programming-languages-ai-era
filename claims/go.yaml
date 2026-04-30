@@ -143,3 +143,23 @@ claims:
     polarity: negative
     source: go-src-011
     notes: The Go FAQ describes the design tradeoff that prefers simplicity over advanced type-system features.
+
+  - id: go-015
+    claim: gopls is the official Go language server, maintained by the Go team, providing a focused and fast semantic model over the Language Server Protocol.
+    dimension: ai_agent_operability
+    criterion: fast_feedback_loops
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: go-src-012
+    notes: The gopls documentation in golang/tools positions it as the official LSP server for Go editor and agent integrations.
+
+  - id: go-016
+    claim: Effective Go and the Go documentation establish goroutines and channels - "do not communicate by sharing memory; share memory by communicating" - as the canonical CSP-style concurrency idiom for Go services.
+    dimension: runtime_ecosystem
+    criterion: concurrency_model
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: go-src-002
+    notes: Effective Go's Concurrency section frames goroutines plus channels as the canonical model; under greenfield framing this remains the forward-default concurrency story for new Go services.

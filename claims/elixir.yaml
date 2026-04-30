@@ -133,3 +133,23 @@ claims:
     polarity: positive
     source: elixir-src-009
     notes: The blog post plans an incremental rollout, signaling careful governance of a major change.
+
+  - id: elixir-014
+    claim: Phoenix LiveView's server-driven rendering model and Phoenix.PubSub primitives provide a low-friction substrate for real-time AI-augmented UIs - streaming model output, live diffs, and collaborative agent sessions - without a separate front-end stack.
+    dimension: runtime_ecosystem
+    criterion: ecosystem_viability
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: elixir-src-007
+    notes: LiveView documents the streaming-update and PubSub primitives that map naturally onto LLM-streamed output and agent-coordinated UIs; this is a forward production-relevance property under greenfield framing.
+
+  - id: elixir-015
+    claim: Elixir releases are documented in the elixir-lang changelog with a steady minor-version cadence (1.14, 1.15, 1.16, 1.17, 1.18) shipping incremental language and tooling improvements.
+    dimension: strategic_viability
+    criterion: ecosystem_velocity
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: elixir-src-012
+    notes: The elixir-lang/elixir CHANGELOG documents the per-release evolution; reframed under greenfield framing as forward ecosystem velocity.

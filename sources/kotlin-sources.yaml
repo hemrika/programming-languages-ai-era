@@ -84,3 +84,25 @@ sources:
     type: official_tooling_documentation
     url: https://kotlinlang.org/docs/gradle-compilation-and-caches.html
     notes: Documents Kotlin Gradle incremental compilation and caching options.
+
+  - id: kotlin-src-012
+    title: Kotlin Documentation - Asynchronous Flow
+    publisher: JetBrains
+    type: official_documentation
+    url: https://kotlinlang.org/docs/flow.html
+    notes: Documents Kotlin Flow as a cold asynchronous reactive streams primitive built on suspend functions and coroutines.
+
+  - id: kotlin-src-013
+    title: Kotlin Multiplatform is Stable
+    publisher: JetBrains
+    type: official_governance_documentation
+    year: 2023
+    url: https://blog.jetbrains.com/kotlin/2023/11/kotlin-multiplatform-stable/
+    notes: JetBrains announcement marking Kotlin Multiplatform as stable across JVM, Android, iOS, JS, and Native targets.
+
+  - id: kotlin-src-014
+    title: Kotlin Language Server (LSP) - Documentation and Implementations
+    publisher: JetBrains / fwcd Kotlin Language Server project
+    type: official_tooling_documentation
+    url: https://github.com/fwcd/kotlin-language-server
+    notes: Documents the community LSP implementation and JetBrains' alignment with the Language Server Protocol for Kotlin tooling integration.

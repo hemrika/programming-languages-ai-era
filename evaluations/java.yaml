@@ -21,15 +21,15 @@ scores:
     score: 3
     confidence: medium
     justification: >
-      Java has rich diagnostics and strong AI-training-corpus density, but build-tool fragmentation, heavier project structure, and slower feedback loops increase agent friction.
-    supporting_claims: [java-011]
+      Java has rich diagnostics, the Eclipse JDT Language Server exposing the JDT semantic model over LSP, and strong AI-training-corpus density, but build-tool fragmentation, heavier project structure, and slower feedback loops increase agent friction.
+    supporting_claims: [java-011, java-014]
 
   runtime_ecosystem:
     score: 4
     confidence: high
     justification: >
-      The JVM is a production-grade target with mature concurrency primitives (virtual threads), portable bytecode and verifier, deep observability and profiling, and well-organized package distribution via Maven Central. These are forward-looking ecosystem-viability properties a greenfield project can lean on today, evaluated independently of any legacy installed-base credit.
-    supporting_claims: [java-006, java-009, java-010]
+      The JVM is a production-grade target with mature concurrency primitives (virtual threads, structured concurrency JEP 453), portable bytecode and verifier, deep observability and profiling, and well-organized package distribution via Maven Central. These are forward-looking ecosystem-viability properties a greenfield project can lean on today, evaluated independently of any legacy installed-base credit.
+    supporting_claims: [java-006, java-009, java-010, java-015]
 
   strategic_viability:
     score: 3

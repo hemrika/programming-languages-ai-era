@@ -153,3 +153,33 @@ claims:
     polarity: negative
     source: python-src-001
     notes: The Language Reference's execution model implies that type-related failures occur during runtime evaluation rather than at parse time.
+
+  - id: python-016
+    claim: Python's typing system has advanced through a sustained sequence of typing PEPs - PEP 484 (hints), PEP 526 (variable annotations), PEP 544 (Protocols), PEP 612 (ParamSpec), PEP 646 (TypeVarTuple), PEP 692 (TypedDict kwargs), PEP 695 (type parameter syntax) - landing across multiple recent versions.
+    dimension: machine_cognition
+    criterion: type_system_strength
+    evidence_type: language_specification
+    confidence: high
+    polarity: positive
+    source: python-src-013
+    notes: The Python Typing topic guide lists active typing PEPs and their version targets; the cumulative effect is a sustained verification-velocity improvement under greenfield framing.
+
+  - id: python-017
+    claim: Python follows an annual release cadence per PEP 602, shipping a new minor version each October with a defined support window.
+    dimension: strategic_viability
+    criterion: ecosystem_velocity
+    evidence_type: language_specification
+    confidence: high
+    polarity: positive
+    source: python-src-014
+    notes: PEP 602 documents the annual release cadence; under greenfield framing this is a forward ecosystem-velocity property.
+
+  - id: python-018
+    claim: pyright and Pylance ship with bundled type stubs for many popular libraries, narrowing the gap between dynamic library APIs and statically checkable code in greenfield projects.
+    dimension: ai_agent_operability
+    criterion: fast_feedback_loops
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: positive
+    source: python-src-015
+    notes: The typeshed project and pyright/Pylance bundle stubs for the standard library and many third-party packages, supporting AI-tooling integration.

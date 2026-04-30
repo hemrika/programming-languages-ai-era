@@ -95,3 +95,25 @@ sources:
     year: 2024
     url: https://github.blog/news-insights/octoverse/octoverse-2024/
     notes: Reports Python as the most-used language on GitHub in 2024, surpassing JavaScript.
+
+  - id: python-src-013
+    title: Python typing - typing-related PEPs index
+    publisher: Python Software Foundation
+    type: language_specification
+    url: https://typing.readthedocs.io/en/latest/spec/peps.html
+    notes: Indexes the active typing-related PEPs that have shaped Python's gradual type system across recent versions.
+
+  - id: python-src-014
+    title: PEP 602 - Annual Release Cycle for Python
+    publisher: Python Software Foundation
+    type: language_specification
+    year: 2019
+    url: https://peps.python.org/pep-0602/
+    notes: Defines Python's annual release cadence with a new minor version each October.
+
+  - id: python-src-015
+    title: typeshed - Stub files for Python standard library and third-party packages
+    publisher: Python Software Foundation / typeshed project
+    type: official_tooling_documentation
+    url: https://github.com/python/typeshed
+    notes: Documents the typeshed stub repository bundled with pyright, Pylance, mypy, and other Python type checkers.

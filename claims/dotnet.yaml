@@ -133,3 +133,23 @@ claims:
     polarity: positive
     source: dotnet-src-003
     notes: csharplang is the public location for C# language design discussions and specifications.
+
+  - id: dotnet-014
+    claim: Roslyn exposes its semantic model through a public Compiler Platform API used by analyzers, code fixes, and source generators, giving editors and AI tooling first-class access to type, symbol, and binding information.
+    dimension: ai_agent_operability
+    criterion: fast_feedback_loops
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: dotnet-src-006
+    notes: The Roslyn SDK overview documents how analyzers and code fixes consume the live SemanticModel; under greenfield framing this is a forward AI-tooling-integration property a new project inherits today.
+
+  - id: dotnet-015
+    claim: .NET ships a new major version annually with even-numbered releases designated as Long-Term Support (LTS), giving a predictable forward cadence for new projects.
+    dimension: strategic_viability
+    criterion: ecosystem_velocity
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: dotnet-src-012
+    notes: The .NET release lifecycle page documents the yearly major release cadence and the LTS designations; under greenfield framing this is a forward ecosystem-velocity signal.

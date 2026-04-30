@@ -28,12 +28,12 @@ scores:
     score: 4
     confidence: medium
     justification: >
-      BEAM's concurrency, fault tolerance, and hot-upgrade story are unique and production-proven, though the broader library ecosystem is narrower than mainstream alternatives.
-    supporting_claims: [elixir-001, elixir-002, elixir-003, elixir-004, elixir-008, elixir-009, elixir-011]
+      BEAM's concurrency, fault tolerance, and hot-upgrade story are unique and production-proven, with Phoenix LiveView's server-driven streaming primitives mapping well onto real-time AI-augmented UIs; the broader library ecosystem is narrower than mainstream alternatives.
+    supporting_claims: [elixir-001, elixir-002, elixir-003, elixir-004, elixir-008, elixir-009, elixir-011, elixir-014]
 
   strategic_viability:
     score: 3
     confidence: medium
     justification: >
-      Niche but durable adoption in fault-tolerant systems and real-time web; not on a mainstream growth trajectory.
-    supporting_claims: [elixir-013]
+      Niche but durable adoption in fault-tolerant systems and real-time web; not on a mainstream growth trajectory, with steady release cadence as a forward velocity signal.
+    supporting_claims: [elixir-013, elixir-015]

@@ -92,3 +92,10 @@ sources:
     type: official_reference
     url: https://en.cppreference.com/w/cpp/language/modules
     notes: Documents the C++20 modules feature intended to replace header-based inclusion.
+
+  - id: cpp-src-012
+    title: CUDA C++ Programming Guide
+    publisher: NVIDIA Corporation
+    type: official_documentation
+    url: https://docs.nvidia.com/cuda/cuda-c-programming-guide/
+    notes: Documents NVIDIA's CUDA C++ programming model; representative of the broader ecosystem (CUDA, AMD ROCm/HIP, Khronos SYCL, Intel oneAPI) that targets C++ as the primary host language for accelerator kernels.

@@ -21,15 +21,15 @@ scores:
     score: 5
     confidence: medium
     justification: >
-      Go has fast compile/test loops, simple project structure, strong formatting conventions, and direct diagnostics.
-    supporting_claims: [go-003, go-004, go-012]
+      Go has fast compile/test loops, simple project structure, strong formatting conventions, direct diagnostics, and gopls's focused LSP-based semantic model.
+    supporting_claims: [go-003, go-004, go-012, go-015]
 
   runtime_ecosystem:
     score: 4
     confidence: high
     justification: >
-      Go is strong for backend services, infrastructure, concurrency, and deployment.
-    supporting_claims: [go-005]
+      Go is strong for backend services, infrastructure, concurrency, and deployment, with the goroutine + channel CSP-style model still the canonical concurrency story for new services.
+    supporting_claims: [go-005, go-016]
 
   strategic_viability:
     score: 4

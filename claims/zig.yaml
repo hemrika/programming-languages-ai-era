@@ -123,3 +123,23 @@ claims:
     polarity: positive
     source: zig-src-003
     notes: The 0.11.0 release notes document self-hosted-compiler progress.
+
+  - id: zig-013
+    claim: Zig's first-class cross-compilation supports a broad target list including embedded ARM, RISC-V, WebAssembly, and other constrained or accelerator-adjacent targets in a single toolchain.
+    dimension: runtime_ecosystem
+    criterion: ecosystem_viability
+    evidence_type: language_specification
+    confidence: medium
+    polarity: positive
+    source: zig-src-008
+    notes: The Zig overview foregrounds cross-compilation across many targets, including embedded and WebAssembly profiles relevant to greenfield systems and accelerator-adjacent work.
+
+  - id: zig-014
+    claim: The Zig project publishes a roadmap and release notes documenting steady pre-1.0 evolution toward 1.0; the velocity is real even as stability is not yet credited.
+    dimension: strategic_viability
+    criterion: ecosystem_velocity
+    evidence_type: official_governance_documentation
+    confidence: medium
+    polarity: positive
+    source: zig-src-011
+    notes: Zig's release-notes sequence and ZSF roadmap material document forward evolution; under greenfield framing this is an ecosystem-velocity signal that is partially offset by the pre-1.0 stability concern in zig-006 and zig-010.

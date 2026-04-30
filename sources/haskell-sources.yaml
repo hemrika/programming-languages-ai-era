@@ -80,3 +80,10 @@ sources:
     type: official_documentation
     url: https://downloads.haskell.org/ghc/latest/docs/users_guide/profiling.html
     notes: Documents profiling tools for diagnosing performance and space behavior under lazy evaluation.
+
+  - id: haskell-src-011
+    title: Haskell Language Server (HLS)
+    publisher: Haskell.org / haskell-language-server contributors
+    type: official_tooling_documentation
+    url: https://haskell-language-server.readthedocs.io/en/latest/
+    notes: Documents the Haskell Language Server, the official LSP-based developer environment for Haskell, exposing GHC's semantic model.

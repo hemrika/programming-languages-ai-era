@@ -28,8 +28,8 @@ scores:
     score: 3
     confidence: medium
     justification: >
-      Strong in scientific computing; narrower elsewhere, with deployment patterns less standardized than Python.
-    supporting_claims: [julia-001, julia-003, julia-005, julia-009, julia-010]
+      Strong in scientific computing, with first-class GPU backends (CUDA.jl, AMDGPU.jl, Metal.jl, oneAPI.jl) under JuliaGPU; narrower elsewhere, with deployment patterns less standardized than Python.
+    supporting_claims: [julia-001, julia-003, julia-005, julia-009, julia-010, julia-014]
 
   strategic_viability:
     score: 3

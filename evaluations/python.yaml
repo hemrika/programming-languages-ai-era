@@ -14,15 +14,15 @@ scores:
     score: 3
     confidence: medium
     justification: >
-      Python is dynamically typed at heart, but PEP 484 type hints, mypy, pyright, and pydantic now provide a credible gradual-typing layer that materially improves static analyzability in well-typed codebases.
-    supporting_claims: [python-001, python-002, python-003, python-004, python-005]
+      Python is dynamically typed at heart, but a sustained sequence of typing PEPs (484, 526, 544, 612, 646, 692, 695) and a mature checker ecosystem (mypy, pyright, pydantic) now provide a credible gradual-typing layer that materially improves static analyzability in well-typed codebases.
+    supporting_claims: [python-001, python-002, python-003, python-004, python-005, python-016]
 
   ai_agent_operability:
     score: 4
     confidence: medium
     justification: >
-      Python has fast execution feedback and simple syntax, but runtime errors and environment issues create repair friction.
-    supporting_claims: [python-006, python-007, python-011]
+      Python has fast execution feedback, simple syntax, mature LSP-based type checkers (pyright/Pylance) backed by the typeshed stub ecosystem, and uv-driven fast dependency management; runtime errors and environment issues remain a repair-friction source.
+    supporting_claims: [python-006, python-007, python-011, python-018]
 
   runtime_ecosystem:
     score: 5
@@ -35,5 +35,5 @@ scores:
     score: 4
     confidence: high
     justification: >
-      Python remains the highest-AI-training-corpus-density language, and ecosystem velocity in ML/data is unmatched. Under greenfield framing the prior 5 reflected partly the installed-base premium, which is no longer scored; the score reduces to 4 with the verification gap counted as a forward concern offset only partially by gradual typing.
-    supporting_claims: [python-012, python-013]
+      Python remains the highest-AI-training-corpus-density language, with annual release cadence (PEP 602) and ecosystem velocity in ML/data unmatched. Under greenfield framing the prior 5 reflected partly the installed-base premium, which is no longer scored; the score reduces to 4 with the verification gap counted as a forward concern offset only partially by gradual typing.
+    supporting_claims: [python-012, python-013, python-017]

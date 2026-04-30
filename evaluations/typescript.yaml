@@ -14,15 +14,15 @@ scores:
     score: 4
     confidence: medium
     justification: >
-      TypeScript provides strong tooling and static analysis, though JavaScript runtime semantics remain.
-    supporting_claims: [typescript-001, typescript-002, typescript-003, typescript-004, typescript-005, typescript-010]
+      TypeScript provides strong tooling and static analysis, with the satisfies operator and ongoing type-system improvements continuing to advance verification velocity, though JavaScript runtime semantics remain.
+    supporting_claims: [typescript-001, typescript-002, typescript-003, typescript-004, typescript-005, typescript-010, typescript-016]
 
   ai_agent_operability:
     score: 5
     confidence: medium
     justification: >
-      TypeScript has excellent language-server support, fast feedback, mature test tooling, and abundant examples.
-    supporting_claims: [typescript-006, typescript-007]
+      TypeScript has excellent language-server support with an incremental semantic model, fast feedback, mature test tooling, and abundant examples.
+    supporting_claims: [typescript-006, typescript-007, typescript-015]
 
   runtime_ecosystem:
     score: 4

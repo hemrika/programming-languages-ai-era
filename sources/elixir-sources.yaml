@@ -85,3 +85,10 @@ sources:
     type: official_tooling_documentation
     url: https://hexdocs.pm/mix/Mix.html
     notes: Documents Mix as Elixir's build tool for tasks, dependencies, and project lifecycle.
+
+  - id: elixir-src-012
+    title: Elixir CHANGELOG
+    publisher: Elixir core team
+    type: official_documentation
+    url: https://github.com/elixir-lang/elixir/blob/main/CHANGELOG.md
+    notes: Public changelog tracking Elixir release-to-release changes; representative of the language's forward evolution cadence.

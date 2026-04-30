@@ -143,3 +143,23 @@ claims:
     polarity: negative
     source: typescript-src-008
     notes: The Handbook documents that any silently propagates without further checking, undermining local correctness reasoning.
+
+  - id: typescript-015
+    claim: The TypeScript Language Server exposes an incremental semantic model that returns symbol references, type information, and refactoring suggestions to editor and agent clients via the Language Server Protocol.
+    dimension: ai_agent_operability
+    criterion: fast_feedback_loops
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: typescript-src-006
+    notes: The architectural overview describes the language service as the API surface used by editors and tools to query the live semantic model; this is a forward-looking AI-tooling-integration property usable by agents today.
+
+  - id: typescript-016
+    claim: TypeScript 4.9 introduced the satisfies operator for validating an expression's type without widening its inferred literal types, advancing the language's gradual verification velocity.
+    dimension: machine_cognition
+    criterion: type_system_strength
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: typescript-src-013
+    notes: The TypeScript 4.9 release notes document the satisfies operator and its narrowing-friendly semantics; a recent example of incremental type-system improvement.

@@ -92,3 +92,11 @@ sources:
     year: 2024
     url: https://github.blog/news-insights/octoverse/octoverse-2024/
     notes: Reports TypeScript's rank among most-used languages on GitHub.
+
+  - id: typescript-src-013
+    title: TypeScript 4.9 Release Notes - The satisfies Operator
+    publisher: Microsoft / TypeScript Project
+    type: official_documentation
+    year: 2022
+    url: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-9.html
+    notes: Documents the satisfies operator added in TypeScript 4.9, an incremental type-system improvement preserving narrowing.

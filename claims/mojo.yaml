@@ -123,3 +123,33 @@ claims:
     polarity: negative
     source: mojo-src-001
     notes: The Mojo Manual's recent introduction implies a small training-data footprint relative to incumbent languages.
+
+  - id: mojo-013
+    claim: Mojo's MLIR-based compilation pipeline targets heterogeneous hardware with explicit GPU primitives, supporting portable kernels across NVIDIA, AMD, and other accelerator backends through Modular's MAX engine.
+    dimension: runtime_ecosystem
+    criterion: ecosystem_viability
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: mojo-src-011
+    notes: The Mojo GPU programming documentation describes hardware-portable kernels and MAX-engine integration; under greenfield framing, accelerator-portability is a forward production-relevance property.
+
+  - id: mojo-014
+    claim: Mojo combines compile-time parameters with explicit ownership conventions, giving the language an unusual greenfield posture for compile-time proof and static-analysis tooling on AI kernels.
+    dimension: machine_cognition
+    criterion: formal_reasoning_potential
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: mojo-src-005
+    notes: The combination of parameter-driven metaprogramming and ownership semantics is documented in the Mojo Manual; treated as a forward verification-velocity signal under greenfield framing.
+
+  - id: mojo-015
+    claim: Modular ships frequent Mojo and MAX releases with a public changelog documenting language and toolchain evolution at a fast cadence.
+    dimension: strategic_viability
+    criterion: ecosystem_velocity
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: mojo-src-012
+    notes: The Mojo changelog documents the rate of language and standard-library changes; reframed under greenfield framing as forward ecosystem velocity, balanced against pre-1.0 stability concerns recorded in mojo-010.

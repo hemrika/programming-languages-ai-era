@@ -97,12 +97,12 @@ claims:
   - id: java-010
     claim: Maven Central provides a well-organized package distribution channel for JVM libraries with versioned, signed artifacts.
     dimension: runtime_ecosystem
-    criterion: library_maturity
+    criterion: ecosystem_viability
     evidence_type: official_tooling_documentation
     confidence: high
     polarity: positive
     source: java-src-008
-    notes: The Maven Central about page documents its role as the default JVM artifact repository; reframed under greenfield framing as well-organized distribution rather than legacy installed-base advantage.
+    notes: The Maven Central about page documents its role as the default JVM artifact repository; reframed under greenfield framing as a forward-looking ecosystem-viability property a new project relies on today rather than legacy installed-base.
 
   - id: java-011
     claim: The Java build-tool ecosystem is split between Maven and Gradle as primary alternatives.
@@ -133,3 +133,23 @@ claims:
     polarity: negative
     source: java-src-003
     notes: JEP 395 explicitly motivates records as a remedy to plain-data-class boilerplate.
+
+  - id: java-014
+    claim: The Eclipse JDT Language Server (Eclipse JDT.LS) provides a Language Server Protocol implementation for Java that exposes the JDT semantic model to editors and agent tooling.
+    dimension: ai_agent_operability
+    criterion: fast_feedback_loops
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: java-src-012
+    notes: JDT.LS is the LSP server underlying VS Code Java tooling and other editors; under greenfield framing this is a forward AI-tooling-integration property usable by new projects today.
+
+  - id: java-015
+    claim: JEP 453 introduces structured concurrency as a preview API that treats groups of related concurrent tasks as a single unit of work.
+    dimension: runtime_ecosystem
+    criterion: concurrency_model
+    evidence_type: official_governance_documentation
+    confidence: high
+    polarity: positive
+    source: java-src-013
+    notes: JEP 453 documents structured concurrency for JDK 21 as preview, building on virtual threads to simplify error handling and cancellation.

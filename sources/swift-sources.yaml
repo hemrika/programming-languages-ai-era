@@ -83,3 +83,18 @@ sources:
     type: official_documentation
     url: https://developer.apple.com/swift/
     notes: Apple's official Swift landing page positioning the language across Apple platforms.
+
+  - id: swift-src-012
+    title: sourcekit-lsp - Swift Language Server
+    publisher: Swift project / Apple
+    type: official_tooling_documentation
+    url: https://github.com/swiftlang/sourcekit-lsp
+    notes: Documents sourcekit-lsp as the official Language Server Protocol implementation for Swift, C, and C++ exposing the SourceKit semantic model.
+
+  - id: swift-src-013
+    title: SE-0336 - Distributed Actor Isolation
+    publisher: Swift project
+    type: official_governance_documentation
+    year: 2022
+    url: https://github.com/swiftlang/swift-evolution/blob/main/proposals/0336-distributed-actor-isolation.md
+    notes: Introduces distributed actor isolation rules for Swift, extending the actor model to location-transparent distributed systems.

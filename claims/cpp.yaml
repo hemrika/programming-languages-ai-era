@@ -123,3 +123,13 @@ claims:
     polarity: positive
     source: cpp-src-010
     notes: cppreference is widely treated as a practical companion to the ISO standard, though it is not an official ISO publication.
+
+  - id: cpp-013
+    claim: The dominant accelerator and heterogeneous-compute toolchains - NVIDIA CUDA, AMD ROCm/HIP, Khronos SYCL, and Intel oneAPI - all primarily target C++ as their host language for kernels and host code.
+    dimension: runtime_ecosystem
+    criterion: ecosystem_viability
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: cpp-src-012
+    notes: NVIDIA's CUDA C++ Programming Guide, AMD's HIP/ROCm documentation, the Khronos SYCL specification, and Intel's oneAPI all foreground C++ as the primary host language; under greenfield framing this is a forward production-relevance property a new accelerator project would inherit today.

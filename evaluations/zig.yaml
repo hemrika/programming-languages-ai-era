@@ -28,12 +28,12 @@ scores:
     score: 3
     confidence: medium
     justification: >
-      Small but growing; strong C interop and cross-compilation are advantages, balanced by limited library coverage.
-    supporting_claims: [zig-004, zig-005, zig-009, zig-012]
+      Small but growing; strong C interop, first-class cross-compilation across embedded/RISC-V/WebAssembly targets, and continued tooling work are advantages, balanced by limited library coverage.
+    supporting_claims: [zig-004, zig-005, zig-009, zig-012, zig-013]
 
   strategic_viability:
     score: 3
     confidence: low
     justification: >
-      Promising design with active community, but pre-1.0 status and competition from Rust create medium-term adoption risk.
-    supporting_claims: [zig-006, zig-007]
+      Promising design with active community and a documented release cadence toward 1.0, but pre-1.0 status and competition from Rust create medium-term adoption risk.
+    supporting_claims: [zig-006, zig-007, zig-014]

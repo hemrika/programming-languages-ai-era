@@ -79,3 +79,17 @@ sources:
     type: official_documentation
     url: https://docs.modular.com/mojo/roadmap/
     notes: Documents known limitations, planned features, and the language's pre-1.0 status.
+
+  - id: mojo-src-011
+    title: Mojo Manual - GPU programming and hardware portability
+    publisher: Modular
+    type: official_documentation
+    url: https://docs.modular.com/mojo/manual/gpu/
+    notes: Documents Mojo's GPU programming model and hardware-portable kernel design through MLIR and Modular's MAX engine.
+
+  - id: mojo-src-012
+    title: Mojo Changelog
+    publisher: Modular
+    type: official_documentation
+    url: https://docs.modular.com/mojo/changelog
+    notes: Public changelog documenting Mojo language and standard-library changes across releases.

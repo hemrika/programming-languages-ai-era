@@ -21,15 +21,15 @@ scores:
     score: 3
     confidence: medium
     justification: >
-      Strong diagnostics on Apple platforms, but smaller training corpus and Xcode/SPM build complexity limit cross-platform agent workflows.
-    supporting_claims: [swift-007]
+      Strong diagnostics on Apple platforms and the official sourcekit-lsp language server provide a credible LSP integration, but a smaller training corpus and Xcode/SPM build complexity limit cross-platform agent workflows.
+    supporting_claims: [swift-007, swift-014]
 
   runtime_ecosystem:
     score: 4
     confidence: medium
     justification: >
-      Production-grade on Apple platforms with strong tooling and performance; server-side Swift on Linux (SwiftNIO, Vapor, AWS Lambda runtime) is increasingly viable, though ecosystem depth still lags mainstream backend languages.
-    supporting_claims: [swift-003, swift-004, swift-008, swift-009]
+      Production-grade on Apple platforms with strong tooling and performance; concurrency primitives include async/await, structured concurrency, actors, and distributed actors (SE-0336/0344). Server-side Swift on Linux (SwiftNIO, Vapor, AWS Lambda runtime) is increasingly viable, though ecosystem depth still lags mainstream backend languages.
+    supporting_claims: [swift-003, swift-004, swift-008, swift-009, swift-015]
 
   strategic_viability:
     score: 3

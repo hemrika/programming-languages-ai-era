@@ -133,3 +133,33 @@ claims:
     polarity: positive
     source: kotlin-src-001
     notes: The null-safety documentation makes nullability visible in declarations and call sites.
+
+  - id: kotlin-014
+    claim: Kotlin Flow provides a cold asynchronous reactive stream API built on top of suspend functions and coroutines.
+    dimension: runtime_ecosystem
+    criterion: concurrency_model
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: kotlin-src-012
+    notes: The Asynchronous Flow guide documents Flow as a coroutine-based reactive streams primitive suitable for backpressure-aware data pipelines.
+
+  - id: kotlin-015
+    claim: Kotlin Multiplatform has progressed to stable across JVM, Android, iOS, JS, and Native targets, with continued investment from JetBrains and Google as a forward cross-platform strategy.
+    dimension: strategic_viability
+    criterion: ecosystem_velocity
+    evidence_type: official_governance_documentation
+    confidence: medium
+    polarity: positive
+    source: kotlin-src-013
+    notes: JetBrains announced Kotlin Multiplatform stability in late 2023; signals forward momentum for shared-code architectures.
+
+  - id: kotlin-016
+    claim: The Kotlin Language Server (kotlin-language-server / fwcd) and JetBrains' own LSP implementations expose Kotlin's semantic model to editors via the Language Server Protocol.
+    dimension: ai_agent_operability
+    criterion: fast_feedback_loops
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: positive
+    source: kotlin-src-014
+    notes: JetBrains documents an official LSP for Kotlin alongside the community implementation; under greenfield framing this is a forward AI-tooling integration property usable by agents today.

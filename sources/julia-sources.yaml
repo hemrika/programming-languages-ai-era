@@ -80,3 +80,10 @@ sources:
     type: official_documentation
     url: https://docs.julialang.org/en/v1/manual/multi-threading/
     notes: Documents Julia's task-based threading and parallelism support.
+
+  - id: julia-src-011
+    title: JuliaGPU - GPU programming in Julia
+    publisher: JuliaGPU organization
+    type: official_documentation
+    url: https://juliagpu.org/
+    notes: Documents the Julia GPU ecosystem including CUDA.jl, AMDGPU.jl, Metal.jl, and oneAPI.jl as first-class accelerator backends.

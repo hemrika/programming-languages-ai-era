@@ -28,8 +28,8 @@ scores:
     score: 4
     confidence: medium
     justification: >
-      C++ retains a production-grade compiler toolchain (Clang, GCC, MSVC), ABI stability, deep OS and hardware integration, and broad library availability - all greenfield-relevant ecosystem properties independent of legacy installed-base credit.
-    supporting_claims: [cpp-004, cpp-005, cpp-008]
+      C++ retains a production-grade compiler toolchain (Clang, GCC, MSVC), ABI stability, deep OS and hardware integration, and broad library availability - all greenfield-relevant ecosystem properties independent of legacy installed-base credit. The dominant accelerator stacks (CUDA, ROCm/HIP, SYCL, oneAPI) primarily target C++ today, extending the forward production-relevance into AI-systems work.
+    supporting_claims: [cpp-004, cpp-005, cpp-008, cpp-013]
 
   strategic_viability:
     score: 2

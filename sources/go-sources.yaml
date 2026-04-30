@@ -86,3 +86,10 @@ sources:
     type: official_documentation
     url: https://go.dev/doc/faq
     notes: Documents the design rationale behind Go's intentionally small feature set.
+
+  - id: go-src-012
+    title: gopls - Go Language Server
+    publisher: The Go Authors
+    type: official_tooling_documentation
+    url: https://github.com/golang/tools/blob/master/gopls/README.md
+    notes: Documents gopls as the official Go language server, providing LSP-based semantic-model integration for editors and agents.

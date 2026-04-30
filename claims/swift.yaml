@@ -133,3 +133,23 @@ claims:
     polarity: positive
     source: swift-src-006
     notes: The swift-evolution repository tracks accepted proposals as the historical record of language change.
+
+  - id: swift-014
+    claim: sourcekit-lsp is the official Swift language server, exposing the SourceKit semantic model over the Language Server Protocol for Swift, C, and C++ tooling integrations.
+    dimension: ai_agent_operability
+    criterion: fast_feedback_loops
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: swift-src-012
+    notes: The swiftlang/sourcekit-lsp repository documents the LSP server implementing Swift and C-family language services for editors and agents.
+
+  - id: swift-015
+    claim: Swift's Distributed Actors (Swift 5.7+, evolution proposals SE-0336/0344) extend the actor model across processes and machines, supporting location-transparent message passing for distributed systems.
+    dimension: runtime_ecosystem
+    criterion: concurrency_model
+    evidence_type: official_governance_documentation
+    confidence: high
+    polarity: positive
+    source: swift-src-013
+    notes: SE-0336 introduces distributed actor isolation; SE-0344 adds the runtime; the feature ships in the Swift toolchain and the Distributed module.

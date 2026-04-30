@@ -108,3 +108,31 @@ sources:
     year: 2024
     url: https://survey.stackoverflow.co/2024/technology#admired-and-desired
     notes: Rust reported as most admired language at 83%.
+
+  - id: rust-src-015
+    title: rust-analyzer User Manual
+    publisher: The Rust Project / rust-analyzer team
+    type: official_tooling_documentation
+    url: https://rust-analyzer.github.io/manual.html
+    notes: Documents rust-analyzer as the official Rust language server, including inlay hints, completions, and the semantic-model APIs exposed over LSP.
+
+  - id: rust-src-016
+    title: candle - Hugging Face's minimalist Rust ML framework
+    publisher: Hugging Face
+    type: official_documentation
+    url: https://github.com/huggingface/candle
+    notes: Documents candle, a Hugging Face ML framework written in Rust with CUDA, Metal, and CPU backends; representative of the Rust ML/accelerator ecosystem alongside wgpu and burn.
+
+  - id: rust-src-017
+    title: Tokio - Asynchronous Rust runtime
+    publisher: Tokio project
+    type: official_documentation
+    url: https://tokio.rs/
+    notes: Documents Tokio's work-stealing scheduler, IO reactor, and async/await ecosystem position as the dominant Rust async runtime.
+
+  - id: rust-src-018
+    title: Rust Project Goals
+    publisher: The Rust Project
+    type: official_governance_documentation
+    url: https://rust-lang.github.io/rust-project-goals/
+    notes: Documents the Rust Project Goals process - a structured forward-roadmap mechanism complementing the RFC process.

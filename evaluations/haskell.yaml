@@ -21,8 +21,8 @@ scores:
     score: 2
     confidence: low
     justification: >
-      Strong compiler feedback and refactoring safety, but slow compile/initialization loops, a small training corpus, lazy-eval surprises, and Cabal/Stack/Nix fragmentation make autonomous agent iteration genuinely difficult.
-    supporting_claims: [haskell-006, haskell-007, haskell-009]
+      Strong compiler feedback, refactoring safety, and the Haskell Language Server's LSP-based semantic-model integration help, but slow compile/initialization loops, a small training corpus, lazy-eval surprises, and Cabal/Stack/Nix fragmentation make autonomous agent iteration genuinely difficult.
+    supporting_claims: [haskell-006, haskell-007, haskell-009, haskell-014]
 
   runtime_ecosystem:
     score: 3

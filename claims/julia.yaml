@@ -133,3 +133,13 @@ claims:
     polarity: positive
     source: julia-src-007
     notes: The Types chapter describes annotations as optional inputs to dispatch and inference.
+
+  - id: julia-014
+    claim: Julia's accelerator ecosystem - CUDA.jl, AMDGPU.jl, Metal.jl, and oneAPI.jl - provides first-class GPU backends maintained under the JuliaGPU organization, supporting portable kernel programming in greenfield numerical and ML projects.
+    dimension: runtime_ecosystem
+    criterion: ecosystem_viability
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: julia-src-011
+    notes: The JuliaGPU site documents CUDA.jl, AMDGPU.jl, Metal.jl, and oneAPI.jl as first-class accelerator backends.
