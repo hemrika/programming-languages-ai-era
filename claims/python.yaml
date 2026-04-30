@@ -115,14 +115,14 @@ claims:
     notes: The uv documentation positions uv as a fast pip-compatible installer and project manager.
 
   - id: python-012
-    claim: GitHub Octoverse 2024 reports Python as the most-used language on GitHub, surpassing JavaScript.
+    claim: GitHub Octoverse 2024 reports Python as the top language on GitHub by repository activity, indicating substantial AI-training-corpus representation and active ecosystem velocity.
     dimension: strategic_viability
-    criterion: adoption_base
+    criterion: ai_training_representation
     evidence_type: developer_survey
     confidence: high
     polarity: positive
     source: python-src-012
-    notes: Octoverse 2024 explicitly highlights Python overtaking JavaScript as the top GitHub language.
+    notes: Octoverse 2024 explicitly highlights Python overtaking JavaScript as the top GitHub language; under greenfield framing this is read as training-corpus and ecosystem-velocity signal rather than installed-base advantage.
 
   - id: python-013
     claim: Stack Overflow's 2024 Developer Survey reports Python among the most-used languages by professional developers.
@@ -132,7 +132,7 @@ claims:
     confidence: high
     polarity: positive
     source: python-src-011
-    notes: The 2024 survey shows Python in the top tier of professional language usage, supporting ai-training representation as a proxy.
+    notes: The 2024 survey shows Python in the top tier of professional language usage, used as a proxy for AI-training-corpus density.
 
   - id: python-014
     claim: Python's whitespace-sensitive block syntax favors readability through indentation as the structural delimiter.

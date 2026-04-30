@@ -105,14 +105,14 @@ claims:
     notes: Apple's developer Swift page foregrounds iOS, macOS, watchOS, tvOS, and visionOS as primary targets.
 
   - id: swift-011
-    claim: Apple's primary positioning of Swift around Apple platforms creates platform-alignment risk for cross-platform adoption.
+    claim: Apple's primary positioning of Swift around Apple platforms creates platform-alignment risk for cross-platform greenfield projects.
     dimension: strategic_viability
-    criterion: adoption_base
+    criterion: future_fit
     evidence_type: official_documentation
     confidence: medium
     polarity: negative
     source: swift-src-011
-    notes: The Apple Developer Swift landing page emphasizes Apple platforms, with non-Apple ecosystems addressed only via separate efforts.
+    notes: The Apple Developer Swift landing page emphasizes Apple platforms, with non-Apple ecosystems addressed only via separate efforts; reframed under greenfield framing as a forward platform-fit concern.
 
   - id: swift-012
     claim: Swift code is designed for safety, with optionals and explicit error handling reducing common runtime hazards.

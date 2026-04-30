@@ -177,22 +177,22 @@ claims:
   - id: rust-018
     claim: Stack Overflow's 2025 Developer Survey reported Rust as the most admired programming language at 72%.
     dimension: strategic_viability
-    criterion: adoption_base
+    criterion: ai_training_representation
     evidence_type: developer_survey
     confidence: medium
     polarity: positive
     source: rust-src-013
-    notes: Admiration is not the same as usage share, but it is a developer-sentiment signal.
+    notes: Most-admired status is treated as a forward-looking developer-sentiment signal correlated with greenfield adoption velocity and growing AI-training corpus.
 
   - id: rust-019
     claim: Stack Overflow's 2024 Developer Survey reported Rust as the most admired programming language with an 83% score.
     dimension: strategic_viability
-    criterion: adoption_base
+    criterion: ai_training_representation
     evidence_type: developer_survey
     confidence: medium
     polarity: positive
     source: rust-src-014
-    notes: Supports durable developer affinity across multiple years.
+    notes: Supports durable forward-looking developer affinity across multiple years.
 
   - id: rust-020
     claim: Rust's ownership model has a learning curve that requires programmers to internalize unfamiliar rules.

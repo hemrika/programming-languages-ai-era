@@ -115,14 +115,14 @@ claims:
     notes: The Kotlin Gradle compilation documentation describes incremental and cached compilation.
 
   - id: kotlin-012
-    claim: The 2023 State of Developer Ecosystem reports Android development as a leading use case for Kotlin.
+    claim: The 2023 State of Developer Ecosystem reports Android development as a leading use case for Kotlin, indicating institutional momentum behind new mobile projects.
     dimension: strategic_viability
-    criterion: adoption_base
+    criterion: ecosystem_velocity
     evidence_type: developer_survey
     confidence: medium
     polarity: positive
     source: kotlin-src-010
-    notes: JetBrains' 2023 survey shows Android as a primary Kotlin use case, supporting strategic viability.
+    notes: JetBrains' 2023 survey shows Android as a primary Kotlin use case; reframed as forward institutional positioning rather than legacy adoption claim.
 
   - id: kotlin-013
     claim: Kotlin's null-safety distinction supports local reasoning about whether a reference may be null.

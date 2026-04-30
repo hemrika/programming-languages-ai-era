@@ -95,14 +95,14 @@ claims:
     notes: The JVMS defines bytecode, class files, and the verifier requirements for safe execution.
 
   - id: java-010
-    claim: Maven Central is the canonical artifact repository for Java open-source libraries.
+    claim: Maven Central provides a well-organized package distribution channel for JVM libraries with versioned, signed artifacts.
     dimension: runtime_ecosystem
     criterion: library_maturity
     evidence_type: official_tooling_documentation
     confidence: high
     polarity: positive
     source: java-src-008
-    notes: The Maven Central about page documents its role as the default JVM artifact repository.
+    notes: The Maven Central about page documents its role as the default JVM artifact repository; reframed under greenfield framing as well-organized distribution rather than legacy installed-base advantage.
 
   - id: java-011
     claim: The Java build-tool ecosystem is split between Maven and Gradle as primary alternatives.

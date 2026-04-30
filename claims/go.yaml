@@ -125,14 +125,14 @@ claims:
     notes: The pkg.go.dev about page documents its role as the canonical Go ecosystem documentation site.
 
   - id: go-013
-    claim: The 2024 H1 Go Developer Survey reports high satisfaction with Go among self-identified Go developers.
+    claim: The 2024 H1 Go Developer Survey reports high satisfaction with Go among self-identified Go developers, a forward-looking sentiment signal.
     dimension: strategic_viability
-    criterion: adoption_base
+    criterion: ai_training_representation
     evidence_type: developer_survey
     confidence: medium
     polarity: positive
     source: go-src-008
-    notes: The Go team publishes the Go Developer Survey annually, drawing responses from active Go users.
+    notes: The Go team publishes the Go Developer Survey annually; reframed as forward-looking developer affinity rather than installed-base claim.
 
   - id: go-014
     claim: Go's deliberately limited type system constrains expressiveness compared to richer systems such as those of Rust or Haskell.

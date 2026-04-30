@@ -85,14 +85,14 @@ claims:
     notes: ECMA-262 defines the runtime semantics that persist after TypeScript type erasure.
 
   - id: typescript-009
-    claim: The npm registry is the dependency distribution channel used for TypeScript packages.
+    claim: The npm registry distributes TypeScript packages and is the largest software package distribution channel by package count.
     dimension: runtime_ecosystem
     criterion: library_maturity
     evidence_type: official_tooling_documentation
     confidence: high
     polarity: positive
     source: typescript-src-010
-    notes: npm Docs describes the registry as the world's largest software registry and primary package source.
+    notes: npm Docs describes the registry as a primary package source; under greenfield framing the relevant fact is breadth and active distribution rather than legacy installed code.
 
   - id: typescript-010
     claim: TypeScript supports literal types and union types that allow modeling of finite value sets in the type system.
@@ -105,24 +105,24 @@ claims:
     notes: The Everyday Types chapter documents literal types and unions used for state-space modeling.
 
   - id: typescript-011
-    claim: Stack Overflow's 2024 Developer Survey reports TypeScript among the most-used and most-admired programming languages.
+    claim: Stack Overflow's 2024 Developer Survey reports TypeScript among the most-admired programming languages, a forward-looking developer-sentiment signal.
     dimension: strategic_viability
-    criterion: adoption_base
+    criterion: ai_training_representation
     evidence_type: developer_survey
     confidence: medium
     polarity: positive
     source: typescript-src-011
-    notes: The 2024 survey lists TypeScript in the top tier of professional language usage and admiration.
+    notes: The 2024 survey lists TypeScript in the top tier of language admiration; reframed as a forward sentiment and AI-training-corpus density signal under greenfield framing.
 
   - id: typescript-012
-    claim: GitHub Octoverse 2024 reports TypeScript as one of the top languages on GitHub by usage.
+    claim: GitHub Octoverse 2024 reports TypeScript among the top languages on GitHub by activity, indicating substantial AI-training-corpus representation.
     dimension: strategic_viability
-    criterion: adoption_base
+    criterion: ai_training_representation
     evidence_type: developer_survey
     confidence: medium
     polarity: positive
     source: typescript-src-012
-    notes: Octoverse 2024 ranks TypeScript among the top GitHub languages by repository activity.
+    notes: Octoverse 2024 ranks TypeScript among the top GitHub languages by repository activity; treated as training-corpus density rather than legacy installed-base.
 
   - id: typescript-013
     claim: TypeScript is governed by Microsoft as an open-source project distributed under the Apache 2.0 license.

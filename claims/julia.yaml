@@ -115,14 +115,14 @@ claims:
     notes: The Julia 1.9 highlights post explicitly motivates native code caching as a remedy to TTFX latency.
 
   - id: julia-012
-    claim: Julia's central numerical-computing focus narrows its general-purpose adoption breadth compared to Python.
+    claim: Julia's central numerical-computing focus narrows its general-purpose future fit relative to broader-domain languages such as Python.
     dimension: strategic_viability
-    criterion: adoption_base
+    criterion: future_fit
     evidence_type: academic_paper
     confidence: medium
     polarity: negative
     source: julia-src-003
-    notes: The SIAM Review paper foregrounds technical computing as Julia's primary domain.
+    notes: The SIAM Review paper foregrounds technical computing as Julia's primary domain; reframed under greenfield framing as a constraint on future general-purpose fit rather than an installed-base claim.
 
   - id: julia-013
     claim: Julia treats type annotations as inputs to its inference and dispatch system rather than as enforcement boundaries.
