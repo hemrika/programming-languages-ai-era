@@ -10,10 +10,10 @@ scores:
       Python is readable and concise, but large systems can suffer from weak boundaries and implicit runtime behavior.
 
   machine_cognition:
-    score: 3
+    score: 2
     confidence: medium
     justification: >
-      Python is dynamically typed at heart, but PEP 484 type hints, mypy, pyright, and pydantic now provide a credible gradual-typing layer that materially improves static analyzability in well-typed codebases.
+      Python is dynamically typed by default and exposes weaker static structure, though type hints improve this.
 
   ai_agent_operability:
     score: 4
@@ -22,10 +22,10 @@ scores:
       Python has fast execution feedback and simple syntax, but runtime errors and environment issues create repair friction.
 
   runtime_ecosystem:
-    score: 5
+    score: 4
     confidence: high
     justification: >
-      Python has the dominant AI, data, scripting, and automation ecosystem in the industry, with library coverage no other language matches, despite weak raw performance offset by native extensions.
+      Python has exceptional AI, data, scripting, and automation ecosystems, but weak raw performance.
 
   strategic_viability:
     score: 5

@@ -4,10 +4,10 @@ updated: 2026-04-30
 
 scores:
   human_cognition:
-    score: 5
+    score: 4
     confidence: high
     justification: >
-      Go's small language surface, explicit style, and rigorously simple semantics make code unusually easy to read and maintain at scale.
+      Go’s small language surface and explicit style make code relatively easy to read and maintain.
 
   machine_cognition:
     score: 4
@@ -31,4 +31,4 @@ scores:
     score: 4
     confidence: medium
     justification: >
-      Go has durable institutional support and st
+      Go has durable institutional support and strong cloud infrastructure adoption.

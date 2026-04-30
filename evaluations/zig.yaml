@@ -31,4 +31,4 @@ scores:
     score: 3
     confidence: low
     justification: >
-      Promising design with active community, but pre-1.0 status and competition from Rust c
+      Promising design with active community, but pre-1.0 status and competition from Rust create medium-term adoption risk.

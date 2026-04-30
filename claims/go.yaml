@@ -1,7 +1,7 @@
 language: Go
 claims:
   - id: go-001
-    claim: Go's simple syntax and fast tooling support reliable AI-agent repair loops.
+    claim: Go’s simple syntax and fast tooling support reliable AI-agent repair loops.
     criterion: ai_agent_operability
     evidence_type: structural
     confidence: medium

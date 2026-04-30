@@ -1,0 +1,110 @@
+language: Rust
+description: >
+  Source registry for atomic claims in claims/rust.yaml. Each entry resolves a
+  rust-src-NNN identifier referenced by an atomic claim's `source` field to a
+  primary source: official documentation, government guidance, or reproducible
+  empirical work. Per the methodology in outputs/evidence-backed-research-execution-plan.md.
+
+sources:
+  - id: rust-src-001
+    title: The Rust Programming Language - Chapter 4 What is Ownership?
+    publisher: The Rust Project
+    type: official_documentation
+    url: https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html
+    notes: Establishes ownership rules, compile-time checks, and learning-curve framing.
+
+  - id: rust-src-002
+    title: The Rust Programming Language - Chapter 4.2 References and Borrowing
+    publisher: The Rust Project
+    type: official_documentation
+    url: https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html
+    notes: Establishes reference validity, borrowing rules, and compiler diagnostics for borrow violations.
+
+  - id: rust-src-003
+    title: The Rust Programming Language - Chapter 6.2 The match Control Flow Construct
+    publisher: The Rust Project
+    type: official_documentation
+    url: https://doc.rust-lang.org/book/ch06-02-match.html
+    notes: Establishes exhaustiveness of match.
+
+  - id: rust-src-004
+    title: The Rust Programming Language - Chapter 6 Enums and Pattern Matching
+    publisher: The Rust Project
+    type: official_documentation
+    url: https://doc.rust-lang.org/book/ch06-00-enums.html
+    notes: Establishes enum variant semantics for state-space modeling.
+
+  - id: rust-src-005
+    title: The Cargo Book - Introduction
+    publisher: The Rust Project
+    type: official_tooling_documentation
+    url: https://doc.rust-lang.org/cargo/
+    notes: Standardized build, test, package, dependency, and workspace workflow.
+
+  - id: rust-src-006
+    title: The Cargo Book - Tests (cargo test)
+    publisher: The Rust Project
+    type: official_tooling_documentation
+    url: https://doc.rust-lang.org/cargo/commands/cargo-test.html
+    notes: Documents unit, integration, and documentation test execution.
+
+  - id: rust-src-007
+    title: The Cargo Book - Workspaces
+    publisher: The Rust Project
+    type: official_tooling_documentation
+    url: https://doc.rust-lang.org/cargo/reference/workspaces.html
+    notes: Documents multi-package workspace semantics and cross-member commands.
+
+  - id: rust-src-008
+    title: The Rust Reference - Unsafety
+    publisher: The Rust Project
+    type: official_reference
+    url: https://doc.rust-lang.org/reference/unsafety.html
+    notes: Defines what unsafe code can do and which guarantees are suspended.
+
+  - id: rust-src-009
+    title: The Rust Reference - Unsafe functions and traits
+    publisher: The Rust Project
+    type: official_reference
+    url: https://doc.rust-lang.org/reference/items/functions.html#unsafe-functions
+    notes: Defines safety-condition obligations on the programmer.
+
+  - id: rust-src-010
+    title: The Rust Edition Guide
+    publisher: The Rust Project
+    type: official_governance_documentation
+    url: https://doc.rust-lang.org/edition-guide/
+    notes: Documents the opt-in edition system and cross-edition crate interoperability.
+
+  - id: rust-src-011
+    title: Software Memory Safety - Cybersecurity Information Sheet
+    publisher: National Security Agency (NSA), United States
+    type: government_guidance
+    year: 2022
+    url: https://media.defense.gov/2022/Nov/10/2003112742/-1/-1/0/CSI_SOFTWARE_MEMORY_SAFETY.PDF
+    notes: NSA guidance recommending memory-safe languages including Rust. Aligned guidance has been issued by CISA.
+
+  - id: rust-src-012
+    title: Memory Safe Languages in Android 13
+    authors: [Vander Stoep, Jeff, Hines, Stephen]
+    publisher: Google Security Blog
+    type: industry_case_study
+    year: 2022
+    url: https://security.googleblog.com/2022/12/memory-safe-languages-in-android-13.html
+    notes: Reports decline in memory-safety vulnerabilities as native code shifted to memory-safe languages, and zero memory-safety vulnerabilities in Android Rust code at time of writing. Authors caution correlation does not necessarily prove causation.
+
+  - id: rust-src-013
+    title: Stack Overflow Developer Survey 2025 - Most Admired Languages
+    publisher: Stack Overflow
+    type: developer_survey
+    year: 2025
+    url: https://survey.stackoverflow.co/2025/
+    notes: Rust reported as most admired language at 72%.
+
+  - id: rust-src-014
+    title: Stack Overflow Developer Survey 2024 - Admired and Desired
+    publisher: Stack Overflow
+    type: developer_survey
+    year: 2024
+    url: https://survey.stackoverflow.co/2024/technology#admired-and-desired
+    notes: Rust reported as most admired language at 83%.

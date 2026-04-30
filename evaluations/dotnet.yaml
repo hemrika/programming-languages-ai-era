@@ -31,4 +31,4 @@ scores:
     score: 4
     confidence: high
     justification: >
-      Microsoft's tight alignment between .NET and AI tooling is a structural tailwind, though open-source mindshare remains smaller 
+      Microsoft's tight alignment between .NET and AI tooling is a structural tailwind, though open-source mindshare remains smaller than the JVM or Node ecosystems.

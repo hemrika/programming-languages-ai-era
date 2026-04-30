@@ -4,10 +4,10 @@ updated: 2026-04-30
 
 scores:
   human_cognition:
-    score: 3
+    score: 4
     confidence: medium
     justification: >
-      Rust is explicit and locally rigorous, but ownership, borrowing, and lifetimes impose substantial cognitive load that lowers practical readability for non-expert maintainers.
+      Rust is explicit and locally rigorous, but ownership, borrowing, and lifetimes impose cognitive load.
 
   machine_cognition:
     score: 5
@@ -28,7 +28,7 @@ scores:
       Rust has strong performance, safety, and tooling, with a growing but uneven ecosystem.
 
   strategic_viability:
-    score: 5
+    score: 4
     confidence: medium
     justification: >
-      Rust is struct
+      Rust is well-positioned in systems, infrastructure, security, and AI-adjacent tooling.

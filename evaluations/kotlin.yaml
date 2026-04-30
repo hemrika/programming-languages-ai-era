@@ -4,10 +4,10 @@ updated: 2026-04-30
 
 scores:
   human_cognition:
-    score: 4
+    score: 5
     confidence: medium
     justification: >
-      Kotlin is concise, expressive, and ergonomic, with sealed types, data classes, and null safety reducing boilerplate, though some advanced features (delegation, scope functions, coroutine builders) raise local-reasoning cost.
+      Kotlin is concise, expressive, and ergonomic, with sealed types, data classes, and null safety reducing boilerplate while keeping local reasoning explicit.
 
   machine_cognition:
     score: 4
@@ -31,4 +31,4 @@ scores:
     score: 4
     confidence: medium
     justification: >
-      Strong Android adoption and growing server-side use, with
+      Strong Android adoption and growing server-side use, with Kotlin Multiplatform expanding reach, balanced against single-vendor (JetBrains) roadmap dependence.

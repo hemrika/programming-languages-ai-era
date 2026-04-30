@@ -4,10 +4,10 @@ updated: 2026-04-30
 
 scores:
   human_cognition:
-    score: 3
+    score: 4
     confidence: medium
     justification: >
-      Modern Java (records, sealed types, pattern matching) is more concise than legacy Java, but the median real-world codebase remains verbose, framework-heavy (older Spring, EE-era), and slow to read at scale.
+      Java is explicit and predictable, with modern features (records, sealed types, pattern matching) reducing legacy verbosity, though older idioms still dominate large codebases.
 
   machine_cognition:
     score: 4
@@ -31,4 +31,4 @@ scores:
     score: 4
     confidence: high
     justification: >
-      Java has durable institutional adoption and a vast installed base, though new-project share 
+      Java has durable institutional adoption and a vast installed base, though new-project share has shifted toward Kotlin and other languages in some segments.

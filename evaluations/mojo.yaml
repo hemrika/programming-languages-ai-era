@@ -10,10 +10,10 @@ scores:
       Python familiarity lowers the entry barrier, but new ownership and compile-time semantics introduce concepts that are not yet well-documented at scale.
 
   machine_cognition:
-    score: 3
+    score: 4
     confidence: low
     justification: >
-      Strong static structure by design (MLIR, types, ownership) is favorable in principle, but immature tooling, sparse analyzer coverage, and unstable language semantics limit how much of that structure tools can actually use today.
+      Strong static structure by design (MLIR, types, ownership) is favorable in principle, but tooling maturity and analyzer coverage are still early.
 
   ai_agent_operability:
     score: 2
@@ -31,4 +31,4 @@ scores:
     score: 3
     confidence: low
     justification: >
-      Promising AI-nat
+      Promising AI-native positioning and strong technical leadership, balanced against single-vendor governance and very early adoption.
