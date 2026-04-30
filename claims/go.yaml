@@ -6,4 +6,4 @@ claims:
     evidence_type: structural
     confidence: medium
     polarity: positive
-    source: pending
+    source: [donovan2015go, gostd]

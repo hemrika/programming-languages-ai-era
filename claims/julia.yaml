@@ -6,7 +6,7 @@ claims:
     evidence_type: structural
     confidence: high
     polarity: positive
-    source: pending
+    source: [bezanson2017julia]
 
   - id: julia-002
     claim: Time-to-first-execution latency creates friction in interactive and agent-driven workflows.
@@ -14,7 +14,7 @@ claims:
     evidence_type: structural
     confidence: high
     polarity: negative
-    source: pending
+    source: [julia_compile]
 
   - id: julia-003
     claim: Julia's training-data footprint is much smaller than Python's in ML and data domains.
@@ -22,4 +22,4 @@ claims:
     evidence_type: structural
     confidence: high
     polarity: negative
-    source: pending
+    source: [octoverse2024]

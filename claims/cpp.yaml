@@ -6,7 +6,7 @@ claims:
     evidence_type: structural
     confidence: high
     polarity: negative
-    source: pending
+    source: [msrc2019, chromium_memsafety, oncd2024]
 
   - id: cpp-002
     claim: Build-system fragmentation increases AI-agent operability friction across C++ projects.
@@ -14,7 +14,7 @@ claims:
     evidence_type: ecosystem
     confidence: medium
     polarity: negative
-    source: pending
+    source: [benchmarksgame]
 
   - id: cpp-003
     claim: C++ retains industrial dominance in performance-critical and ML-adjacent systems.
@@ -22,4 +22,4 @@ claims:
     evidence_type: ecosystem
     confidence: high
     polarity: positive
-    source: pending
+    source: [tiobe, ieee2024]

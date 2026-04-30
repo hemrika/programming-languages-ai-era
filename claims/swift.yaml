@@ -6,7 +6,7 @@ claims:
     evidence_type: structural
     confidence: high
     polarity: positive
-    source: pending
+    source: [swiftbook]
 
   - id: swift-002
     claim: Swift's strategic reach is constrained by Apple-platform alignment.
@@ -14,7 +14,7 @@ claims:
     evidence_type: ecosystem
     confidence: high
     polarity: negative
-    source: pending
+    source: [redmonk2024, so2024]
 
   - id: swift-003
     claim: Swift has a smaller AI-training-data footprint than mainstream cross-platform languages.
@@ -22,4 +22,4 @@ claims:
     evidence_type: structural
     confidence: medium
     polarity: negative
-    source: pending
+    source: [octoverse2024]

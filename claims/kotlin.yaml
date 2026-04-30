@@ -6,7 +6,7 @@ claims:
     evidence_type: structural
     confidence: high
     polarity: positive
-    source: pending
+    source: [hoare2009null, kotlindocs]
 
   - id: kotlin-002
     claim: Full Java interop preserves access to the JVM ecosystem and migration paths.
@@ -14,7 +14,7 @@ claims:
     evidence_type: structural
     confidence: high
     polarity: positive
-    source: pending
+    source: [kotlindocs]
 
   - id: kotlin-003
     claim: Kotlin's training-data footprint is smaller than Java's, affecting AI-completion quality.
@@ -22,4 +22,4 @@ claims:
     evidence_type: structural
     confidence: medium
     polarity: negative
-    source: pending
+    source: [octoverse2024, so2024]

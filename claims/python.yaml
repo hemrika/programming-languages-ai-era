@@ -6,7 +6,7 @@ claims:
     evidence_type: structural
     confidence: high
     polarity: negative
-    source: pending
+    source: [pep484, mypy]
 
   - id: python-002
     claim: Python’s AI and data ecosystem creates strong strategic viability.
@@ -14,4 +14,4 @@ claims:
     evidence_type: ecosystem
     confidence: high
     polarity: positive
-    source: pending
+    source: [octoverse2024, so2024]

@@ -6,4 +6,4 @@ claims:
     evidence_type: structural
     confidence: high
     polarity: positive
-    source: pending
+    source: [tshandbook]

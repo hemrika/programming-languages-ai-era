@@ -6,7 +6,7 @@ claims:
     evidence_type: structural
     confidence: high
     polarity: positive
-    source: pending
+    source: [armstrong2013erlang, phoenix_liveview]
 
   - id: elixir-002
     claim: Elixir's historical dynamic typing limits static analyzability, partly mitigated by emerging set-theoretic types.
@@ -14,7 +14,7 @@ claims:
     evidence_type: structural
     confidence: medium
     polarity: negative
-    source: pending
+    source: [elixir_types]
 
   - id: elixir-003
     claim: Elixir's training-data footprint is smaller than mainstream backend languages.
@@ -22,4 +22,4 @@ claims:
     evidence_type: structural
     confidence: medium
     polarity: negative
-    source: pending
+    source: [so2024]

@@ -6,7 +6,7 @@ claims:
     evidence_type: structural
     confidence: high
     polarity: positive
-    source: pending
+    source: [roslyn]
 
   - id: dotnet-002
     claim: Roslyn exposes a first-class semantic model that supports analyzers, refactoring, and source generation.
@@ -14,7 +14,7 @@ claims:
     evidence_type: structural
     confidence: high
     polarity: positive
-    source: pending
+    source: [roslyn]
 
   - id: dotnet-003
     claim: The .NET runtime provides production-grade cross-platform deployment with strong performance.
@@ -22,4 +22,4 @@ claims:
     evidence_type: ecosystem
     confidence: high
     polarity: positive
-    source: pending
+    source: [ms_agent_framework]
