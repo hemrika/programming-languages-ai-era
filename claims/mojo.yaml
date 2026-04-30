@@ -1,25 +1,125 @@
 language: Mojo
+status: draft
+updated: 2026-04-30
+verification_status: web_verified_initial_pass
+
 claims:
   - id: mojo-001
-    claim: Mojo is designed as an AI-native language with MLIR-based compilation and hardware-aware semantics.
+    claim: Mojo is designed as a programming language for AI development with stated goals of Python compatibility.
+    dimension: strategic_viability
     criterion: future_fit
-    evidence_type: structural
+    evidence_type: official_documentation
     confidence: high
     polarity: positive
-    source: [mojomanual, lattner2021mlir]
+    source: mojo-src-001
+    notes: The Mojo Manual introduction frames Mojo as an AI-native language with Python compatibility goals.
 
   - id: mojo-002
-    claim: Mojo's training-data footprint is minimal, limiting AI-completion quality today.
-    criterion: ai_training_representation
-    evidence_type: structural
+    claim: Mojo is built on the MLIR compiler infrastructure to target heterogeneous hardware including CPUs, GPUs, and accelerators.
+    dimension: runtime_ecosystem
+    criterion: performance_ceiling
+    evidence_type: official_documentation
     confidence: high
-    polarity: negative
-    source: [octoverse2024]
+    polarity: positive
+    source: mojo-src-002
+    notes: The Why Mojo page documents MLIR-based compilation as a foundational design choice.
 
   - id: mojo-003
-    claim: Single-vendor governance (Modular) creates adoption and ecosystem risk.
+    claim: MLIR is a multi-level intermediate representation framework introduced to support domain-specific compiler construction.
+    dimension: machine_cognition
+    criterion: formal_reasoning_potential
+    evidence_type: academic_paper
+    confidence: high
+    polarity: positive
+    source: mojo-src-007
+    notes: The CGO 2021 MLIR paper defines MLIR's multi-level IR architecture.
+
+  - id: mojo-004
+    claim: Mojo supports compile-time parameters used for generic programming and metaprogramming.
+    dimension: machine_cognition
+    criterion: type_system_strength
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: mojo-src-005
+    notes: The Mojo parameters chapter documents parameterized types and functions evaluated at compile time.
+
+  - id: mojo-005
+    claim: Mojo defines argument conventions and ownership-based memory management with explicit borrowed and owned argument forms.
+    dimension: runtime_ecosystem
+    criterion: security_posture
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: mojo-src-004
+    notes: The Ownership chapter documents the borrowed, inout, and owned argument conventions.
+
+  - id: mojo-006
+    claim: Mojo provides interoperability with the CPython ecosystem so Python libraries can be called from Mojo programs.
+    dimension: runtime_ecosystem
+    criterion: interop
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: mojo-src-009
+    notes: The Python integration chapter documents calling CPython modules from Mojo.
+
+  - id: mojo-007
+    claim: Modular's MAX engine compiles machine-learning graphs through MLIR for inference and serving.
+    dimension: runtime_ecosystem
+    criterion: performance_ceiling
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: mojo-src-006
+    notes: The MAX documentation describes the MLIR-based compilation pipeline for ML inference.
+
+  - id: mojo-008
+    claim: Mojo is governed by a single primary vendor, Modular, raising single-vendor concentration risk.
+    dimension: strategic_viability
     criterion: governance_quality
-    evidence_type: structural
+    evidence_type: official_governance_documentation
+    confidence: high
+    polarity: negative
+    source: mojo-src-008
+    notes: The Modular blog announces standard-library open-sourcing while Modular remains the sole governing entity.
+
+  - id: mojo-009
+    claim: Modular open-sourced the Mojo standard library while retaining the compiler under proprietary terms.
+    dimension: strategic_viability
+    criterion: institutional_support
+    evidence_type: official_governance_documentation
+    confidence: high
+    polarity: positive
+    source: mojo-src-008
+    notes: The blog post announces standard-library open-sourcing as a step toward broader openness.
+
+  - id: mojo-010
+    claim: Mojo is pre-1.0 and the official documentation maintains a roadmap describing known limitations and missing features.
+    dimension: strategic_viability
+    criterion: backward_compatibility
+    evidence_type: official_documentation
+    confidence: high
+    polarity: negative
+    source: mojo-src-010
+    notes: The Mojo roadmap and sharp edges page documents pre-1.0 instability and unfinished features.
+
+  - id: mojo-011
+    claim: The Mojo language tour walks through value semantics and parameterized types as core constructs.
+    dimension: human_cognition
+    criterion: conceptual_economy
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: mojo-src-003
+    notes: The basics tour documents Mojo's value-semantics-by-default model.
+
+  - id: mojo-012
+    claim: Mojo is too new and small for substantial AI-training-data representation in pre-existing model corpora.
+    dimension: ai_agent_operability
+    criterion: code_generation_robustness
+    evidence_type: official_documentation
     confidence: medium
     polarity: negative
-    source: [mojomanual]
+    source: mojo-src-001
+    notes: The Mojo Manual's recent introduction implies a small training-data footprint relative to incumbent languages.

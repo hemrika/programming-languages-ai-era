@@ -1,0 +1,81 @@
+language: Mojo
+description: >
+  Source registry for atomic claims in claims/mojo.yaml. Each entry resolves a
+  mojo-src-NNN identifier referenced by an atomic claim's `source` field to a
+  primary source: the Mojo Manual, MAX engine documentation, the MLIR paper, or
+  Modular blog posts. Per the methodology in
+  outputs/evidence-backed-research-execution-plan.md.
+
+sources:
+  - id: mojo-src-001
+    title: Mojo Manual - Introduction
+    publisher: Modular
+    type: official_documentation
+    url: https://docs.modular.com/mojo/manual/
+    notes: Introduces Mojo as a programming language designed for AI development with Python compatibility goals.
+
+  - id: mojo-src-002
+    title: Mojo Manual - Why Mojo
+    publisher: Modular
+    type: official_documentation
+    url: https://docs.modular.com/mojo/why-mojo/
+    notes: Documents Mojo's design rationale including MLIR-based compilation and accelerator awareness.
+
+  - id: mojo-src-003
+    title: Mojo Manual - Language Tour
+    publisher: Modular
+    type: official_documentation
+    url: https://docs.modular.com/mojo/manual/basics/
+    notes: Walks through Mojo language features including value semantics and parameterized types.
+
+  - id: mojo-src-004
+    title: Mojo Manual - Ownership
+    publisher: Modular
+    type: official_documentation
+    url: https://docs.modular.com/mojo/manual/values/ownership
+    notes: Documents Mojo's argument conventions and ownership-based memory model.
+
+  - id: mojo-src-005
+    title: Mojo Manual - Parameters and metaprogramming
+    publisher: Modular
+    type: official_documentation
+    url: https://docs.modular.com/mojo/manual/parameters/
+    notes: Documents Mojo's compile-time parameters used for generic and metaprogramming patterns.
+
+  - id: mojo-src-006
+    title: MAX Engine Documentation
+    publisher: Modular
+    type: official_documentation
+    url: https://docs.modular.com/max/
+    notes: Documents the MAX inference and serving engine that compiles ML graphs through MLIR.
+
+  - id: mojo-src-007
+    title: MLIR - Scaling Compiler Infrastructure for Domain Specific Computation
+    authors: [Lattner, Chris, Amini, Mehdi, Bondhugula, Uday, Cohen, Albert, Davis, Andy, Pienaar, Jacques, Riddle, River, Shpeisman, Tatiana, Vasilache, Nicolas, Zinenko, Oleksandr]
+    publisher: IEEE/ACM International Symposium on Code Generation and Optimization (CGO)
+    type: academic_paper
+    year: 2021
+    url: https://research.google/pubs/mlir-scaling-compiler-infrastructure-for-domain-specific-computation/
+    notes: The MLIR paper introducing the multi-level intermediate representation framework Mojo builds on.
+
+  - id: mojo-src-008
+    title: Modular Blog - Mojo open-sourcing the standard library
+    publisher: Modular
+    type: official_governance_documentation
+    year: 2024
+    url: https://www.modular.com/blog/the-next-big-step-in-mojo-open-source
+    notes: Documents Modular's open-sourcing of the Mojo standard library and ongoing single-vendor governance.
+
+  - id: mojo-src-009
+    title: Mojo Manual - Python integration
+    publisher: Modular
+    type: official_documentation
+    url: https://docs.modular.com/mojo/manual/python/
+    notes: Documents Mojo's interoperability with CPython libraries.
+
+  - id: mojo-src-010
+    title: Mojo Roadmap and Sharp Edges
+    publisher: Modular
+    type: official_documentation
+    url: https://docs.modular.com/mojo/roadmap/
+    notes: Documents known limitations, planned features, and the language's pre-1.0 status.
