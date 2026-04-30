@@ -1,0 +1,86 @@
+language: Kotlin
+description: >
+  Source registry for atomic claims in claims/kotlin.yaml. Each entry resolves a
+  kotlin-src-NNN identifier referenced by an atomic claim's `source` field to a
+  primary source: Kotlin language documentation, language specification, or
+  reproducible empirical work. Per the methodology in
+  outputs/evidence-backed-research-execution-plan.md.
+
+sources:
+  - id: kotlin-src-001
+    title: Kotlin Language Documentation - Null safety
+    publisher: JetBrains
+    type: official_documentation
+    url: https://kotlinlang.org/docs/null-safety.html
+    notes: Documents Kotlin's null-safety distinction between nullable and non-nullable reference types.
+
+  - id: kotlin-src-002
+    title: Kotlin Language Specification
+    publisher: JetBrains
+    type: language_specification
+    url: https://kotlinlang.org/spec/
+    notes: Formal specification of Kotlin including type system, control flow, and overload resolution.
+
+  - id: kotlin-src-003
+    title: Kotlin Documentation - Java interop
+    publisher: JetBrains
+    type: official_documentation
+    url: https://kotlinlang.org/docs/java-interop.html
+    notes: Documents bidirectional Java/Kotlin interoperability.
+
+  - id: kotlin-src-004
+    title: Kotlin Documentation - Sealed classes and interfaces
+    publisher: JetBrains
+    type: official_documentation
+    url: https://kotlinlang.org/docs/sealed-classes.html
+    notes: Documents sealed class hierarchies for restricted subclassing and exhaustive matching.
+
+  - id: kotlin-src-005
+    title: Kotlin Documentation - Data classes
+    publisher: JetBrains
+    type: official_documentation
+    url: https://kotlinlang.org/docs/data-classes.html
+    notes: Documents data classes with synthesized equals, hashCode, toString, and copy.
+
+  - id: kotlin-src-006
+    title: Kotlin Coroutines Guide
+    publisher: JetBrains
+    type: official_documentation
+    url: https://kotlinlang.org/docs/coroutines-guide.html
+    notes: Documents coroutines as a structured-concurrency model with suspend functions.
+
+  - id: kotlin-src-007
+    title: Kotlin Multiplatform Documentation
+    publisher: JetBrains
+    type: official_documentation
+    url: https://kotlinlang.org/docs/multiplatform.html
+    notes: Documents Kotlin Multiplatform for sharing code across JVM, Android, iOS, web, and native targets.
+
+  - id: kotlin-src-008
+    title: Develop Android apps with Kotlin
+    publisher: Google / Android Developers
+    type: official_documentation
+    url: https://developer.android.com/kotlin
+    notes: Documents Google's official position on Kotlin as the preferred language for Android development.
+
+  - id: kotlin-src-009
+    title: Kotlin Documentation - Idioms (when expression)
+    publisher: JetBrains
+    type: official_documentation
+    url: https://kotlinlang.org/docs/control-flow.html#when-expression
+    notes: Documents the when expression including exhaustiveness requirements when used as an expression.
+
+  - id: kotlin-src-010
+    title: The State of Developer Ecosystem 2023 - Kotlin
+    publisher: JetBrains
+    type: developer_survey
+    year: 2023
+    url: https://www.jetbrains.com/lp/devecosystem-2023/kotlin/
+    notes: Reports Kotlin developer demographics, primary use cases, and tooling preferences.
+
+  - id: kotlin-src-011
+    title: Kotlin Documentation - Compiler options and incremental compilation
+    publisher: JetBrains
+    type: official_tooling_documentation
+    url: https://kotlinlang.org/docs/gradle-compilation-and-caches.html
+    notes: Documents Kotlin Gradle incremental compilation and caching options.

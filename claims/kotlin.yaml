@@ -1,25 +1,135 @@
 language: Kotlin
+status: draft
+updated: 2026-04-30
+verification_status: web_verified_initial_pass
+
 claims:
   - id: kotlin-001
-    claim: Null safety encoded in the type system reduces a major class of runtime errors.
-    criterion: machine_cognition
-    evidence_type: structural
+    claim: Kotlin distinguishes nullable and non-nullable reference types in its type system.
+    dimension: machine_cognition
+    criterion: type_system_strength
+    evidence_type: official_documentation
     confidence: high
     polarity: positive
-    source: [hoare2009null, kotlindocs]
+    source: kotlin-src-001
+    notes: Kotlin's null-safety documentation defines T versus T? as distinct types and enforces null checks.
 
   - id: kotlin-002
-    claim: Full Java interop preserves access to the JVM ecosystem and migration paths.
-    criterion: runtime_ecosystem
-    evidence_type: structural
+    claim: Kotlin sealed classes restrict the set of subclasses to a known closed hierarchy.
+    dimension: machine_cognition
+    criterion: type_system_strength
+    evidence_type: official_documentation
     confidence: high
     polarity: positive
-    source: [kotlindocs]
+    source: kotlin-src-004
+    notes: Sealed classes documentation defines closed hierarchies usable for exhaustive matching.
 
   - id: kotlin-003
-    claim: Kotlin's training-data footprint is smaller than Java's, affecting AI-completion quality.
-    criterion: ai_agent_operability
-    evidence_type: structural
-    confidence: medium
+    claim: A Kotlin when expression must be exhaustive when used as an expression.
+    dimension: machine_cognition
+    criterion: type_system_strength
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: kotlin-src-009
+    notes: The when expression documentation requires exhaustiveness in expression position.
+
+  - id: kotlin-004
+    claim: Kotlin data classes synthesize equals, hashCode, toString, and copy from declared properties.
+    dimension: human_cognition
+    criterion: expressiveness
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: kotlin-src-005
+    notes: Data classes documentation specifies the auto-generated members.
+
+  - id: kotlin-005
+    claim: Kotlin provides bidirectional interoperability with Java code on the JVM.
+    dimension: runtime_ecosystem
+    criterion: interop
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: kotlin-src-003
+    notes: The Java interop documentation describes calling Java from Kotlin and vice versa.
+
+  - id: kotlin-006
+    claim: Kotlin coroutines provide a structured-concurrency model based on suspend functions.
+    dimension: runtime_ecosystem
+    criterion: concurrency_model
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: kotlin-src-006
+    notes: The Coroutines Guide documents suspend functions, scopes, and structured concurrency.
+
+  - id: kotlin-007
+    claim: Kotlin Multiplatform supports sharing code across JVM, Android, iOS, web, and native targets.
+    dimension: runtime_ecosystem
+    criterion: deployment_model
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: kotlin-src-007
+    notes: The Multiplatform documentation enumerates the supported targets and shared-code model.
+
+  - id: kotlin-008
+    claim: Google designates Kotlin as the preferred language for Android development.
+    dimension: strategic_viability
+    criterion: institutional_support
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: kotlin-src-008
+    notes: The Android Developers Kotlin page explicitly recommends Kotlin for Android.
+
+  - id: kotlin-009
+    claim: Kotlin is governed by JetBrains, creating dependence on a single primary vendor for language direction.
+    dimension: strategic_viability
+    criterion: governance_quality
+    evidence_type: official_documentation
+    confidence: high
     polarity: negative
-    source: [octoverse2024, so2024]
+    source: kotlin-src-002
+    notes: The Kotlin specification and language site identify JetBrains as the language steward.
+
+  - id: kotlin-010
+    claim: The Kotlin Language Specification provides a formal definition of Kotlin's type system, control flow, and overload resolution.
+    dimension: machine_cognition
+    criterion: semantic_clarity
+    evidence_type: language_specification
+    confidence: high
+    polarity: positive
+    source: kotlin-src-002
+    notes: The specification establishes a precise reference for tooling and analysis.
+
+  - id: kotlin-011
+    claim: Kotlin Gradle incremental compilation reduces feedback latency on incremental code edits.
+    dimension: ai_agent_operability
+    criterion: fast_feedback_loops
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: positive
+    source: kotlin-src-011
+    notes: The Kotlin Gradle compilation documentation describes incremental and cached compilation.
+
+  - id: kotlin-012
+    claim: The 2023 State of Developer Ecosystem reports Android development as a leading use case for Kotlin.
+    dimension: strategic_viability
+    criterion: adoption_base
+    evidence_type: developer_survey
+    confidence: medium
+    polarity: positive
+    source: kotlin-src-010
+    notes: JetBrains' 2023 survey shows Android as a primary Kotlin use case, supporting strategic viability.
+
+  - id: kotlin-013
+    claim: Kotlin's null-safety distinction supports local reasoning about whether a reference may be null.
+    dimension: human_cognition
+    criterion: local_reasoning
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: kotlin-src-001
+    notes: The null-safety documentation makes nullability visible in declarations and call sites.
