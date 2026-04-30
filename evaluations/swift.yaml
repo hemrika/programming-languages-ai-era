@@ -8,27 +8,32 @@ scores:
     confidence: medium
     justification: >
       Swift is concise and expressive with strong local reasoning, though protocol-with-associated-types and generics complexity can raise cognitive load.
+    supporting_claims: [swift-012]
 
   machine_cognition:
     score: 4
     confidence: medium
     justification: >
       Strong static typing and value semantics give tools and AI systems good structural visibility, with mature tooling on Apple platforms.
+    supporting_claims: [swift-001, swift-002, swift-005]
 
   ai_agent_operability:
     score: 3
     confidence: medium
     justification: >
       Strong diagnostics on Apple platforms, but smaller training corpus and Xcode/SPM build complexity limit cross-platform agent workflows.
+    supporting_claims: [swift-007]
 
   runtime_ecosystem:
-    score: 3
+    score: 4
     confidence: medium
     justification: >
-      Excellent on Apple platforms; server-side Swift on Linux is improving but ecosystem depth lags mainstream backend languages.
+      Production-grade on Apple platforms with strong tooling and performance; server-side Swift on Linux (SwiftNIO, Vapor, AWS Lambda runtime) is increasingly viable, though ecosystem depth still lags mainstream backend languages.
+    supporting_claims: [swift-003, swift-004, swift-008, swift-009]
 
   strategic_viability:
     score: 3
     confidence: medium
     justification: >
       Durable demand within Apple's ecosystem, with limited evidence of broad cross-platform adoption to date.
+    supporting_claims: [swift-006, swift-010, swift-011, swift-013]

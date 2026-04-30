@@ -8,27 +8,32 @@ scores:
     confidence: medium
     justification: >
       Zig's explicit, regular syntax and lack of hidden control flow support strong local reasoning, with fewer abstractions to learn than Rust.
+    supporting_claims: [zig-001]
 
   machine_cognition:
     score: 4
     confidence: medium
     justification: >
       Static typing and explicit semantics give tools clean structural signal, though formal guarantees are weaker than Rust's.
+    supporting_claims: [zig-002, zig-003, zig-011]
 
   ai_agent_operability:
     score: 3
     confidence: low
     justification: >
       Fast compiles and explicit semantics aid agents, but pre-1.0 churn, a small training corpus, and limited examples constrain reliability.
+    supporting_claims: [zig-008, zig-010]
 
   runtime_ecosystem:
     score: 3
     confidence: medium
     justification: >
       Small but growing; strong C interop and cross-compilation are advantages, balanced by limited library coverage.
+    supporting_claims: [zig-004, zig-005, zig-009, zig-012]
 
   strategic_viability:
     score: 3
     confidence: low
     justification: >
       Promising design with active community, but pre-1.0 status and competition from Rust create medium-term adoption risk.
+    supporting_claims: [zig-006, zig-007]

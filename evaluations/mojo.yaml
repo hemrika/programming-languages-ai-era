@@ -8,27 +8,32 @@ scores:
     confidence: low
     justification: >
       Python familiarity lowers the entry barrier, but new ownership and compile-time semantics introduce concepts that are not yet well-documented at scale.
+    supporting_claims: [mojo-011]
 
   machine_cognition:
-    score: 4
+    score: 3
     confidence: low
     justification: >
-      Strong static structure by design (MLIR, types, ownership) is favorable in principle, but tooling maturity and analyzer coverage are still early.
+      Strong static structure by design (MLIR, types, ownership) is favorable in principle, but immature tooling, sparse analyzer coverage, and unstable language semantics limit how much of that structure tools can actually use today.
+    supporting_claims: [mojo-003, mojo-004]
 
   ai_agent_operability:
     score: 2
     confidence: low
     justification: >
       Sparse training data, immature tooling, and limited examples constrain AI-agent operability even though the language design is favorable.
+    supporting_claims: [mojo-012]
 
   runtime_ecosystem:
     score: 2
     confidence: low
     justification: >
       Library coverage is minimal compared with Python or C++; production deployment patterns are not yet broadly established.
+    supporting_claims: [mojo-002, mojo-005, mojo-006, mojo-007]
 
   strategic_viability:
     score: 3
     confidence: low
     justification: >
       Promising AI-native positioning and strong technical leadership, balanced against single-vendor governance and very early adoption.
+    supporting_claims: [mojo-001, mojo-008, mojo-009, mojo-010]

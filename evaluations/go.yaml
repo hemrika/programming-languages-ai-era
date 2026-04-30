@@ -4,31 +4,36 @@ updated: 2026-04-30
 
 scores:
   human_cognition:
-    score: 4
+    score: 5
     confidence: high
     justification: >
-      Go’s small language surface and explicit style make code relatively easy to read and maintain.
+      Go's small language surface, explicit style, and rigorously simple semantics make code unusually easy to read and maintain at scale.
+    supporting_claims: [go-008, go-009, go-010, go-011]
 
   machine_cognition:
     score: 4
     confidence: medium
     justification: >
       Go has static typing, regular syntax, and good tooling, but less expressive type-level modeling than Rust or ML-family languages.
+    supporting_claims: [go-001, go-002, go-006, go-007, go-014]
 
   ai_agent_operability:
     score: 5
     confidence: medium
     justification: >
       Go has fast compile/test loops, simple project structure, strong formatting conventions, and direct diagnostics.
+    supporting_claims: [go-003, go-004, go-012]
 
   runtime_ecosystem:
     score: 4
     confidence: high
     justification: >
       Go is strong for backend services, infrastructure, concurrency, and deployment.
+    supporting_claims: [go-005]
 
   strategic_viability:
     score: 4
     confidence: medium
     justification: >
       Go has durable institutional support and strong cloud infrastructure adoption.
+    supporting_claims: [go-013]

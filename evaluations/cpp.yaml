@@ -8,27 +8,32 @@ scores:
     confidence: medium
     justification: >
       C++ has sharp edges, undefined behavior, and historical complexity; modern subsets are cleaner, but real-world codebases mix many eras and idioms.
+    supporting_claims: [cpp-003]
 
   machine_cognition:
     score: 3
     confidence: medium
     justification: >
       Mature analyzers exist, but template metaprogramming, macros, and weak modularity obscure structure from tools and AI systems.
+    supporting_claims: [cpp-002, cpp-009, cpp-010, cpp-011]
 
   ai_agent_operability:
     score: 2
     confidence: medium
     justification: >
       Slow builds, fragmented build systems, and high blast radius for incorrect changes make agent operation costly and risky.
+    supporting_claims: [cpp-012]
 
   runtime_ecosystem:
     score: 5
     confidence: high
     justification: >
       C++ has production-grade ecosystems across systems, embedded, games, HFT, and ML internals, with the highest practical performance ceiling.
+    supporting_claims: [cpp-004, cpp-005, cpp-008]
 
   strategic_viability:
     score: 4
     confidence: medium
     justification: >
       Massive installed base and durable demand, though new-project share is shifting toward Rust and other safer alternatives in some segments.
+    supporting_claims: [cpp-001, cpp-006, cpp-007]

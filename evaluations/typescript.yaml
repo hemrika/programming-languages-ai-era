@@ -8,27 +8,32 @@ scores:
     confidence: medium
     justification: >
       TypeScript improves JavaScript maintainability through explicit types and editor support.
+    supporting_claims: [typescript-014]
 
   machine_cognition:
     score: 4
     confidence: medium
     justification: >
       TypeScript provides strong tooling and static analysis, though JavaScript runtime semantics remain.
+    supporting_claims: [typescript-001, typescript-002, typescript-003, typescript-004, typescript-005, typescript-010]
 
   ai_agent_operability:
     score: 5
     confidence: medium
     justification: >
       TypeScript has excellent language-server support, fast feedback, mature test tooling, and abundant examples.
+    supporting_claims: [typescript-006, typescript-007]
 
   runtime_ecosystem:
     score: 4
     confidence: high
     justification: >
       TypeScript benefits from the JavaScript and Node ecosystems, with broad deployment options.
+    supporting_claims: [typescript-008, typescript-009]
 
   strategic_viability:
     score: 5
     confidence: high
     justification: >
       TypeScript combines massive ecosystem gravity with better maintainability than plain JavaScript.
+    supporting_claims: [typescript-011, typescript-012, typescript-013]

@@ -8,27 +8,32 @@ scores:
     confidence: medium
     justification: >
       Elixir's syntax and functional, immutable-by-default style produce readable, locally reasonable code with consistent idioms.
+    supporting_claims: [elixir-012]
 
   machine_cognition:
     score: 3
     confidence: medium
     justification: >
       Historically dynamic, with Dialyzer providing partial static analysis; set-theoretic types in development could raise this score over time.
+    supporting_claims: [elixir-005, elixir-006, elixir-007]
 
   ai_agent_operability:
     score: 3
     confidence: medium
     justification: >
       Fast feedback loops and clear conventions help agents, but a smaller training corpus and limited example diversity create friction.
+    supporting_claims: [elixir-010]
 
   runtime_ecosystem:
     score: 4
     confidence: medium
     justification: >
       BEAM's concurrency, fault tolerance, and hot-upgrade story are unique and production-proven, though the broader library ecosystem is narrower than mainstream alternatives.
+    supporting_claims: [elixir-001, elixir-002, elixir-003, elixir-004, elixir-008, elixir-009, elixir-011]
 
   strategic_viability:
     score: 3
     confidence: medium
     justification: >
       Niche but durable adoption in fault-tolerant systems and real-time web; not on a mainstream growth trajectory.
+    supporting_claims: [elixir-013]

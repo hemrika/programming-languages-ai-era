@@ -4,31 +4,36 @@ updated: 2026-04-30
 
 scores:
   human_cognition:
-    score: 5
+    score: 4
     confidence: medium
     justification: >
-      Kotlin is concise, expressive, and ergonomic, with sealed types, data classes, and null safety reducing boilerplate while keeping local reasoning explicit.
+      Kotlin is concise, expressive, and ergonomic, with sealed types, data classes, and null safety reducing boilerplate, though some advanced features (delegation, scope functions, coroutine builders) raise local-reasoning cost.
+    supporting_claims: [kotlin-004, kotlin-013]
 
   machine_cognition:
     score: 4
     confidence: medium
     justification: >
       Strong static typing and JetBrains-grade tooling support refactoring and analysis, though type inference complexity and slower compiles limit the ceiling.
+    supporting_claims: [kotlin-001, kotlin-002, kotlin-003, kotlin-010]
 
   ai_agent_operability:
     score: 4
     confidence: medium
     justification: >
       Good diagnostics and IDE feedback support agent workflows, but slower builds and a smaller training corpus than Java create friction.
+    supporting_claims: [kotlin-011]
 
   runtime_ecosystem:
     score: 4
     confidence: high
     justification: >
       JVM runtime maturity plus full Java interop gives Kotlin access to a deep, production-grade ecosystem.
+    supporting_claims: [kotlin-005, kotlin-006, kotlin-007]
 
   strategic_viability:
     score: 4
     confidence: medium
     justification: >
       Strong Android adoption and growing server-side use, with Kotlin Multiplatform expanding reach, balanced against single-vendor (JetBrains) roadmap dependence.
+    supporting_claims: [kotlin-008, kotlin-009, kotlin-012]

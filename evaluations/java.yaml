@@ -4,31 +4,36 @@ updated: 2026-04-30
 
 scores:
   human_cognition:
-    score: 4
+    score: 3
     confidence: medium
     justification: >
-      Java is explicit and predictable, with modern features (records, sealed types, pattern matching) reducing legacy verbosity, though older idioms still dominate large codebases.
+      Modern Java (records, sealed types, pattern matching) is more concise than legacy Java, but the median real-world codebase remains verbose, framework-heavy (older Spring, EE-era), and slow to read at scale.
+    supporting_claims: [java-005, java-012, java-013]
 
   machine_cognition:
     score: 4
     confidence: high
     justification: >
       Strong static typing, regular syntax, and mature analyzers make Java highly amenable to tooling and AI reasoning, though the type system is less expressive than Rust or ML-family languages.
+    supporting_claims: [java-001, java-002, java-003, java-004]
 
   ai_agent_operability:
     score: 3
     confidence: medium
     justification: >
       Java has rich diagnostics and a very large training corpus, but build-tool fragmentation, heavier project structure, and slower feedback loops increase agent friction.
+    supporting_claims: [java-011]
 
   runtime_ecosystem:
     score: 5
     confidence: high
     justification: >
       The JVM is among the most production-proven runtimes, with deep library coverage, mature observability, and strong concurrency support.
+    supporting_claims: [java-006, java-009, java-010]
 
   strategic_viability:
     score: 4
     confidence: high
     justification: >
       Java has durable institutional adoption and a vast installed base, though new-project share has shifted toward Kotlin and other languages in some segments.
+    supporting_claims: [java-007, java-008]

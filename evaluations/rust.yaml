@@ -4,31 +4,36 @@ updated: 2026-04-30
 
 scores:
   human_cognition:
-    score: 4
+    score: 3
     confidence: medium
     justification: >
-      Rust is explicit and locally rigorous, but ownership, borrowing, and lifetimes impose cognitive load.
+      Rust is explicit and locally rigorous, but ownership, borrowing, and lifetimes impose substantial cognitive load that lowers practical readability for non-expert maintainers.
+    supporting_claims: [rust-005, rust-020]
 
   machine_cognition:
     score: 5
     confidence: high
     justification: >
       Rust exposes strong static structure through types, ownership, borrowing, lifetimes, and compiler checks.
+    supporting_claims: [rust-002, rust-003, rust-006, rust-007, rust-012]
 
   ai_agent_operability:
     score: 4
     confidence: medium
     justification: >
       Rust has strong compiler feedback and tooling, but repair loops can be complex.
+    supporting_claims: [rust-004, rust-009, rust-010]
 
   runtime_ecosystem:
     score: 4
     confidence: high
     justification: >
       Rust has strong performance, safety, and tooling, with a growing but uneven ecosystem.
+    supporting_claims: [rust-001, rust-008, rust-011, rust-017]
 
   strategic_viability:
-    score: 4
+    score: 5
     confidence: medium
     justification: >
-      Rust is well-positioned in systems, infrastructure, security, and AI-adjacent tooling.
+      Rust is structurally aligned with AI-era safety pressure (ONCD, MSRC, Android, Chromium reports) and increasingly the default for systems, infrastructure, security-sensitive, and AI-adjacent tooling.
+    supporting_claims: [rust-013, rust-014, rust-015, rust-016, rust-018, rust-019]
