@@ -1,0 +1,25 @@
+language: Java
+claims:
+  - id: java-001
+    claim: Java's static typing and mature tooling support reliable refactoring across very large codebases.
+    criterion: refactorability
+    evidence_type: structural
+    confidence: high
+    polarity: positive
+    source: pending
+
+  - id: java-002
+    claim: Java's historical verbosity increases code-volume cost for AI-agent generation and review.
+    criterion: ai_agent_operability
+    evidence_type: structural
+    confidence: medium
+    polarity: negative
+    source: pending
+
+  - id: java-003
+    claim: The JVM provides production-grade performance, observability, and deployment maturity.
+    criterion: runtime_ecosystem
+    evidence_type: ecosystem
+    confidence: high
+    polarity: positive
+    source: pending

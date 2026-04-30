@@ -1,0 +1,25 @@
+language: .NET
+claims:
+  - id: dotnet-001
+    claim: C#'s nullable reference types and pattern matching strengthen static analyzability.
+    criterion: machine_cognition
+    evidence_type: structural
+    confidence: high
+    polarity: positive
+    source: pending
+
+  - id: dotnet-002
+    claim: Roslyn exposes a first-class semantic model that supports analyzers, refactoring, and source generation.
+    criterion: refactorability
+    evidence_type: structural
+    confidence: high
+    polarity: positive
+    source: pending
+
+  - id: dotnet-003
+    claim: The .NET runtime provides production-grade cross-platform deployment with strong performance.
+    criterion: runtime_ecosystem
+    evidence_type: ecosystem
+    confidence: high
+    polarity: positive
+    source: pending

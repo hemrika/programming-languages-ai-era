@@ -1,0 +1,34 @@
+language: .NET
+status: draft
+updated: 2026-04-30
+
+scores:
+  human_cognition:
+    score: 4
+    confidence: medium
+    justification: >
+      Modern C# is concise and expressive, with records, pattern matching, and nullable reference types improving local reasoning, though the platform surface (project system, MSBuild) adds cognitive load.
+
+  machine_cognition:
+    score: 4
+    confidence: high
+    justification: >
+      Strong static typing combined with Roslyn's semantic model gives tools and AI systems first-class access to program structure and refactoring primitives.
+
+  ai_agent_operability:
+    score: 4
+    confidence: medium
+    justification: >
+      Fast incremental builds, strong diagnostics, and Microsoft's AI-tooling alignment support agent workflows, though project-system quirks and a smaller training-data footprint than TypeScript or Python create friction.
+
+  runtime_ecosystem:
+    score: 4
+    confidence: high
+    justification: >
+      The .NET runtime is production-grade, cross-platform, and has deep enterprise library coverage with strong performance.
+
+  strategic_viability:
+    score: 4
+    confidence: high
+    justification: >
+      Microsoft's tight alignment between .NET and AI tooling is a structural tailwind, though open-source mindshare remains smaller than the JVM or Node ecosystems.
