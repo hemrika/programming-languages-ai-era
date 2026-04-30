@@ -50,7 +50,7 @@ Criteria:
 - performance predictability
 - deployment model
 - interop
-- library maturity
+- library maturity (do the libraries you need exist for new projects, not the volume of legacy code in this language)
 - tooling maturity
 - security posture
 - concurrency model
@@ -61,7 +61,7 @@ Measures long-term relevance.
 
 Criteria:
 
-- adoption base
+- ecosystem velocity
 - institutional support
 - learning curve
 - talent availability

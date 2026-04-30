@@ -1,6 +1,6 @@
 # Cross-Cutting Lens Analysis
 
-The framework defines five cross-cutting lenses (`framework/evaluation-framework.md`). This document evaluates each language against each lens and reads across them to identify the strongest cross-lens profiles.
+The framework defines four cross-cutting lenses (`framework/evaluation-framework.md`). This document evaluates each language against each lens and reads across them to identify the strongest cross-lens profiles.
 
 ## 1. Verification advantage
 
@@ -22,25 +22,12 @@ Languages where AI agents can write, modify, test, and verify code with low fric
 |---|---|
 | Strong | TypeScript, Go |
 | Moderate | Python, Rust, .NET, Kotlin |
-| Constrained | Java, Haskell, Swift, Zig, Elixir |
-| Difficult | C++, Mojo, Julia |
+| Constrained | Java, Swift, Zig, Elixir |
+| Difficult | C++, Haskell, Mojo, Julia |
 
 See `agent-friendly-languages.md` for the per-language reasoning.
 
-## 3. Legacy gravity
-
-Languages whose installed base creates persistent demand independent of greenfield momentum.
-
-| Tier | Languages |
-|---|---|
-| High | Java, C++, Python, JavaScript/TypeScript |
-| Moderate | .NET (C#), Go, Swift (Apple platforms) |
-| Low | Rust, Kotlin, Haskell, Elixir, Zig, Julia |
-| Negligible | Mojo |
-
-Legacy gravity is asymmetric. It makes a language harder to displace, but it does not protect a language from becoming a legacy *liability* if AI-era pressures (verification, safety) erode its strategic position. C++ is the clearest example: high legacy gravity *and* high safety risk produce a fragile incumbent.
-
-## 4. Safety pressure
+## 3. Safety pressure
 
 Where AI-generated change carries unusually high blast radius, languages that prevent or contain those errors are favored.
 
@@ -53,7 +40,7 @@ Where AI-generated change carries unusually high blast radius, languages that pr
 
 Safety pressure is increasingly policy-aware, not merely technical. The White House ONCD report (2024), Microsoft Security Response Center analyses (2019), Android security publications (2022), and Chromium memory-safety reports collectively mark memory safety as a structural property regulators and platform owners now actively select for. C++ is the most exposed mainstream language under this lens; Python's exposure is different in kind (runtime errors rather than memory unsafety) but real for production AI-generated systems.
 
-## 5. Abstraction compression
+## 4. Abstraction compression
 
 Languages that allow expressing more behavior in fewer lines without compromising clarity.
 
@@ -68,31 +55,31 @@ Compression is double-edged. Go's intentional weakness on this lens is part of i
 
 ## Reading across the lenses
 
-No single language wins all five. The strongest cross-lens profiles in this set:
+No single language wins all four. The strongest cross-lens profiles in this set:
 
-- **Rust.** Strong on verification and safety; moderate on agentic and abstraction; low legacy gravity (offset by greenfield momentum in systems and infrastructure).
-- **TypeScript.** Strong on agentic; moderate on verification, safety, and abstraction; high legacy gravity through the JavaScript ecosystem.
-- **Kotlin.** Strong on safety and abstraction; moderate on verification and agentic; legacy gravity inherited via JVM interop.
-- **Go.** Strong on agentic; moderate on safety; deliberately weak on abstraction; moderate legacy gravity in cloud and infrastructure.
+- **Rust.** Strong on verification and safety; moderate on agentic and abstraction. Greenfield momentum in systems and infrastructure is the forward-looking signal.
+- **TypeScript.** Strong on agentic; moderate on verification, safety, and abstraction. Modern typed-language credit comes from the gradual-typing layer, not the underlying JavaScript runtime.
+- **Kotlin.** Strong on safety and abstraction; moderate on verification and agentic. JVM interop is incidental — the greenfield case rests on null-safety, sealed types, and coroutines.
+- **Go.** Strong on agentic; moderate on safety; deliberately weak on abstraction. Convention-driven tooling produces a uniquely low-friction agent profile for new services.
 
-The strongest defensive position (legacy gravity + ecosystem) belongs to Java, Python, and C++ — but C++ is uniquely exposed on the safety lens, making it the most fragile incumbent in the set.
+The strongest greenfield positions (verification + agentic + safety) cluster around Rust, TypeScript, and Kotlin.
 
 ## Where the lenses disagree
 
 Three cases where the lenses pull in different directions are worth flagging:
 
-- **Python.** Maximum legacy gravity and ecosystem; weak verification; weak safety. The framework's central question for Python is whether AI-era pressure on verification erodes the moat faster than gradual typing rebuilds it.
-- **Haskell.** Maximum verification; weak agentic; weak legacy gravity. Strong static structure does not transfer into AI-era dominance without operability and ecosystem.
-- **Mojo.** Designed for the future but currently weak on every lens except potential. The lens analysis is a useful counterfactual: what if AI-native design were sufficient by itself? The current evidence says it is not.
+- **Python.** Maximum ecosystem (forward-relevant in ML/data); weak verification; weak safety. The framework's central question for Python is whether AI-era pressure on verification erodes its position faster than gradual typing rebuilds it.
+- **Haskell.** Maximum verification; weak agentic. Strong static structure does not transfer into AI-era dominance without operability and ecosystem.
+- **Mojo.** Designed for the future but currently weak on every lens except potential. The lens analysis is a useful counterfactual: what if AI-native design were sufficient by itself? The current evidence says it is not — but under greenfield framing, the AI-native bet is exactly the kind of forward-looking property the framework credits.
 
 ## Implications for portfolio thinking
 
-For a team selecting languages across a portfolio of AI-era projects, this lens analysis suggests:
+For a team selecting languages across a portfolio of AI-era greenfield projects, this lens analysis suggests:
 
 - **Default for greenfield application work.** TypeScript or Kotlin — strong on agentic and abstraction with reasonable safety.
 - **Default for systems, infrastructure, security-sensitive.** Rust — pays the operability cost for verification and safety gains.
-- **Default for data, AI/ML, scripting.** Python — accepting the verification gap but leveraging ecosystem.
-- **Default for fault-tolerant distributed systems.** Elixir — ecosystem cost accepted for runtime properties no other language matches.
-- **Default for very large existing estates.** Maintain incumbents (Java, C# on .NET, C++ where present) and apply AI-era pressure incrementally — modernization, memory-safety migration, gradual typing.
+- **Default for data, AI/ML, scripting.** Python — accepting the verification gap but leveraging ecosystem velocity in ML.
+- **Default for fault-tolerant distributed systems.** Elixir — operability cost accepted for runtime properties no other language matches.
+- **Default for AI-native compute kernels (forward bet).** Mojo — accepting current ecosystem narrowness for hardware-portable performance, with active risk management.
 
 No language is a default for *everything*. The framework's central output is that AI-era language choice becomes more domain-sensitive, not less.
