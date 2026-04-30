@@ -2,7 +2,7 @@
 
 ## AI-era hypothesis
 
-C++ sharpens the *legacy gravity* and *safety pressure* lenses: it dominates performance-critical and ML-internals work and has a vast existing codebase, but AI-generated changes carry an unusually high blast radius due to memory unsafety and undefined behavior.
+C++ sharpens the *incumbent risk* and *safety pressure* lenses: it dominates performance-critical and ML-internals work and has a vast existing codebase, but AI-generated changes carry an unusually high blast radius due to memory unsafety and undefined behavior.
 
 ## Strengths
 
