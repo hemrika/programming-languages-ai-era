@@ -1,0 +1,87 @@
+language: Elixir
+description: >
+  Source registry for atomic claims in claims/elixir.yaml. Each entry resolves an
+  elixir-src-NNN identifier referenced by an atomic claim's `source` field to a
+  primary source: Elixir documentation, Erlang/OTP documentation, the Phoenix
+  framework documentation, or Elixir core-team blog posts. Per the methodology
+  in outputs/evidence-backed-research-execution-plan.md.
+
+sources:
+  - id: elixir-src-001
+    title: Elixir Documentation - Introduction
+    publisher: Elixir core team
+    type: official_documentation
+    url: https://elixir-lang.org/getting-started/introduction.html
+    notes: Introduces Elixir as a dynamic, functional language built on the Erlang VM.
+
+  - id: elixir-src-002
+    title: Erlang/OTP Documentation - System Principles
+    publisher: Ericsson AB
+    type: official_documentation
+    url: https://www.erlang.org/doc/system/system_principles.html
+    notes: Documents OTP design principles including supervision trees and fault tolerance.
+
+  - id: elixir-src-003
+    title: Erlang/OTP Documentation - Supervision Principles
+    publisher: Ericsson AB
+    type: official_documentation
+    url: https://www.erlang.org/doc/system/sup_princ.html
+    notes: Documents the supervision principles underlying OTP applications, used by Elixir.
+
+  - id: elixir-src-004
+    title: Erlang/OTP Documentation - Hot Code Replacement
+    publisher: Ericsson AB
+    type: official_documentation
+    url: https://www.erlang.org/doc/system/release_handling.html
+    notes: Documents code upgrade and release-handling support in OTP.
+
+  - id: elixir-src-005
+    title: Elixir Documentation - Processes
+    publisher: Elixir core team
+    type: official_documentation
+    url: https://elixir-lang.org/getting-started/processes.html
+    notes: Documents Elixir's lightweight processes and message-passing model.
+
+  - id: elixir-src-006
+    title: Phoenix Framework Documentation - Overview
+    publisher: Phoenix Framework team
+    type: official_documentation
+    url: https://hexdocs.pm/phoenix/overview.html
+    notes: Documents the Phoenix web framework for Elixir.
+
+  - id: elixir-src-007
+    title: Phoenix LiveView Documentation
+    publisher: Phoenix Framework team
+    type: official_documentation
+    url: https://hexdocs.pm/phoenix_live_view/
+    notes: Documents Phoenix LiveView, server-rendered live web applications over WebSockets.
+
+  - id: elixir-src-008
+    title: Dialyzer - Erlang/OTP documentation
+    publisher: Ericsson AB
+    type: official_tooling_documentation
+    url: https://www.erlang.org/doc/man/dialyzer.html
+    notes: Documents the Dialyzer success-typing static analyzer for Erlang and Elixir.
+
+  - id: elixir-src-009
+    title: My Future with Elixir - set-theoretic types
+    authors: [Valim, Jose]
+    publisher: elixir-lang.org blog
+    type: official_governance_documentation
+    year: 2023
+    url: https://elixir-lang.org/blog/2023/06/22/type-system-updates-research-dev/
+    notes: Outlines the research program for introducing set-theoretic types into Elixir.
+
+  - id: elixir-src-010
+    title: Hex - The package manager for the Erlang ecosystem
+    publisher: Hex.pm
+    type: official_tooling_documentation
+    url: https://hex.pm/
+    notes: Documents Hex as the package manager shared by Elixir and Erlang.
+
+  - id: elixir-src-011
+    title: Mix - Elixir build tool
+    publisher: Elixir core team
+    type: official_tooling_documentation
+    url: https://hexdocs.pm/mix/Mix.html
+    notes: Documents Mix as Elixir's build tool for tasks, dependencies, and project lifecycle.

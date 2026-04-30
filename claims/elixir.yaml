@@ -1,25 +1,135 @@
 language: Elixir
+status: draft
+updated: 2026-04-30
+verification_status: web_verified_initial_pass
+
 claims:
   - id: elixir-001
-    claim: BEAM supervision trees and "let it crash" semantics produce strong runtime fault tolerance.
-    criterion: runtime_ecosystem
-    evidence_type: structural
+    claim: Elixir runs on the Erlang virtual machine and inherits BEAM's process and concurrency model.
+    dimension: runtime_ecosystem
+    criterion: concurrency_model
+    evidence_type: official_documentation
     confidence: high
     polarity: positive
-    source: [armstrong2013erlang, phoenix_liveview]
+    source: elixir-src-001
+    notes: The Elixir introduction documents Elixir as a language compiled to BEAM bytecode and run on the Erlang VM.
 
   - id: elixir-002
-    claim: Elixir's historical dynamic typing limits static analyzability, partly mitigated by emerging set-theoretic types.
-    criterion: machine_cognition
-    evidence_type: structural
-    confidence: medium
-    polarity: negative
-    source: [elixir_types]
+    claim: OTP supervision trees define a structured fault-tolerance model based on supervisors restarting child processes according to declared strategies.
+    dimension: runtime_ecosystem
+    criterion: security_posture
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: elixir-src-003
+    notes: The OTP Supervision Principles document the supervisor strategies and child specifications.
 
   - id: elixir-003
-    claim: Elixir's training-data footprint is smaller than mainstream backend languages.
-    criterion: ai_training_representation
-    evidence_type: structural
-    confidence: medium
+    claim: OTP supports hot code replacement so running systems can upgrade modules without restart.
+    dimension: runtime_ecosystem
+    criterion: deployment_model
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: elixir-src-004
+    notes: The OTP release handling chapter documents code upgrades in running systems.
+
+  - id: elixir-004
+    claim: Elixir processes are lightweight, isolated units that communicate exclusively via asynchronous message passing.
+    dimension: runtime_ecosystem
+    criterion: concurrency_model
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: elixir-src-005
+    notes: The Elixir Processes chapter documents the actor-style message-passing model.
+
+  - id: elixir-005
+    claim: Elixir is dynamically typed.
+    dimension: machine_cognition
+    criterion: type_system_strength
+    evidence_type: official_documentation
+    confidence: high
     polarity: negative
-    source: [so2024]
+    source: elixir-src-001
+    notes: The Elixir introduction explicitly identifies Elixir as a dynamic language.
+
+  - id: elixir-006
+    claim: Dialyzer applies success-typing analysis to detect type discrepancies in Erlang and Elixir code.
+    dimension: machine_cognition
+    criterion: static_analyzability
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: elixir-src-008
+    notes: The Dialyzer manual documents its success-typing approach to static analysis.
+
+  - id: elixir-007
+    claim: The Elixir core team is researching the introduction of a set-theoretic type system into the language.
+    dimension: machine_cognition
+    criterion: type_system_strength
+    evidence_type: official_governance_documentation
+    confidence: medium
+    polarity: positive
+    source: elixir-src-009
+    notes: Jose Valim's elixir-lang blog post outlines the set-theoretic types research and rollout plan.
+
+  - id: elixir-008
+    claim: Phoenix is a productive web framework for Elixir built on top of OTP and Ecto.
+    dimension: runtime_ecosystem
+    criterion: library_maturity
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: elixir-src-006
+    notes: The Phoenix overview documents the framework's architecture and core components.
+
+  - id: elixir-009
+    claim: Phoenix LiveView renders server-driven user interfaces communicating over WebSockets.
+    dimension: runtime_ecosystem
+    criterion: library_maturity
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: elixir-src-007
+    notes: The Phoenix LiveView documentation describes its server-rendered, WebSocket-driven model.
+
+  - id: elixir-010
+    claim: Mix provides a single tool for compiling, running, testing, and managing dependencies in Elixir projects.
+    dimension: ai_agent_operability
+    criterion: fast_feedback_loops
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: elixir-src-011
+    notes: The Mix documentation describes the unified build-tool subcommand surface.
+
+  - id: elixir-011
+    claim: Hex is the package manager shared by the Elixir and Erlang ecosystems.
+    dimension: runtime_ecosystem
+    criterion: library_maturity
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: elixir-src-010
+    notes: The Hex.pm site documents its role as the package manager for the Erlang VM ecosystem.
+
+  - id: elixir-012
+    claim: Erlang/OTP system principles emphasize fault tolerance built around process isolation and explicit failure modes.
+    dimension: human_cognition
+    criterion: error_visibility
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: elixir-src-002
+    notes: The OTP system principles document foreground fault tolerance as a primary design objective.
+
+  - id: elixir-013
+    claim: The set-theoretic type system is being introduced gradually across multiple Elixir releases rather than landing as a single shipping milestone.
+    dimension: strategic_viability
+    criterion: governance_quality
+    evidence_type: official_governance_documentation
+    confidence: medium
+    polarity: positive
+    source: elixir-src-009
+    notes: The blog post plans an incremental rollout, signaling careful governance of a major change.
