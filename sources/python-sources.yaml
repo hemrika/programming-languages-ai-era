@@ -1,0 +1,97 @@
+language: Python
+description: >
+  Source registry for atomic claims in claims/python.yaml. Each entry resolves a
+  python-src-NNN identifier referenced by an atomic claim's `source` field to a
+  primary source: official documentation, language specification, PEPs, or
+  reproducible empirical work. Per the methodology in
+  outputs/evidence-backed-research-execution-plan.md.
+
+sources:
+  - id: python-src-001
+    title: The Python Language Reference
+    publisher: Python Software Foundation
+    type: language_specification
+    url: https://docs.python.org/3/reference/
+    notes: Defines Python syntax, semantics, and the data and execution models for Python 3.
+
+  - id: python-src-002
+    title: PEP 484 - Type Hints
+    publisher: Python Software Foundation
+    type: language_specification
+    year: 2014
+    url: https://peps.python.org/pep-0484/
+    notes: Defines the optional static type-hint syntax for Python and confirms hints are not enforced at runtime.
+
+  - id: python-src-003
+    title: PEP 526 - Syntax for Variable Annotations
+    publisher: Python Software Foundation
+    type: language_specification
+    year: 2016
+    url: https://peps.python.org/pep-0526/
+    notes: Adds variable annotation syntax to Python.
+
+  - id: python-src-004
+    title: PEP 695 - Type Parameter Syntax
+    publisher: Python Software Foundation
+    type: language_specification
+    year: 2022
+    url: https://peps.python.org/pep-0695/
+    notes: Introduces native syntax for generic type parameters in Python 3.12.
+
+  - id: python-src-005
+    title: mypy documentation - Introduction
+    publisher: mypy project
+    type: official_tooling_documentation
+    url: https://mypy.readthedocs.io/en/stable/introduction.html
+    notes: Documents mypy as an optional static type checker for Python.
+
+  - id: python-src-006
+    title: pyright README
+    publisher: Microsoft
+    type: official_tooling_documentation
+    url: https://github.com/microsoft/pyright
+    notes: Documents pyright as a static type checker for Python with strict-mode and editor integration.
+
+  - id: python-src-007
+    title: Pydantic Documentation - Why Pydantic
+    publisher: Pydantic
+    type: official_tooling_documentation
+    url: https://docs.pydantic.dev/latest/why/
+    notes: Documents Pydantic v2 as a runtime data validation library based on Python type hints.
+
+  - id: python-src-008
+    title: Python Documentation - threading - Thread-based parallelism
+    publisher: Python Software Foundation
+    type: official_documentation
+    url: https://docs.python.org/3/library/threading.html
+    notes: Documents the Global Interpreter Lock and its impact on CPython multi-threaded execution.
+
+  - id: python-src-009
+    title: pip documentation - User Guide
+    publisher: PyPA
+    type: official_tooling_documentation
+    url: https://pip.pypa.io/en/stable/user_guide/
+    notes: Documents pip as the standard Python package installer and its dependency resolution behavior.
+
+  - id: python-src-010
+    title: uv documentation
+    publisher: Astral
+    type: official_tooling_documentation
+    url: https://docs.astral.sh/uv/
+    notes: Documents uv as a fast Rust-based Python package and project manager.
+
+  - id: python-src-011
+    title: Stack Overflow Developer Survey 2024 - Most Popular Technologies
+    publisher: Stack Overflow
+    type: developer_survey
+    year: 2024
+    url: https://survey.stackoverflow.co/2024/technology
+    notes: Reports Python among the top languages by professional developer use.
+
+  - id: python-src-012
+    title: GitHub Octoverse 2024 - The State of Open Source
+    publisher: GitHub
+    type: developer_survey
+    year: 2024
+    url: https://github.blog/news-insights/octoverse/octoverse-2024/
+    notes: Reports Python as the most-used language on GitHub in 2024, surpassing JavaScript.

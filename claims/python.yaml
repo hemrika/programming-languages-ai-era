@@ -1,17 +1,155 @@
 language: Python
+status: draft
+updated: 2026-04-30
+verification_status: web_verified_initial_pass
+
 claims:
   - id: python-001
-    claim: Python’s dynamic typing weakens static analyzability by default.
+    claim: Python is a dynamically typed language whose values carry type information at runtime rather than at variable declaration.
+    dimension: machine_cognition
     criterion: static_analyzability
-    evidence_type: structural
+    evidence_type: language_specification
     confidence: high
     polarity: negative
-    source: [pep484, mypy]
+    source: python-src-001
+    notes: The Language Reference's data model establishes that types are properties of objects, not variables, limiting what can be inferred without runtime observation.
 
   - id: python-002
-    claim: Python’s AI and data ecosystem creates strong strategic viability.
-    criterion: strategic_viability
-    evidence_type: ecosystem
+    claim: PEP 484 type hints are not enforced at runtime by the Python interpreter.
+    dimension: machine_cognition
+    criterion: type_system_strength
+    evidence_type: language_specification
+    confidence: high
+    polarity: negative
+    source: python-src-002
+    notes: PEP 484 explicitly states that the proposal does not introduce runtime type checking.
+
+  - id: python-003
+    claim: PEP 484 defines an optional, gradual static type-hint syntax for Python.
+    dimension: machine_cognition
+    criterion: type_system_strength
+    evidence_type: language_specification
     confidence: high
     polarity: positive
-    source: [octoverse2024, so2024]
+    source: python-src-002
+    notes: PEP 484 introduces type hints while maintaining backward compatibility with untyped Python code.
+
+  - id: python-004
+    claim: PEP 695 introduces dedicated syntax for generic type parameters starting in Python 3.12.
+    dimension: machine_cognition
+    criterion: type_system_strength
+    evidence_type: language_specification
+    confidence: high
+    polarity: positive
+    source: python-src-004
+    notes: PEP 695 documents the new type parameter syntax shipped in Python 3.12.
+
+  - id: python-005
+    claim: PEP 526 adds syntax for annotating module- and class-level variables.
+    dimension: machine_cognition
+    criterion: semantic_clarity
+    evidence_type: language_specification
+    confidence: high
+    polarity: positive
+    source: python-src-003
+    notes: PEP 526 establishes annotated assignment syntax used by type checkers and IDEs.
+
+  - id: python-006
+    claim: mypy is an optional static type checker for Python that consumes PEP 484 type hints.
+    dimension: ai_agent_operability
+    criterion: fast_feedback_loops
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: python-src-005
+    notes: The mypy introduction describes mypy as a separate static type checker.
+
+  - id: python-007
+    claim: Microsoft's pyright provides a strict-mode static type checker for Python with editor integration.
+    dimension: ai_agent_operability
+    criterion: fast_feedback_loops
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: python-src-006
+    notes: The pyright README describes its strict mode and language server integration.
+
+  - id: python-008
+    claim: Pydantic provides runtime data validation for Python based on type hints.
+    dimension: runtime_ecosystem
+    criterion: library_maturity
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: python-src-007
+    notes: The Pydantic documentation describes Pydantic as a runtime validation library that enforces shapes at I/O boundaries.
+
+  - id: python-009
+    claim: CPython uses a Global Interpreter Lock that prevents multiple native threads from executing Python bytecode simultaneously.
+    dimension: runtime_ecosystem
+    criterion: concurrency_model
+    evidence_type: official_documentation
+    confidence: high
+    polarity: negative
+    source: python-src-008
+    notes: The threading module documentation explicitly notes the GIL constraint on CPython.
+
+  - id: python-010
+    claim: pip is the standard package installer for Python, distributed with CPython by default.
+    dimension: runtime_ecosystem
+    criterion: tooling_maturity
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: python-src-009
+    notes: The pip user guide identifies pip as the recommended default installer.
+
+  - id: python-011
+    claim: uv is a Rust-based Python package and project manager that targets faster dependency resolution and installation than pip.
+    dimension: ai_agent_operability
+    criterion: fast_feedback_loops
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: python-src-010
+    notes: The uv documentation positions uv as a fast pip-compatible installer and project manager.
+
+  - id: python-012
+    claim: GitHub Octoverse 2024 reports Python as the most-used language on GitHub, surpassing JavaScript.
+    dimension: strategic_viability
+    criterion: adoption_base
+    evidence_type: developer_survey
+    confidence: high
+    polarity: positive
+    source: python-src-012
+    notes: Octoverse 2024 explicitly highlights Python overtaking JavaScript as the top GitHub language.
+
+  - id: python-013
+    claim: Stack Overflow's 2024 Developer Survey reports Python among the most-used languages by professional developers.
+    dimension: strategic_viability
+    criterion: ai_training_representation
+    evidence_type: developer_survey
+    confidence: high
+    polarity: positive
+    source: python-src-011
+    notes: The 2024 survey shows Python in the top tier of professional language usage, supporting ai-training representation as a proxy.
+
+  - id: python-014
+    claim: Python's whitespace-sensitive block syntax favors readability through indentation as the structural delimiter.
+    dimension: human_cognition
+    criterion: readability
+    evidence_type: language_specification
+    confidence: high
+    polarity: positive
+    source: python-src-001
+    notes: The Language Reference's lexical analysis section defines indentation as the block-grouping mechanism.
+
+  - id: python-015
+    claim: Python's dynamic typing means many type errors surface only when execution reaches them at runtime.
+    dimension: human_cognition
+    criterion: error_visibility
+    evidence_type: language_specification
+    confidence: high
+    polarity: negative
+    source: python-src-001
+    notes: The Language Reference's execution model implies that type-related failures occur during runtime evaluation rather than at parse time.
