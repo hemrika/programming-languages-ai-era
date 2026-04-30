@@ -1,0 +1,34 @@
+language: Swift
+status: draft
+updated: 2026-04-30
+
+scores:
+  human_cognition:
+    score: 4
+    confidence: medium
+    justification: >
+      Swift is concise and expressive with strong local reasoning, though protocol-with-associated-types and generics complexity can raise cognitive load.
+
+  machine_cognition:
+    score: 4
+    confidence: medium
+    justification: >
+      Strong static typing and value semantics give tools and AI systems good structural visibility, with mature tooling on Apple platforms.
+
+  ai_agent_operability:
+    score: 3
+    confidence: medium
+    justification: >
+      Strong diagnostics on Apple platforms, but smaller training corpus and Xcode/SPM build complexity limit cross-platform agent workflows.
+
+  runtime_ecosystem:
+    score: 3
+    confidence: medium
+    justification: >
+      Excellent on Apple platforms; server-side Swift on Linux is improving but ecosystem depth lags mainstream backend languages.
+
+  strategic_viability:
+    score: 3
+    confidence: medium
+    justification: >
+      Durable demand within Apple's ecosystem, with limited evidence of broad cross-platform adoption to date.

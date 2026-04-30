@@ -1,0 +1,25 @@
+language: C++
+claims:
+  - id: cpp-001
+    claim: Memory unsafety and undefined behavior create a high blast radius for AI-generated code changes.
+    criterion: security_posture
+    evidence_type: structural
+    confidence: high
+    polarity: negative
+    source: pending
+
+  - id: cpp-002
+    claim: Build-system fragmentation increases AI-agent operability friction across C++ projects.
+    criterion: ai_agent_operability
+    evidence_type: ecosystem
+    confidence: medium
+    polarity: negative
+    source: pending
+
+  - id: cpp-003
+    claim: C++ retains industrial dominance in performance-critical and ML-adjacent systems.
+    criterion: strategic_viability
+    evidence_type: ecosystem
+    confidence: high
+    polarity: positive
+    source: pending

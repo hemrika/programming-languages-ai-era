@@ -1,0 +1,25 @@
+language: Kotlin
+claims:
+  - id: kotlin-001
+    claim: Null safety encoded in the type system reduces a major class of runtime errors.
+    criterion: machine_cognition
+    evidence_type: structural
+    confidence: high
+    polarity: positive
+    source: pending
+
+  - id: kotlin-002
+    claim: Full Java interop preserves access to the JVM ecosystem and migration paths.
+    criterion: runtime_ecosystem
+    evidence_type: structural
+    confidence: high
+    polarity: positive
+    source: pending
+
+  - id: kotlin-003
+    claim: Kotlin's training-data footprint is smaller than Java's, affecting AI-completion quality.
+    criterion: ai_agent_operability
+    evidence_type: structural
+    confidence: medium
+    polarity: negative
+    source: pending

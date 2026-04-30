@@ -1,0 +1,25 @@
+language: Mojo
+claims:
+  - id: mojo-001
+    claim: Mojo is designed as an AI-native language with MLIR-based compilation and hardware-aware semantics.
+    criterion: future_fit
+    evidence_type: structural
+    confidence: high
+    polarity: positive
+    source: pending
+
+  - id: mojo-002
+    claim: Mojo's training-data footprint is minimal, limiting AI-completion quality today.
+    criterion: ai_training_representation
+    evidence_type: structural
+    confidence: high
+    polarity: negative
+    source: pending
+
+  - id: mojo-003
+    claim: Single-vendor governance (Modular) creates adoption and ecosystem risk.
+    criterion: governance_quality
+    evidence_type: structural
+    confidence: medium
+    polarity: negative
+    source: pending

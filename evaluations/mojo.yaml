@@ -1,0 +1,34 @@
+language: Mojo
+status: draft
+updated: 2026-04-30
+
+scores:
+  human_cognition:
+    score: 3
+    confidence: low
+    justification: >
+      Python familiarity lowers the entry barrier, but new ownership and compile-time semantics introduce concepts that are not yet well-documented at scale.
+
+  machine_cognition:
+    score: 4
+    confidence: low
+    justification: >
+      Strong static structure by design (MLIR, types, ownership) is favorable in principle, but tooling maturity and analyzer coverage are still early.
+
+  ai_agent_operability:
+    score: 2
+    confidence: low
+    justification: >
+      Sparse training data, immature tooling, and limited examples constrain AI-agent operability even though the language design is favorable.
+
+  runtime_ecosystem:
+    score: 2
+    confidence: low
+    justification: >
+      Library coverage is minimal compared with Python or C++; production deployment patterns are not yet broadly established.
+
+  strategic_viability:
+    score: 3
+    confidence: low
+    justification: >
+      Promising AI-native positioning and strong technical leadership, balanced against single-vendor governance and very early adoption.
