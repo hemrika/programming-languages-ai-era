@@ -1,25 +1,135 @@
 language: Haskell
+status: draft
+updated: 2026-04-30
+verification_status: web_verified_initial_pass
+
 claims:
   - id: haskell-001
-    claim: Haskell's type system supports strong machine-checked contracts and refactoring guarantees.
-    criterion: machine_cognition
-    evidence_type: structural
+    claim: Haskell is a pure functional language with non-strict (lazy) evaluation as defined by the Haskell 2010 Language Report.
+    dimension: machine_cognition
+    criterion: semantic_clarity
+    evidence_type: language_specification
     confidence: high
     polarity: positive
-    source: [vazou2014liquid]
+    source: haskell-src-001
+    notes: The Haskell 2010 Report defines Haskell's purity and non-strict evaluation as core language properties.
 
   - id: haskell-002
-    claim: Lazy evaluation complicates performance reasoning for both humans and AI systems.
-    criterion: performance_predictability
-    evidence_type: structural
+    claim: Haskell uses Hindley-Milner-style type inference to infer types for top-level and local bindings.
+    dimension: machine_cognition
+    criterion: type_system_strength
+    evidence_type: language_specification
     confidence: high
-    polarity: negative
-    source: [vazou2014liquid]
+    polarity: positive
+    source: haskell-src-001
+    notes: The Haskell 2010 Report specifies the type-inference algorithm at the heart of the language.
 
   - id: haskell-003
-    claim: Haskell's adoption and training-data footprint are smaller than mainstream alternatives.
-    criterion: ai_training_representation
-    evidence_type: structural
+    claim: GHC is the de facto Haskell compiler and adds many language extensions beyond Haskell 2010.
+    dimension: runtime_ecosystem
+    criterion: tooling_maturity
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: haskell-src-002
+    notes: The GHC User's Guide documents GHC's role and its extension surface.
+
+  - id: haskell-004
+    claim: GHC offers a large set of optional language extensions that programs commonly enable on a per-module basis.
+    dimension: machine_cognition
+    criterion: syntax_regularity
+    evidence_type: official_documentation
     confidence: high
     polarity: negative
-    source: [so2024, redmonk2024]
+    source: haskell-src-008
+    notes: The GHC extensions chapter documents many extensions whose combined use complicates a single canonical Haskell dialect.
+
+  - id: haskell-005
+    claim: Liquid Haskell adds refinement types to Haskell that support compile-time logical specifications about program values.
+    dimension: machine_cognition
+    criterion: formal_reasoning_potential
+    evidence_type: academic_paper
+    confidence: high
+    polarity: positive
+    source: haskell-src-003
+    notes: The 2014 ICFP paper introduces Liquid Haskell as a refinement-type extension.
+
+  - id: haskell-006
+    claim: Cabal is Haskell's reference build and package system.
+    dimension: ai_agent_operability
+    criterion: dependency_clarity
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: haskell-src-004
+    notes: The Cabal User's Guide documents Cabal's role in building and packaging Haskell projects.
+
+  - id: haskell-007
+    claim: Stack is an alternative Haskell build tool that uses curated package snapshots layered on Cabal-the-library.
+    dimension: ai_agent_operability
+    criterion: dependency_clarity
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: negative
+    source: haskell-src-005
+    notes: Stack's documentation establishes it as a Cabal alternative, contributing to Haskell build-tool fragmentation.
+
+  - id: haskell-008
+    claim: Hackage is the central package repository for Haskell open-source libraries.
+    dimension: runtime_ecosystem
+    criterion: library_maturity
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: haskell-src-006
+    notes: The Hackage site documents its role as the central Haskell package archive.
+
+  - id: haskell-009
+    claim: Hoogle allows searching Haskell APIs by type signature.
+    dimension: ai_agent_operability
+    criterion: dependency_clarity
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: haskell-src-007
+    notes: Hoogle documents its support for type-directed library search.
+
+  - id: haskell-010
+    claim: Haskell's lazy evaluation complicates performance and space reasoning compared to strict-by-default languages.
+    dimension: human_cognition
+    criterion: local_reasoning
+    evidence_type: language_specification
+    confidence: high
+    polarity: negative
+    source: haskell-src-009
+    notes: The Haskell Report's lazy semantics chapter underpins the well-known complexity of reasoning about evaluation order.
+
+  - id: haskell-011
+    claim: GHC provides time and heap profilers for diagnosing performance behavior under lazy evaluation.
+    dimension: runtime_ecosystem
+    criterion: tooling_maturity
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: haskell-src-010
+    notes: The GHC profiling chapter documents the suite of profilers available to Haskell programs.
+
+  - id: haskell-012
+    claim: Haskell's typeclass and higher-kinded type machinery is unfamiliar to mainstream-trained developers, contributing to a steep learning curve.
+    dimension: strategic_viability
+    criterion: learning_curve
+    evidence_type: language_specification
+    confidence: medium
+    polarity: negative
+    source: haskell-src-001
+    notes: The Haskell Report's class system and kind system are well-known sources of conceptual difficulty for new learners.
+
+  - id: haskell-013
+    claim: GHC is governed openly through the Glasgow Haskell Compiler project with public release notes for each version.
+    dimension: strategic_viability
+    criterion: governance_quality
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: haskell-src-002
+    notes: The GHC User's Guide and project artifacts establish a public, versioned governance trail.
