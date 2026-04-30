@@ -1,9 +1,145 @@
 language: TypeScript
+status: draft
+updated: 2026-04-30
+verification_status: web_verified_initial_pass
+
 claims:
   - id: typescript-001
-    claim: TypeScript improves JavaScript maintainability by adding static typing and editor tooling.
-    criterion: machine_cognition
-    evidence_type: structural
+    claim: TypeScript adds an optional static type layer over JavaScript and erases types during compilation to JavaScript.
+    dimension: machine_cognition
+    criterion: static_analyzability
+    evidence_type: official_documentation
     confidence: high
     polarity: positive
-    source: [tshandbook]
+    source: typescript-src-001
+    notes: The Handbook describes TypeScript as a typed superset that compiles to plain JavaScript with types erased at runtime.
+
+  - id: typescript-002
+    claim: TypeScript supports discriminated unions that allow exhaustive case handling through control-flow narrowing.
+    dimension: machine_cognition
+    criterion: type_system_strength
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: typescript-src-003
+    notes: The Narrowing chapter documents discriminant properties and the never type for exhaustiveness checks.
+
+  - id: typescript-003
+    claim: TypeScript uses structural typing so types are compatible based on shape rather than nominal declaration.
+    dimension: machine_cognition
+    criterion: semantic_clarity
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: typescript-src-005
+    notes: The Type Compatibility chapter establishes the structural model and contrasts it with nominal systems.
+
+  - id: typescript-004
+    claim: TypeScript's strict mode bundles strict family flags including strictNullChecks and noImplicitAny as opt-in defaults.
+    dimension: machine_cognition
+    criterion: static_analyzability
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: typescript-src-004
+    notes: The TSConfig reference enumerates the strict family and confirms strict mode is not on by default.
+
+  - id: typescript-005
+    claim: TypeScript's any type opts a value out of static type checking.
+    dimension: machine_cognition
+    criterion: type_system_strength
+    evidence_type: official_documentation
+    confidence: high
+    polarity: negative
+    source: typescript-src-008
+    notes: The Handbook explicitly states that any disables further type checking for that value.
+
+  - id: typescript-006
+    claim: TypeScript ships a language service that powers editor features such as completions, hovers, and rename refactoring.
+    dimension: ai_agent_operability
+    criterion: fast_feedback_loops
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: typescript-src-006
+    notes: The architectural overview documents the language service as a separate compiler-pipeline consumer.
+
+  - id: typescript-007
+    claim: The Language Server Protocol standardizes editor integration of language tooling and was originated by Microsoft alongside TypeScript tooling.
+    dimension: ai_agent_operability
+    criterion: fast_feedback_loops
+    evidence_type: official_reference
+    confidence: high
+    polarity: positive
+    source: typescript-src-007
+    notes: The LSP specification documents the protocol Microsoft published to standardize language-server interactions.
+
+  - id: typescript-008
+    claim: TypeScript compiles to JavaScript and inherits ECMAScript runtime semantics including dynamic dispatch and prototype-based objects.
+    dimension: runtime_ecosystem
+    criterion: performance_predictability
+    evidence_type: language_specification
+    confidence: high
+    polarity: negative
+    source: typescript-src-009
+    notes: ECMA-262 defines the runtime semantics that persist after TypeScript type erasure.
+
+  - id: typescript-009
+    claim: The npm registry is the dependency distribution channel used for TypeScript packages.
+    dimension: runtime_ecosystem
+    criterion: library_maturity
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: typescript-src-010
+    notes: npm Docs describes the registry as the world's largest software registry and primary package source.
+
+  - id: typescript-010
+    claim: TypeScript supports literal types and union types that allow modeling of finite value sets in the type system.
+    dimension: machine_cognition
+    criterion: type_system_strength
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: typescript-src-002
+    notes: The Everyday Types chapter documents literal types and unions used for state-space modeling.
+
+  - id: typescript-011
+    claim: Stack Overflow's 2024 Developer Survey reports TypeScript among the most-used and most-admired programming languages.
+    dimension: strategic_viability
+    criterion: adoption_base
+    evidence_type: developer_survey
+    confidence: medium
+    polarity: positive
+    source: typescript-src-011
+    notes: The 2024 survey lists TypeScript in the top tier of professional language usage and admiration.
+
+  - id: typescript-012
+    claim: GitHub Octoverse 2024 reports TypeScript as one of the top languages on GitHub by usage.
+    dimension: strategic_viability
+    criterion: adoption_base
+    evidence_type: developer_survey
+    confidence: medium
+    polarity: positive
+    source: typescript-src-012
+    notes: Octoverse 2024 ranks TypeScript among the top GitHub languages by repository activity.
+
+  - id: typescript-013
+    claim: TypeScript is governed by Microsoft as an open-source project distributed under the Apache 2.0 license.
+    dimension: strategic_viability
+    criterion: institutional_support
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: typescript-src-001
+    notes: The official site and Handbook identify Microsoft stewardship and the open-source release.
+
+  - id: typescript-014
+    claim: TypeScript's any escape hatch can degrade local reasoning where it is reached.
+    dimension: human_cognition
+    criterion: local_reasoning
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: typescript-src-008
+    notes: The Handbook documents that any silently propagates without further checking, undermining local correctness reasoning.

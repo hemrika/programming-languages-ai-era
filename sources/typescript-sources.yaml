@@ -1,0 +1,94 @@
+language: TypeScript
+description: >
+  Source registry for atomic claims in claims/typescript.yaml. Each entry resolves a
+  typescript-src-NNN identifier referenced by an atomic claim's `source` field to a
+  primary source: official documentation, language specification, or reproducible
+  empirical work. Per the methodology in outputs/evidence-backed-research-execution-plan.md.
+
+sources:
+  - id: typescript-src-001
+    title: TypeScript Handbook - The Basics
+    publisher: Microsoft / TypeScript Project
+    type: official_documentation
+    url: https://www.typescriptlang.org/docs/handbook/2/basic-types.html
+    notes: Establishes that TypeScript adds a static type layer over JavaScript and erases types at compile time.
+
+  - id: typescript-src-002
+    title: TypeScript Handbook - Everyday Types
+    publisher: Microsoft / TypeScript Project
+    type: official_documentation
+    url: https://www.typescriptlang.org/docs/handbook/2/everyday-types.html
+    notes: Documents the core type forms including unions, literals, and type aliases used for modeling state.
+
+  - id: typescript-src-003
+    title: TypeScript Handbook - Narrowing
+    publisher: Microsoft / TypeScript Project
+    type: official_documentation
+    url: https://www.typescriptlang.org/docs/handbook/2/narrowing.html
+    notes: Documents control-flow-based type narrowing and discriminated unions for exhaustive case handling.
+
+  - id: typescript-src-004
+    title: TSConfig Reference - strict
+    publisher: Microsoft / TypeScript Project
+    type: official_tooling_documentation
+    url: https://www.typescriptlang.org/tsconfig/#strict
+    notes: Establishes that strict mode is opt-in and bundles strictNullChecks and other strict family flags.
+
+  - id: typescript-src-005
+    title: TypeScript Handbook - Type Compatibility (structural typing)
+    publisher: Microsoft / TypeScript Project
+    type: official_documentation
+    url: https://www.typescriptlang.org/docs/handbook/type-compatibility.html
+    notes: Documents structural (duck) typing as TypeScript's compatibility model.
+
+  - id: typescript-src-006
+    title: TypeScript Architectural Overview
+    publisher: Microsoft / TypeScript Project
+    type: official_documentation
+    url: https://github.com/microsoft/TypeScript/wiki/Architectural-Overview
+    notes: Describes the compiler pipeline including the language service used by editors.
+
+  - id: typescript-src-007
+    title: Language Server Protocol Specification
+    publisher: Microsoft
+    type: official_reference
+    url: https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/
+    notes: Defines the editor-tooling protocol pioneered by the TypeScript language service.
+
+  - id: typescript-src-008
+    title: TypeScript Handbook - The any type
+    publisher: Microsoft / TypeScript Project
+    type: official_documentation
+    url: https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#any
+    notes: Documents that any disables type checking for its values, weakening static guarantees.
+
+  - id: typescript-src-009
+    title: ECMAScript 2024 Language Specification
+    publisher: Ecma International / TC39
+    type: language_specification
+    year: 2024
+    url: https://tc39.es/ecma262/
+    notes: Defines the underlying JavaScript runtime semantics that TypeScript compiles to.
+
+  - id: typescript-src-010
+    title: npm Docs - About npm
+    publisher: npm, Inc. / GitHub
+    type: official_tooling_documentation
+    url: https://docs.npmjs.com/about-npm
+    notes: Documents the npm registry, the world's largest software registry, used for TypeScript package distribution.
+
+  - id: typescript-src-011
+    title: Stack Overflow Developer Survey 2024 - Most Popular Technologies
+    publisher: Stack Overflow
+    type: developer_survey
+    year: 2024
+    url: https://survey.stackoverflow.co/2024/technology
+    notes: Reports TypeScript usage and admiration metrics among professional developers.
+
+  - id: typescript-src-012
+    title: GitHub Octoverse 2024 - The State of Open Source
+    publisher: GitHub
+    type: developer_survey
+    year: 2024
+    url: https://github.blog/news-insights/octoverse/octoverse-2024/
+    notes: Reports TypeScript's rank among most-used languages on GitHub.
