@@ -1,0 +1,91 @@
+language: Java
+description: >
+  Source registry for atomic claims in claims/java.yaml. Each entry resolves a
+  java-src-NNN identifier referenced by an atomic claim's `source` field to a
+  primary source: Java specifications, JEPs, or reproducible empirical work.
+  Per the methodology in outputs/evidence-backed-research-execution-plan.md.
+
+sources:
+  - id: java-src-001
+    title: The Java Language Specification, Java SE 21 Edition
+    publisher: Oracle / Eclipse Foundation
+    type: language_specification
+    year: 2023
+    url: https://docs.oracle.com/javase/specs/jls/se21/html/index.html
+    notes: Defines the Java programming language including the type system, class model, and concurrency semantics.
+
+  - id: java-src-002
+    title: The Java Virtual Machine Specification, Java SE 21 Edition
+    publisher: Oracle
+    type: language_specification
+    year: 2023
+    url: https://docs.oracle.com/javase/specs/jvms/se21/html/index.html
+    notes: Defines the JVM, including the class file format, bytecode instruction set, and verification.
+
+  - id: java-src-003
+    title: JEP 395 - Records
+    publisher: OpenJDK
+    type: official_governance_documentation
+    year: 2021
+    url: https://openjdk.org/jeps/395
+    notes: Standardizes records as transparent immutable carriers for shallowly immutable data.
+
+  - id: java-src-004
+    title: JEP 405 - Record Patterns (Preview)
+    publisher: OpenJDK
+    type: official_governance_documentation
+    year: 2022
+    url: https://openjdk.org/jeps/405
+    notes: Introduces record patterns for declarative deconstruction in pattern matching.
+
+  - id: java-src-005
+    title: JEP 427 - Pattern Matching for switch (Third Preview)
+    publisher: OpenJDK
+    type: official_governance_documentation
+    year: 2022
+    url: https://openjdk.org/jeps/427
+    notes: Extends switch with type patterns and exhaustiveness checking on sealed hierarchies.
+
+  - id: java-src-006
+    title: JEP 444 - Virtual Threads
+    publisher: OpenJDK
+    type: official_governance_documentation
+    year: 2023
+    url: https://openjdk.org/jeps/444
+    notes: Standardizes virtual threads as lightweight threads scheduled by the JVM.
+
+  - id: java-src-007
+    title: OpenJDK JDK Project
+    publisher: OpenJDK
+    type: official_governance_documentation
+    url: https://openjdk.org/projects/jdk/
+    notes: Documents the six-month time-based release cadence and LTS designations for the JDK.
+
+  - id: java-src-008
+    title: Maven Central Repository - About
+    publisher: Sonatype / The Apache Software Foundation
+    type: official_tooling_documentation
+    url: https://central.sonatype.com/
+    notes: Documents Maven Central as the canonical repository for Java open-source artifacts.
+
+  - id: java-src-009
+    title: Gradle User Manual
+    publisher: Gradle, Inc.
+    type: official_tooling_documentation
+    url: https://docs.gradle.org/current/userguide/userguide.html
+    notes: Documents Gradle as a JVM-ecosystem build tool, alternative to Maven.
+
+  - id: java-src-010
+    title: Java SE 17 - Sealed Classes (JEP 409)
+    publisher: OpenJDK
+    type: official_governance_documentation
+    year: 2021
+    url: https://openjdk.org/jeps/409
+    notes: Standardizes sealed classes and interfaces, enabling closed type hierarchies.
+
+  - id: java-src-011
+    title: Java Documentation - Compatibility Guide
+    publisher: Oracle
+    type: official_documentation
+    url: https://docs.oracle.com/en/java/javase/21/migrate/
+    notes: Documents Java's longstanding emphasis on backward source and binary compatibility across releases.

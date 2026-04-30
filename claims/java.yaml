@@ -1,25 +1,135 @@
 language: Java
+status: draft
+updated: 2026-04-30
+verification_status: web_verified_initial_pass
+
 claims:
   - id: java-001
-    claim: Java's static typing and mature tooling support reliable refactoring across very large codebases.
-    criterion: refactorability
-    evidence_type: structural
+    claim: Java is a statically typed language whose types are checked at compile time as defined in the Java Language Specification.
+    dimension: machine_cognition
+    criterion: static_analyzability
+    evidence_type: language_specification
     confidence: high
     polarity: positive
-    source: [jep395]
+    source: java-src-001
+    notes: The JLS defines static typing rules and compile-time checks across declarations and expressions.
 
   - id: java-002
-    claim: Java's historical verbosity increases code-volume cost for AI-agent generation and review.
-    criterion: ai_agent_operability
-    evidence_type: structural
-    confidence: medium
-    polarity: negative
-    source: [jep395]
-
-  - id: java-003
-    claim: The JVM provides production-grade performance, observability, and deployment maturity.
-    criterion: runtime_ecosystem
-    evidence_type: ecosystem
+    claim: Java records are transparent immutable carriers for a shallowly immutable group of named values.
+    dimension: machine_cognition
+    criterion: type_system_strength
+    evidence_type: official_governance_documentation
     confidence: high
     polarity: positive
-    source: [techempower]
+    source: java-src-003
+    notes: JEP 395 defines records and their auto-generated accessors, equals, and hashCode.
+
+  - id: java-003
+    claim: Java sealed classes restrict which classes or interfaces may extend or implement them.
+    dimension: machine_cognition
+    criterion: type_system_strength
+    evidence_type: official_governance_documentation
+    confidence: high
+    polarity: positive
+    source: java-src-010
+    notes: JEP 409 introduces sealed types, enabling closed hierarchies suitable for exhaustive matching.
+
+  - id: java-004
+    claim: Java pattern matching for switch supports exhaustiveness checking on sealed type hierarchies.
+    dimension: machine_cognition
+    criterion: type_system_strength
+    evidence_type: official_governance_documentation
+    confidence: high
+    polarity: positive
+    source: java-src-005
+    notes: JEP 427 documents type patterns in switch and the requirement for exhaustive coverage.
+
+  - id: java-005
+    claim: Record patterns enable declarative deconstruction of records inside pattern matching contexts.
+    dimension: human_cognition
+    criterion: expressiveness
+    evidence_type: official_governance_documentation
+    confidence: high
+    polarity: positive
+    source: java-src-004
+    notes: JEP 405 introduces record patterns for use inside switch and instanceof.
+
+  - id: java-006
+    claim: Java virtual threads are lightweight threads scheduled by the JVM rather than the operating system.
+    dimension: runtime_ecosystem
+    criterion: concurrency_model
+    evidence_type: official_governance_documentation
+    confidence: high
+    polarity: positive
+    source: java-src-006
+    notes: JEP 444 documents virtual threads as a JVM-level abstraction over a smaller pool of OS threads.
+
+  - id: java-007
+    claim: The OpenJDK release model ships a new JDK every six months with designated long-term-support versions.
+    dimension: strategic_viability
+    criterion: governance_quality
+    evidence_type: official_governance_documentation
+    confidence: high
+    polarity: positive
+    source: java-src-007
+    notes: The JDK Project documents the time-based release cadence and LTS designations.
+
+  - id: java-008
+    claim: Java emphasizes long-term source and binary compatibility across major releases.
+    dimension: strategic_viability
+    criterion: backward_compatibility
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: java-src-011
+    notes: The Java migration guide documents Oracle's compatibility commitments and known incompatibilities.
+
+  - id: java-009
+    claim: The JVM specification defines a portable bytecode and class-file format with mandatory verifier checks.
+    dimension: runtime_ecosystem
+    criterion: deployment_model
+    evidence_type: language_specification
+    confidence: high
+    polarity: positive
+    source: java-src-002
+    notes: The JVMS defines bytecode, class files, and the verifier requirements for safe execution.
+
+  - id: java-010
+    claim: Maven Central is the canonical artifact repository for Java open-source libraries.
+    dimension: runtime_ecosystem
+    criterion: library_maturity
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: java-src-008
+    notes: The Maven Central about page documents its role as the default JVM artifact repository.
+
+  - id: java-011
+    claim: The Java build-tool ecosystem is split between Maven and Gradle as primary alternatives.
+    dimension: ai_agent_operability
+    criterion: dependency_clarity
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: negative
+    source: java-src-009
+    notes: The Gradle User Manual positions Gradle as an alternative to Maven, and both remain widely used in the JVM ecosystem.
+
+  - id: java-012
+    claim: Java's class-based, single-inheritance object model is defined by the Java Language Specification.
+    dimension: human_cognition
+    criterion: conceptual_economy
+    evidence_type: language_specification
+    confidence: high
+    polarity: positive
+    source: java-src-001
+    notes: The JLS defines the class model used uniformly across the language.
+
+  - id: java-013
+    claim: Java's pre-records boilerplate for plain-data classes was a recognized verbosity cost addressed by JEP 395.
+    dimension: human_cognition
+    criterion: expressiveness
+    evidence_type: official_governance_documentation
+    confidence: high
+    polarity: negative
+    source: java-src-003
+    notes: JEP 395 explicitly motivates records as a remedy to plain-data-class boilerplate.
