@@ -1,0 +1,34 @@
+language: Julia
+status: draft
+updated: 2026-04-30
+
+scores:
+  human_cognition:
+    score: 4
+    confidence: medium
+    justification: >
+      Concise and expressive for numerical work; multiple dispatch is powerful but requires shifting mental models from object-oriented or procedural defaults.
+
+  machine_cognition:
+    score: 3
+    confidence: medium
+    justification: >
+      Dynamic at heart and multiple-dispatch resolution complicates static inference, though optional type annotations help local analysis.
+
+  ai_agent_operability:
+    score: 2
+    confidence: medium
+    justification: >
+      TTFX latency and a small training corpus slow agent feedback loops, despite good interactive tooling.
+
+  runtime_ecosystem:
+    score: 3
+    confidence: medium
+    justification: >
+      Strong in scientific computing; narrower elsewhere, with deployment patterns less standardized than Python.
+
+  strategic_viability:
+    score: 3
+    confidence: medium
+    justification: >
+      Niche but durable in research and scientific computing; unlikely to displace Python broadly in AI/ML.

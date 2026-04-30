@@ -1,0 +1,25 @@
+language: Haskell
+claims:
+  - id: haskell-001
+    claim: Haskell's type system supports strong machine-checked contracts and refactoring guarantees.
+    criterion: machine_cognition
+    evidence_type: structural
+    confidence: high
+    polarity: positive
+    source: pending
+
+  - id: haskell-002
+    claim: Lazy evaluation complicates performance reasoning for both humans and AI systems.
+    criterion: performance_predictability
+    evidence_type: structural
+    confidence: high
+    polarity: negative
+    source: pending
+
+  - id: haskell-003
+    claim: Haskell's adoption and training-data footprint are smaller than mainstream alternatives.
+    criterion: ai_training_representation
+    evidence_type: structural
+    confidence: high
+    polarity: negative
+    source: pending

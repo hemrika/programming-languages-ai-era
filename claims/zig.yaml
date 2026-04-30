@@ -1,0 +1,25 @@
+language: Zig
+claims:
+  - id: zig-001
+    claim: Zig has no hidden control flow or allocations, supporting local reasoning and predictable performance.
+    criterion: local_reasoning
+    evidence_type: structural
+    confidence: high
+    polarity: positive
+    source: pending
+
+  - id: zig-002
+    claim: Zig lacks compile-time memory-safety guarantees comparable to Rust's borrow checker.
+    criterion: security_posture
+    evidence_type: structural
+    confidence: high
+    polarity: negative
+    source: pending
+
+  - id: zig-003
+    claim: Pre-1.0 status creates language and stdlib churn that affects AI-agent operability.
+    criterion: ai_agent_operability
+    evidence_type: structural
+    confidence: medium
+    polarity: negative
+    source: pending

@@ -1,0 +1,34 @@
+language: Zig
+status: draft
+updated: 2026-04-30
+
+scores:
+  human_cognition:
+    score: 4
+    confidence: medium
+    justification: >
+      Zig's explicit, regular syntax and lack of hidden control flow support strong local reasoning, with fewer abstractions to learn than Rust.
+
+  machine_cognition:
+    score: 4
+    confidence: medium
+    justification: >
+      Static typing and explicit semantics give tools clean structural signal, though formal guarantees are weaker than Rust's.
+
+  ai_agent_operability:
+    score: 3
+    confidence: low
+    justification: >
+      Fast compiles and explicit semantics aid agents, but pre-1.0 churn, a small training corpus, and limited examples constrain reliability.
+
+  runtime_ecosystem:
+    score: 3
+    confidence: medium
+    justification: >
+      Small but growing; strong C interop and cross-compilation are advantages, balanced by limited library coverage.
+
+  strategic_viability:
+    score: 3
+    confidence: low
+    justification: >
+      Promising design with active community, but pre-1.0 status and competition from Rust create medium-term adoption risk.
