@@ -1,25 +1,135 @@
 language: Swift
+status: draft
+updated: 2026-04-30
+verification_status: web_verified_initial_pass
+
 claims:
   - id: swift-001
-    claim: Swift's optional types and value semantics support strong static reasoning about correctness.
-    criterion: machine_cognition
-    evidence_type: structural
+    claim: Swift uses optional types to express the possible absence of a value in the type system.
+    dimension: machine_cognition
+    criterion: type_system_strength
+    evidence_type: official_documentation
     confidence: high
     polarity: positive
-    source: [swiftbook]
+    source: swift-src-002
+    notes: The Optional Chaining chapter and The Basics document the optional type as a non-implicit nil channel.
 
   - id: swift-002
-    claim: Swift's strategic reach is constrained by Apple-platform alignment.
-    criterion: strategic_viability
-    evidence_type: ecosystem
+    claim: Swift defaults structures and enumerations to value types and classes to reference types.
+    dimension: machine_cognition
+    criterion: semantic_clarity
+    evidence_type: official_documentation
     confidence: high
-    polarity: negative
-    source: [redmonk2024, so2024]
+    polarity: positive
+    source: swift-src-010
+    notes: Structures and Classes documents the value-type / reference-type split and copy semantics.
 
   - id: swift-003
-    claim: Swift has a smaller AI-training-data footprint than mainstream cross-platform languages.
-    criterion: ai_training_representation
-    evidence_type: structural
+    claim: Swift provides async/await, structured concurrency, and actors as language-level concurrency primitives.
+    dimension: runtime_ecosystem
+    criterion: concurrency_model
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: swift-src-004
+    notes: The Concurrency chapter documents the language-level concurrency model.
+
+  - id: swift-004
+    claim: Swift specifies memory-safety rules including detection of conflicting access to memory.
+    dimension: runtime_ecosystem
+    criterion: security_posture
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: swift-src-005
+    notes: The Memory Safety chapter documents conflicting-access detection at compile and runtime.
+
+  - id: swift-005
+    claim: Swift protocols support protocol-oriented programming including default implementations and associated types.
+    dimension: machine_cognition
+    criterion: type_system_strength
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: swift-src-003
+    notes: The Protocols chapter documents protocol composition, defaults, and associated types.
+
+  - id: swift-006
+    claim: Swift evolves through an open Swift Evolution process with public proposals and review on GitHub.
+    dimension: strategic_viability
+    criterion: governance_quality
+    evidence_type: official_governance_documentation
+    confidence: high
+    polarity: positive
+    source: swift-src-006
+    notes: The swift-evolution repository documents the evolution process and proposal lifecycle.
+
+  - id: swift-007
+    claim: Swift Package Manager is the official tool for managing Swift dependencies and building Swift projects.
+    dimension: ai_agent_operability
+    criterion: dependency_clarity
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: swift-src-007
+    notes: The SPM documentation describes its role as the official Swift package and build manager.
+
+  - id: swift-008
+    claim: SwiftNIO provides a non-blocking I/O event-driven networking framework for server-side Swift.
+    dimension: runtime_ecosystem
+    criterion: library_maturity
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: swift-src-008
+    notes: The SwiftNIO README documents its event-loop networking model.
+
+  - id: swift-009
+    claim: Vapor provides a server-side Swift web framework targeting Linux and macOS deployments.
+    dimension: runtime_ecosystem
+    criterion: library_maturity
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: swift-src-009
+    notes: Vapor's documentation describes a full-stack web framework for server-side Swift.
+
+  - id: swift-010
+    claim: Apple positions Swift primarily as the language for Apple-platform application development.
+    dimension: strategic_viability
+    criterion: institutional_support
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: swift-src-011
+    notes: Apple's developer Swift page foregrounds iOS, macOS, watchOS, tvOS, and visionOS as primary targets.
+
+  - id: swift-011
+    claim: Apple's primary positioning of Swift around Apple platforms creates platform-alignment risk for cross-platform adoption.
+    dimension: strategic_viability
+    criterion: adoption_base
+    evidence_type: official_documentation
     confidence: medium
     polarity: negative
-    source: [octoverse2024]
+    source: swift-src-011
+    notes: The Apple Developer Swift landing page emphasizes Apple platforms, with non-Apple ecosystems addressed only via separate efforts.
+
+  - id: swift-012
+    claim: Swift code is designed for safety, with optionals and explicit error handling reducing common runtime hazards.
+    dimension: human_cognition
+    criterion: error_visibility
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: swift-src-001
+    notes: The Basics chapter describes optional handling and required error handling in the type system.
+
+  - id: swift-013
+    claim: The Swift Evolution process records and archives breaking changes through versioned proposals and a public review history.
+    dimension: strategic_viability
+    criterion: backward_compatibility
+    evidence_type: official_governance_documentation
+    confidence: medium
+    polarity: positive
+    source: swift-src-006
+    notes: The swift-evolution repository tracks accepted proposals as the historical record of language change.

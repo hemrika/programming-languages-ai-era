@@ -1,0 +1,85 @@
+language: Swift
+description: >
+  Source registry for atomic claims in claims/swift.yaml. Each entry resolves a
+  swift-src-NNN identifier referenced by an atomic claim's `source` field to a
+  primary source: The Swift Programming Language book, Swift Evolution proposals,
+  or Apple Developer documentation. Per the methodology in
+  outputs/evidence-backed-research-execution-plan.md.
+
+sources:
+  - id: swift-src-001
+    title: The Swift Programming Language - The Basics
+    publisher: Apple Inc.
+    type: official_documentation
+    url: https://docs.swift.org/swift-book/documentation/the-swift-programming-language/thebasics/
+    notes: Introduces Swift type system fundamentals including optionals and value types.
+
+  - id: swift-src-002
+    title: The Swift Programming Language - Optional Chaining
+    publisher: Apple Inc.
+    type: official_documentation
+    url: https://docs.swift.org/swift-book/documentation/the-swift-programming-language/optionalchaining/
+    notes: Documents how Swift uses optionals to express the absence of values in the type system.
+
+  - id: swift-src-003
+    title: The Swift Programming Language - Protocols
+    publisher: Apple Inc.
+    type: official_documentation
+    url: https://docs.swift.org/swift-book/documentation/the-swift-programming-language/protocols/
+    notes: Documents Swift protocols including protocol-oriented programming and protocol-with-associated-types.
+
+  - id: swift-src-004
+    title: The Swift Programming Language - Concurrency
+    publisher: Apple Inc.
+    type: official_documentation
+    url: https://docs.swift.org/swift-book/documentation/the-swift-programming-language/concurrency/
+    notes: Documents async/await, structured concurrency, and actors in Swift.
+
+  - id: swift-src-005
+    title: The Swift Programming Language - Memory Safety
+    publisher: Apple Inc.
+    type: official_documentation
+    url: https://docs.swift.org/swift-book/documentation/the-swift-programming-language/memorysafety/
+    notes: Documents Swift's memory-safety guarantees and conflicting-access checking.
+
+  - id: swift-src-006
+    title: Swift Evolution Process
+    publisher: Swift project
+    type: official_governance_documentation
+    url: https://github.com/swiftlang/swift-evolution
+    notes: Documents the open Swift Evolution process and proposal lifecycle.
+
+  - id: swift-src-007
+    title: Swift Package Manager - Documentation
+    publisher: Swift project
+    type: official_tooling_documentation
+    url: https://www.swift.org/documentation/package-manager/
+    notes: Documents SPM as the official Swift dependency and build manager.
+
+  - id: swift-src-008
+    title: SwiftNIO README
+    publisher: Apple
+    type: official_documentation
+    url: https://github.com/apple/swift-nio
+    notes: Documents SwiftNIO as a non-blocking I/O event-driven networking framework for server-side Swift.
+
+  - id: swift-src-009
+    title: Vapor Documentation - Welcome
+    publisher: Vapor project
+    type: official_documentation
+    url: https://docs.vapor.codes/
+    notes: Documents Vapor as a server-side Swift web framework.
+
+  - id: swift-src-010
+    title: The Swift Programming Language - Structures and Classes
+    publisher: Apple Inc.
+    type: official_documentation
+    url: https://docs.swift.org/swift-book/documentation/the-swift-programming-language/classesandstructures/
+    notes: Documents Swift's value-type structs versus reference-type classes.
+
+  - id: swift-src-011
+    title: Apple Developer - Swift
+    publisher: Apple Inc.
+    type: official_documentation
+    url: https://developer.apple.com/swift/
+    notes: Apple's official Swift landing page positioning the language across Apple platforms.
