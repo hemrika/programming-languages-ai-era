@@ -1,25 +1,125 @@
 language: C++
+status: draft
+updated: 2026-04-30
+verification_status: web_verified_initial_pass
+
 claims:
   - id: cpp-001
-    claim: Memory unsafety and undefined behavior create a high blast radius for AI-generated code changes.
-    criterion: security_posture
-    evidence_type: structural
-    confidence: high
-    polarity: negative
-    source: [msrc2019, chromium_memsafety, oncd2024]
-
-  - id: cpp-002
-    claim: Build-system fragmentation increases AI-agent operability friction across C++ projects.
-    criterion: ai_agent_operability
-    evidence_type: ecosystem
-    confidence: medium
-    polarity: negative
-    source: [benchmarksgame]
-
-  - id: cpp-003
-    claim: C++ retains industrial dominance in performance-critical and ML-adjacent systems.
-    criterion: strategic_viability
-    evidence_type: ecosystem
+    claim: C++ is an internationally standardized language with three-yearly major revisions, with C++23 published as ISO/IEC 14882:2024.
+    dimension: strategic_viability
+    criterion: governance_quality
+    evidence_type: language_specification
     confidence: high
     polarity: positive
-    source: [tiobe, ieee2024]
+    source: cpp-src-003
+    notes: ISO/IEC 14882:2024 documents the published C++23 standard.
+
+  - id: cpp-002
+    claim: C++20 introduces modules, concepts, ranges, and coroutines as major language additions.
+    dimension: machine_cognition
+    criterion: type_system_strength
+    evidence_type: language_specification
+    confidence: high
+    polarity: positive
+    source: cpp-src-001
+    notes: ISO/IEC 14882:2020 establishes these features at the standard level.
+
+  - id: cpp-003
+    claim: The C++ Core Guidelines provide curated guidance for writing modern C++ safely and effectively.
+    dimension: human_cognition
+    criterion: readability
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: cpp-src-004
+    notes: The Core Guidelines are stewarded by Bjarne Stroustrup and Herb Sutter under the Standard C++ Foundation.
+
+  - id: cpp-004
+    claim: Microsoft reports that approximately 70 percent of the security vulnerabilities it assigns CVEs to are memory-safety issues.
+    dimension: runtime_ecosystem
+    criterion: security_posture
+    evidence_type: industry_case_study
+    confidence: high
+    polarity: negative
+    source: cpp-src-005
+    notes: The MSRC post explicitly states the ~70% figure across Microsoft products written largely in C and C++.
+
+  - id: cpp-005
+    claim: The Chromium project reports that approximately 70 percent of its high-severity security bugs are memory-safety bugs.
+    dimension: runtime_ecosystem
+    criterion: security_posture
+    evidence_type: industry_case_study
+    confidence: high
+    polarity: negative
+    source: cpp-src-006
+    notes: Chromium's memory-safety page reports the proportion of high-severity bugs that are memory-safety issues.
+
+  - id: cpp-006
+    claim: The U.S. National Security Agency recommends shifting from memory-unsafe programming languages including C and C++ to memory-safe languages.
+    dimension: strategic_viability
+    criterion: future_fit
+    evidence_type: government_guidance
+    confidence: high
+    polarity: negative
+    source: cpp-src-007
+    notes: NSA's Cybersecurity Information Sheet on Software Memory Safety names C and C++ as memory-unsafe.
+
+  - id: cpp-007
+    claim: The U.S. Office of the National Cyber Director recommends use of memory-safe programming languages and cites C and C++ as memory-unsafe.
+    dimension: strategic_viability
+    criterion: future_fit
+    evidence_type: government_guidance
+    confidence: high
+    polarity: negative
+    source: cpp-src-008
+    notes: The 2024 ONCD report Back to the Building Blocks calls out C and C++ as memory-unsafe.
+
+  - id: cpp-008
+    claim: Google reports that Android memory-safety vulnerabilities declined as new native code shifted away from C and C++ to memory-safe languages.
+    dimension: runtime_ecosystem
+    criterion: security_posture
+    evidence_type: industry_case_study
+    confidence: medium
+    polarity: negative
+    source: cpp-src-009
+    notes: The Google Security Blog reports the decline while noting correlation does not imply causation.
+
+  - id: cpp-009
+    claim: C++20 modules are designed as a replacement for header-based inclusion, addressing weak boundaries from textual #include semantics.
+    dimension: machine_cognition
+    criterion: refactorability
+    evidence_type: official_reference
+    confidence: medium
+    polarity: positive
+    source: cpp-src-011
+    notes: cppreference documents modules as introduced in C++20 and intended to replace header-based code organization.
+
+  - id: cpp-010
+    claim: The C++17 standard adds structured bindings, fold expressions, and constexpr if as language-level changes.
+    dimension: machine_cognition
+    criterion: type_system_strength
+    evidence_type: language_specification
+    confidence: high
+    polarity: positive
+    source: cpp-src-002
+    notes: ISO/IEC 14882:2017 documents these features at the standard level.
+
+  - id: cpp-011
+    claim: C++ programs may exhibit undefined behavior, which by definition has no guaranteed runtime semantics.
+    dimension: machine_cognition
+    criterion: semantic_clarity
+    evidence_type: language_specification
+    confidence: high
+    polarity: negative
+    source: cpp-src-001
+    notes: ISO/IEC 14882:2020 retains undefined behavior as a category that constrains static reasoning.
+
+  - id: cpp-012
+    claim: cppreference.com provides a community-maintained reference for C++ language and library features.
+    dimension: ai_agent_operability
+    criterion: dependency_clarity
+    evidence_type: official_reference
+    confidence: medium
+    polarity: positive
+    source: cpp-src-010
+    notes: cppreference is widely treated as a practical companion to the ISO standard, though it is not an official ISO publication.

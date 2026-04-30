@@ -1,0 +1,94 @@
+language: C++
+description: >
+  Source registry for atomic claims in claims/cpp.yaml. Each entry resolves a
+  cpp-src-NNN identifier referenced by an atomic claim's `source` field to a
+  primary source: ISO C++ standards, government cybersecurity guidance, or
+  industry case studies. Per the methodology in
+  outputs/evidence-backed-research-execution-plan.md.
+
+sources:
+  - id: cpp-src-001
+    title: ISO/IEC 14882:2020 Programming languages - C++
+    publisher: International Organization for Standardization
+    type: language_specification
+    year: 2020
+    url: https://www.iso.org/standard/79358.html
+    notes: The C++20 international standard, which adds modules, concepts, ranges, and coroutines.
+
+  - id: cpp-src-002
+    title: ISO/IEC 14882:2017 Programming languages - C++
+    publisher: International Organization for Standardization
+    type: language_specification
+    year: 2017
+    url: https://www.iso.org/standard/68564.html
+    notes: The C++17 international standard.
+
+  - id: cpp-src-003
+    title: ISO/IEC 14882:2024 Programming languages - C++
+    publisher: International Organization for Standardization
+    type: language_specification
+    year: 2024
+    url: https://www.iso.org/standard/83626.html
+    notes: The C++23 international standard published in 2024.
+
+  - id: cpp-src-004
+    title: C++ Core Guidelines
+    publisher: Standard C++ Foundation (Bjarne Stroustrup, Herb Sutter)
+    type: official_documentation
+    url: https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines
+    notes: Curated guidelines for writing modern C++ safely and effectively.
+
+  - id: cpp-src-005
+    title: We need a safer systems programming language
+    authors: [Levick, Gavin]
+    publisher: Microsoft Security Response Center
+    type: industry_case_study
+    year: 2019
+    url: https://msrc.microsoft.com/blog/2019/07/we-need-a-safer-systems-programming-language/
+    notes: Reports that approximately 70% of CVEs Microsoft assigns are memory-safety issues.
+
+  - id: cpp-src-006
+    title: Memory safety
+    publisher: The Chromium Projects
+    type: industry_case_study
+    url: https://www.chromium.org/Home/chromium-security/memory-safety/
+    notes: Reports that approximately 70% of high-severity Chromium security bugs are memory-safety bugs.
+
+  - id: cpp-src-007
+    title: Software Memory Safety - Cybersecurity Information Sheet
+    publisher: National Security Agency (NSA), United States
+    type: government_guidance
+    year: 2022
+    url: https://media.defense.gov/2022/Nov/10/2003112742/-1/-1/0/CSI_SOFTWARE_MEMORY_SAFETY.PDF
+    notes: Recommends shifting from memory-unsafe languages including C and C++ to memory-safe languages.
+
+  - id: cpp-src-008
+    title: Back to the Building Blocks - A Path Toward Secure and Measurable Software
+    publisher: Office of the National Cyber Director, The White House
+    type: government_guidance
+    year: 2024
+    url: https://www.whitehouse.gov/wp-content/uploads/2024/02/Final-ONCD-Technical-Report.pdf
+    notes: Recommends use of memory-safe programming languages and cites C and C++ as memory-unsafe.
+
+  - id: cpp-src-009
+    title: Memory Safe Languages in Android 13
+    authors: [Vander Stoep, Jeff, Hines, Stephen]
+    publisher: Google Security Blog
+    type: industry_case_study
+    year: 2022
+    url: https://security.googleblog.com/2022/12/memory-safe-languages-in-android-13.html
+    notes: Reports a decline in Android memory-safety vulnerabilities as native code shifts away from C and C++ to memory-safe languages.
+
+  - id: cpp-src-010
+    title: cppreference.com
+    publisher: cppreference.com community
+    type: official_reference
+    url: https://en.cppreference.com/w/
+    notes: Community-maintained C and C++ reference site widely used as a practical companion to ISO standards.
+
+  - id: cpp-src-011
+    title: C++20 Modules - cppreference
+    publisher: cppreference.com community
+    type: official_reference
+    url: https://en.cppreference.com/w/cpp/language/modules
+    notes: Documents the C++20 modules feature intended to replace header-based inclusion.
