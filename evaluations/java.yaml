@@ -7,7 +7,7 @@ scores:
     score: 3
     confidence: medium
     justification: >
-      Modern Java (records, sealed types, pattern matching) is more concise than legacy Java, but the median real-world codebase remains verbose, framework-heavy (older Spring, EE-era), and slow to read at scale.
+      Modern Java (records, sealed types, pattern matching) is more concise than legacy Java, but the median real-world codebase remains verbose and slow to read at scale.
     supporting_claims: [java-005, java-012, java-013]
 
   machine_cognition:
@@ -21,19 +21,19 @@ scores:
     score: 3
     confidence: medium
     justification: >
-      Java has rich diagnostics and a very large training corpus, but build-tool fragmentation, heavier project structure, and slower feedback loops increase agent friction.
+      Java has rich diagnostics and strong AI-training-corpus density, but build-tool fragmentation, heavier project structure, and slower feedback loops increase agent friction.
     supporting_claims: [java-011]
 
   runtime_ecosystem:
-    score: 5
-    confidence: high
-    justification: >
-      The JVM is among the most production-proven runtimes, with deep library coverage, mature observability, and strong concurrency support.
-    supporting_claims: [java-006, java-009, java-010]
-
-  strategic_viability:
     score: 4
     confidence: high
     justification: >
-      Java has durable institutional adoption and a vast installed base, though new-project share has shifted toward Kotlin and other languages in some segments.
+      The JVM is among the most production-proven runtimes, with mature concurrency (virtual threads), portable bytecode, and well-organized package distribution via Maven Central. Under greenfield framing, the legacy installed-base premium is removed; what remains is a high-quality but not category-leading platform for new projects.
+    supporting_claims: [java-006, java-009, java-010]
+
+  strategic_viability:
+    score: 3
+    confidence: medium
+    justification: >
+      OpenJDK governance and long-term compatibility commitments are forward-looking strengths. Under greenfield framing, the durable adoption premium that previously lifted Java to 4 is not credited; new-project share is shifting toward Kotlin and other languages in many segments.
     supporting_claims: [java-007, java-008]

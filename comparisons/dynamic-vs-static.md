@@ -14,11 +14,11 @@ Three forces push toward static structure in the AI era:
 
 Three forces continue to favor dynamic languages where they already dominate:
 
-1. **Ecosystem density.** Python's ML and data ecosystem, Ruby's web ecosystem, JavaScript's browser ecosystem are not portable.
+1. **Ecosystem velocity.** Python's ML and data ecosystem continues to be where new AI-era libraries land first; this is a forward-looking advantage, not a legacy one.
 2. **Runtime properties.** Elixir's BEAM and Erlang's fault-tolerance are runtime-level properties dynamic typing does not impair.
 3. **Iteration speed.** REPL-driven and notebook-driven workflows remain efficient for exploratory work, even with AI assistance.
 
-The result is not "static wins" but a re-pricing: static structure is more valuable than it was, dynamic flexibility is less valuable than it was, and the ecosystems that bridge the two (TypeScript over JavaScript, typed Python, Elixir typespecs) become structurally important.
+The result is not "static wins" but a re-pricing: static structure is more valuable than it was, dynamic flexibility is less valuable than it was, and the ecosystems that bridge the two (TypeScript with strict mode, typed Python, Elixir typespecs) become structurally important.
 
 ## Per-language read
 
@@ -33,9 +33,9 @@ The result is not "static wins" but a re-pricing: static structure is more valua
 
 ### Dynamically typed (advantage weakening unless typed)
 
-- **Python.** Most-used language with the largest ecosystem. Untyped Python is structurally weak under AI-era pressure: agents produce code that runs but fails at runtime in ways static checking would catch. Typed Python (mypy, pyright, pydantic, type-checked dependencies) recovers most of the static advantage and is the only sustainable AI-era Python posture for production systems.
-- **JavaScript.** Independent of TypeScript, plain JavaScript loses ground to TypeScript continuously. The framework treats JavaScript and TypeScript as separate strategic positions; JavaScript's only remaining advantage is the absence of a build step in some contexts, which AI tooling makes increasingly unimportant.
-- **Elixir.** Dynamic but with strong runtime guarantees. The verification gap exists at the type level but is partially compensated by the actor model and supervision trees. Typespecs (with Dialyzer or Gradient) close part of the gap. Ecosystem and runtime properties keep Elixir strategically valuable independent of the dynamic-static lens.
+- **Python.** Highest AI-training-corpus density and the most active ML/data ecosystem velocity for new projects. Untyped Python is structurally weak under AI-era pressure: agents produce code that runs but fails at runtime in ways static checking would catch. Typed Python (mypy, pyright, pydantic, type-checked dependencies) recovers most of the static advantage and is the only sustainable AI-era Python posture for production systems.
+- **JavaScript.** Independent of TypeScript, plain JavaScript loses ground to TypeScript continuously. The framework treats JavaScript and TypeScript as separate strategic positions; for greenfield work the case for plain JavaScript over TypeScript is weak.
+- **Elixir.** Dynamic but with strong runtime guarantees. The verification gap exists at the type level but is partially compensated by the actor model and supervision trees. Typespecs (with Dialyzer or Gradient) close part of the gap; the in-progress set-theoretic type system promises further closure. Runtime properties keep Elixir strategically valuable independent of the dynamic-static lens.
 - **Julia.** Dynamic with optional type annotations and strong multiple-dispatch. The verification gap is real but specific to numerical correctness in domains where Julia is dominant. Strategic position is narrow but defensible.
 
 ### Dynamically typed languages with mature gradual typing (the bridge)
@@ -45,22 +45,22 @@ The result is not "static wins" but a re-pricing: static structure is more valua
 
 ## Quantifying the shift
 
-Drawing on the overview matrix, the average weighted score by static/dynamic class:
+Drawing on the overview matrix (greenfield framing, 2026-04-30), the average weighted score by static/dynamic class:
 
 | Class | Languages | Mean weighted |
 |---|---|---:|
-| Static (mature) | Rust, Kotlin, .NET, Swift, Java, Go, Zig | 3.78 |
-| Dynamic + gradual typing | TypeScript, typed Python, Elixir | ~3.95 (using TS=4.35, Python=4.05, Elixir=3.40) |
+| Static (mature) | Rust, Kotlin, .NET, Swift, Java, Go, Zig | 3.88 |
+| Dynamic + gradual typing | TypeScript, typed Python, Elixir | ~3.87 (using TS=4.25, Python=3.95, Elixir=3.40) |
 | Pure static (research-grade) | Haskell | 3.25 |
 | Dynamic without strong gradual typing | Julia | 2.75 |
 
-The headline is that *gradual typing* is the most predictive feature, not the original static or dynamic origin. Languages that have invested in static structure - whether built that way (Rust, Kotlin, Go) or layered onto a dynamic base (TypeScript, typed Python) - cluster at the top.
+The headline is that *gradual typing* is the most predictive feature, not the original static or dynamic origin. Languages that have invested in static structure - whether built that way (Rust, Kotlin, Go) or layered onto a dynamic base (TypeScript, typed Python) - cluster at the top. Under greenfield framing, the static and gradual-typing classes effectively tie at the top of the matrix; the directional ordering is unchanged.
 
 ## Implications
 
 1. **For greenfield projects, default to statically typed or strongly gradually typed languages.** TypeScript, Go, Rust, Kotlin, .NET, typed Python.
-2. **For existing dynamic codebases, type discipline is the highest-leverage AI-era investment.** TypeScript adoption, mypy/pyright rollout, Elixir typespecs.
+2. **For new dynamic codebases, treat type discipline as a day-one investment.** Strict TypeScript, mypy/pyright in CI from project start, Elixir typespecs.
 3. **For research and exploratory work, dynamic languages retain their place.** Julia, Python in notebooks, REPL workflows.
 4. **The dynamic-vs-static framing is becoming less useful.** A more accurate axis is "how much structure is checked at build time versus runtime." Gradual typing is the mechanism that lets a language move along this axis without abandoning its ecosystem.
 
-See `overview.md` for the full matrix and `lens-analysis.md` for how the verification lens interacts with safety, operability, legacy gravity, and abstraction.
+See `overview.md` for the full matrix and `lens-analysis.md` for how the verification lens interacts with safety, agentic operability, and abstraction compression.

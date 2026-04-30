@@ -32,8 +32,8 @@ scores:
     supporting_claims: [mojo-002, mojo-005, mojo-006, mojo-007]
 
   strategic_viability:
-    score: 3
+    score: 4
     confidence: low
     justification: >
-      Promising AI-native positioning and strong technical leadership, balanced against single-vendor governance and very early adoption.
+      AI-native design (MLIR, ownership, hardware-portable compilation) is exactly the kind of forward-looking bet greenfield framing credits. Under greenfield framing, the installed-base penalty that previously held Mojo at 3 is removed; what remains is a high-potential future-fit profile balanced against single-vendor governance and very early adoption stage.
     supporting_claims: [mojo-001, mojo-008, mojo-009, mojo-010]

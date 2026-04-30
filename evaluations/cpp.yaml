@@ -25,15 +25,15 @@ scores:
     supporting_claims: [cpp-012]
 
   runtime_ecosystem:
-    score: 5
-    confidence: high
+    score: 3
+    confidence: medium
     justification: >
-      C++ has production-grade ecosystems across systems, embedded, games, HFT, and ML internals, with the highest practical performance ceiling.
+      C++ retains the highest practical performance ceiling and strong cross-platform reach for new systems work, but under greenfield framing the documented memory-safety vulnerability rates (Microsoft, Chromium, Android) directly downgrade security posture and library maturity is no longer credited as a legacy moat.
     supporting_claims: [cpp-004, cpp-005, cpp-008]
 
   strategic_viability:
-    score: 4
+    score: 2
     confidence: medium
     justification: >
-      Massive installed base and durable demand, though new-project share is shifting toward Rust and other safer alternatives in some segments.
+      Under greenfield framing, installed base does not score. The active forward signals are negative: NSA and ONCD guidance explicitly advise against memory-unsafe languages for new projects, while ISO governance is the only meaningful positive. New-project share is shifting toward Rust and other safer alternatives in security-sensitive segments.
     supporting_claims: [cpp-001, cpp-006, cpp-007]

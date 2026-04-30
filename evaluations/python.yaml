@@ -28,12 +28,12 @@ scores:
     score: 5
     confidence: high
     justification: >
-      Python has the dominant AI, data, scripting, and automation ecosystem in the industry, with library coverage no other language matches, despite weak raw performance offset by native extensions.
+      Python's ML, data, scripting, and automation ecosystem is the dominant choice for new AI-era projects in those domains. Under greenfield framing the credit is for forward-looking ecosystem velocity (active library maturation around LLM tooling, agentic frameworks, vector stores) rather than legacy code volume.
     supporting_claims: [python-008, python-009, python-010]
 
   strategic_viability:
-    score: 5
+    score: 4
     confidence: high
     justification: >
-      Python has massive adoption, library depth, and AI-era relevance.
+      Python remains the highest-AI-training-corpus-density language, and ecosystem velocity in ML/data is unmatched. Under greenfield framing the prior 5 reflected partly the installed-base premium, which is no longer scored; the score reduces to 4 with the verification gap counted as a forward concern offset only partially by gradual typing.
     supporting_claims: [python-012, python-013]

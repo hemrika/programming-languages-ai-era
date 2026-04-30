@@ -28,12 +28,12 @@ scores:
     score: 4
     confidence: high
     justification: >
-      TypeScript benefits from the JavaScript and Node ecosystems, with broad deployment options.
+      The npm distribution channel is broad and active, with mature deployment options across browser, Node, Deno, Bun, and edge runtimes. Under greenfield framing the legacy JavaScript inheritance is not credited as an ecosystem advantage; what remains is a high-velocity package distribution channel suitable for new projects.
     supporting_claims: [typescript-008, typescript-009]
 
   strategic_viability:
-    score: 5
+    score: 4
     confidence: high
     justification: >
-      TypeScript combines massive ecosystem gravity with better maintainability than plain JavaScript.
+      Strong forward signals: most-admired developer-sentiment results, top-tier AI-training-corpus density, and active Microsoft stewardship. Under greenfield framing the prior 5 partly reflected legacy JavaScript ecosystem gravity, which is no longer scored; the score reduces to 4 with the modern-typed-language credit retained.
     supporting_claims: [typescript-011, typescript-012, typescript-013]
