@@ -63,4 +63,4 @@ The headline is that *gradual typing* is the most predictive feature, not the or
 3. **For research and exploratory work, dynamic languages retain their place.** Julia, Python in notebooks, REPL workflows.
 4. **The dynamic-vs-static framing is becoming less useful.** A more accurate axis is "how much structure is checked at build time versus runtime." Gradual typing is the mechanism that lets a language move along this axis without abandoning its ecosystem.
 
-See `overview.md` for the full matrix and `lens-analysis.md` for how the verification lens interacts with safety, operability, legacy gravity, and abstraction.
+See `overview.md` for the full matrix and `lens-analysis.md` for how the verification lens inte

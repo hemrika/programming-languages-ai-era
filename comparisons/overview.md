@@ -12,7 +12,7 @@ These are draft scores intended to be falsifiable by the underlying claims, not 
 |---          |---:|---:|---:|---:|---:|---:|
 | TypeScript  | 4  | 4  | 5  | 4  | 5  | 4.35 |
 | Go          | 5  | 4  | 5  | 4  | 4  | 4.45 |
-| Rust        | 3  | 5  | 4  | 4  | 5  | 4.20 |
+| Rust        | 3  | 5  | 4  | 4  | 5  | 4.15 |
 | Kotlin      | 4  | 4  | 4  | 4  | 4  | 4.00 |
 | .NET (C#)   | 4  | 4  | 4  | 4  | 4  | 4.00 |
 | Python      | 4  | 3  | 4  | 5  | 5  | 4.05 |
@@ -20,7 +20,7 @@ These are draft scores intended to be falsifiable by the underlying claims, not 
 | Java        | 3  | 4  | 3  | 5  | 4  | 3.75 |
 | Elixir      | 4  | 3  | 3  | 4  | 3  | 3.40 |
 | Haskell     | 3  | 5  | 2  | 3  | 3  | 3.25 |
-| Zig         | 4  | 4  | 3  | 3  | 3  | 3.40 |
+| Zig         | 4  | 4  | 3  | 3  | 3  | 3.45 |
 | C++         | 2  | 3  | 2  | 5  | 4  | 3.05 |
 | Julia       | 3  | 3  | 2  | 3  | 3  | 2.75 |
 | Mojo        | 3  | 3  | 2  | 2  | 3  | 2.55 |

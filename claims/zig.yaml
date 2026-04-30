@@ -21,5 +21,4 @@ claims:
     criterion: ai_agent_operability
     evidence_type: structural
     confidence: medium
-    polarity: negative
-    source: [zigref]
+    polarity: negativ

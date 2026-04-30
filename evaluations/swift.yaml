@@ -22,13 +22,13 @@ scores:
       Strong diagnostics on Apple platforms, but smaller training corpus and Xcode/SPM build complexity limit cross-platform agent workflows.
 
   runtime_ecosystem:
-    score: 3
+    score: 4
     confidence: medium
     justification: >
-      Excellent on Apple platforms; server-side Swift on Linux is improving but ecosystem depth lags mainstream backend languages.
+      Production-grade on Apple platforms with strong tooling and performance; server-side Swift on Linux (SwiftNIO, Vapor, AWS Lambda runtime) is increasingly viable, though ecosystem depth still lags mainstream backend languages.
 
   strategic_viability:
     score: 3
     confidence: medium
     justification: >
-      Durable demand within Apple's ecosystem, with limited evidence of broad cross-platform adoption to date.
+      Dura

@@ -30,13 +30,13 @@ The five operability sub-properties used here:
 
 - **Java.** Strong language-server tooling, but project layout (multi-module Maven/Gradle) and verbosity slow agent iteration. Test workflows are excellent. The constraint is volume: more code per equivalent task means more context consumed.
 - **Swift.** Apple-platform toolchain is closed and slow on iteration. SwiftPM is improving but lags Cargo and npm in convention. Cross-platform Swift is plausible but ecosystem is thin. Agents do well on small Swift projects, less well on Xcode-centric ones.
-- **Haskell.** Excellent type errors, but slow feedback (compile times, GHC initialization) and high cognitive load. Agents without a strong Haskell prior produce code that type-checks but is idiomatically wrong. Operability is structurally low even as the language is structurally strong.
 - **Zig.** Deliberately small surface area, fast compiler, clear errors. Held back by ecosystem thinness and language flux (pre-1.0). The score reflects current state, not the destination. May rise to 4 post-1.0.
 - **Elixir.** Phoenix and Mix provide a coherent project shape. Operability is held back by the runtime model (BEAM) requiring agent reasoning patterns that differ from sequential languages, and by the smaller ecosystem of agent-tested patterns.
 
 ### Difficult (operability score 2)
 
 - **C++.** The hardest mainstream language for agent operation. Build systems are fragmented (CMake, Bazel, Make, Meson), compile errors from templates are pathological, and the language has too many ways to express the same construct. Agents can succeed in well-disciplined codebases, but the median codebase is operability-hostile.
+- **Haskell.** Excellent type errors, but slow feedback (compile times, GHC initialization), high cognitive load, and Cabal/Stack/Nix fragmentation. Agents without a strong Haskell prior produce code that type-checks but is idiomatically wrong. Operability is structurally low even as the language is structurally strong.
 - **Mojo.** Early-stage tooling, limited package ecosystem, and a moving language definition. Operability score reflects current state and is expected to rise as the language stabilizes - but the rise is not yet evidenced.
 - **Julia.** Excellent for interactive scientific work but operability for autonomous agents is limited by JIT compilation latency, package ecosystem fragility, and a culture of notebook-first development that does not translate to agent workflows.
 
@@ -60,4 +60,4 @@ If AI-agent operability is the dominant constraint:
 - Avoid **C++ greenfield** unless legacy or performance constraints force it.
 - Treat **Mojo, Julia, Zig** as bets requiring active risk management until ecosystems mature.
 
-See `lens-analysis.md` for how operability interacts with the other four lenses, and `overview.md` for how it weighs in the overall scoring.
+See `lens-analysis.md` for how operability inte

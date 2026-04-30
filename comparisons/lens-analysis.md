@@ -22,8 +22,8 @@ Languages where AI agents can write, modify, test, and verify code with low fric
 |---|---|
 | Strong | TypeScript, Go |
 | Moderate | Python, Rust, .NET, Kotlin |
-| Constrained | Java, Haskell, Swift, Zig, Elixir |
-| Difficult | C++, Mojo, Julia |
+| Constrained | Java, Swift, Zig, Elixir |
+| Difficult | C++, Haskell, Mojo, Julia |
 
 See `agent-friendly-languages.md` for the per-language reasoning.
 
@@ -95,4 +95,4 @@ For a team selecting languages across a portfolio of AI-era projects, this lens 
 - **Default for fault-tolerant distributed systems.** Elixir — ecosystem cost accepted for runtime properties no other language matches.
 - **Default for very large existing estates.** Maintain incumbents (Java, C# on .NET, C++ where present) and apply AI-era pressure incrementally — modernization, memory-safety migration, gradual typing.
 
-No language is a default for *everything*. The framework's central output is that AI-era language choice becomes more domain-sensitive, not less.
+No language is a default for *everything*. The fr

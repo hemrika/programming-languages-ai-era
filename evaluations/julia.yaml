@@ -4,10 +4,10 @@ updated: 2026-04-30
 
 scores:
   human_cognition:
-    score: 4
+    score: 3
     confidence: medium
     justification: >
-      Concise and expressive for numerical work; multiple dispatch is powerful but requires shifting mental models from object-oriented or procedural defaults.
+      Concise and expressive for numerical work, but multiple dispatch and the dynamic-with-annotations style require non-trivial mental-model shifts, and behavior often depends on combinations of method definitions distributed across packages.
 
   machine_cognition:
     score: 3
@@ -31,4 +31,4 @@ scores:
     score: 3
     confidence: medium
     justification: >
-      Niche but durable in research and scientific computing; unlikely to displace Python broadly in AI/ML.
+      Niche but durable

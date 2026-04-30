@@ -21,5 +21,4 @@ claims:
     criterion: ai_training_representation
     evidence_type: structural
     confidence: medium
-    polarity: negative
-    source: [so2024]
+    polarity: negativ

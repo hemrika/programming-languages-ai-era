@@ -1,7 +1,7 @@
 language: Rust
 claims:
   - id: rust-001
-    claim: Rust’s ownership and borrowing model catches many memory-management errors at compile time.
+    claim: Rust's ownership and borrowing model catches many memory-management errors at compile time.
     criterion: security_posture
     evidence_type: structural
     confidence: high
@@ -9,7 +9,7 @@ claims:
     source: [msrc2019, android_memsafety, oncd2024]
 
   - id: rust-002
-    claim: Rust’s compiler diagnostics provide strong feedback for repair loops.
+    claim: Rust's compiler diagnostics provide strong feedback for repair loops.
     criterion: error_message_quality
     evidence_type: structural
     confidence: medium

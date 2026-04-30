@@ -16,10 +16,10 @@ scores:
       Among the strongest static structures in mainstream-ish languages, with type-driven development directly supporting machine reasoning.
 
   ai_agent_operability:
-    score: 3
+    score: 2
     confidence: low
     justification: >
-      Strong compiler feedback and refactoring safety, offset by a small training corpus, lazy-eval surprises, and build-tool fragmentation.
+      Strong compiler feedback and refactoring safety, but slow compile/initialization loops, a small training corpus, lazy-eval surprises, and Cabal/Stack/Nix fragmentation make autonomous agent iteration genuinely difficult.
 
   runtime_ecosystem:
     score: 3
@@ -31,4 +31,4 @@ scores:
     score: 3
     confidence: medium
     justification: >
-      Durable in research, finance, and high-assurance domains; unlikely to enter mainstream commercial adoption, but valuable as a verification anchor.
+      Durable in research, finance
