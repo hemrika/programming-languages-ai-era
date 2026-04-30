@@ -1,25 +1,135 @@
 language: .NET
+status: draft
+updated: 2026-04-30
+verification_status: web_verified_initial_pass
+
 claims:
   - id: dotnet-001
-    claim: C#'s nullable reference types and pattern matching strengthen static analyzability.
-    criterion: machine_cognition
-    evidence_type: structural
+    claim: C# is standardized internationally as ECMA-334.
+    dimension: strategic_viability
+    criterion: governance_quality
+    evidence_type: language_specification
     confidence: high
     polarity: positive
-    source: [roslyn]
+    source: dotnet-src-001
+    notes: ECMA-334 is the international standard for the C# programming language.
 
   - id: dotnet-002
-    claim: Roslyn exposes a first-class semantic model that supports analyzers, refactoring, and source generation.
-    criterion: refactorability
-    evidence_type: structural
+    claim: The Common Language Infrastructure is standardized as ECMA-335 and defines the CLI execution system, CIL, the Common Type System, and metadata.
+    dimension: runtime_ecosystem
+    criterion: deployment_model
+    evidence_type: language_specification
     confidence: high
     polarity: positive
-    source: [roslyn]
+    source: dotnet-src-002
+    notes: ECMA-335 is the international standard for the CLI underlying .NET runtimes.
 
   - id: dotnet-003
-    claim: The .NET runtime provides production-grade cross-platform deployment with strong performance.
-    criterion: runtime_ecosystem
-    evidence_type: ecosystem
+    claim: C# nullable reference types add static null-state flow analysis distinguishing nullable and non-nullable references.
+    dimension: machine_cognition
+    criterion: type_system_strength
+    evidence_type: language_specification
     confidence: high
     polarity: positive
-    source: [ms_agent_framework]
+    source: dotnet-src-003
+    notes: The csharplang specification defines null-state flow analysis and warning behavior.
+
+  - id: dotnet-004
+    claim: C# pattern matching supports type, property, list, and relational patterns in switch expressions and statements.
+    dimension: machine_cognition
+    criterion: type_system_strength
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: dotnet-src-004
+    notes: Microsoft Learn documents the family of pattern forms available in modern C#.
+
+  - id: dotnet-005
+    claim: C# records provide synthesized value-equality and concise immutable data declarations.
+    dimension: human_cognition
+    criterion: expressiveness
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: dotnet-src-005
+    notes: The C# records reference describes auto-generated equality members and copy semantics.
+
+  - id: dotnet-006
+    claim: The Roslyn compiler platform exposes a public API for analyzers, code fixes, and refactorings.
+    dimension: ai_agent_operability
+    criterion: fast_feedback_loops
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: dotnet-src-006
+    notes: The .NET Compiler Platform SDK documents the analyzer and code-fix programming model.
+
+  - id: dotnet-007
+    claim: Roslyn source generators allow C# code to be synthesized at compile time from semantic-model inputs.
+    dimension: machine_cognition
+    criterion: refactorability
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: dotnet-src-011
+    notes: The source generators overview describes how they participate in the compilation pipeline.
+
+  - id: dotnet-008
+    claim: .NET runs cross-platform on Windows, Linux, and macOS with a single unified runtime.
+    dimension: runtime_ecosystem
+    criterion: deployment_model
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: dotnet-src-007
+    notes: The .NET introduction documents cross-platform runtime support across major OSes.
+
+  - id: dotnet-009
+    claim: NuGet is the standard package manager for the .NET platform.
+    dimension: runtime_ecosystem
+    criterion: library_maturity
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: dotnet-src-008
+    notes: The NuGet documentation establishes its role as the .NET package manager.
+
+  - id: dotnet-010
+    claim: The dotnet CLI provides unified subcommands for build, test, run, package, and tool management.
+    dimension: ai_agent_operability
+    criterion: fast_feedback_loops
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: dotnet-src-009
+    notes: The dotnet CLI overview enumerates the integrated subcommand set.
+
+  - id: dotnet-011
+    claim: MSBuild is the build engine underlying the .NET project system and exposes a configurable XML-based project format.
+    dimension: ai_agent_operability
+    criterion: dependency_clarity
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: negative
+    source: dotnet-src-010
+    notes: MSBuild's surface area introduces project-system complexity that affects agent operability.
+
+  - id: dotnet-012
+    claim: Nullable reference types are an opt-in feature configured per project rather than enabled by default in older codebases.
+    dimension: machine_cognition
+    criterion: static_analyzability
+    evidence_type: language_specification
+    confidence: high
+    polarity: negative
+    source: dotnet-src-003
+    notes: The nullable reference types specification documents the per-context opt-in model.
+
+  - id: dotnet-013
+    claim: C# is governed openly through the dotnet/csharplang repository where language proposals and specifications are hosted.
+    dimension: strategic_viability
+    criterion: governance_quality
+    evidence_type: language_specification
+    confidence: high
+    polarity: positive
+    source: dotnet-src-003
+    notes: csharplang is the public location for C# language design discussions and specifications.

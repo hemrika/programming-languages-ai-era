@@ -1,0 +1,87 @@
+language: .NET
+description: >
+  Source registry for atomic claims in claims/dotnet.yaml. Each entry resolves a
+  dotnet-src-NNN identifier referenced by an atomic claim's `source` field to a
+  primary source: ECMA standards, csharplang specifications, or Microsoft Learn
+  reference documentation. Per the methodology in
+  outputs/evidence-backed-research-execution-plan.md.
+
+sources:
+  - id: dotnet-src-001
+    title: ECMA-334 - C# Language Specification (6th edition)
+    publisher: Ecma International
+    type: language_specification
+    year: 2022
+    url: https://ecma-international.org/publications-and-standards/standards/ecma-334/
+    notes: The C# Language Specification standardized as ECMA-334.
+
+  - id: dotnet-src-002
+    title: ECMA-335 - Common Language Infrastructure (6th edition)
+    publisher: Ecma International
+    type: language_specification
+    year: 2012
+    url: https://ecma-international.org/publications-and-standards/standards/ecma-335/
+    notes: Defines the CLI virtual execution system, CIL, the Common Type System, and metadata.
+
+  - id: dotnet-src-003
+    title: csharplang - Nullable Reference Types Specification
+    publisher: Microsoft / .NET Foundation
+    type: language_specification
+    url: https://github.com/dotnet/csharplang/blob/main/proposals/csharp-8.0/nullable-reference-types-specification.md
+    notes: Specifies nullable reference types annotations and flow analysis introduced in C# 8.
+
+  - id: dotnet-src-004
+    title: Pattern matching - C# language reference
+    publisher: Microsoft Learn
+    type: official_documentation
+    url: https://learn.microsoft.com/dotnet/csharp/language-reference/operators/patterns
+    notes: Documents C# pattern matching including type, property, list, and relational patterns.
+
+  - id: dotnet-src-005
+    title: Records - C# reference
+    publisher: Microsoft Learn
+    type: official_documentation
+    url: https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/record
+    notes: Documents record types as reference or value types with synthesized members for value-equality.
+
+  - id: dotnet-src-006
+    title: .NET Compiler Platform SDK (Roslyn) overview
+    publisher: Microsoft Learn
+    type: official_tooling_documentation
+    url: https://learn.microsoft.com/dotnet/csharp/roslyn-sdk/
+    notes: Documents the Roslyn compiler API, analyzers, code fixes, and source generators.
+
+  - id: dotnet-src-007
+    title: .NET runtime documentation
+    publisher: Microsoft Learn
+    type: official_documentation
+    url: https://learn.microsoft.com/dotnet/core/introduction
+    notes: Documents .NET as a cross-platform runtime supporting Windows, Linux, and macOS.
+
+  - id: dotnet-src-008
+    title: NuGet documentation - What is NuGet?
+    publisher: Microsoft Learn
+    type: official_tooling_documentation
+    url: https://learn.microsoft.com/nuget/what-is-nuget
+    notes: Documents NuGet as the standard package manager for the .NET platform.
+
+  - id: dotnet-src-009
+    title: dotnet CLI overview
+    publisher: Microsoft Learn
+    type: official_tooling_documentation
+    url: https://learn.microsoft.com/dotnet/core/tools/
+    notes: Documents the unified dotnet command-line interface for build, test, and run.
+
+  - id: dotnet-src-010
+    title: MSBuild documentation
+    publisher: Microsoft Learn
+    type: official_tooling_documentation
+    url: https://learn.microsoft.com/visualstudio/msbuild/msbuild
+    notes: Documents MSBuild as the build engine underlying the .NET project system.
+
+  - id: dotnet-src-011
+    title: Source generators - C# documentation
+    publisher: Microsoft Learn
+    type: official_tooling_documentation
+    url: https://learn.microsoft.com/dotnet/csharp/roslyn-sdk/source-generators-overview
+    notes: Documents Roslyn source generators that synthesize C# code at compile time.
