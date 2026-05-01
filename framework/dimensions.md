@@ -70,3 +70,18 @@ Criteria:
 - governance quality
 - AI-training representation
 - future fit
+
+## AI-systems interoperability
+
+Measures how cleanly the language integrates with the infrastructure a complete AI-era system actually depends on: the data layer, LLM providers, agent frameworks, protocols, inference runtimes, streaming, and observability.
+
+Criteria:
+
+- data_layer_integration (SQL, NoSQL, vector-store clients)
+- llm_provider_support (OpenAI, Anthropic, Google SDKs)
+- agent_framework_support (LangChain, Semantic Kernel, LlamaIndex, etc.)
+- protocol_support (MCP, A2A, OpenAI function-calling)
+- inference_runtime_support (ONNX, llama.cpp bindings, local inference)
+- streaming_messaging (Kafka, NATS, Pub/Sub)
+- observability (OpenTelemetry, structured logging)
+- embedding_pipeline_support (embedding generation, vector ingestion)

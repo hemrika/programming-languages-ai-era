@@ -5,11 +5,12 @@ ROOT = Path(__file__).resolve().parents[1]
 EVAL_DIR = ROOT / "evaluations"
 
 WEIGHTS = {
-    "human_cognition": 0.20,
-    "machine_cognition": 0.25,
-    "ai_agent_operability": 0.25,
-    "runtime_ecosystem": 0.20,
+    "human_cognition": 0.15,
+    "machine_cognition": 0.20,
+    "ai_agent_operability": 0.20,
+    "runtime_ecosystem": 0.15,
     "strategic_viability": 0.10,
+    "ai_systems_interoperability": 0.20,
 }
 
 def weighted_score(data):

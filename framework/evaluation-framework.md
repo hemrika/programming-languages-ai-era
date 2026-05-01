@@ -14,13 +14,14 @@ Which programming languages become more valuable when AI systems participate dee
 
 ## Evaluation dimensions
 
-| Dimension | Weight | Key question |
-|---|---:|---|
-| Human cognition | 20% | Can humans understand and govern the code? |
-| Machine cognition | 25% | Can tools and AI systems reason about the code? |
-| AI-agent operability | 25% | Can agents safely modify and verify the code? |
-| Runtime and ecosystem | 20% | Can the language support production systems? |
-| Strategic viability | 10% | Will the language remain relevant and supported? |
+| Dimension | Weight |
+|---|---:|
+| Human cognition | 15% |
+| Machine cognition | 20% |
+| AI-agent operability | 20% |
+| Runtime and ecosystem | 15% |
+| Strategic viability | 10% |
+| AI-systems interoperability | 20% |
 
 ## Cross-cutting lenses
 
