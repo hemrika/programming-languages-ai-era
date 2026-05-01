@@ -14,6 +14,8 @@ REQUIRED_DIMENSIONS = {
     "strategic_viability",
 }
 
+ALLOWED_HALF_SCORES = {1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0}
+
 def load_claims_index(lang: str) -> dict:
     """Return {claim_id: dimension} for the given language, or {} if missing."""
     path = CLAIMS_DIR / f"{lang}.yaml"
@@ -29,12 +31,6 @@ def load_claims_index(lang: str) -> dict:
     return index
 
 def validate_claims_counters(lang: str) -> tuple[list[str], int]:
-    """Validate the optional `counters:` field on each claim in claims/<lang>.yaml.
-
-    When present, `counters` must be a list of strings, and each ID must
-    resolve to a claim in the SAME language's claims file.
-    Returns (errors, counters_links_validated).
-    """
     path = CLAIMS_DIR / f"{lang}.yaml"
     errors: list[str] = []
     if not path.exists():
@@ -61,7 +57,6 @@ def validate_claims_counters(lang: str) -> tuple[list[str], int]:
     return errors, links
 
 def validate_file(path: Path) -> tuple[list[str], int, int]:
-    """Validate a single evaluation file. Returns (errors, dims_validated, claim_refs_valid)."""
     errors = []
     data = yaml.safe_load(path.read_text(encoding="utf-8"))
 
@@ -89,8 +84,22 @@ def validate_file(path: Path) -> tuple[list[str], int, int]:
         justification = value.get("justification")
         supporting_claims = value.get("supporting_claims")
 
-        if not isinstance(score, int) or score < 1 or score > 5:
-            errors.append(f"{dimension}: score must be integer 1-5")
+        if isinstance(score, bool):
+            errors.append(f"{dimension}: score must be a number, not bool")
+        elif isinstance(score, int):
+            if score < 1 or score > 5:
+                errors.append(f"{dimension}: integer score must be 1-5")
+        elif isinstance(score, float):
+            if score not in ALLOWED_HALF_SCORES:
+                errors.append(
+                    f"{dimension}: float score must be one of "
+                    f"{sorted(ALLOWED_HALF_SCORES)}, got {score}"
+                )
+        else:
+            errors.append(
+                f"{dimension}: score must be int 1-5 or float in "
+                f"{sorted(ALLOWED_HALF_SCORES)}"
+            )
         if confidence not in {"low", "medium", "high"}:
             errors.append(f"{dimension}: confidence must be low/medium/high")
         if not justification:
@@ -122,7 +131,6 @@ def validate_file(path: Path) -> tuple[list[str], int, int]:
 def main():
     failed = False
 
-    # Validate counters: field across all claim files (same-language reference resolution).
     total_counters_links = 0
     for path in sorted(CLAIMS_DIR.glob("*.yaml")):
         lang = path.stem
