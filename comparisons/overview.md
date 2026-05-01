@@ -10,6 +10,26 @@ These are draft scores intended to be falsifiable by the underlying claims, not 
 
 The cohort is 10 languages (cpp, dotnet, elixir, go, java, kotlin, python, rust, swift, typescript). Mojo, Zig, Julia, and Haskell were dropped: Mojo and Zig pre-1.0, Julia narrowly numerical, Haskell a verification reference rather than a default. The remaining 10 cover the languages a greenfield team is actually deciding between.
 
+## Track coverage
+
+The execution plan (`outputs/evidence-backed-research-execution-plan.md`) lists eight comparison tracks. The framework consolidates them across the four comparison files and four insight files actually maintained, since several tracks share evidence. The mapping below makes the plan-to-artifact relationship explicit:
+
+| Plan track | Current artifact |
+|---|---|
+| Dynamic vs static | `comparisons/dynamic-vs-static.md` |
+| Systems languages | `comparisons/lens-analysis.md` (verification + safety lenses) |
+| Enterprise languages | `comparisons/lens-analysis.md` (cross-cutting), `insights/incumbent-risk.md` |
+| Web/application languages | `comparisons/lens-analysis.md` (agentic + abstraction lenses) |
+| AI/data ecosystem languages | `comparisons/overview.md` (ai_systems_interoperability and structured_output_maturity dimensions), `insights/ai-favors-verifiability.md` |
+| Agent-friendly languages | `comparisons/agent-friendly-languages.md`, `insights/agentic-feedback-loops.md` |
+| Verification-friendly languages | `comparisons/lens-analysis.md` (verification lens), `insights/ai-favors-verifiability.md` |
+| Legacy-gravity → Incumbent-risk | `insights/incumbent-risk.md` (renamed from "legacy-gravity" in v0.2 to reflect greenfield framing) |
+
+Standalone documents not in the original track list:
+
+- `comparisons/overview.md` — the seven-dimension matrix and weighted ranking that anchors the rest.
+- `insights/safety-pressure.md` — the institutional/regulatory selection-pressure thesis derived from the safety lens.
+
 ## Full matrix (10 languages, 7 dimensions)
 
 | Language    | HC  | MC  | AO  | RE  | SV  | AI  | SO  | Weighted |
@@ -49,20 +69,4 @@ Three clusters emerge.
 
 5. **Verification advantage does not automatically translate to overall ranking.** Rust (MC=5) leads on machine cognition but trails the top tier because its agent-framework and structured-output layers are younger than Python or TypeScript. The framework's weighting reflects that verification, operability, AI-systems integration, and structured-output maturity must all be present for top-tier AI-era position.
 
-6. **The dynamic-static gap is narrowing where gradual typing and runtime validation co-exist.** TypeScript and Python both reach SO=5.0 because Zod and Pydantic combine schema-as-code with type inference (TypeScript) or runtime validation (Python). The boundary between LLM output and program logic is now defended at runtime even where the host type system is dynamic.
-
-## How to use this document
-
-For the reasoning behind any cell:
-
-- Per-language detail: `claims/<language>.yaml` and `evaluations/<language>.yaml`.
-- Dimension definitions and weights: `framework/evaluation-framework.md` and `framework/dimensions.md`.
-- Cross-cutting reads: `lens-analysis.md` (four lenses) and `agent-friendly-languages.md` (operability deep dive).
-- Dynamic vs static comparison: `dynamic-vs-static.md`.
-
-## Limitations
-
-- v0.3 scores are author-judgment grounded in claims, not a calibrated multi-rater process.
-- Weights are working assumptions. A reasonable reader could reweight runtime/ecosystem higher (favoring Python and the JVM languages) or AI-agent operability higher (favoring Go and TypeScript). The matrix is robust to small weight perturbations but not to large ones.
-- Greenfield framing is itself a deliberate choice. Teams whose primary task is *maintaining* large incumbent estates should re-weight: legacy gravity reappears as an advantage in that question, and the matrix above will under-credit Java, Python, and C++ for that purpose.
-- The AI-systems interoperability and Structured-output maturity dimensions are recent additions; the underlying ecosystems are evolving rapidly. Expect scores on both axes to shift as MCP adoption broadens, additional first-party SDKs land, and constrained-generation tooling matures.
+6. **The dynamic-static gap is narrowing where gradual typing and runtime validation co-exist.** TypeScript and Python both reach SO=5.0 because Zod and Pydantic combine schema-as
