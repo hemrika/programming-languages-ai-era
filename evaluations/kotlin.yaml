@@ -44,3 +44,10 @@ scores:
     justification: >
       Kotlin has an official MCP Kotlin SDK (co-developed with JetBrains) and inherits the JVM AI stack (LangChain4j, Anthropic Java SDK, ONNX Runtime Java) through Java interop. Kotlin-native AI tooling is thin, but Kotlin Multiplatform extends the AI integration story to mobile and JS targets in a way no other cohort language matches.
     supporting_claims: [kotlin-021, kotlin-022, kotlin-023, kotlin-024]
+
+  structured_output_maturity:
+    score: 3.5
+    confidence: medium
+    justification: >
+      kotlinx.serialization is excellent and the compiler plugin generates type-safe serializers from data classes; sealed classes and exhaustive when give compile-time-checked discriminated unions for LLM-output discrimination. JVM interop opens LangChain4j AI Services and the Anthropic Java SDK to Kotlin projects. The Kotlin-native LLM-tooling layer is thin compared to Python or TypeScript.
+    supporting_claims: [kotlin-025, kotlin-026, kotlin-027, kotlin-028, kotlin-029]

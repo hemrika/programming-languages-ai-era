@@ -44,3 +44,10 @@ scores:
     justification: >
       .NET has official Anthropic and OpenAI SDKs, Microsoft Semantic Kernel as a first-party agent framework, an official MCP C# SDK, and ONNX Runtime as a Microsoft-shipped inference runtime. Vector-store clients via NuGet are growing; the agent-framework depth trails Python and TypeScript but the Microsoft-backed first-party stack is unique in the cohort.
     supporting_claims: [dotnet-019, dotnet-020, dotnet-021, dotnet-022, dotnet-023]
+
+  structured_output_maturity:
+    score: 4.0
+    confidence: medium
+    justification: >
+      .NET has a solid structured-output foundation: System.Text.Json with source generation, records and nullable reference types, JsonSchemaExporter for native types-to-JSON-Schema, Semantic Kernel function calling with attribute-based parameter binding, and Microsoft.Extensions.AI as a unified AI surface. LLM-specific community ergonomics are thinner than the Python or TypeScript ecosystems.
+    supporting_claims: [dotnet-024, dotnet-025, dotnet-026, dotnet-027, dotnet-028]

@@ -44,3 +44,10 @@ scores:
     justification: >
       Rust has an official MCP Rust SDK, the async-openai Rust client, HuggingFace's candle as a native inference runtime, and production-grade Postgres and Kafka clients. The agent-framework ecosystem (Rig, swiftide, langchain-rust) is younger than Python or TypeScript, which keeps the score at 3 despite the strong infrastructure-side integration profile.
     supporting_claims: [rust-027, rust-028, rust-029, rust-030, rust-031]
+
+  structured_output_maturity:
+    score: 3.5
+    confidence: medium
+    justification: >
+      Serde is the gold standard for type-safe parsing in Rust, schemars provides JSON Schema generation, and Rust enums with tagged-union deserialization plus exhaustive match give strong compile-time contract safety. async-openai and Rust agent frameworks (rig, langchain-rust) supply structured-output flows but the LLM-specific ergonomics layer is younger than Python or TypeScript.
+    supporting_claims: [rust-032, rust-033, rust-034, rust-035, rust-036]

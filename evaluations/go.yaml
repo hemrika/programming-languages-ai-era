@@ -44,3 +44,10 @@ scores:
     justification: >
       Go has an official Anthropic SDK, an official OpenAI SDK, an official MCP Go SDK, and infra-grade Kafka and Postgres clients. Agent-framework depth (LangChainGo and similar) lags Python and TypeScript, which keeps the score below the top tier despite the strong infrastructure-side integration story.
     supporting_claims: [go-020, go-021, go-022, go-023, go-024]
+
+  structured_output_maturity:
+    score: 3.0
+    confidence: medium
+    justification: >
+      Go's encoding/json plus struct tags is solid and the openai-go SDK gives type-safe tool-call definitions. Schema-validation libraries are fragmented (validator/v10, ozzo-validation) with no canonical Pydantic-equivalent. invopop/jsonschema provides JSON Schema generation. The structured-output layer lacks the LLM-specific ergonomics of Python or TypeScript and Go's lack of sum types limits boundary-safety expressiveness.
+    supporting_claims: [go-025, go-026, go-027, go-028, go-029]

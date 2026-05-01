@@ -44,3 +44,10 @@ scores:
     justification: >
       Swift has strong Apple-platform ML integration via Core ML, Create ML, and MLX, but cross-platform AI integration is thin. There are no first-party Anthropic or OpenAI Swift SDKs, and major agent frameworks do not publish Swift ports. The score reflects an Apple-platform-shaped AI integration story rather than a portable cohort-comparable one.
     supporting_claims: [swift-019, swift-020, swift-021, swift-022, swift-023]
+
+  structured_output_maturity:
+    score: 2.5
+    confidence: medium
+    justification: >
+      Swift's Codable is solid and enums with associated values give compile-time-checked discriminated unions. The LLM-specific structured-output ecosystem is thin: community Swift OpenAI clients (swift-openai-responses, MacPaw/OpenAI) cover some surface, no first-party Anthropic or OpenAI Swift SDK exists, and schema-from-types automation for LLM tool calls is largely manual.
+    supporting_claims: [swift-024, swift-025, swift-026, swift-027, swift-028]

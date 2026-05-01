@@ -44,3 +44,10 @@ scores:
     justification: >
       TypeScript has official Anthropic and OpenAI SDKs, an official MCP TypeScript SDK, LangChain.js as a canonical JS/TS port, and a TypeScript LlamaIndex distribution. Vector-store clients are well represented across npm. The ecosystem trails Python only on agent-framework depth and embedding-pipeline tooling.
     supporting_claims: [typescript-019, typescript-020, typescript-021, typescript-022, typescript-023]
+
+  structured_output_maturity:
+    score: 5.0
+    confidence: high
+    justification: >
+      TypeScript matches Python's structured-output maturity from a different angle: Zod is the dominant ecosystem standard, TypeScript's structural type system gives end-to-end compile-time inference via z.infer, the OpenAI Node SDK and Vercel AI SDK accept Zod natively, and zod-to-json-schema converts schemas for any LLM tool definition. ArkType is emerging as a faster alternative on the same model.
+    supporting_claims: [typescript-024, typescript-025, typescript-026, typescript-027, typescript-028]

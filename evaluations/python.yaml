@@ -44,3 +44,10 @@ scores:
     justification: >
       Python has the most complete AI-systems integration story in the cohort: official Anthropic and OpenAI SDKs, the canonical LangChain Python implementation, an official MCP Python SDK, and first-class clients for every major vector store. Embedding pipelines, inference runtimes, and observability all expose Python as their primary surface.
     supporting_claims: [python-021, python-022, python-023, python-024, python-025]
+
+  structured_output_maturity:
+    score: 5.0
+    confidence: high
+    justification: >
+      Python sets the gold standard for structured-output maturity. Pydantic v2 is the dominant schema-validation library, the OpenAI SDK supports Pydantic response_format parsing natively, Instructor wraps both OpenAI and Anthropic with Pydantic-validated structured outputs and retries, and Outlines provides JSON-Schema-, regex-, and grammar-constrained decoding. The runtime-validation posture is the only structural gap.
+    supporting_claims: [python-026, python-027, python-028, python-029, python-030]

@@ -44,3 +44,10 @@ scores:
     justification: >
       C++ is the host language for the dominant local-inference runtimes (llama.cpp, ONNX Runtime C++ API) and the major accelerator stacks (CUDA, ROCm/HIP, SYCL, oneAPI), giving it a uniquely strong inference-runtime story. Kafka via librdkafka is production-grade. Agent frameworks and first-party LLM SDKs are essentially absent; integration is mediated through Python bindings.
     supporting_claims: [cpp-017, cpp-018, cpp-019, cpp-020, cpp-021]
+
+  structured_output_maturity:
+    score: 2.0
+    confidence: medium
+    justification: >
+      nlohmann/json is widely used for manual JSON-to-types mapping and llama.cpp ships native GBNF JSON-schema-constrained decoding. Standard C++ has no first-party LLM SDK, no Pydantic-equivalent schema-to-types library, and no native types-to-JSON-Schema generation; reflection (P2996) is still in progress. Type safety after parsing is strong but the schema-definition pipeline is manual.
+    supporting_claims: [cpp-022, cpp-023, cpp-024, cpp-025, cpp-026]

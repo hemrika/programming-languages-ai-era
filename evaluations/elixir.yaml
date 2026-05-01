@@ -44,3 +44,10 @@ scores:
     justification: >
       Elixir has Bumblebee on Nx for native inference, BEAM-native streaming via Phoenix.PubSub and GenStage, and community LLM-provider clients. The first-party LLM-vendor SDK story is thin and the agent-framework ecosystem trails Python and TypeScript. The score reflects strong runtime/streaming primitives offset by a small AI-integration ecosystem.
     supporting_claims: [elixir-019, elixir-020, elixir-021, elixir-022, elixir-023]
+
+  structured_output_maturity:
+    score: 2.5
+    confidence: medium
+    justification: >
+      Ecto changesets are a strong runtime validation construct and instructor_ex ports the Instructor pattern to Elixir with Ecto-validated structured outputs. The LLM-specific structured-output ecosystem is community-maintained, set-theoretic types research is pre-stable, and JSON Schema autogeneration from Elixir types is less standardized than the Python or TypeScript paths.
+    supporting_claims: [elixir-024, elixir-025, elixir-026, elixir-027, elixir-028]
