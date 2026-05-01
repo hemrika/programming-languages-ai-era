@@ -85,3 +85,16 @@ Criteria:
 - streaming_messaging (Kafka, NATS, Pub/Sub)
 - observability (OpenTelemetry, structured logging)
 - embedding_pipeline_support (embedding generation, vector ingestion)
+
+## Structured-output maturity
+
+Measures how mature the language's ecosystem is for the type/data layer that sits between LLM output and program logic: schema-validated JSON parsing, LLM tool-call argument typing, constrained generation support, type-safe structured outputs from LLM SDKs, and JSON Schema generation from native types.
+
+Criteria:
+
+- schema_validation (declarative schema-validated parsing libraries: Pydantic, Zod, Serde+schemars, Jackson Bean Validation, kotlinx-serialization, System.Text.Json, Codable, Ecto changesets)
+- llm_tool_call_typing (type-safe LLM tool-call argument definitions in the official LLM SDKs)
+- constrained_generation (JSON-schema-constrained decoding / guided generation: llama.cpp grammars, Outlines, etc.)
+- structured_output_libraries (LLM-specific structured-output ergonomics: Instructor, Vercel AI SDK structured outputs, LangChain output parsers, LangChain4j AI Services, Semantic Kernel function calling)
+- json_schema_generation (native types -> JSON Schema autogeneration)
+- compile_time_contract_safety (how strongly the type system protects the boundary between LLM output and program code)

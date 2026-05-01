@@ -17,11 +17,12 @@ Which programming languages become more valuable when AI systems participate dee
 | Dimension | Weight |
 |---|---:|
 | Human cognition | 15% |
-| Machine cognition | 20% |
+| Machine cognition | 15% |
 | AI-agent operability | 20% |
 | Runtime and ecosystem | 15% |
 | Strategic viability | 10% |
-| AI-systems interoperability | 20% |
+| AI-systems interoperability | 15% |
+| Structured-output maturity | 10% |
 
 ## Cross-cutting lenses
 
