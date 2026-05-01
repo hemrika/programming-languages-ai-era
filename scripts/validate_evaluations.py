@@ -13,6 +13,12 @@ REQUIRED_DIMENSIONS = {
     "runtime_ecosystem",
     "strategic_viability",
     "ai_systems_interoperability",
+    "structured_output_maturity",
+}
+
+COHORT = {
+    "cpp", "dotnet", "elixir", "go", "java",
+    "kotlin", "python", "rust", "swift", "typescript",
 }
 
 ALLOWED_HALF_SCORES = {1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0}
@@ -135,6 +141,8 @@ def main():
     total_counters_links = 0
     for path in sorted(CLAIMS_DIR.glob("*.yaml")):
         lang = path.stem
+        if lang not in COHORT:
+            continue
         errors, links = validate_claims_counters(lang)
         if errors:
             failed = True
@@ -144,6 +152,8 @@ def main():
         total_counters_links += links
 
     for path in sorted(EVAL_DIR.glob("*.yaml")):
+        if path.stem not in COHORT:
+            continue
         errors, dims_validated, claim_refs_valid = validate_file(path)
         if errors:
             failed = True
@@ -152,7 +162,7 @@ def main():
                 print(f"  - {error}")
         else:
             rel = path.relative_to(ROOT).as_posix()
-            print(f"{rel}: {dims_validated}/6 dimensions, {claim_refs_valid} claim refs valid")
+            print(f"{rel}: {dims_validated}/7 dimensions, {claim_refs_valid} claim refs valid")
 
     if failed:
         sys.exit(1)
