@@ -106,3 +106,31 @@ sources:
     type: official_tooling_documentation
     url: https://github.com/fwcd/kotlin-language-server
     notes: Documents the community LSP implementation and JetBrains' alignment with the Language Server Protocol for Kotlin tooling integration.
+
+  - id: kotlin-src-015
+    title: Model Context Protocol Kotlin SDK
+    publisher: Model Context Protocol project / JetBrains
+    type: official_tooling_documentation
+    url: https://github.com/modelcontextprotocol/kotlin-sdk
+    notes: Official Kotlin SDK for the Model Context Protocol.
+
+  - id: kotlin-src-016
+    title: LangChain4j (Kotlin via Java interop)
+    publisher: LangChain4j project
+    type: official_tooling_documentation
+    url: https://github.com/langchain4j/langchain4j
+    notes: LangChain4j Java agent framework, consumable from Kotlin via interop.
+
+  - id: kotlin-src-017
+    title: Kotlin Multiplatform
+    publisher: JetBrains
+    type: official_documentation
+    url: https://www.jetbrains.com/kotlin-multiplatform/
+    notes: Documents Kotlin Multiplatform's support for sharing code across JVM, Android, iOS, JS, and Native.
+
+  - id: kotlin-src-018
+    title: Kotlin AI ecosystem state notes
+    publisher: JetBrains / community
+    type: official_tooling_documentation
+    url: https://kotlinlang.org/docs/multiplatform.html
+    notes: Documents the dominance of JVM-interop libraries over Kotlin-native AI tooling.

@@ -37,3 +37,10 @@ scores:
     justification: >
       Niche but durable adoption in fault-tolerant systems and real-time web; not on a mainstream growth trajectory, with steady release cadence as a forward velocity signal.
     supporting_claims: [elixir-013, elixir-015]
+
+  ai_systems_interoperability:
+    score: 2.5
+    confidence: medium
+    justification: >
+      Elixir has Bumblebee on Nx for native inference, BEAM-native streaming via Phoenix.PubSub and GenStage, and community LLM-provider clients. The first-party LLM-vendor SDK story is thin and the agent-framework ecosystem trails Python and TypeScript. The score reflects strong runtime/streaming primitives offset by a small AI-integration ecosystem.
+    supporting_claims: [elixir-019, elixir-020, elixir-021, elixir-022, elixir-023]

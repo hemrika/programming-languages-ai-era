@@ -92,3 +92,38 @@ sources:
     type: official_documentation
     url: https://learn.microsoft.com/dotnet/core/releases-and-support
     notes: Documents the .NET release cadence with annual major versions and LTS designations on even-numbered releases.
+
+  - id: dotnet-src-013
+    title: Anthropic .NET SDK
+    publisher: Anthropic
+    type: official_tooling_documentation
+    url: https://github.com/anthropics/anthropic-sdk-dotnet
+    notes: Official .NET client library for the Anthropic Claude API.
+
+  - id: dotnet-src-014
+    title: Microsoft Semantic Kernel
+    publisher: Microsoft
+    type: official_tooling_documentation
+    url: https://github.com/microsoft/semantic-kernel
+    notes: Microsoft's open-source agent framework with .NET, Python, and Java SDKs.
+
+  - id: dotnet-src-015
+    title: Model Context Protocol C# SDK
+    publisher: Model Context Protocol project / Microsoft
+    type: official_tooling_documentation
+    url: https://github.com/modelcontextprotocol/csharp-sdk
+    notes: Official .NET SDK for the Model Context Protocol.
+
+  - id: dotnet-src-016
+    title: ONNX Runtime - .NET package
+    publisher: Microsoft / ONNX Runtime project
+    type: official_tooling_documentation
+    url: https://onnxruntime.ai/docs/install/#install-on-net
+    notes: Official .NET package of ONNX Runtime for cross-framework AI model inference.
+
+  - id: dotnet-src-017
+    title: OpenAI .NET library (NuGet) and Azure.AI.OpenAI
+    publisher: OpenAI / Microsoft
+    type: official_tooling_documentation
+    url: https://github.com/openai/openai-dotnet
+    notes: Official .NET OpenAI client and the Azure-flavored Azure.AI.OpenAI Microsoft package.

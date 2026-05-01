@@ -37,3 +37,10 @@ scores:
     justification: >
       Rust is structurally aligned with AI-era safety pressure (ONCD, MSRC, Android, Chromium reports) and increasingly the default for systems, infrastructure, security-sensitive, and AI-adjacent tooling. The RFC process and Project Goals roadmap give a public ecosystem-velocity signal.
     supporting_claims: [rust-013, rust-014, rust-015, rust-016, rust-018, rust-019, rust-024]
+
+  ai_systems_interoperability:
+    score: 3
+    confidence: medium
+    justification: >
+      Rust has an official MCP Rust SDK, the async-openai Rust client, HuggingFace's candle as a native inference runtime, and production-grade Postgres and Kafka clients. The agent-framework ecosystem (Rig, swiftide, langchain-rust) is younger than Python or TypeScript, which keeps the score at 3 despite the strong infrastructure-side integration profile.
+    supporting_claims: [rust-027, rust-028, rust-029, rust-030, rust-031]

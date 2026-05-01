@@ -187,3 +187,53 @@ claims:
     source: swift-src-009
     notes: Vapor's documentation tracks supported Swift versions on Linux; the Linux toolchain release schedule typically follows Apple-platform releases with a delay, and many Apple-platform frameworks (UIKit, SwiftUI, Foundation extensions) are not portable.
     counters: [swift-008, swift-009]
+
+  - id: swift-019
+    claim: Apple's Core ML and Create ML frameworks are the canonical on-device inference and training stacks for Swift on Apple platforms, providing first-party model deployment for iOS, macOS, watchOS, and tvOS.
+    dimension: ai_systems_interoperability
+    criterion: inference_runtime_support
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: swift-src-014
+    notes: developer.apple.com/documentation/coreml documents Core ML as Apple's first-party inference framework.
+
+  - id: swift-020
+    claim: Apple platforms expose Core ML and the new Foundation Models framework, but cross-platform Swift AI integration (Linux, server-side) is significantly thinner than Apple-platform tooling.
+    dimension: ai_systems_interoperability
+    criterion: inference_runtime_support
+    evidence_type: official_documentation
+    confidence: high
+    polarity: negative
+    source: swift-src-015
+    notes: Apple's AI-stack documentation emphasizes Apple-platform deployment; Swift Server work has limited first-party AI tooling.
+
+  - id: swift-021
+    claim: First-party Anthropic and OpenAI SDKs for Swift do not exist; LLM access in Swift relies on community packages such as MacPaw/OpenAI and AnthropicSwiftSDK.
+    dimension: ai_systems_interoperability
+    criterion: llm_provider_support
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: negative
+    source: swift-src-016
+    notes: github.com/MacPaw/OpenAI is the dominant community Swift OpenAI client; no first-party SDK.
+
+  - id: swift-022
+    claim: Cross-platform Swift agent-framework support is essentially absent; LangChain, LlamaIndex, and Semantic Kernel do not publish Swift implementations.
+    dimension: ai_systems_interoperability
+    criterion: agent_framework_support
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: negative
+    source: swift-src-017
+    notes: No major agent framework lists Swift as a supported target as of 2026.
+
+  - id: swift-023
+    claim: Apple's MLX framework targets Apple Silicon for high-performance ML and exposes Swift bindings, but its model and integration ecosystem is younger than ONNX Runtime or candle.
+    dimension: ai_systems_interoperability
+    criterion: inference_runtime_support
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: swift-src-018
+    notes: github.com/ml-explore/mlx and the Swift bindings target Apple Silicon ML workloads.

@@ -37,3 +37,10 @@ scores:
     justification: >
       Durable demand within Apple's ecosystem, with limited evidence of broad cross-platform adoption to date.
     supporting_claims: [swift-006, swift-010, swift-011, swift-013, swift-017]
+
+  ai_systems_interoperability:
+    score: 2
+    confidence: medium
+    justification: >
+      Swift has strong Apple-platform ML integration via Core ML, Create ML, and MLX, but cross-platform AI integration is thin. There are no first-party Anthropic or OpenAI Swift SDKs, and major agent frameworks do not publish Swift ports. The score reflects an Apple-platform-shaped AI integration story rather than a portable cohort-comparable one.
+    supporting_claims: [swift-019, swift-020, swift-021, swift-022, swift-023]

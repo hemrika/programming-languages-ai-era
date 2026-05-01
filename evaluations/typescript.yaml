@@ -37,3 +37,10 @@ scores:
     justification: >
       Strong forward signals: most-admired developer-sentiment results, top-tier AI-training-corpus density, and active Microsoft stewardship. Under greenfield framing the prior 5 partly reflected legacy JavaScript ecosystem gravity, which is no longer scored; the score reduces to 4 with the modern-typed-language credit retained.
     supporting_claims: [typescript-011, typescript-012, typescript-013]
+
+  ai_systems_interoperability:
+    score: 4.5
+    confidence: high
+    justification: >
+      TypeScript has official Anthropic and OpenAI SDKs, an official MCP TypeScript SDK, LangChain.js as a canonical JS/TS port, and a TypeScript LlamaIndex distribution. Vector-store clients are well represented across npm. The ecosystem trails Python only on agent-framework depth and embedding-pipeline tooling.
+    supporting_claims: [typescript-019, typescript-020, typescript-021, typescript-022, typescript-023]

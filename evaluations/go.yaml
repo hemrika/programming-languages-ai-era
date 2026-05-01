@@ -37,3 +37,10 @@ scores:
     justification: >
       Go has durable institutional support and strong cloud infrastructure adoption.
     supporting_claims: [go-013]
+
+  ai_systems_interoperability:
+    score: 3.5
+    confidence: medium
+    justification: >
+      Go has an official Anthropic SDK, an official OpenAI SDK, an official MCP Go SDK, and infra-grade Kafka and Postgres clients. Agent-framework depth (LangChainGo and similar) lags Python and TypeScript, which keeps the score below the top tier despite the strong infrastructure-side integration story.
+    supporting_claims: [go-020, go-021, go-022, go-023, go-024]

@@ -117,3 +117,38 @@ sources:
     type: official_tooling_documentation
     url: https://github.com/python/typeshed
     notes: Documents the typeshed stub repository bundled with pyright, Pylance, mypy, and other Python type checkers.
+
+  - id: python-src-016
+    title: Anthropic Python SDK
+    publisher: Anthropic
+    type: official_tooling_documentation
+    url: https://github.com/anthropics/anthropic-sdk-python
+    notes: Official Python client library for the Anthropic Claude API.
+
+  - id: python-src-017
+    title: OpenAI Python SDK
+    publisher: OpenAI
+    type: official_tooling_documentation
+    url: https://github.com/openai/openai-python
+    notes: Official Python client library for the OpenAI API.
+
+  - id: python-src-018
+    title: LangChain Python documentation
+    publisher: LangChain
+    type: official_tooling_documentation
+    url: https://python.langchain.com
+    notes: Canonical Python documentation for the LangChain agent and LLM-application framework.
+
+  - id: python-src-019
+    title: Model Context Protocol Python SDK
+    publisher: Model Context Protocol project
+    type: official_tooling_documentation
+    url: https://github.com/modelcontextprotocol/python-sdk
+    notes: Official Python SDK for the Model Context Protocol.
+
+  - id: python-src-020
+    title: pgvector - Open-source vector similarity search for Postgres
+    publisher: pgvector project
+    type: official_tooling_documentation
+    url: https://github.com/pgvector/pgvector
+    notes: pgvector documents Python (psycopg, SQLAlchemy, Django) clients for vector operations on Postgres.

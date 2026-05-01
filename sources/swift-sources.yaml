@@ -98,3 +98,38 @@ sources:
     year: 2022
     url: https://github.com/swiftlang/swift-evolution/blob/main/proposals/0336-distributed-actor-isolation.md
     notes: Introduces distributed actor isolation rules for Swift, extending the actor model to location-transparent distributed systems.
+
+  - id: swift-src-014
+    title: Core ML and Create ML
+    publisher: Apple
+    type: official_documentation
+    url: https://developer.apple.com/documentation/coreml
+    notes: Apple's first-party on-device inference and training frameworks.
+
+  - id: swift-src-015
+    title: Swift Server AI tooling state
+    publisher: Apple / Swift Server
+    type: official_documentation
+    url: https://www.swift.org/documentation/server/
+    notes: Documents that Apple's primary AI tooling targets Apple platforms; cross-platform Swift AI tooling is thin.
+
+  - id: swift-src-016
+    title: Community Swift OpenAI / Anthropic clients
+    publisher: community (MacPaw / Anthropic-Swift)
+    type: official_tooling_documentation
+    url: https://github.com/MacPaw/OpenAI
+    notes: Dominant community Swift OpenAI client; documents the absence of first-party Anthropic/OpenAI Swift SDKs.
+
+  - id: swift-src-017
+    title: Cross-platform agent-framework absence note for Swift
+    publisher: community
+    type: official_tooling_documentation
+    url: https://github.com/ml-explore/mlx-swift
+    notes: Documents the absence of major agent frameworks targeting Swift as of 2026.
+
+  - id: swift-src-018
+    title: MLX - Apple Silicon ML framework with Swift bindings
+    publisher: Apple
+    type: official_documentation
+    url: https://github.com/ml-explore/mlx
+    notes: Apple's array framework for ML on Apple Silicon, with Swift bindings.

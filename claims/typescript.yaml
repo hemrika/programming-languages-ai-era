@@ -188,3 +188,53 @@ claims:
     source: typescript-src-001
     notes: The TypeScript Handbook describes type erasure during compilation; runtime data validation requires libraries such as zod or io-ts that re-encode the type at runtime.
     counters: [typescript-001, typescript-003]
+
+  - id: typescript-019
+    claim: The Anthropic TypeScript SDK is the official client for the Claude API and is published by Anthropic.
+    dimension: ai_systems_interoperability
+    criterion: llm_provider_support
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: typescript-src-015
+    notes: github.com/anthropics/anthropic-sdk-typescript is the maintained official Anthropic Node/TypeScript client.
+
+  - id: typescript-020
+    claim: The OpenAI Node SDK is the official TypeScript/JavaScript client for the OpenAI API.
+    dimension: ai_systems_interoperability
+    criterion: llm_provider_support
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: typescript-src-016
+    notes: github.com/openai/openai-node is the maintained Node SDK with first-class TypeScript types.
+
+  - id: typescript-021
+    claim: LangChain.js is the canonical JavaScript/TypeScript port of LangChain, with broad LLM, vector-store, and tool integrations.
+    dimension: ai_systems_interoperability
+    criterion: agent_framework_support
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: typescript-src-017
+    notes: js.langchain.com is the official JavaScript/TypeScript LangChain documentation site.
+
+  - id: typescript-022
+    claim: The Model Context Protocol TypeScript SDK is the official TypeScript implementation of MCP, maintained by the Model Context Protocol project.
+    dimension: ai_systems_interoperability
+    criterion: protocol_support
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: typescript-src-018
+    notes: github.com/modelcontextprotocol/typescript-sdk is the canonical TypeScript MCP SDK.
+
+  - id: typescript-023
+    claim: LlamaIndex publishes a TypeScript implementation in addition to its primary Python edition, giving TypeScript projects a first-class RAG/indexing framework.
+    dimension: ai_systems_interoperability
+    criterion: agent_framework_support
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: positive
+    source: typescript-src-019
+    notes: ts.llamaindex.ai documents the TypeScript LlamaIndex distribution.

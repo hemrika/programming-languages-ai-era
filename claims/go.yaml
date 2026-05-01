@@ -198,3 +198,53 @@ claims:
     source: go-src-005
     notes: The Go Memory Model specifies synchronization conditions but does not prevent goroutine leaks or deadlocks; the runtime ships goroutine-leak-detection tooling externally because static prevention is out of language scope.
     counters: [go-005, go-016]
+
+  - id: go-020
+    claim: The Anthropic Go SDK is an official client for the Claude API published by Anthropic.
+    dimension: ai_systems_interoperability
+    criterion: llm_provider_support
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: go-src-013
+    notes: github.com/anthropics/anthropic-sdk-go is the maintained official Go client.
+
+  - id: go-021
+    claim: The OpenAI Go SDK is an official Go client for the OpenAI API.
+    dimension: ai_systems_interoperability
+    criterion: llm_provider_support
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: go-src-014
+    notes: github.com/openai/openai-go is the official Go OpenAI client.
+
+  - id: go-022
+    claim: The Model Context Protocol Go SDK is the official Go implementation of MCP.
+    dimension: ai_systems_interoperability
+    criterion: protocol_support
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: go-src-015
+    notes: github.com/modelcontextprotocol/go-sdk hosts the official Go MCP SDK.
+
+  - id: go-023
+    claim: confluent-kafka-go and the Sarama client provide production-grade Go Kafka support; pgx is the canonical Postgres driver and supports pgvector via type extensions.
+    dimension: ai_systems_interoperability
+    criterion: streaming_messaging
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: go-src-016
+    notes: confluent-kafka-go is published by Confluent; pgx is the dominant Go Postgres driver with pgvector extensions available.
+
+  - id: go-024
+    claim: The Go agent-framework ecosystem (LangChainGo and similar) lags the Python and TypeScript implementations in feature breadth and integration count.
+    dimension: ai_systems_interoperability
+    criterion: agent_framework_support
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: negative
+    source: go-src-017
+    notes: github.com/tmc/langchaingo is community-maintained and trails the Python LangChain in supported integrations.

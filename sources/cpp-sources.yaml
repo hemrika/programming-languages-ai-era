@@ -99,3 +99,38 @@ sources:
     type: official_documentation
     url: https://docs.nvidia.com/cuda/cuda-c-programming-guide/
     notes: Documents NVIDIA's CUDA C++ programming model; representative of the broader ecosystem (CUDA, AMD ROCm/HIP, Khronos SYCL, Intel oneAPI) that targets C++ as the primary host language for accelerator kernels.
+
+  - id: cpp-src-013
+    title: llama.cpp - LLM inference in C/C++
+    publisher: ggerganov / community
+    type: official_tooling_documentation
+    url: https://github.com/ggerganov/llama.cpp
+    notes: Reference local-inference runtime for LLMs, implemented in C/C++.
+
+  - id: cpp-src-014
+    title: ONNX Runtime - C++ API
+    publisher: Microsoft / ONNX Runtime project
+    type: official_tooling_documentation
+    url: https://onnxruntime.ai/docs/api/c/
+    notes: Documents the C++ API of ONNX Runtime as a primary binding.
+
+  - id: cpp-src-015
+    title: CUDA, ROCm/HIP, SYCL, oneAPI host-language documentation
+    publisher: NVIDIA / AMD / Intel
+    type: official_documentation
+    url: https://docs.nvidia.com/cuda/cuda-c-programming-guide/
+    notes: Accelerator host APIs primarily target C++ (CUDA C++, HIP C++, SYCL C++, oneAPI C++).
+
+  - id: cpp-src-016
+    title: C++ AI agent-ecosystem absence note
+    publisher: community
+    type: official_tooling_documentation
+    url: https://github.com/llama-cpp-python
+    notes: Documents that C++ AI integration is overwhelmingly mediated by Python bindings rather than first-party C++ SDKs.
+
+  - id: cpp-src-017
+    title: librdkafka - Apache Kafka C/C++ client
+    publisher: Confluent
+    type: official_tooling_documentation
+    url: https://github.com/confluentinc/librdkafka
+    notes: Production-grade C/C++ Kafka client.

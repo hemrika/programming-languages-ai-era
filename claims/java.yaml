@@ -188,3 +188,53 @@ claims:
     source: java-src-011
     notes: The Java Compatibility Guide preserves API stability across releases; deprecated-but-not-removed APIs in the standard library mean greenfield codebases still encounter legacy idioms in dependencies and tutorials.
     counters: [java-008]
+
+  - id: java-019
+    claim: The Anthropic Java SDK is an official client for the Claude API published by Anthropic.
+    dimension: ai_systems_interoperability
+    criterion: llm_provider_support
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: java-src-014
+    notes: github.com/anthropics/anthropic-sdk-java is the maintained official Java Claude SDK.
+
+  - id: java-020
+    claim: LangChain4j is a Java port of LangChain with broad LLM-provider, vector-store, and tool-integration coverage on the JVM.
+    dimension: ai_systems_interoperability
+    criterion: agent_framework_support
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: java-src-015
+    notes: github.com/langchain4j/langchain4j is the canonical Java agent framework.
+
+  - id: java-021
+    claim: The Model Context Protocol Java SDK is the official Java implementation of MCP.
+    dimension: ai_systems_interoperability
+    criterion: protocol_support
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: java-src-016
+    notes: github.com/modelcontextprotocol/java-sdk hosts the official Java MCP SDK.
+
+  - id: java-022
+    claim: The JVM Kafka client (org.apache.kafka:kafka-clients) is the reference implementation of the Kafka protocol and is the canonical streaming integration on the JVM.
+    dimension: ai_systems_interoperability
+    criterion: streaming_messaging
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: java-src-017
+    notes: kafka.apache.org documents kafka-clients as the canonical JVM Kafka library; production deployments are JVM-first.
+
+  - id: java-023
+    claim: ONNX Runtime ships an official Java package, providing a production-grade inference runtime for JVM applications.
+    dimension: ai_systems_interoperability
+    criterion: inference_runtime_support
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: java-src-018
+    notes: onnxruntime ships the com.microsoft.onnxruntime Maven package as an official Java distribution.

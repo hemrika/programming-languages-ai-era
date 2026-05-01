@@ -114,3 +114,38 @@ sources:
     type: official_documentation
     url: https://github.com/microsoft/TypeScript/wiki/TypeScript-Design-Goals
     notes: Documents TypeScript design goals including the explicit non-goal of soundness in the type system.
+
+  - id: typescript-src-015
+    title: Anthropic TypeScript SDK
+    publisher: Anthropic
+    type: official_tooling_documentation
+    url: https://github.com/anthropics/anthropic-sdk-typescript
+    notes: Official TypeScript/Node client for the Anthropic Claude API.
+
+  - id: typescript-src-016
+    title: OpenAI Node SDK
+    publisher: OpenAI
+    type: official_tooling_documentation
+    url: https://github.com/openai/openai-node
+    notes: Official Node.js/TypeScript client for the OpenAI API.
+
+  - id: typescript-src-017
+    title: LangChain.js documentation
+    publisher: LangChain
+    type: official_tooling_documentation
+    url: https://js.langchain.com
+    notes: Canonical JavaScript/TypeScript LangChain documentation.
+
+  - id: typescript-src-018
+    title: Model Context Protocol TypeScript SDK
+    publisher: Model Context Protocol project
+    type: official_tooling_documentation
+    url: https://github.com/modelcontextprotocol/typescript-sdk
+    notes: Official TypeScript SDK for the Model Context Protocol.
+
+  - id: typescript-src-019
+    title: LlamaIndex TypeScript documentation
+    publisher: LlamaIndex
+    type: official_tooling_documentation
+    url: https://ts.llamaindex.ai
+    notes: Canonical TypeScript port of LlamaIndex for RAG and document indexing.

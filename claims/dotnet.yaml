@@ -188,3 +188,53 @@ claims:
     source: dotnet-src-001
     notes: ECMA-334 6th edition lags the C# language version implemented in current Roslyn; standardization is preserved but the canonical implementation reference is the dotnet/csharplang and dotnet/runtime repositories.
     counters: [dotnet-001, dotnet-002, dotnet-013]
+
+  - id: dotnet-019
+    claim: The Anthropic .NET SDK is the official C# client for the Claude API, published by Anthropic.
+    dimension: ai_systems_interoperability
+    criterion: llm_provider_support
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: dotnet-src-013
+    notes: github.com/anthropics/anthropic-sdk-dotnet is the maintained official .NET Claude SDK.
+
+  - id: dotnet-020
+    claim: Microsoft Semantic Kernel is a Microsoft-published agent framework with first-class .NET support, providing planners, plugins, and connectors.
+    dimension: ai_systems_interoperability
+    criterion: agent_framework_support
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: dotnet-src-014
+    notes: github.com/microsoft/semantic-kernel ships .NET, Python, and Java SDKs; .NET is the original target.
+
+  - id: dotnet-021
+    claim: The Model Context Protocol C# SDK is the official .NET implementation of MCP, maintained by the Model Context Protocol project in collaboration with Microsoft.
+    dimension: ai_systems_interoperability
+    criterion: protocol_support
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: dotnet-src-015
+    notes: github.com/modelcontextprotocol/csharp-sdk hosts the official .NET MCP SDK.
+
+  - id: dotnet-022
+    claim: ONNX Runtime ships an official .NET package and is widely used as the inference runtime for AI models in C# applications.
+    dimension: ai_systems_interoperability
+    criterion: inference_runtime_support
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: dotnet-src-016
+    notes: Microsoft.ML.OnnxRuntime is published on NuGet by Microsoft and is the canonical .NET inference runtime.
+
+  - id: dotnet-023
+    claim: The official OpenAI .NET library (Azure.AI.OpenAI / OpenAI) is published by Microsoft/OpenAI and ships first-class C# bindings.
+    dimension: ai_systems_interoperability
+    criterion: llm_provider_support
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: dotnet-src-017
+    notes: NuGet OpenAI package and Azure.AI.OpenAI from Microsoft are the canonical OpenAI clients in .NET.

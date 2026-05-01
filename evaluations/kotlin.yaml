@@ -37,3 +37,10 @@ scores:
     justification: >
       Strong Android adoption and growing server-side use, with Kotlin Multiplatform now stable across JVM/Android/iOS/JS/Native targets expanding the forward cross-platform reach, balanced against single-vendor (JetBrains) roadmap dependence.
     supporting_claims: [kotlin-008, kotlin-009, kotlin-012, kotlin-015, kotlin-020]
+
+  ai_systems_interoperability:
+    score: 3
+    confidence: medium
+    justification: >
+      Kotlin has an official MCP Kotlin SDK (co-developed with JetBrains) and inherits the JVM AI stack (LangChain4j, Anthropic Java SDK, ONNX Runtime Java) through Java interop. Kotlin-native AI tooling is thin, but Kotlin Multiplatform extends the AI integration story to mobile and JS targets in a way no other cohort language matches.
+    supporting_claims: [kotlin-021, kotlin-022, kotlin-023, kotlin-024]

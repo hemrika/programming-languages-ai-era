@@ -187,3 +187,53 @@ claims:
     source: elixir-src-002
     notes: Erlang/OTP system principles describe BEAM's process model optimized for IO-bound and supervised concurrency; numerical workloads typically rely on Nx with EXLA backends or NIFs for acceleration.
     counters: [elixir-001, elixir-002, elixir-004]
+
+  - id: elixir-019
+    claim: Bumblebee provides pre-trained transformer models on top of Nx and EXLA, giving Elixir a native inference path for HuggingFace-style models.
+    dimension: ai_systems_interoperability
+    criterion: inference_runtime_support
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: elixir-src-013
+    notes: github.com/elixir-nx/bumblebee documents native Elixir transformer inference via Nx.
+
+  - id: elixir-020
+    claim: Nx is the Elixir numerical-computing library that underpins Bumblebee and provides a native tensor stack with EXLA (XLA) and Torchx backends.
+    dimension: ai_systems_interoperability
+    criterion: inference_runtime_support
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: elixir-src-014
+    notes: github.com/elixir-nx/nx is the canonical Elixir tensor library.
+
+  - id: elixir-021
+    claim: BEAM-native streaming via Phoenix.PubSub and GenStage gives Elixir a strong runtime story for streaming and event-driven AI workloads, independent of external messaging systems.
+    dimension: ai_systems_interoperability
+    criterion: streaming_messaging
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: elixir-src-015
+    notes: hexdocs.pm/phoenix_pubsub and hexdocs.pm/gen_stage document Elixir's BEAM-native streaming primitives.
+
+  - id: elixir-022
+    claim: Elixir LLM-provider SDKs are mostly community-maintained, with libraries such as anthropic_ex and openai_ex providing API access but trailing official-vendor SDK support found in Python, TypeScript, and .NET.
+    dimension: ai_systems_interoperability
+    criterion: llm_provider_support
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: negative
+    source: elixir-src-016
+    notes: hex.pm hosts community Anthropic and OpenAI clients; Anthropic and OpenAI do not publish first-party Elixir SDKs.
+
+  - id: elixir-023
+    claim: Elixir agent-framework support (Instructor, LangChain Elixir port) is small in scope compared to the Python and TypeScript ecosystems, with fewer integrations and a thinner connector library.
+    dimension: ai_systems_interoperability
+    criterion: agent_framework_support
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: negative
+    source: elixir-src-017
+    notes: github.com/thmsmlr/instructor_ex and the Elixir LangChain port are credible but trail Python LangChain.

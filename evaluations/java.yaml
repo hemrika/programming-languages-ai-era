@@ -37,3 +37,10 @@ scores:
     justification: >
       OpenJDK governance and long-term compatibility commitments are forward-looking strengths. Under greenfield framing, the durable adoption premium that previously lifted Java to 4 is not credited; new-project share is shifting toward Kotlin and other languages in many segments.
     supporting_claims: [java-007, java-008, java-016]
+
+  ai_systems_interoperability:
+    score: 3.5
+    confidence: medium
+    justification: >
+      Java has an official Anthropic SDK, LangChain4j as a credible JVM agent framework, an official MCP Java SDK, mature Kafka and JDBC integration, and an official ONNX Runtime Java package. Vector-store SDKs are growing but mostly community-maintained. The infrastructure-grade integration story is strong; the LLM-provider depth trails .NET because Microsoft Semantic Kernel does not have a parallel Java-first agent framework.
+    supporting_claims: [java-019, java-020, java-021, java-022, java-023]

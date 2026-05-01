@@ -136,3 +136,38 @@ sources:
     type: official_governance_documentation
     url: https://rust-lang.github.io/rust-project-goals/
     notes: Documents the Rust Project Goals process - a structured forward-roadmap mechanism complementing the RFC process.
+
+  - id: rust-src-019
+    title: Model Context Protocol Rust SDK
+    publisher: Model Context Protocol project
+    type: official_tooling_documentation
+    url: https://github.com/modelcontextprotocol/rust-sdk
+    notes: Official Rust SDK for the Model Context Protocol.
+
+  - id: rust-src-020
+    title: async-openai - Async Rust OpenAI client
+    publisher: 64bit
+    type: official_tooling_documentation
+    url: https://github.com/64bit/async-openai
+    notes: De facto async Rust OpenAI client.
+
+  - id: rust-src-021
+    title: candle - HuggingFace minimalist ML framework for Rust
+    publisher: Hugging Face
+    type: official_tooling_documentation
+    url: https://github.com/huggingface/candle
+    notes: HuggingFace's Rust ML framework providing native inference for transformer models.
+
+  - id: rust-src-022
+    title: Rust agent-framework ecosystem (Rig, swiftide, langchain-rust)
+    publisher: community
+    type: official_tooling_documentation
+    url: https://github.com/0xPlaygrounds/rig
+    notes: Documents the early-stage state of the Rust agent-framework ecosystem.
+
+  - id: rust-src-023
+    title: sqlx, tokio-postgres, rust-rdkafka
+    publisher: community / Confluent
+    type: official_tooling_documentation
+    url: https://github.com/launchbadge/sqlx
+    notes: Production-grade async Postgres and Kafka clients for Rust.

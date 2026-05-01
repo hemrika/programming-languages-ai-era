@@ -207,3 +207,43 @@ claims:
     source: kotlin-src-008
     notes: The Android Kotlin developer page positions Kotlin as the preferred Android language; the deep Android coupling means Kotlin's strategic trajectory is partly hostage to Google's Android investment, asymmetric for non-mobile use cases.
     counters: [kotlin-008, kotlin-012]
+
+  - id: kotlin-021
+    claim: The Model Context Protocol Kotlin SDK is the official Kotlin implementation of MCP, providing first-class Kotlin/JVM bindings.
+    dimension: ai_systems_interoperability
+    criterion: protocol_support
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: kotlin-src-015
+    notes: github.com/modelcontextprotocol/kotlin-sdk hosts the official Kotlin MCP SDK, jointly developed with JetBrains.
+
+  - id: kotlin-022
+    claim: Kotlin can consume LangChain4j and the Anthropic Java SDK directly through Java interop, inheriting the JVM agent-framework and LLM-provider stack.
+    dimension: ai_systems_interoperability
+    criterion: agent_framework_support
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: kotlin-src-016
+    notes: LangChain4j and the Anthropic Java SDK are usable from Kotlin without wrappers via standard JVM interop.
+
+  - id: kotlin-023
+    claim: Kotlin Multiplatform allows shared LLM-client and agent code to target JVM, Android, iOS, and JS from a single source set, which is unique among the cohort for mobile-and-server AI integration.
+    dimension: ai_systems_interoperability
+    criterion: agent_framework_support
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: kotlin-src-017
+    notes: Kotlin Multiplatform is stable across JVM/Android/iOS/JS/Native and is documented for cross-platform application code.
+
+  - id: kotlin-024
+    claim: Native Kotlin AI tooling (Kotlin-only LLM SDKs, agent frameworks) is thin compared to Python and TypeScript; most Kotlin AI integration relies on Java-interop libraries rather than Kotlin-first APIs.
+    dimension: ai_systems_interoperability
+    criterion: agent_framework_support
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: negative
+    source: kotlin-src-018
+    notes: The Kotlin-native AI stack is small; most production code consumes Java libraries through interop.

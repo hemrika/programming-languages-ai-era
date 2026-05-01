@@ -37,3 +37,10 @@ scores:
     justification: >
       Python remains the highest-AI-training-corpus-density language, with annual release cadence (PEP 602) and ecosystem velocity in ML/data unmatched. Under greenfield framing the prior 5 reflected partly the installed-base premium, which is no longer scored; the score reduces to 4 with the verification gap counted as a forward concern offset only partially by gradual typing.
     supporting_claims: [python-012, python-013, python-017]
+
+  ai_systems_interoperability:
+    score: 5
+    confidence: high
+    justification: >
+      Python has the most complete AI-systems integration story in the cohort: official Anthropic and OpenAI SDKs, the canonical LangChain Python implementation, an official MCP Python SDK, and first-class clients for every major vector store. Embedding pipelines, inference runtimes, and observability all expose Python as their primary surface.
+    supporting_claims: [python-021, python-022, python-023, python-024, python-025]

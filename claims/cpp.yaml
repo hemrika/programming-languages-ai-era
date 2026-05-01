@@ -172,3 +172,53 @@ claims:
     source: cpp-src-004
     notes: The C++ Core Guidelines are advisory; conformance tooling (clang-tidy, cppcheck, Microsoft GSL) is opt-in and configuration-dependent, leaving uniform adoption to project-level decisions.
     counters: [cpp-003]
+
+  - id: cpp-017
+    claim: llama.cpp is the dominant open-source local-inference runtime for LLMs and is implemented primarily in C/C++, making C++ the canonical host for high-performance local inference.
+    dimension: ai_systems_interoperability
+    criterion: inference_runtime_support
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: cpp-src-013
+    notes: github.com/ggerganov/llama.cpp is implemented in C/C++ and is the reference local-inference runtime.
+
+  - id: cpp-018
+    claim: ONNX Runtime is implemented primarily in C++ and exposes a first-class C++ API as one of its principal language bindings.
+    dimension: ai_systems_interoperability
+    criterion: inference_runtime_support
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: cpp-src-014
+    notes: onnxruntime.ai documents the C++ API as a primary binding alongside Python, .NET, and Java.
+
+  - id: cpp-019
+    claim: The dominant accelerator host APIs (CUDA, ROCm/HIP, SYCL, oneAPI) primarily target C++, giving C++ unique access to GPU and accelerator runtimes used in AI-systems pipelines.
+    dimension: ai_systems_interoperability
+    criterion: inference_runtime_support
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: cpp-src-015
+    notes: NVIDIA CUDA, AMD ROCm/HIP, Intel oneAPI/SYCL all document C++ as the primary host language.
+
+  - id: cpp-020
+    claim: C++ has effectively no first-party agent-framework or LLM-provider SDK ecosystem; LLM and agent integration in C++ is achieved by binding to Python/Node libraries or invoking external services.
+    dimension: ai_systems_interoperability
+    criterion: agent_framework_support
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: negative
+    source: cpp-src-016
+    notes: No major LLM provider ships a first-party C++ SDK; LangChain has no canonical C++ port.
+
+  - id: cpp-021
+    claim: confluent-kafka-cpp (librdkafka) is the production-grade C++ Kafka client and is widely used in C++ streaming infrastructure.
+    dimension: ai_systems_interoperability
+    criterion: streaming_messaging
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: cpp-src-017
+    notes: github.com/confluentinc/librdkafka is the canonical C++ Kafka client.

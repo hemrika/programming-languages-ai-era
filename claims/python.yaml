@@ -208,3 +208,53 @@ claims:
     source: python-src-015
     notes: typeshed acknowledges incomplete coverage of the third-party ecosystem; many libraries ship without inline annotations or stub packages, so a project's effective static guarantee depends on dependency-graph annotation density.
     counters: [python-016, python-018]
+
+  - id: python-021
+    claim: The Anthropic Python SDK is the official client for Anthropic's Claude API and the canonical integration entry point for Anthropic's models from Python.
+    dimension: ai_systems_interoperability
+    criterion: llm_provider_support
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: python-src-016
+    notes: github.com/anthropics/anthropic-sdk-python is the maintained Python client for the Claude API.
+
+  - id: python-022
+    claim: The OpenAI Python SDK is the official client library for the OpenAI API and a canonical Python integration for GPT-family models.
+    dimension: ai_systems_interoperability
+    criterion: llm_provider_support
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: python-src-017
+    notes: github.com/openai/openai-python is the maintained official Python OpenAI client.
+
+  - id: python-023
+    claim: LangChain ships its primary Python implementation with first-class integrations across LLM providers, vector stores, and tool runtimes, making Python the most fully featured target for agent-framework code.
+    dimension: ai_systems_interoperability
+    criterion: agent_framework_support
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: python-src-018
+    notes: python.langchain.com documents the canonical Python LangChain implementation.
+
+  - id: python-024
+    claim: The Model Context Protocol Python SDK is the official Python implementation of MCP, published by the Model Context Protocol project.
+    dimension: ai_systems_interoperability
+    criterion: protocol_support
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: python-src-019
+    notes: github.com/modelcontextprotocol/python-sdk hosts the official Python MCP SDK.
+
+  - id: python-025
+    claim: Python has official client SDKs for all major vector stores (Pinecone, Weaviate, Qdrant, Chroma, pgvector via psycopg) plus first-party embedding pipelines through OpenAI/Anthropic/HuggingFace clients.
+    dimension: ai_systems_interoperability
+    criterion: data_layer_integration
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: python-src-020
+    notes: Each vector store project lists Python as the primary client; pgvector has psycopg + SQLAlchemy bindings.

@@ -37,3 +37,10 @@ scores:
     justification: >
       Under greenfield framing, installed base does not score. The active forward signals are negative: NSA and ONCD guidance explicitly advise against memory-unsafe languages for new projects, while ISO governance is the only meaningful positive. New-project share is shifting toward Rust and other safer alternatives in security-sensitive segments.
     supporting_claims: [cpp-001, cpp-006, cpp-007]
+
+  ai_systems_interoperability:
+    score: 3
+    confidence: medium
+    justification: >
+      C++ is the host language for the dominant local-inference runtimes (llama.cpp, ONNX Runtime C++ API) and the major accelerator stacks (CUDA, ROCm/HIP, SYCL, oneAPI), giving it a uniquely strong inference-runtime story. Kafka via librdkafka is production-grade. Agent frameworks and first-party LLM SDKs are essentially absent; integration is mediated through Python bindings.
+    supporting_claims: [cpp-017, cpp-018, cpp-019, cpp-020, cpp-021]

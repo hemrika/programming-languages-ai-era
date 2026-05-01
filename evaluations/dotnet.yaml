@@ -37,3 +37,10 @@ scores:
     justification: >
       Microsoft's tight alignment between .NET and AI tooling is a structural tailwind, with a predictable annual major-release cadence and LTS designations supporting forward planning. Open-source mindshare remains smaller than the JVM or Node ecosystems.
     supporting_claims: [dotnet-001, dotnet-013, dotnet-015, dotnet-016, dotnet-018]
+
+  ai_systems_interoperability:
+    score: 4
+    confidence: high
+    justification: >
+      .NET has official Anthropic and OpenAI SDKs, Microsoft Semantic Kernel as a first-party agent framework, an official MCP C# SDK, and ONNX Runtime as a Microsoft-shipped inference runtime. Vector-store clients via NuGet are growing; the agent-framework depth trails Python and TypeScript but the Microsoft-backed first-party stack is unique in the cohort.
+    supporting_claims: [dotnet-019, dotnet-020, dotnet-021, dotnet-022, dotnet-023]

@@ -104,3 +104,38 @@ sources:
     year: 2023
     url: https://openjdk.org/jeps/453
     notes: Introduces structured concurrency as a preview API that treats groups of related tasks as a single unit of work, atop virtual threads.
+
+  - id: java-src-014
+    title: Anthropic Java SDK
+    publisher: Anthropic
+    type: official_tooling_documentation
+    url: https://github.com/anthropics/anthropic-sdk-java
+    notes: Official Java client library for the Anthropic Claude API.
+
+  - id: java-src-015
+    title: LangChain4j
+    publisher: LangChain4j project
+    type: official_tooling_documentation
+    url: https://github.com/langchain4j/langchain4j
+    notes: Canonical Java port of LangChain with broad integrations.
+
+  - id: java-src-016
+    title: Model Context Protocol Java SDK
+    publisher: Model Context Protocol project
+    type: official_tooling_documentation
+    url: https://github.com/modelcontextprotocol/java-sdk
+    notes: Official Java SDK for the Model Context Protocol.
+
+  - id: java-src-017
+    title: Apache Kafka - Java client (kafka-clients)
+    publisher: Apache Software Foundation
+    type: official_tooling_documentation
+    url: https://kafka.apache.org/documentation/#api
+    notes: Official Java Kafka client and reference protocol implementation.
+
+  - id: java-src-018
+    title: ONNX Runtime - Java package
+    publisher: Microsoft / ONNX Runtime project
+    type: official_tooling_documentation
+    url: https://onnxruntime.ai/docs/install/#install-on-java
+    notes: Official Java distribution of ONNX Runtime for cross-framework inference.

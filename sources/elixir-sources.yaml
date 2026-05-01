@@ -92,3 +92,38 @@ sources:
     type: official_documentation
     url: https://github.com/elixir-lang/elixir/blob/main/CHANGELOG.md
     notes: Public changelog tracking Elixir release-to-release changes; representative of the language's forward evolution cadence.
+
+  - id: elixir-src-013
+    title: Bumblebee - Pre-trained transformer models for Elixir
+    publisher: elixir-nx
+    type: official_tooling_documentation
+    url: https://github.com/elixir-nx/bumblebee
+    notes: Native Elixir transformer inference on top of Nx and EXLA.
+
+  - id: elixir-src-014
+    title: Nx - Numerical Elixir
+    publisher: elixir-nx
+    type: official_tooling_documentation
+    url: https://github.com/elixir-nx/nx
+    notes: Canonical Elixir tensor library underpinning Bumblebee, with EXLA and Torchx backends.
+
+  - id: elixir-src-015
+    title: Phoenix.PubSub and GenStage
+    publisher: Phoenix Framework / Elixir community
+    type: official_documentation
+    url: https://hexdocs.pm/phoenix_pubsub/
+    notes: BEAM-native streaming and back-pressure primitives.
+
+  - id: elixir-src-016
+    title: Elixir LLM-provider community SDKs
+    publisher: community
+    type: official_tooling_documentation
+    url: https://github.com/zoedsoupe/anthropic
+    notes: Documents the community-maintained nature of Elixir LLM provider clients.
+
+  - id: elixir-src-017
+    title: Instructor for Elixir / LangChain Elixir port
+    publisher: community
+    type: official_tooling_documentation
+    url: https://github.com/thmsmlr/instructor_ex
+    notes: Documents the smaller Elixir agent-framework ecosystem.

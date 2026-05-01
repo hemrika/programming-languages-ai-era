@@ -93,3 +93,38 @@ sources:
     type: official_tooling_documentation
     url: https://github.com/golang/tools/blob/master/gopls/README.md
     notes: Documents gopls as the official Go language server, providing LSP-based semantic-model integration for editors and agents.
+
+  - id: go-src-013
+    title: Anthropic Go SDK
+    publisher: Anthropic
+    type: official_tooling_documentation
+    url: https://github.com/anthropics/anthropic-sdk-go
+    notes: Official Go client library for the Anthropic Claude API.
+
+  - id: go-src-014
+    title: OpenAI Go SDK
+    publisher: OpenAI
+    type: official_tooling_documentation
+    url: https://github.com/openai/openai-go
+    notes: Official Go client library for the OpenAI API.
+
+  - id: go-src-015
+    title: Model Context Protocol Go SDK
+    publisher: Model Context Protocol project
+    type: official_tooling_documentation
+    url: https://github.com/modelcontextprotocol/go-sdk
+    notes: Official Go SDK for the Model Context Protocol.
+
+  - id: go-src-016
+    title: confluent-kafka-go and pgx
+    publisher: Confluent / pgx project
+    type: official_tooling_documentation
+    url: https://github.com/confluentinc/confluent-kafka-go
+    notes: Production Go Kafka client (Confluent) and the pgx Postgres driver supporting pgvector.
+
+  - id: go-src-017
+    title: LangChainGo
+    publisher: community
+    type: official_tooling_documentation
+    url: https://github.com/tmc/langchaingo
+    notes: Community Go port of LangChain; documents the more limited integration surface compared to Python and TS LangChain.

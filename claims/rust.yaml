@@ -268,3 +268,53 @@ claims:
     source: rust-src-017
     notes: Tokio's documentation acknowledges runtime-specific entry points; libraries written against one async runtime often do not run on another, creating ecosystem fragmentation around async/await effects.
     counters: [rust-023]
+
+  - id: rust-027
+    claim: The Model Context Protocol Rust SDK is the official Rust implementation of MCP.
+    dimension: ai_systems_interoperability
+    criterion: protocol_support
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: rust-src-019
+    notes: github.com/modelcontextprotocol/rust-sdk hosts the official Rust MCP SDK.
+
+  - id: rust-028
+    claim: async-openai is the de facto async Rust client for the OpenAI API and is widely used in production.
+    dimension: ai_systems_interoperability
+    criterion: llm_provider_support
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: positive
+    source: rust-src-020
+    notes: github.com/64bit/async-openai is the most widely adopted async OpenAI Rust client.
+
+  - id: rust-029
+    claim: candle is HuggingFace's official minimalist machine-learning framework for Rust, providing a native inference runtime for transformer models.
+    dimension: ai_systems_interoperability
+    criterion: inference_runtime_support
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: rust-src-021
+    notes: github.com/huggingface/candle is the official HuggingFace Rust ML library.
+
+  - id: rust-030
+    claim: Rust agent-framework support (Rig, swiftide, langchain-rust) is younger and thinner than Python and TypeScript equivalents, with fewer first-class integrations.
+    dimension: ai_systems_interoperability
+    criterion: agent_framework_support
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: negative
+    source: rust-src-022
+    notes: The most active Rust agent libraries are early-stage and trail Python/TS LangChain in integration breadth.
+
+  - id: rust-031
+    claim: Rust's Postgres ecosystem (sqlx, tokio-postgres) and rdkafka client provide production-grade data-layer and streaming integrations that align well with AI-systems infrastructure.
+    dimension: ai_systems_interoperability
+    criterion: data_layer_integration
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: rust-src-023
+    notes: sqlx and tokio-postgres are the dominant async Postgres clients; rust-rdkafka wraps librdkafka for Kafka.
