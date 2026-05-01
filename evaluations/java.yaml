@@ -25,10 +25,10 @@ scores:
     supporting_claims: [java-011, java-014]
 
   runtime_ecosystem:
-    score: 4
+    score: 4.5
     confidence: high
     justification: >
-      The JVM is a production-grade target with mature concurrency primitives (virtual threads, structured concurrency JEP 453), portable bytecode and verifier, deep observability and profiling, and well-organized package distribution via Maven Central. These are forward-looking ecosystem-viability properties a greenfield project can lean on today, evaluated independently of any legacy installed-base credit.
+      The JVM is a uniquely production-grade target: virtual threads (Java 21+) and structured concurrency (JEP 453) collapse the cost of high-concurrency server work, portable bytecode and verifier give predictable deployment, deep observability and profiling tooling are unmatched in the cohort, and Maven Central is a credible greenfield package distribution. These forward-looking ecosystem-viability properties move the score past the integer-4 line.
     supporting_claims: [java-006, java-009, java-010, java-015]
 
   strategic_viability:

@@ -11,10 +11,10 @@ scores:
     supporting_claims: [kotlin-004, kotlin-013]
 
   machine_cognition:
-    score: 4
+    score: 4.5
     confidence: medium
     justification: >
-      Strong static typing and JetBrains-grade tooling support refactoring and analysis, though type inference complexity and slower compiles limit the ceiling.
+      Strong static typing with nullable and non-nullable reference types, sealed hierarchies, and exhaustive when expressions over closed hierarchies push Kotlin past the integer-4 line on machine cognition. JetBrains-grade tooling supports refactoring and analysis; type inference complexity and slower compiles still limit the absolute ceiling.
     supporting_claims: [kotlin-001, kotlin-002, kotlin-003, kotlin-010, kotlin-017]
 
   ai_agent_operability:
