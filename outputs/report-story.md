@@ -10,9 +10,9 @@ Then a single number changed the conversation. Microsoft and the Chromium projec
 
 AI agents arrived in the same window. They started writing code at production scale, and "fast feedback for an agent" became a real number on a budget. The Unknown world rewards different properties: how cheaply a language can be verified, how cleanly its semantic model exposes itself to an LSP, how aligned the language is with the new safety guidance.
 
-But this isn't a simple morality play. The greenfield bet isn't *verification* defeating *operability* — it's *both at once, in tension*. Haskell tops verification and lands middle-tier. Go tops operability and tops the matrix overall, despite ranking last in the cohort on type-system expressiveness. The pattern repeats: languages that win one axis and lose its opposite settle in the middle. The top of the matrix is where both rents get paid.
+But this isn't a simple morality play. The greenfield bet isn't *verification* defeating *operability* — it's *both at once, in tension*. Rust tops verification and lands third on weighted total. Go tops operability and tops the matrix overall, despite ranking last in the cohort on type-system expressiveness. The pattern repeats: languages that win one axis and lose its opposite settle in the middle. The top of the matrix is where both rents get paid.
 
-**What this is about, for you:** if you're starting a new project today and AI agents will write a substantial fraction of the code, which language gives your team cheap verification, fast feedback, and forward position — without paying rent for legacy you don't have? Fourteen languages, ranked. Every assertion traceable to a primary source.
+**What this is about, for you:** if you're starting a new project today and AI agents will write a substantial fraction of the code, which language gives your team cheap verification, fast feedback, and forward position — without paying rent for legacy you don't have? Ten languages, ranked. Every assertion traceable to a primary source.
 
 ## Framing
 
@@ -38,40 +38,36 @@ What the framework credits: governance quality, future fit, training-corpus repr
 | Python      | 4  | 3  | 4  | 5  | 4  | 3.95 |
 | Swift       | 4  | 4  | 3  | 4  | 3  | 3.65 |
 | Java        | 3  | 4  | 3  | 4  | 3  | 3.45 |
-| Zig         | 4  | 4  | 3  | 3  | 3  | 3.45 |
 | Elixir      | 4  | 3  | 3  | 4  | 3  | 3.40 |
-| Haskell     | 3  | 5  | 2  | 3  | 3  | 3.25 |
-| Julia       | 3  | 3  | 2  | 3  | 3  | 2.75 |
-| Mojo        | 3  | 3  | 2  | 2  | 4  | 2.65 |
 | C++         | 2  | 3  | 2  | 4  | 2  | 2.65 |
 
 HC = Human cognition, MC = Machine cognition, AO = AI-agent operability, RE = Runtime/ecosystem, SV = Strategic viability.
 
-Read the table from the top and the surprise is immediate: the leader has the simplest type system in the cohort, and the language with the most expressive type system sits in the middle. That isn't a glitch in the weighting. It is the central finding compressed into two rows.
+Read the table from the top and the surprise is immediate: the leader has the simplest type system in the cohort. That isn't a glitch in the weighting. It is the central finding compressed into one row.
 
 **Top tier — both rents paid.** Go, TypeScript, Rust, Kotlin, .NET clear 4.0 by combining a credible operability story with structural strength on the verification or safety side. Go and TypeScript win on operability. Rust wins on verification and safety. Kotlin and .NET pay both rents at "good enough" — and in a framework that punishes any zero, "good enough on every axis" beats "perfect on one and weak on another."
 
-**Middle tier — strength offset by structural cost.** Python, Swift, Java, Zig, Elixir, Haskell. Each carries a real asset (ML library velocity, Apple-platform integration, modern JVM concurrency, explicit design, BEAM properties, verification ceiling) and a cost the framework refuses to discount (type erasure, lagging Linux posture, build-tool fragmentation, pre-1.0 churn, dynamic typing, optional-extension proliferation).
+**Middle tier — strength offset by structural cost.** Python, Swift, Java, Elixir. Each carries a real asset (ML library velocity, Apple-platform integration, modern JVM concurrency, BEAM properties) and a cost the framework refuses to discount (type erasure, lagging Linux posture, build-tool fragmentation, dynamic typing).
 
-**Lower tier — under named pressure.** Julia (narrow scope), Mojo (ecosystem stage despite a structurally favourable AI-native bet), C++ (regulatory exposure read as strategic-viability). Lower-tier doesn't mean wrong-tier; the bet is conditional and the conditions are nameable.
+**Lower tier — under named pressure.** C++ alone, exposed by regulatory pressure read as strategic-viability. Lower-tier doesn't mean wrong-tier; the bet is conditional and the conditions are nameable.
 
 ## Five Findings
 
 ### 1. AI-agent operability is the dimension that does the most separating.
 
-The Known story about agents: they need smart compilers. The Unknown story, visible in this matrix: they need *unified toolchains*. Go and TypeScript score 5 on AI-agent operability. Haskell and C++ score 2. The gap holds even where underlying language quality on other dimensions is comparable. Operability tracks **toolchain unification and LSP-exposed semantic models**, not type-system depth.
+The Known story about agents: they need smart compilers. The Unknown story, visible in this matrix: they need *unified toolchains*. Go and TypeScript score 5 on AI-agent operability. C++ scores 2. The gap holds even where underlying language quality on other dimensions is comparable. Operability tracks **toolchain unification and LSP-exposed semantic models**, not type-system depth.
 
 Go has a single canonical command covering build, test, format, vet, dependency management, and documentation [go-003], a single canonical formatter [go-002], minimum-version-selection dependency resolution [go-004], and gopls as the official LSP server [go-015]. TypeScript reaches the same surface from a dynamic substrate: opt-in strict mode [typescript-004], discriminated unions [typescript-002], a Microsoft-maintained language service [typescript-006], and the Language Server Protocol Microsoft originated [typescript-007]. .NET ships Roslyn [dotnet-006, dotnet-014] and a unified `dotnet` CLI [dotnet-010]. Rust's diagnostics [rust-004] and rust-analyzer [rust-021] sit alongside Cargo's canonical workflow [rust-008].
 
-Haskell has HLS [haskell-014] but a fragmented build surface — Cabal versus Stack [haskell-006, haskell-007] — and a sprawling optional-extensions surface complicating a canonical dialect [haskell-004]. C++ has cppreference [cpp-012] but no canonical build system and uneven C++20 module adoption [cpp-015].
+C++ has cppreference [cpp-012] but no canonical build system and uneven C++20 module adoption [cpp-015].
 
 ### 2. AI raises the value of cheap verification.
 
 When a human writes the code, the bottleneck is generation. When an agent writes the code, the bottleneck is validation — agents produce more candidate diffs than any human can read. A compiler that can falsify a candidate without execution is worth more in the Unknown than it ever was in the Known.
 
-The strongest verification structures cluster in five languages: Rust's ownership-checked memory rules [rust-001, rust-002, rust-003] with exhaustive `match` [rust-006]; Haskell's Hindley-Milner inference [haskell-002] extended through Liquid Haskell to refinement types [haskell-005]; Kotlin's nullable-type distinction [kotlin-001] and exhaustive `when` over sealed hierarchies [kotlin-002, kotlin-003]; .NET's nullable-reference-type flow analysis [dotnet-003] and pattern-matching family [dotnet-004]; Swift's optionals [swift-001] and conflicting-access detection [swift-004].
+The strongest verification structures cluster in four languages: Rust's ownership-checked memory rules [rust-001, rust-002, rust-003] with exhaustive `match` [rust-006]; Kotlin's nullable-type distinction [kotlin-001] and exhaustive `when` over sealed hierarchies [kotlin-002, kotlin-003]; .NET's nullable-reference-type flow analysis [dotnet-003] and pattern-matching family [dotnet-004]; Swift's optionals [swift-001] and conflicting-access detection [swift-004].
 
-A second pattern is **verification velocity** — the rate at which a language is closing its verification gap. TypeScript's `satisfies` operator [typescript-016], Python's typing-PEP cadence [python-016] with PEP 695 generics [python-004], Elixir's set-theoretic type research [elixir-007], Mojo's compile-time parameters [mojo-004, mojo-005]. The cohort trajectory is toward verification, not away from it. Verification leadership doesn't translate automatically — Haskell scores 5 on machine cognition and 2 on operability — but the direction is unambiguous. Reading: `insights/ai-favors-verifiability.md`.
+A second pattern is **verification velocity** — the rate at which a language is closing its verification gap. TypeScript's `satisfies` operator [typescript-016], Python's typing-PEP cadence [python-016] with PEP 695 generics [python-004], Elixir's set-theoretic type research [elixir-007]. The cohort trajectory is toward verification, not away from it. Verification leadership doesn't translate automatically — Rust scores 5 on machine cognition but 4 on operability — but the direction is unambiguous. Reading: `insights/ai-favors-verifiability.md`.
 
 ### 3. Safety pressure crossed from preference to criterion.
 
@@ -91,7 +87,7 @@ Java retains forward credit for virtual threads [java-006], structured concurren
 
 The original binary — dynamic versus static — was always too coarse, and AI-era pressure has retired it. TypeScript's static layer over JavaScript [typescript-001], with discriminated unions [typescript-002] and structural typing [typescript-003], reaches a profile competitive with mature static languages. It scores 4.25 — ahead of Kotlin and .NET, both 4.00.
 
-Python's typing has advanced through PEPs 484, 526, 544, 612, 646, 692, 695 [python-016], with PEP 695 generics [python-004] and pyright/Pylance [python-018] giving agents enough signal in well-typed codebases. Elixir is researching set-theoretic types [elixir-007, elixir-013] and supports Dialyzer success-typing [elixir-006]. The gap remaining is between languages investing in static structure and those that haven't: Julia's optional annotations [julia-007] feed inference and dispatch [julia-013], but type-stability discipline is hand-maintained [julia-016]. Headline: *gradual typing* — not static or dynamic origin — is the most predictive feature. Reading: `comparisons/dynamic-vs-static.md`.
+Python's typing has advanced through PEPs 484, 526, 544, 612, 646, 692, 695 [python-016], with PEP 695 generics [python-004] and pyright/Pylance [python-018] giving agents enough signal in well-typed codebases. Elixir is researching set-theoretic types [elixir-007, elixir-013] and supports Dialyzer success-typing [elixir-006]. The gap remaining is between languages investing in static structure and those that haven't; plain JavaScript continues to lose ground to TypeScript. Headline: *gradual typing* — not static or dynamic origin — is the most predictive feature. Reading: `comparisons/dynamic-vs-static.md`.
 
 ## Per-Language Verdicts
 
@@ -159,14 +155,6 @@ Python's typing has advanced through PEPs 484, 526, 544, 612, 646, 692, 695 [pyt
 
 **The climb.** Right answer when the project is JVM-shaped and the team's hiring market is narrower than Kotlin's. Middle-tier — competent everywhere, dominant nowhere greenfield teams operate.
 
-### Zig — 3.45 — *A C-replacement bet for greenfield systems work where Rust's verification cost is not justified.*
-
-**The rise.** Explicit design — no hidden control flow, allocations, or operator overloading [zig-001]. Explicit allocator passing makes resource policy first-class [zig-002]. Unified comptime collapses metaprogramming [zig-003]. First-class cross-compilation [zig-005, zig-013].
-
-**The fall.** Pre-1.0 status with continuing language and stdlib churn [zig-006, zig-010]. No compile-time memory-safety guarantees comparable to Rust's [zig-009].
-
-**The climb.** Right answer when the project is systems-shaped, C is unacceptable, and Rust's verification cost is excessive. Defensible for explicit-design enthusiasts willing to absorb pre-1.0 churn.
-
 ### Elixir — 3.40 — *Default for fault-tolerant distributed systems and real-time AI-augmented UIs.*
 
 **The rise.** The BEAM process and concurrency model [elixir-001, elixir-004], OTP supervision trees as structured fault tolerance [elixir-002], Phoenix LiveView as a substrate for server-driven real-time interfaces [elixir-009, elixir-014]. Runtime properties not matched in the cohort.
@@ -174,30 +162,6 @@ Python's typing has advanced through PEPs 484, 526, 544, 612, 646, 692, 695 [pyt
 **The fall.** Elixir is dynamically typed [elixir-005] with set-theoretic types still in research [elixir-016]. LiveView's server-driven rendering ties front-end lifecycle to a stateful socket [elixir-017].
 
 **The climb.** Right answer when fault tolerance and soft-real-time interactivity are the defining properties. The verification gap is acceptable when OTP's runtime guarantees do the work the type system would have.
-
-### Haskell — 3.25 — *A reference language for verification, not a default for delivery.*
-
-**The rise.** Hindley-Milner inference over a pure non-strict core [haskell-001, haskell-002], with Liquid Haskell extending to refinement types and compile-time specifications [haskell-005]. The verification ceiling in this matrix.
-
-**The fall.** GHC's optional-extensions surface complicates a single canonical dialect [haskell-004]. Lazy-by-default evaluation creates space-leak risk [haskell-015]. Typeclass and higher-kinded type machinery remain unfamiliar to mainstream developers [haskell-012]. The build-tool surface is split between Cabal and Stack [haskell-006, haskell-007].
-
-**The climb.** Right answer when correctness is the product and the team can absorb the operability cost — formal-verification work, compiler internals, financial modeling at the edge. A reference language, not a default.
-
-### Julia — 2.75 — *Defensible in numerical computing, narrow elsewhere.*
-
-**The rise.** Multiple dispatch combined with type inference enables generic library composition with high-performance specialized code [julia-002, julia-003]. Native code caching closes the long-standing time-to-first-execution complaint [julia-004]. A credible accelerator ecosystem [julia-014].
-
-**The fall.** Central focus on numerical computing narrows general-purpose future fit [julia-012]. Type-stability discipline must be hand-maintained [julia-016] — agents and humans both pay attention costs other languages absorb at the compiler.
-
-**The climb.** Right answer when the project is numerical-computing-shaped and Python's verification gap is the binding constraint. Narrow, but real.
-
-### Mojo — 2.65 — *A forward bet on AI-native compute kernels with active risk management required.*
-
-**The rise.** MLIR-based compilation targeting heterogeneous hardware [mojo-002, mojo-013], compile-time parameters with ownership conventions [mojo-004, mojo-005, mojo-014], frequent releases under a public changelog [mojo-015]. A structurally favourable bet on AI-native compilation.
-
-**The fall.** Single-vendor governance under Modular [mojo-008], pre-1.0 status [mojo-010], small AI-training-corpus footprint [mojo-012]. Ecosystem stage is the binding constraint.
-
-**The climb.** Right answer when the project is an AI-native kernel, the team can absorb single-vendor and pre-1.0 risk, and Rust's accelerator path doesn't fit the hardware.
 
 ### C++ — 2.65 — *Default only for accelerator host code where the safety penalty is knowingly accepted.*
 
@@ -214,14 +178,14 @@ The question is not "which language is best" but "which language is right for th
 | Domain | Primary | Alternatives | The trade-off you are accepting |
 |---|---|---|---|
 | Greenfield application work | TypeScript | Kotlin, .NET (C#) | Operability and ecosystem breadth, in exchange for unsoundness [typescript-005, typescript-017] |
-| Systems / infrastructure / security-sensitive | Rust | Zig, Go | Verification and safety [rust-001, rust-015], in exchange for compile-time and learning-curve cost [rust-020, rust-025] |
-| Data / AI/ML / scripting | Python | TypeScript (data products), Julia (numerics) | ML ecosystem velocity [python-012] over verification gap [python-002] — typed-from-day-one is the price |
+| Systems / infrastructure / security-sensitive | Rust | Go | Verification and safety [rust-001, rust-015], in exchange for compile-time and learning-curve cost [rust-020, rust-025] |
+| Data / AI/ML / scripting | Python | TypeScript (data products) | ML ecosystem velocity [python-012] over verification gap [python-002] — typed-from-day-one is the price |
 | Fault-tolerant distributed systems | Elixir | Go, Rust | BEAM runtime properties [elixir-001, elixir-002] over verification ceiling [elixir-005] |
-| AI-native compute kernels | Mojo (forward bet), Rust | C++ (only where unavoidable) | Hardware-portable performance [mojo-002] in exchange for ecosystem narrowness [mojo-008] |
+| AI-native compute kernels | Rust | C++ (only where unavoidable) | Rust accelerator/ML ecosystem (wgpu, candle, burn) [rust-022] over C++ memory-safety exposure [cpp-004] |
 | Apple-platform application work | Swift | Kotlin Multiplatform [kotlin-015] | Native platform integration [swift-003] in exchange for Apple-aligned governance [swift-011] |
 | Accelerator host code where C++ is forced | C++ | Rust (where accelerator support exists) | Toolchain access [cpp-013], with memory-safety penalty knowingly accepted [cpp-006] |
 
-For **greenfield application work** — web, mobile, internal tools — TypeScript wins on the broadest joint operability-and-verification profile; Kotlin and .NET are credible where the JVM or .NET runtime is operationally preferred. For **systems or infrastructure**, Rust pays operability cost for verification and safety gains aligned with the regulatory direction; Zig is defensible where Rust is excessive but C is unacceptable. For **data or ML**, Python's ecosystem velocity is forward-relevant — typed-from-day-one is non-negotiable. For **fault-tolerant distributed systems**, Elixir's BEAM properties aren't matched in this cohort. For **AI-native compute kernels**, Mojo is a forward bet; Rust is the lower-risk alternative; C++ only when accelerator support forces it. For **Apple platforms**, Swift is the native default; Kotlin Multiplatform is the cross-platform alternative.
+For **greenfield application work** — web, mobile, internal tools — TypeScript wins on the broadest joint operability-and-verification profile; Kotlin and .NET are credible where the JVM or .NET runtime is operationally preferred. For **systems or infrastructure**, Rust pays operability cost for verification and safety gains aligned with the regulatory direction; Go is the alternative when deliberate minimalism is preferred over verification ceiling. For **data or ML**, Python's ecosystem velocity is forward-relevant — typed-from-day-one is non-negotiable. For **fault-tolerant distributed systems**, Elixir's BEAM properties aren't matched in this cohort. For **AI-native compute kernels**, Rust's accelerator/ML stack is the forward path; C++ only when accelerator host code forces it. For **Apple platforms**, Swift is the native default; Kotlin Multiplatform is the cross-platform alternative.
 
 No single language is a default for everything. AI-era language choice is becoming more domain-sensitive, not less.
 
@@ -229,7 +193,7 @@ No single language is a default for everything. AI-era language choice is becomi
 
 What this report can't tell you. The framework weights (HC 20%, MC 25%, AO 25%, RE 20%, SV 10%) are working assumptions, not the output of a calibrated multi-rater process. A reader could weight runtime/ecosystem higher (favouring Python and the JVM languages) or AI-agent operability higher (favouring Go and TypeScript). The matrix is robust to small weight perturbations, not to large ones. Read it as the output of *a* defensible weighting, not *the* weighting.
 
-Snapshot date is **2026-04-30**. Mojo's pre-1.0 trajectory [mojo-010] and release cadence [mojo-015] could shift ecosystem-stage scores within twelve months. Zig's pre-1.0 churn [zig-006] is similar. Julia's accelerator and parser improvements [julia-005, julia-014] are landing continuously. Elixir's set-theoretic type work [elixir-007, elixir-013] could move that language's verification score before its next major release.
+Snapshot date is **2026-04-30**. Elixir's set-theoretic type work [elixir-007, elixir-013] could move that language's verification score before its next major release. Python's typing PEP cadence [python-016] continues to land each release, and TypeScript's type-system additions ship on the same cadence as the JavaScript surface they layer over.
 
 The greenfield framing is itself a deliberate choice. A team maintaining a million-line incumbent estate has a different question; legacy gravity reappears as an advantage there, and this matrix under-credits Java, Python, and C++ for that purpose. Bilingual-team and polyglot-portfolio questions are out of scope.
 
@@ -237,4 +201,5 @@ Scores are single-rater author judgments grounded in atomic claims with primary-
 
 ## Reading and Reproducibility
 
-The corpus is structured for traceability. **Framework** in `framework/` (criteria, weights, lenses, rubric); **Claims** in `claims/<language>.yaml` (255 atomic claims, each with a primary-source citation); **Sources** in `sources/<language>-sources.yaml` (181 entries); **Evaluations** in `evaluations/<language>.yaml`; **Comparisons** and **Insights** in their named directories. The matrix is reproducible via `scripts/score_summary.py`. Methodology: `outputs/evidence-backed-research-execution-plan.md`.
+The corpus is structured for traceability. **Framework** in `framework/` (criteria, weights, lenses, rubric); **Claims** in `claims/<language>.yaml` (191 atomic claims, each with a primary-source citation); **Sources** in `sources/<language>-sources.yaml` (136 entries); **Evaluations** in `evaluations/<language>.yaml`; **Comparisons** and **Insights** in their named directories. The matrix is reproducible via `scripts/score_summary.py`. Methodology: `outputs/evidence-backed-research-execution-plan.md`.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
