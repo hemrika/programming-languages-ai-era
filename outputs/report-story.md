@@ -10,7 +10,7 @@ Then a single number changed the conversation. Microsoft and the Chromium projec
 
 AI agents arrived in the same window. They started writing code at production scale, and "fast feedback for an agent" became a real number on a budget. The Unknown world rewards different properties: how cheaply a language can be verified, how cleanly its semantic model exposes itself to an LSP, how aligned the language is with the new safety guidance.
 
-But this isn't a simple morality play. The greenfield bet isn't *verification* defeating *operability* — it's *both at once, in tension*. Rust tops verification and lands third on weighted total. Go tops operability and tops the matrix overall, despite ranking last in the cohort on type-system expressiveness. The pattern repeats: languages that win one axis and lose its opposite settle in the middle. The top of the matrix is where both rents get paid.
+But this isn't a simple morality play. The greenfield bet isn't *verification* defeating *operability* — it's *both at once, in tension*. Rust tops verification and lands fifth on weighted total. Go tops operability and lands second overall, despite ranking last in the cohort on type-system expressiveness. TypeScript leads by combining strong operability with first-party AI-systems integration. The pattern repeats: languages that win one axis and lose its opposite settle in the middle. The top of the matrix is where both rents get paid.
 
 **What this is about, for you:** if you're starting a new project today and AI agents will write a substantial fraction of the code, which language gives your team cheap verification, fast feedback, and forward position — without paying rent for legacy you don't have? Ten languages, ranked. Every assertion traceable to a primary source.
 
@@ -20,7 +20,7 @@ Picking a language used to mean choosing a tribe. The tribe came with a hiring m
 
 This report evaluates each language from a deliberately greenfield position. Installed base, code volume, incumbent inertia — none of it earns credit. That choice is load-bearing. A team maintaining a million lines of Java has a different question to answer; this report is not for them. This is for the team starting today, with AI agents in the loop, asking which language gives them the best forward posture for the next three years.
 
-The framework had to make five decisions. Can humans understand and govern the code (**Human cognition**, 20%)? Can compilers, analyzers, and AI systems reason about it (**Machine cognition**, 25%)? Can agents safely modify and verify it (**AI-agent operability**, 25%)? Can the runtime carry production traffic (**Runtime and ecosystem**, 20%)? Will the language still be the right choice in three years (**Strategic viability**, 10%)? Operability and machine cognition together carry half the weight — a bet that the AI-era discriminator is the feedback loop, not the syntax.
+The framework asks six questions, each with a weight. Can humans understand and govern the code (**Human cognition**, 15%)? Can compilers, analyzers, and AI systems reason about it (**Machine cognition**, 20%)? Can agents safely modify and verify it (**AI-agent operability**, 20%)? Can the runtime carry production traffic (**Runtime and ecosystem**, 15%)? Will the language still be the right choice in three years (**Strategic viability**, 10%)? And new in v0.2: does it plug into the data layer, LLM providers, agent frameworks, MCP, inference runtimes, streaming, and observability that an AI-era system actually depends on (**AI-systems interoperability**, 20%)? Machine cognition, operability, and AI-systems integration together carry 60% of the weight — a bet that the AI-era discriminator is the feedback loop and the integration surface, not the syntax.
 
 Four lenses cut across the dimensions: **verification advantage** (what the compiler falsifies before code runs), **agentic development advantage** (fast feedback, deterministic tooling, clear diagnostics), **safety pressure** (alignment with regulatory and platform-vendor selection criteria), **abstraction compression** (behaviour per line, with what implicit context cost).
 
@@ -28,28 +28,28 @@ What the framework credits: governance quality, future fit, training-corpus repr
 
 ## The Matrix
 
-| Language    | HC | MC | AO | RE | SV | Weighted |
-|---          |---:|---:|---:|---:|---:|---:|
-| Go          | 5  | 4  | 5  | 4  | 4  | 4.45 |
-| TypeScript  | 4  | 4  | 5  | 4  | 4  | 4.25 |
-| Rust        | 3  | 5  | 4  | 4  | 5  | 4.15 |
-| Kotlin      | 4  | 4  | 4  | 4  | 4  | 4.00 |
-| .NET (C#)   | 4  | 4  | 4  | 4  | 4  | 4.00 |
-| Python      | 4  | 3  | 4  | 5  | 4  | 3.95 |
-| Swift       | 4  | 4  | 3  | 4  | 3  | 3.65 |
-| Java        | 3  | 4  | 3  | 4  | 3  | 3.45 |
-| Elixir      | 4  | 3  | 3  | 4  | 3  | 3.40 |
-| C++         | 2  | 3  | 2  | 4  | 2  | 2.65 |
+| Language    | HC  | MC  | AO  | RE  | SV  | AI  | Weighted |
+|---          |---: |---: |---: |---: |---: |---: |---:|
+| TypeScript  | 4   | 4   | 5   | 4   | 4   | 4.5 | 4.30 |
+| Go          | 5   | 4   | 5   | 4   | 4   | 3.5 | 4.25 |
+| Python      | 4   | 3   | 4   | 5   | 4   | 5   | 4.15 |
+| .NET (C#)   | 4   | 4   | 4   | 4   | 4   | 4   | 4.00 |
+| Rust        | 3   | 5   | 4   | 4   | 5   | 3   | 3.95 |
+| Kotlin      | 4   | 4.5 | 4   | 4   | 4   | 3   | 3.90 |
+| Java        | 3   | 4   | 3   | 4.5 | 3   | 3.5 | 3.53 |
+| Swift       | 4   | 4   | 3   | 4   | 3   | 2   | 3.30 |
+| Elixir      | 4   | 3   | 3   | 4.5 | 3   | 2.5 | 3.28 |
+| C++         | 2   | 3   | 2   | 4   | 2   | 3   | 2.70 |
 
-HC = Human cognition, MC = Machine cognition, AO = AI-agent operability, RE = Runtime/ecosystem, SV = Strategic viability.
+HC = Human cognition (15%), MC = Machine cognition (20%), AO = AI-agent operability (20%), RE = Runtime/ecosystem (15%), SV = Strategic viability (10%), AI = AI-systems interoperability (20%).
 
 Read the table from the top and the surprise is immediate: the leader has the simplest type system in the cohort. That isn't a glitch in the weighting. It is the central finding compressed into one row.
 
-**Top tier — both rents paid.** Go, TypeScript, Rust, Kotlin, .NET clear 4.0 by combining a credible operability story with structural strength on the verification or safety side. Go and TypeScript win on operability. Rust wins on verification and safety. Kotlin and .NET pay both rents at "good enough" — and in a framework that punishes any zero, "good enough on every axis" beats "perfect on one and weak on another."
+**Top tier — both rents paid.** TypeScript, Go, Python, .NET clear 4.0 by combining a credible operability story with first-party AI-systems integration depth. TypeScript leads on the joint operability + LangChain.js + MCP TS SDK profile. Python rejoins the top tier on the strength of the dominant LLM SDK and agent-framework story. Go remains close behind on operability breadth. .NET pays both rents through Microsoft Semantic Kernel and the official MCP C# SDK.
 
-**Middle tier — strength offset by structural cost.** Python, Swift, Java, Elixir. Each carries a real asset (ML library velocity, Apple-platform integration, modern JVM concurrency, BEAM properties) and a cost the framework refuses to discount (type erasure, lagging Linux posture, build-tool fragmentation, dynamic typing).
+**Middle tier — structural strength meets a thinner AI-integration ecosystem.** Rust, Kotlin, Java, Swift, Elixir. Each carries a real asset (Rust verification, Kotlin null-safety, JVM concurrency, BEAM properties, Apple-platform integration) and a cost the framework refuses to discount (Rust's young agent-framework ecosystem, Kotlin's thin AI-native tooling, Java's verbose surface, Swift's thin cross-platform AI integration, Elixir's small LLM-vendor SDK ecosystem).
 
-**Lower tier — under named pressure.** C++ alone, exposed by regulatory pressure read as strategic-viability. Lower-tier doesn't mean wrong-tier; the bet is conditional and the conditions are nameable.
+**Lower tier — under named pressure.** C++ alone, exposed by regulatory pressure read as strategic-viability. The 6th dimension does credit C++ for being the host of llama.cpp, ONNX, and CUDA/ROCm/SYCL — the score is 3, not 1 — but no first-party LLM SDK or agent framework lifts it further. Lower-tier doesn't mean wrong-tier; the bet is conditional and the conditions are nameable.
 
 ## Five Findings
 
@@ -91,7 +91,7 @@ Python's typing has advanced through PEPs 484, 526, 544, 612, 646, 692, 695 [pyt
 
 ## Per-Language Verdicts
 
-### Go — 4.45 — *Default for backend services where deliberate minimalism is acceptable.*
+### Go — 4.25 — *Default for backend services where deliberate minimalism is acceptable.*
 
 **The rise.** Go enters the AI era with a uniquely low-friction agent profile: a single canonical command for the full development loop [go-003], gofmt as the canonical formatter [go-002], gopls as the official LSP server [go-015], goroutines and channels as a runtime concurrency primitive [go-005]. Operability isn't a feature; it's the worldview.
 
@@ -99,7 +99,7 @@ Python's typing has advanced through PEPs 484, 526, 544, 612, 646, 692, 695 [pyt
 
 **The climb.** Go lands first not by winning verification but by winning the rest. For greenfield backend services — networked infrastructure, agents reading and editing code at scale, teams who prefer explicit dullness to implicit cleverness — Go's joint operability profile beats every other language in the cohort.
 
-### TypeScript — 4.25 — *Default for application work in the JavaScript-shaped world.*
+### TypeScript — 4.30 — *Default for application work in the JavaScript-shaped world.*
 
 **The rise.** TypeScript layers an optional static type system over JavaScript [typescript-001], with discriminated unions for exhaustive narrowing [typescript-002] and a strict-mode bundle escalating to near-static discipline [typescript-004]. The Microsoft-maintained Language Service [typescript-006] talks to editors over the Language Server Protocol Microsoft originated [typescript-007].
 
@@ -107,7 +107,7 @@ Python's typing has advanced through PEPs 484, 526, 544, 612, 646, 692, 695 [pyt
 
 **The climb.** Right answer when the project lives in the JavaScript ecosystem and the team commits to strict mode from day one. Lands at 4.25 — verification-velocity carries it past static-typed peers.
 
-### Rust — 4.15 — *Default for systems, infrastructure, and security-sensitive work.*
+### Rust — 3.95 — *Default for systems, infrastructure, and security-sensitive work.*
 
 **The rise.** Ownership-checked memory rules without garbage collection [rust-001, rust-002, rust-003], exhaustive `match` over enums [rust-006, rust-007], and regulatory alignment via NSA and Android telemetry [rust-015, rust-016, rust-017]. Cargo unifies the workflow [rust-008], rust-analyzer is a high-quality LSP [rust-021], and an accelerator/ML ecosystem is emerging in wgpu, candle, burn [rust-022].
 
@@ -115,7 +115,7 @@ Python's typing has advanced through PEPs 484, 526, 544, 612, 646, 692, 695 [pyt
 
 **The climb.** Right answer when the project is systems-shaped and the cost of a memory-safety incident exceeds the learning-curve cost — infrastructure, security tooling, kernels, anything regulators watch.
 
-### Kotlin — 4.00 — *Default for JVM application work and increasingly for cross-platform.*
+### Kotlin — 3.90 — *Default for JVM application work and increasingly for cross-platform.*
 
 **The rise.** Nullable types as a first-class distinction [kotlin-001], sealed hierarchies with exhaustive `when` [kotlin-002, kotlin-003], coroutines for structured concurrency [kotlin-006], and Multiplatform now stable across JVM, Android, iOS, JS, Native [kotlin-015].
 
@@ -131,7 +131,7 @@ Python's typing has advanced through PEPs 484, 526, 544, 612, 646, 692, 695 [pyt
 
 **The climb.** Right answer for Microsoft-shop application and service work, credible well beyond. Co-leads the second top-tier band with Kotlin.
 
-### Python — 3.95 — *Default for data, AI/ML, and scripting; second-best for general application work.*
+### Python — 4.15 — *Default for data, AI/ML, and AI-systems integration; second-best for general application work.*
 
 **The rise.** Top GitHub language by activity [python-012], sustained typing PEP cadence [python-016] including PEP 484 hints [python-003] and PEP 695 generics [python-004], pyright/Pylance with typeshed stubs [python-018], uv as a fast package manager [python-011], unmatched ML-library gravity [python-013].
 
@@ -139,7 +139,7 @@ Python's typing has advanced through PEPs 484, 526, 544, 612, 646, 692, 695 [pyt
 
 **The climb.** Right answer for data, ML, and scripting — ecosystem gravity alone justifies it. For general application work, second-best behind TypeScript. Typed Python in CI from day one is the only sustainable AI-era posture.
 
-### Swift — 3.65 — *Default for Apple-platform application work.*
+### Swift — 3.30 — *Default for Apple-platform application work.*
 
 **The rise.** Optionals as a type-system distinction [swift-001], memory-safety rules with conflicting-access detection [swift-004], language-level async/await and actors [swift-003], an open Swift Evolution process [swift-006].
 
@@ -147,7 +147,7 @@ Python's typing has advanced through PEPs 484, 526, 544, 612, 646, 692, 695 [pyt
 
 **The climb.** Right answer for Apple-platform work, full stop. Outside that domain, Kotlin Multiplatform and TypeScript are stronger forward bets.
 
-### Java — 3.45 — *Forward case is narrower than its historic position suggested.*
+### Java — 3.53 — *Forward case is narrower than its historic position suggested but stronger under v0.2.*
 
 **The rise.** Virtual threads as a JVM-level concurrency primitive [java-006], structured concurrency in JEP 453 [java-015], records and sealed classes for closed-hierarchy pattern matching [java-002, java-003, java-004]. Modern Java is substantively better than the Java most teams remember.
 
@@ -155,7 +155,7 @@ Python's typing has advanced through PEPs 484, 526, 544, 612, 646, 692, 695 [pyt
 
 **The climb.** Right answer when the project is JVM-shaped and the team's hiring market is narrower than Kotlin's. Middle-tier — competent everywhere, dominant nowhere greenfield teams operate.
 
-### Elixir — 3.40 — *Default for fault-tolerant distributed systems and real-time AI-augmented UIs.*
+### Elixir — 3.28 — *Default for fault-tolerant distributed systems and real-time AI-augmented UIs.*
 
 **The rise.** The BEAM process and concurrency model [elixir-001, elixir-004], OTP supervision trees as structured fault tolerance [elixir-002], Phoenix LiveView as a substrate for server-driven real-time interfaces [elixir-009, elixir-014]. Runtime properties not matched in the cohort.
 
@@ -163,7 +163,7 @@ Python's typing has advanced through PEPs 484, 526, 544, 612, 646, 692, 695 [pyt
 
 **The climb.** Right answer when fault tolerance and soft-real-time interactivity are the defining properties. The verification gap is acceptable when OTP's runtime guarantees do the work the type system would have.
 
-### C++ — 2.65 — *Default only for accelerator host code where the safety penalty is knowingly accepted.*
+### C++ — 2.70 — *Default only for accelerator host code where the safety penalty is knowingly accepted.*
 
 **The rise.** ISO standardization with three-yearly revisions [cpp-001], C++20 modules and ranges [cpp-002], and dominant accelerator toolchains — CUDA, ROCm/HIP, SYCL, oneAPI — all primarily targeting C++ [cpp-013].
 
@@ -191,7 +191,7 @@ No single language is a default for everything. AI-era language choice is becomi
 
 ## Limitations
 
-What this report can't tell you. The framework weights (HC 20%, MC 25%, AO 25%, RE 20%, SV 10%) are working assumptions, not the output of a calibrated multi-rater process. A reader could weight runtime/ecosystem higher (favouring Python and the JVM languages) or AI-agent operability higher (favouring Go and TypeScript). The matrix is robust to small weight perturbations, not to large ones. Read it as the output of *a* defensible weighting, not *the* weighting.
+What this report can't tell you. The framework weights (HC 15%, MC 20%, AO 20%, RE 15%, SV 10%, AI 20%) are working assumptions, not the output of a calibrated multi-rater process. A reader could weight runtime/ecosystem higher (favouring Python and the JVM languages) or AI-agent operability higher (favouring Go and TypeScript). The matrix is robust to small weight perturbations, not to large ones. Read it as the output of *a* defensible weighting, not *the* weighting.
 
 Snapshot date is **2026-04-30**. Elixir's set-theoretic type work [elixir-007, elixir-013] could move that language's verification score before its next major release. Python's typing PEP cadence [python-016] continues to land each release, and TypeScript's type-system additions ship on the same cadence as the JavaScript surface they layer over.
 
@@ -201,5 +201,5 @@ Scores are single-rater author judgments grounded in atomic claims with primary-
 
 ## Reading and Reproducibility
 
-The corpus is structured for traceability. **Framework** in `framework/` (criteria, weights, lenses, rubric); **Claims** in `claims/<language>.yaml` (191 atomic claims, each with a primary-source citation); **Sources** in `sources/<language>-sources.yaml` (136 entries); **Evaluations** in `evaluations/<language>.yaml`; **Comparisons** and **Insights** in their named directories. The matrix is reproducible via `scripts/score_summary.py`. Methodology: `outputs/evidence-backed-research-execution-plan.md`.
+The corpus is structured for traceability. **Framework** in `framework/` (criteria, weights, lenses, rubric); **Claims** in `claims/<language>.yaml` (241 atomic claims, each with a primary-source citation); **Sources** in `sources/<language>-sources.yaml` (186 entries); **Evaluations** in `evaluations/<language>.yaml`; **Comparisons** and **Insights** in their named directories. The matrix is reproducible via `scripts/score_summary.py`. Methodology: `outputs/evidence-backed-research-execution-plan.md`.
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               

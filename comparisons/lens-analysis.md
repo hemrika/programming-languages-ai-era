@@ -54,7 +54,9 @@ Compression is double-edged. Go's intentional weakness on this lens is part of i
 
 ## Reading across the lenses
 
-No single language wins all four. The strongest cross-lens profiles in this set:
+The framework reads across four lenses (verification, agentic, safety, abstraction). The 6th dimension added in v0.2 — AI-systems interoperability — interacts with all four but does not warrant a fifth lens of its own; it functions as a cross-cutting *capability* (how well the language plugs into the data layer, LLM providers, agent frameworks, MCP, inference runtimes, streaming, observability) rather than a structural property of the language itself. Read AI-systems interoperability as the dimension that decides ranking *given* the four-lens profile.
+
+No single language wins all four lenses. The strongest cross-lens profiles in this set:
 
 - **Rust.** Strong on verification and safety; moderate on agentic and abstraction. Greenfield momentum in systems and infrastructure is the forward-looking signal. The Rust ML/accelerator ecosystem (wgpu, candle, burn) and Tokio's production-grade async runtime extend this position into AI-systems work.
 - **TypeScript.** Strong on agentic; moderate on verification, safety, and abstraction. Modern typed-language credit comes from the gradual-typing layer, not the underlying JavaScript runtime. The `satisfies` operator and incremental Language Service semantic model reinforce the AI-tooling integration story.
@@ -72,7 +74,7 @@ Two cases where the lenses pull in different directions are worth flagging:
 
 ## A note on C++ under recalibrated greenfield framing
 
-C++ presents the cleanest case for separating two distinct forward-looking properties from legacy gravity. The recalibrated runtime/ecosystem score (4) credits production-grade compiler toolchains (Clang, GCC, MSVC), ABI stability, OS and hardware integration, and the fact that the dominant accelerator stacks (CUDA, ROCm/HIP, SYCL, oneAPI) all primarily target C++ as their host language. These are forward ecosystem-viability properties a greenfield C++ project would inherit today - distinct from any legacy-installed-base credit. The strategic-viability score (2) reflects the safety pressure (NSA, ONCD, MSRC, Chromium, Android) that is the dominant active forward signal pushing new projects away. The two scores together produce a 2.65 weighted total - alone at the bottom of the matrix, exposed on safety while retaining production-toolchain credit.
+C++ presents the cleanest case for separating two distinct forward-looking properties from legacy gravity. The recalibrated runtime/ecosystem score (4) credits production-grade compiler toolchains (Clang, GCC, MSVC), ABI stability, OS and hardware integration, and the fact that the dominant accelerator stacks (CUDA, ROCm/HIP, SYCL, oneAPI) all primarily target C++ as their host language. These are forward ecosystem-viability properties a greenfield C++ project would inherit today - distinct from any legacy-installed-base credit. The strategic-viability score (2) reflects the safety pressure (NSA, ONCD, MSRC, Chromium, Android) that is the dominant active forward signal pushing new projects away. The two scores together produce a 2.70 weighted total under v0.2 - alone at the bottom of the matrix, exposed on safety while retaining production-toolchain credit. The new AI-systems interoperability dimension scores C++ at 3 (inference-runtime credit for llama.cpp, ONNX C++, CUDA/ROCm host) but the agent-framework absence prevents the score from rising above the integer-3 line.
 
 ## Implications for portfolio thinking
 
