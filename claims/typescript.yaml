@@ -238,3 +238,53 @@ claims:
     polarity: positive
     source: typescript-src-019
     notes: ts.llamaindex.ai documents the TypeScript LlamaIndex distribution.
+
+  - id: typescript-024
+    claim: Zod is the dominant TypeScript schema-validation library, defining schemas in TypeScript that produce both runtime validators and inferred TypeScript types from a single declaration.
+    dimension: structured_output_maturity
+    criterion: schema_validation
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: typescript-src-020
+    notes: zod.dev documents the Zod schema-builder API and the z.infer<typeof Schema> type-inference pattern that yields a single source of truth for runtime and compile-time shapes.
+
+  - id: typescript-025
+    claim: The OpenAI Node SDK and Anthropic TypeScript SDK accept Zod schemas natively for tool-call argument typing and structured outputs, returning parsed TypeScript-typed objects.
+    dimension: structured_output_maturity
+    criterion: llm_tool_call_typing
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: typescript-src-021
+    notes: The OpenAI Node SDK ships zodResponseFormat and zodFunction helpers; the Anthropic TS SDK supports Zod tool-input schemas via betas/tools usage.
+
+  - id: typescript-026
+    claim: The Vercel AI SDK exposes generateObject and streamObject helpers that accept a Zod schema and return Zod-validated TypeScript-typed structured output from any supported LLM provider.
+    dimension: structured_output_maturity
+    criterion: structured_output_libraries
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: typescript-src-022
+    notes: ai-sdk.dev documents generateObject/streamObject with Zod schemas and provider-agnostic structured output support.
+
+  - id: typescript-027
+    claim: zod-to-json-schema converts Zod schemas to JSON Schema, allowing TypeScript projects to derive provider-agnostic JSON Schema definitions directly from native Zod types.
+    dimension: structured_output_maturity
+    criterion: json_schema_generation
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: typescript-src-023
+    notes: github.com/StefanTerdell/zod-to-json-schema documents conversion of Zod schemas to JSON Schema for LLM tool definitions.
+
+  - id: typescript-028
+    claim: TypeScript's structural type system combined with Zod's type-inference pattern provides compile-time contract safety from LLM-output parsing through application logic, with the parse boundary enforced at runtime.
+    dimension: structured_output_maturity
+    criterion: compile_time_contract_safety
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: typescript-src-020
+    notes: A Zod schema produces both a runtime validator and a TypeScript type via z.infer; downstream code that consumes the parsed result is checked at compile time against the same shape that the runtime validator enforces.

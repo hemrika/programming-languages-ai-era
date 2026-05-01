@@ -152,3 +152,31 @@ sources:
     type: official_tooling_documentation
     url: https://github.com/pgvector/pgvector
     notes: pgvector documents Python (psycopg, SQLAlchemy, Django) clients for vector operations on Postgres.
+
+  - id: python-src-021
+    title: Pydantic Documentation
+    publisher: Pydantic
+    type: official_tooling_documentation
+    url: https://docs.pydantic.dev/latest/
+    notes: Documents Pydantic v2 schema validation, JSON Schema generation, and LLM-output validation patterns.
+
+  - id: python-src-022
+    title: OpenAI Python SDK - Structured Outputs
+    publisher: OpenAI
+    type: official_tooling_documentation
+    url: https://github.com/openai/openai-python#structured-outputs
+    notes: Documents .parse() and Pydantic-backed structured outputs in the official OpenAI Python SDK.
+
+  - id: python-src-023
+    title: Instructor Documentation
+    publisher: Instructor / Jason Liu et al.
+    type: official_tooling_documentation
+    url: https://python.useinstructor.com
+    notes: Documents Instructor as a Pydantic-first structured-output wrapper around LLM provider SDKs.
+
+  - id: python-src-024
+    title: Outlines Documentation
+    publisher: dottxt-ai
+    type: official_tooling_documentation
+    url: https://dottxt-ai.github.io/outlines/
+    notes: Documents Outlines as a Python library for JSON-schema-, regex-, and grammar-constrained LLM decoding.

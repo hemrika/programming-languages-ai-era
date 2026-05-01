@@ -134,3 +134,31 @@ sources:
     type: official_tooling_documentation
     url: https://github.com/confluentinc/librdkafka
     notes: Production-grade C/C++ Kafka client.
+
+  - id: cpp-src-018
+    title: nlohmann/json - JSON for Modern C++
+    publisher: nlohmann/json project
+    type: official_tooling_documentation
+    url: https://github.com/nlohmann/json
+    notes: Documents nlohmann/json as the most widely used C++ JSON library with ADL-based type mapping.
+
+  - id: cpp-src-019
+    title: ISO C++ - Standards and ecosystem
+    publisher: isocpp.org
+    type: official_documentation
+    url: https://isocpp.org/std/the-standard
+    notes: ISO C++ standardization site; no canonical LLM SDK or structured-output library is endorsed at the standard level.
+
+  - id: cpp-src-020
+    title: llama.cpp - GBNF grammars and JSON Schema
+    publisher: ggerganov / llama.cpp project
+    type: official_tooling_documentation
+    url: https://github.com/ggerganov/llama.cpp/blob/master/grammars/README.md
+    notes: Documents llama.cpp GBNF grammars and the json-schema-to-grammar conversion for constrained decoding.
+
+  - id: cpp-src-021
+    title: P2996 - Reflection for C++26
+    publisher: ISO C++ committee
+    type: language_specification
+    url: https://wg21.link/P2996
+    notes: Documents the in-progress reflection proposal for C++; standard C++ has no native runtime/compile-time reflection today.

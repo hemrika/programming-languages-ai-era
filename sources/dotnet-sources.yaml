@@ -127,3 +127,38 @@ sources:
     type: official_tooling_documentation
     url: https://github.com/openai/openai-dotnet
     notes: Official .NET OpenAI client and the Azure-flavored Azure.AI.OpenAI Microsoft package.
+
+  - id: dotnet-src-018
+    title: System.Text.Json source generation
+    publisher: Microsoft
+    type: official_documentation
+    url: https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/source-generation
+    notes: Documents the System.Text.Json source generator for AOT-compatible, trim-safe serialization of .NET types.
+
+  - id: dotnet-src-019
+    title: Semantic Kernel - Function calling
+    publisher: Microsoft
+    type: official_tooling_documentation
+    url: https://learn.microsoft.com/en-us/semantic-kernel/concepts/ai-services/chat-completion/function-calling/
+    notes: Documents KernelFunction-attributed methods and automatic parameter schema generation for LLM tool calls.
+
+  - id: dotnet-src-020
+    title: Microsoft.Extensions.AI documentation
+    publisher: Microsoft
+    type: official_tooling_documentation
+    url: https://learn.microsoft.com/en-us/dotnet/ai/microsoft-extensions-ai
+    notes: Documents the unified Microsoft.Extensions.AI abstractions including structured outputs across providers.
+
+  - id: dotnet-src-021
+    title: System.Text.Json - JsonSchemaExporter
+    publisher: Microsoft
+    type: official_documentation
+    url: https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/extract-schema
+    notes: Documents JsonSchemaExporter shipped in .NET 9 for generating JSON Schema from .NET types.
+
+  - id: dotnet-src-022
+    title: C# Nullable reference types
+    publisher: Microsoft
+    type: official_documentation
+    url: https://learn.microsoft.com/en-us/dotnet/csharp/nullable-references
+    notes: Documents nullable reference types as a compile-time null-state analysis feature.

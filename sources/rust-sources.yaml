@@ -171,3 +171,31 @@ sources:
     type: official_tooling_documentation
     url: https://github.com/launchbadge/sqlx
     notes: Production-grade async Postgres and Kafka clients for Rust.
+
+  - id: rust-src-024
+    title: Serde - Serialization framework for Rust
+    publisher: Serde project
+    type: official_tooling_documentation
+    url: https://serde.rs
+    notes: Documents Serde as the canonical Rust serialization framework with derive-macro generated parsers.
+
+  - id: rust-src-025
+    title: schemars - JSON Schema generation for Rust
+    publisher: schemars project
+    type: official_tooling_documentation
+    url: https://docs.rs/schemars
+    notes: Documents schemars as a JSON Schema generator from Rust types annotated with #[derive(JsonSchema)].
+
+  - id: rust-src-026
+    title: async-openai
+    publisher: async-openai project
+    type: official_tooling_documentation
+    url: https://github.com/64bit/async-openai
+    notes: Documents async-openai, a Rust client for OpenAI with Serde-based tool/function-call types.
+
+  - id: rust-src-027
+    title: Rig - Rust LLM Framework
+    publisher: 0xPlaygrounds
+    type: official_tooling_documentation
+    url: https://github.com/0xPlaygrounds/rig
+    notes: Documents Rig as a Rust LLM agent framework with structured-output support.

@@ -133,3 +133,31 @@ sources:
     type: official_documentation
     url: https://github.com/ml-explore/mlx
     notes: Apple's array framework for ML on Apple Silicon, with Swift bindings.
+
+  - id: swift-src-019
+    title: Swift Codable documentation
+    publisher: Apple
+    type: language_specification
+    url: https://developer.apple.com/documentation/swift/codable
+    notes: Documents the Codable protocol as Swift's standard-library type-safe (de)serialization mechanism.
+
+  - id: swift-src-020
+    title: Swift enums documentation
+    publisher: Apple
+    type: language_specification
+    url: https://docs.swift.org/swift-book/documentation/the-swift-programming-language/enumerations/
+    notes: Documents Swift enums with associated values and exhaustive switch as Swift's sum-type construct.
+
+  - id: swift-src-021
+    title: swift-openai-responses
+    publisher: m1guelpf / community
+    type: official_tooling_documentation
+    url: https://github.com/m1guelpf/swift-openai-responses
+    notes: Community Swift client for the OpenAI Responses API with structured-output support.
+
+  - id: swift-src-022
+    title: MLX Swift
+    publisher: Apple / ml-explore
+    type: official_tooling_documentation
+    url: https://github.com/ml-explore/mlx-swift
+    notes: Documents the Swift bindings for MLX, Apple's array framework for machine learning.

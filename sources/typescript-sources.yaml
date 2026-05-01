@@ -149,3 +149,31 @@ sources:
     type: official_tooling_documentation
     url: https://ts.llamaindex.ai
     notes: Canonical TypeScript port of LlamaIndex for RAG and document indexing.
+
+  - id: typescript-src-020
+    title: Zod Documentation
+    publisher: Colin McDonnell / Zod project
+    type: official_tooling_documentation
+    url: https://zod.dev
+    notes: Documents Zod as a TypeScript-first schema validation library with static type inference from schemas.
+
+  - id: typescript-src-021
+    title: OpenAI Node SDK - Helpers and Structured Outputs
+    publisher: OpenAI
+    type: official_tooling_documentation
+    url: https://github.com/openai/openai-node#helpers
+    notes: Documents zodResponseFormat and zodFunction helpers in the official OpenAI Node SDK.
+
+  - id: typescript-src-022
+    title: Vercel AI SDK - Generating Structured Data
+    publisher: Vercel
+    type: official_tooling_documentation
+    url: https://ai-sdk.dev/docs/ai-sdk-core/generating-structured-data
+    notes: Documents generateObject and streamObject with Zod schemas in the Vercel AI SDK.
+
+  - id: typescript-src-023
+    title: zod-to-json-schema
+    publisher: Stefan Terdell / Zod ecosystem
+    type: official_tooling_documentation
+    url: https://github.com/StefanTerdell/zod-to-json-schema
+    notes: Converts Zod schemas to JSON Schema for use with LLM tool calls and other JSON-Schema consumers.

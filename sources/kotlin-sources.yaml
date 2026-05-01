@@ -134,3 +134,38 @@ sources:
     type: official_tooling_documentation
     url: https://kotlinlang.org/docs/multiplatform.html
     notes: Documents the dominance of JVM-interop libraries over Kotlin-native AI tooling.
+
+  - id: kotlin-src-019
+    title: Kotlin Serialization documentation
+    publisher: JetBrains
+    type: official_tooling_documentation
+    url: https://kotlinlang.org/docs/serialization.html
+    notes: Documents kotlinx.serialization as the official JetBrains-maintained Kotlin serialization framework.
+
+  - id: kotlin-src-020
+    title: Kotlin Sealed classes and interfaces
+    publisher: JetBrains
+    type: language_specification
+    url: https://kotlinlang.org/docs/sealed-classes.html
+    notes: Documents sealed classes and exhaustive when as Kotlin's closed sum-type construct.
+
+  - id: kotlin-src-021
+    title: LangChain4j - Kotlin usage
+    publisher: LangChain4j project
+    type: official_tooling_documentation
+    url: https://docs.langchain4j.dev/get-started
+    notes: Documents LangChain4j use from Kotlin via JVM interop with Kotlin data classes as AI-Service return types.
+
+  - id: kotlin-src-022
+    title: kotlinx-serialization JSON Schema community modules
+    publisher: kotlinx ecosystem / community
+    type: official_tooling_documentation
+    url: https://github.com/Kantis/ks3
+    notes: Community modules cover JSON Schema generation from kotlinx.serialization-annotated types.
+
+  - id: kotlin-src-023
+    title: Kotlin LLM library landscape
+    publisher: kotlinlang community
+    type: official_tooling_documentation
+    url: https://kotlinlang.org/docs/data-science-overview.html
+    notes: Kotlin data-science overview indicates LLM-tooling primarily flows through JVM/Java ecosystem rather than Kotlin-native libraries.

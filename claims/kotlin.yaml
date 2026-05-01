@@ -247,3 +247,54 @@ claims:
     polarity: negative
     source: kotlin-src-018
     notes: The Kotlin-native AI stack is small; most production code consumes Java libraries through interop.
+
+  - id: kotlin-025
+    claim: kotlinx.serialization is the official JetBrains-maintained Kotlin serialization framework with a compiler plugin that generates type-safe serializers from @Serializable Kotlin data classes.
+    dimension: structured_output_maturity
+    criterion: schema_validation
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: kotlin-src-019
+    notes: kotlinlang.org/docs/serialization.html documents kotlinx.serialization as the official Kotlin-first serialization library with multiplatform support.
+
+  - id: kotlin-026
+    claim: Kotlin sealed classes and sealed interfaces with exhaustive when expressions provide closed-hierarchy modeling of LLM-output discriminated unions, statically checked at compile time.
+    dimension: structured_output_maturity
+    criterion: compile_time_contract_safety
+    evidence_type: language_specification
+    confidence: high
+    polarity: positive
+    source: kotlin-src-020
+    notes: kotlinlang.org documents sealed classes and exhaustive when as a closed sum-type construct for safe LLM-output discrimination.
+
+  - id: kotlin-027
+    claim: LangChain4j AI Services and the Anthropic Java SDK are usable from Kotlin via JVM interop, giving Kotlin projects type-safe LLM tool-call argument binding to Kotlin data classes.
+    dimension: structured_output_maturity
+    criterion: llm_tool_call_typing
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: positive
+    source: kotlin-src-021
+    notes: Kotlin's seamless Java interop allows LangChain4j and the Anthropic Java SDK to be consumed with Kotlin idioms; Kotlin-native LLM SDKs are rarer.
+
+  - id: kotlin-028
+    claim: kotlinx-serialization-json-schema and community projects generate JSON Schema documents from @Serializable Kotlin types, but the LLM-specific structured-output layer is thinner than Python or TypeScript.
+    dimension: structured_output_maturity
+    criterion: json_schema_generation
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: positive
+    source: kotlin-src-022
+    notes: Community modules (e.g., kotlinx-serialization-jsonschema, kxs-ts-gen) cover JSON Schema generation from Kotlin types; the LLM-tooling layer is less mature than the TS/Python ecosystems.
+
+  - id: kotlin-029
+    claim: Kotlin's LLM-specific structured-output ecosystem (Kotlin-native Instructor analogues, Kotlin-only structured-output libraries) is thin compared to Python and TypeScript, with most tooling reused from the JVM stack.
+    dimension: structured_output_maturity
+    criterion: structured_output_libraries
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: negative
+    source: kotlin-src-023
+    notes: github.com search and kotlinlang community indices show LLM-specific structured-output libraries primarily routed through LangChain4j JVM rather than Kotlin-native projects.
+    counters: [kotlin-025, kotlin-027]

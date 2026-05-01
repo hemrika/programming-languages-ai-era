@@ -222,3 +222,54 @@ claims:
     polarity: positive
     source: cpp-src-017
     notes: github.com/confluentinc/librdkafka is the canonical C++ Kafka client.
+
+  - id: cpp-022
+    claim: nlohmann/json is the most widely used C++ JSON library and supports manual mapping between JSON and C++ types via to_json/from_json overloads.
+    dimension: structured_output_maturity
+    criterion: schema_validation
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: cpp-src-018
+    notes: github.com/nlohmann/json documents the JSON for Modern C++ library with manual ADL-based type mapping.
+
+  - id: cpp-023
+    claim: C++ has no first-party LLM provider SDK, no broadly adopted LLM-specific structured-output library, and no Pydantic-equivalent schema-to-types validation framework.
+    dimension: structured_output_maturity
+    criterion: structured_output_libraries
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: negative
+    source: cpp-src-019
+    notes: github.com search and ISO C++ guidance show no canonical LLM SDK or structured-output library in C++; the ecosystem is fragmented across community wrappers.
+    counters: [cpp-022]
+
+  - id: cpp-024
+    claim: llama.cpp implements native JSON-schema-constrained decoding via GBNF grammars, giving C++ projects in-process JSON-Schema-guided generation that other ecosystems often consume via FFI.
+    dimension: structured_output_maturity
+    criterion: constrained_generation
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: cpp-src-020
+    notes: github.com/ggerganov/llama.cpp documents GBNF grammar files and the json-schema-to-grammar conversion as a native C++ constrained-decoding feature.
+
+  - id: cpp-025
+    claim: C++ projects must hand-write or adopt third-party reflection libraries to convert C++ types to JSON Schema; standard C++ has no native types-to-JSON-Schema autogeneration.
+    dimension: structured_output_maturity
+    criterion: json_schema_generation
+    evidence_type: language_specification
+    confidence: high
+    polarity: negative
+    source: cpp-src-021
+    notes: ISO C++ has no built-in reflection (P2996 still in progress); JSON Schema generation in C++ requires manual mapping or Boost.Describe/cista-style annotations.
+
+  - id: cpp-026
+    claim: C++'s strong static type system gives compile-time contract safety once JSON has been parsed into typed structs, but the lack of an LLM-tooling layer means schema definition, JSON Schema generation, and validation are largely manual.
+    dimension: structured_output_maturity
+    criterion: compile_time_contract_safety
+    evidence_type: language_specification
+    confidence: medium
+    polarity: positive
+    source: cpp-src-018
+    notes: Once a struct is populated via nlohmann/json the C++ type system enforces shape; the manual upstream definition is the bottleneck rather than type-level safety.

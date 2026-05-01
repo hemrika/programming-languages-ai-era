@@ -258,3 +258,54 @@ claims:
     polarity: positive
     source: python-src-020
     notes: Each vector store project lists Python as the primary client; pgvector has psycopg + SQLAlchemy bindings.
+
+  - id: python-026
+    claim: Pydantic v2 is the de-facto Python schema-validation library, generating JSON Schema from declarative Python models and validating LLM-produced JSON against typed shapes.
+    dimension: structured_output_maturity
+    criterion: schema_validation
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: python-src-021
+    notes: docs.pydantic.dev documents BaseModel, JSON Schema generation via model_json_schema(), and validation flows used as the canonical Python LLM-output validator.
+
+  - id: python-027
+    claim: The OpenAI Python SDK supports passing a Pydantic BaseModel as the response_format, parsing tool calls and structured outputs into typed Python instances.
+    dimension: structured_output_maturity
+    criterion: llm_tool_call_typing
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: python-src-022
+    notes: The OpenAI Python SDK README documents the .parse() helper and Pydantic-backed structured outputs returning typed objects.
+
+  - id: python-028
+    claim: The Instructor library wraps LLM clients to return Pydantic-validated structured outputs, with retry-on-validation-failure and patching of the OpenAI/Anthropic clients.
+    dimension: structured_output_maturity
+    criterion: structured_output_libraries
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: python-src-023
+    notes: python.useinstructor.com documents Instructor as a Pydantic-first structured-output layer over LLM provider SDKs.
+
+  - id: python-029
+    claim: Outlines is a Python library for guided generation that constrains LLM decoding to JSON Schema, regular expressions, or context-free grammars at the token level.
+    dimension: structured_output_maturity
+    criterion: constrained_generation
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: python-src-024
+    notes: dottxt-ai.github.io/outlines documents JSON-schema-, regex-, and grammar-guided decoding for local and remote LLMs in Python.
+
+  - id: python-030
+    claim: Python's structured-output safety relies on runtime validation rather than static type checking, so contract violations surface only when Pydantic validates a response, not at compile time.
+    dimension: structured_output_maturity
+    criterion: compile_time_contract_safety
+    evidence_type: language_specification
+    confidence: high
+    polarity: negative
+    source: python-src-002
+    notes: PEP 484 type hints are advisory; the Pydantic boundary is enforced at runtime, so an unchecked path through dynamic Python can still produce structurally invalid LLM-output handling.
+    counters: [python-026, python-028]

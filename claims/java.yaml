@@ -238,3 +238,53 @@ claims:
     polarity: positive
     source: java-src-018
     notes: onnxruntime ships the com.microsoft.onnxruntime Maven package as an official Java distribution.
+
+  - id: java-024
+    claim: Jackson is the de-facto JVM JSON library and combines with Java Bean Validation (Jakarta Validation, JSR 380) to validate deserialized Java records against declarative annotations.
+    dimension: structured_output_maturity
+    criterion: schema_validation
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: java-src-019
+    notes: github.com/FasterXML/jackson and jakarta.ee/specifications/bean-validation document Jackson + Bean Validation as the canonical Java validated-deserialization pairing.
+
+  - id: java-025
+    claim: LangChain4j AI Services bind a Java interface declaration to LLM tool calls, generating JSON Schemas from Java method signatures and parsing LLM responses back into typed Java records.
+    dimension: structured_output_maturity
+    criterion: llm_tool_call_typing
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: java-src-020
+    notes: docs.langchain4j.dev documents AI Services as a high-level Java-interface-to-LLM mapping with automatic schema and parsing.
+
+  - id: java-026
+    claim: LangChain4j and the Anthropic Java SDK provide structured-output ergonomics including automatic Java-record deserialization of LLM-generated JSON.
+    dimension: structured_output_maturity
+    criterion: structured_output_libraries
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: positive
+    source: java-src-020
+    notes: LangChain4j documents structured-output handlers; the Anthropic Java SDK ships JSON-Schema-aware tool-input types.
+
+  - id: java-027
+    claim: The mbknor-jackson-jsonSchema project and Jackson JSON Schema modules generate JSON Schema documents from Java POJOs and records, supporting LLM tool-input definitions.
+    dimension: structured_output_maturity
+    criterion: json_schema_generation
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: positive
+    source: java-src-021
+    notes: github.com/mbknor/mbknor-jackson-jsonSchema documents Jackson-driven JSON Schema generation for Java types; Jackson also ships first-party JSON Schema modules.
+
+  - id: java-028
+    claim: Java's static type system, records, and sealed classes give compile-time contract safety from Jackson deserialization through downstream code, but the type-to-schema layer is more verbose and less LLM-native than Pydantic or Zod.
+    dimension: structured_output_maturity
+    criterion: compile_time_contract_safety
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: java-src-022
+    notes: Records (JEP 395) and sealed classes (JEP 409) give closed-shape, type-safe LLM-output handling on the JVM, though boilerplate and library fragmentation lag the TS/Python LLM ergonomics.

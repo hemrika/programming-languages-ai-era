@@ -128,3 +128,31 @@ sources:
     type: official_tooling_documentation
     url: https://github.com/tmc/langchaingo
     notes: Community Go port of LangChain; documents the more limited integration surface compared to Python and TS LangChain.
+
+  - id: go-src-018
+    title: Go encoding/json package documentation
+    publisher: Go team
+    type: language_specification
+    url: https://pkg.go.dev/encoding/json
+    notes: Documents the standard-library encoding/json package and struct-tag-based marshaling.
+
+  - id: go-src-019
+    title: openai-go SDK
+    publisher: OpenAI
+    type: official_tooling_documentation
+    url: https://github.com/openai/openai-go
+    notes: Documents the official OpenAI Go SDK with struct-defined tool-call typing.
+
+  - id: go-src-020
+    title: go-playground/validator
+    publisher: go-playground
+    type: official_tooling_documentation
+    url: https://github.com/go-playground/validator
+    notes: Documents validator/v10, the most-used Go struct-tag validation library among multiple alternatives.
+
+  - id: go-src-021
+    title: invopop/jsonschema
+    publisher: Invopop
+    type: official_tooling_documentation
+    url: https://github.com/invopop/jsonschema
+    notes: Documents JSON Schema generation from Go structs via reflection.

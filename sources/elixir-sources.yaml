@@ -127,3 +127,24 @@ sources:
     type: official_tooling_documentation
     url: https://github.com/thmsmlr/instructor_ex
     notes: Documents the smaller Elixir agent-framework ecosystem.
+
+  - id: elixir-src-018
+    title: Ecto.Changeset documentation
+    publisher: Elixir Ecto project
+    type: official_tooling_documentation
+    url: https://hexdocs.pm/ecto/Ecto.Changeset.html
+    notes: Documents Ecto changesets as Elixir's canonical runtime data validation and casting construct.
+
+  - id: elixir-src-019
+    title: instructor_ex
+    publisher: thmsmlr / Elixir community
+    type: official_tooling_documentation
+    url: https://github.com/thmsmlr/instructor_ex
+    notes: Documents the Elixir port of the Instructor pattern returning Ecto-validated structured LLM outputs.
+
+  - id: elixir-src-020
+    title: Elixir set-theoretic types research
+    publisher: Elixir core team
+    type: official_documentation
+    url: https://elixir-lang.org/blog/2023/06/22/type-system-updates-research-dev/
+    notes: Documents the set-theoretic types work as ongoing research, not a stable language-level type system.

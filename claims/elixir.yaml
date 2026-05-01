@@ -237,3 +237,54 @@ claims:
     polarity: negative
     source: elixir-src-017
     notes: github.com/thmsmlr/instructor_ex and the Elixir LangChain port are credible but trail Python LangChain.
+
+  - id: elixir-024
+    claim: Ecto changesets provide runtime schema validation, casting, and constraint checking for Elixir maps, with declarative validators that compose over data shapes.
+    dimension: structured_output_maturity
+    criterion: schema_validation
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: elixir-src-018
+    notes: hexdocs.pm/ecto/Ecto.Changeset.html documents Ecto changesets as the canonical Elixir runtime data-validation construct.
+
+  - id: elixir-025
+    claim: instructor_ex is the Elixir port of the Instructor pattern, returning Ecto-validated structured outputs from LLM calls with retry-on-validation-failure.
+    dimension: structured_output_maturity
+    criterion: structured_output_libraries
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: positive
+    source: elixir-src-019
+    notes: github.com/thmsmlr/instructor_ex documents an Elixir Instructor analogue that returns Ecto-schema-validated LLM outputs.
+
+  - id: elixir-026
+    claim: Elixir's LLM-specific structured-output ecosystem is thin, with community libraries (instructor_ex, langchain_elixir) maintained outside the major LLM provider organizations.
+    dimension: structured_output_maturity
+    criterion: structured_output_libraries
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: negative
+    source: elixir-src-019
+    notes: hex.pm shows Elixir LLM tooling primarily community-maintained; first-party Anthropic or OpenAI Elixir SDKs are absent.
+    counters: [elixir-024, elixir-025]
+
+  - id: elixir-027
+    claim: Elixir's set-theoretic typing research is pre-stable and runtime validation through Ecto changesets remains the practical contract-safety mechanism for LLM-output handling.
+    dimension: structured_output_maturity
+    criterion: compile_time_contract_safety
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: elixir-src-020
+    notes: elixir-lang.org documents the set-theoretic types work as still in research; structured-output safety in Elixir is enforced at runtime via Ecto rather than at compile time.
+
+  - id: elixir-028
+    claim: instructor_ex and Ecto schema introspection provide a path from Elixir schema definitions to JSON Schema for LLM tool definitions, but native types-to-JSON-Schema autogeneration is less standardized than in Python or TypeScript.
+    dimension: structured_output_maturity
+    criterion: json_schema_generation
+    evidence_type: official_tooling_documentation
+    confidence: low
+    polarity: positive
+    source: elixir-src-019
+    notes: instructor_ex documents schema-to-JSON-Schema conversion for OpenAI tool calls; the Elixir ecosystem lacks a dominant equivalent of zod-to-json-schema or Pydantic.

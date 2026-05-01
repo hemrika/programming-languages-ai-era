@@ -248,3 +248,54 @@ claims:
     polarity: negative
     source: go-src-017
     notes: github.com/tmc/langchaingo is community-maintained and trails the Python LangChain in supported integrations.
+
+  - id: go-025
+    claim: Go's encoding/json standard-library package provides struct-tag-driven JSON parsing into typed Go structs, the canonical structured-data parsing path on the Go standard library.
+    dimension: structured_output_maturity
+    criterion: schema_validation
+    evidence_type: language_specification
+    confidence: high
+    polarity: positive
+    source: go-src-018
+    notes: pkg.go.dev/encoding/json documents struct-tag-based JSON encoding and decoding into Go types.
+
+  - id: go-026
+    claim: The openai-go SDK generates JSON Schema for tool calls from Go struct definitions and parses LLM responses into typed Go structs.
+    dimension: structured_output_maturity
+    criterion: llm_tool_call_typing
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: go-src-019
+    notes: github.com/openai/openai-go documents tool-call typing via Go structs and the JSON-Schema generation flow.
+
+  - id: go-027
+    claim: Go's validation library landscape is fragmented across go-playground/validator, ozzo-validation, and others, with no single canonical schema-validation library equivalent to Pydantic or Zod.
+    dimension: structured_output_maturity
+    criterion: schema_validation
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: negative
+    source: go-src-020
+    notes: pkg.go.dev shows go-playground/validator/v10 as the most-used validator but multiple competing libraries exist; the ecosystem lacks a dominant schema-with-inferred-types library.
+    counters: [go-025, go-026]
+
+  - id: go-028
+    claim: jsonschema-go and invopop/jsonschema generate JSON Schema documents from Go structs, supporting LLM tool-input definitions.
+    dimension: structured_output_maturity
+    criterion: json_schema_generation
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: positive
+    source: go-src-021
+    notes: github.com/invopop/jsonschema documents JSON Schema generation from Go structs via reflection.
+
+  - id: go-029
+    claim: Go's static type system protects the boundary between LLM output and program code at compile time once the JSON has been parsed into a typed struct, but the structured-output ecosystem lacks the LLM-specific ergonomics of Python or TypeScript.
+    dimension: structured_output_maturity
+    criterion: compile_time_contract_safety
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: go-src-018
+    notes: encoding/json gives type-checked struct-typed access to LLM JSON; Go's lack of sum types and the fragmented validation ecosystem keep the score moderate.

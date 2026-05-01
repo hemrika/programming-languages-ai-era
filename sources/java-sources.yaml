@@ -139,3 +139,31 @@ sources:
     type: official_tooling_documentation
     url: https://onnxruntime.ai/docs/install/#install-on-java
     notes: Official Java distribution of ONNX Runtime for cross-framework inference.
+
+  - id: java-src-019
+    title: Jackson - High-performance JSON processor for Java
+    publisher: FasterXML / Jackson project
+    type: official_tooling_documentation
+    url: https://github.com/FasterXML/jackson
+    notes: Documents Jackson as the de-facto JVM JSON library used with Jakarta Bean Validation for validated deserialization.
+
+  - id: java-src-020
+    title: LangChain4j Documentation - AI Services
+    publisher: LangChain4j project
+    type: official_tooling_documentation
+    url: https://docs.langchain4j.dev/tutorials/ai-services
+    notes: Documents AI Services as Java-interface-to-LLM binding with automatic JSON Schema generation and structured outputs.
+
+  - id: java-src-021
+    title: mbknor-jackson-jsonSchema
+    publisher: mbknor / Jackson ecosystem
+    type: official_tooling_documentation
+    url: https://github.com/mbknor/mbknor-jackson-jsonSchema
+    notes: Documents Jackson-driven JSON Schema generation from Java types.
+
+  - id: java-src-022
+    title: JEP 395 - Records
+    publisher: OpenJDK
+    type: language_specification
+    url: https://openjdk.org/jeps/395
+    notes: Documents Java records as a closed-shape immutable data carrier suited to LLM-output deserialization.

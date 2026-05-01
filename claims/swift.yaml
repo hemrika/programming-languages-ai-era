@@ -237,3 +237,54 @@ claims:
     polarity: positive
     source: swift-src-018
     notes: github.com/ml-explore/mlx and the Swift bindings target Apple Silicon ML workloads.
+
+  - id: swift-024
+    claim: Swift's Codable protocol with auto-synthesized conformances provides type-safe JSON parsing into Swift structs and enums via the standard-library JSONEncoder/JSONDecoder.
+    dimension: structured_output_maturity
+    criterion: schema_validation
+    evidence_type: language_specification
+    confidence: high
+    polarity: positive
+    source: swift-src-019
+    notes: developer.apple.com/documentation/swift/codable documents Codable as Swift's standard-library type-safe (de)serialization protocol.
+
+  - id: swift-025
+    claim: Swift enums with associated values and exhaustive switch statements give compile-time-checked discriminated unions for LLM-output discrimination.
+    dimension: structured_output_maturity
+    criterion: compile_time_contract_safety
+    evidence_type: language_specification
+    confidence: high
+    polarity: positive
+    source: swift-src-020
+    notes: docs.swift.org documents enums with associated values and exhaustive switch as Swift's sum-type construct.
+
+  - id: swift-026
+    claim: Swift's LLM-specific structured-output ecosystem is thin, with community libraries such as swift-openai-responses and MacPaw/OpenAI providing some structured-output support but no first-party Anthropic or OpenAI Swift SDK.
+    dimension: structured_output_maturity
+    criterion: structured_output_libraries
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: negative
+    source: swift-src-021
+    notes: github.com search shows community Swift OpenAI clients; first-party Anthropic and OpenAI Swift SDKs are absent.
+
+  - id: swift-027
+    claim: Swift's LLM tool-call typing relies on user-defined Codable structs and manually-supplied JSON Schemas; no Swift equivalent to Zod-to-JSON-Schema or Pydantic-driven schema generation is broadly adopted.
+    dimension: structured_output_maturity
+    criterion: llm_tool_call_typing
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: negative
+    source: swift-src-021
+    notes: Community Swift OpenAI clients require hand-written JSON Schema or use ad-hoc reflection; the schema-from-types automation is less mature than Python/TS.
+    counters: [swift-024, swift-025]
+
+  - id: swift-028
+    claim: Swift's structured-output integration with first-party Apple ML stacks (Core ML, MLX) is solid for on-device inference but separate from the cross-platform LLM-output validation ecosystem.
+    dimension: structured_output_maturity
+    criterion: structured_output_libraries
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: positive
+    source: swift-src-022
+    notes: developer.apple.com/documentation/coreml and ml-explore/mlx-swift document type-safe Apple ML APIs distinct from the LLM-text structured-output ecosystem.

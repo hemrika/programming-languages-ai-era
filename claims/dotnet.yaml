@@ -238,3 +238,53 @@ claims:
     polarity: positive
     source: dotnet-src-017
     notes: NuGet OpenAI package and Azure.AI.OpenAI from Microsoft are the canonical OpenAI clients in .NET.
+
+  - id: dotnet-024
+    claim: System.Text.Json is the in-box .NET JSON serializer with a source-generator mode that statically generates serializers from C# records and types.
+    dimension: structured_output_maturity
+    criterion: schema_validation
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: dotnet-src-018
+    notes: learn.microsoft.com documents System.Text.Json source generation producing trim-safe, AOT-friendly serializers for typed structured-data parsing.
+
+  - id: dotnet-025
+    claim: Microsoft Semantic Kernel exposes function calling with C# attributes that map .NET methods and parameters to LLM tool definitions and parse the LLM-produced arguments back into typed C# values.
+    dimension: structured_output_maturity
+    criterion: llm_tool_call_typing
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: dotnet-src-019
+    notes: Microsoft Learn's Semantic Kernel docs describe KernelFunction attributes and automatic JSON-Schema-driven parameter binding for tool calls.
+
+  - id: dotnet-026
+    claim: The Microsoft.Extensions.AI abstractions and OpenAI .NET SDK expose typed structured-output APIs that bind LLM JSON responses to C# records via System.Text.Json.
+    dimension: structured_output_maturity
+    criterion: structured_output_libraries
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: dotnet-src-020
+    notes: learn.microsoft.com/dotnet/ai documents Microsoft.Extensions.AI as the unified .NET AI surface with structured-output helpers.
+
+  - id: dotnet-027
+    claim: System.Text.Json includes a JsonSchemaExporter that generates JSON Schema documents from .NET types, providing native types-to-JSON-Schema generation for LLM tool definitions.
+    dimension: structured_output_maturity
+    criterion: json_schema_generation
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: dotnet-src-021
+    notes: learn.microsoft.com documents JsonSchemaExporter shipped in .NET 9 for generating JSON Schema from CLR types.
+
+  - id: dotnet-028
+    claim: C# nullable reference types and records combined with System.Text.Json source generation give .NET projects compile-time contract safety from LLM-output deserialization through application code.
+    dimension: structured_output_maturity
+    criterion: compile_time_contract_safety
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: dotnet-src-022
+    notes: Records, init-only properties, and nullable reference types make the deserialized shape statically checkable; LLM-specific community ergonomics remain thinner than Python or TypeScript.

@@ -318,3 +318,54 @@ claims:
     polarity: positive
     source: rust-src-023
     notes: sqlx and tokio-postgres are the dominant async Postgres clients; rust-rdkafka wraps librdkafka for Kafka.
+
+  - id: rust-032
+    claim: Serde is the dominant Rust serialization framework, generating zero-cost type-safe parsers and serializers from #[derive(Serialize, Deserialize)] on Rust structs and enums.
+    dimension: structured_output_maturity
+    criterion: schema_validation
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: rust-src-024
+    notes: serde.rs documents Serde as the canonical Rust serialization framework with derive-macro generated, type-safe parsers.
+
+  - id: rust-033
+    claim: schemars generates JSON Schema documents from Rust types annotated with #[derive(JsonSchema)], enabling provider-agnostic schema export for LLM tool definitions.
+    dimension: structured_output_maturity
+    criterion: json_schema_generation
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: rust-src-025
+    notes: docs.rs/schemars documents the JsonSchema derive macro and schema generation from Rust types.
+
+  - id: rust-034
+    claim: async-openai and the Anthropic Rust SDKs accept Rust types deserialized via Serde for tool-call arguments and structured outputs, but the LLM-specific structured-output layer is younger than Python or TypeScript.
+    dimension: structured_output_maturity
+    criterion: llm_tool_call_typing
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: positive
+    source: rust-src-026
+    notes: github.com/64bit/async-openai documents tool/function call types defined via Serde structs; the layer relies on user-supplied JSON Schemas more than Python/TS.
+
+  - id: rust-035
+    claim: Rust's enums combined with Serde's tagged-union deserialization provide compile-time-checked discriminated unions for LLM-output discrimination, with exhaustive match enforced by the compiler.
+    dimension: structured_output_maturity
+    criterion: compile_time_contract_safety
+    evidence_type: language_specification
+    confidence: high
+    polarity: positive
+    source: rust-src-024
+    notes: serde.rs documents tagged enum representations (internally, externally, adjacently tagged); combined with exhaustive match this is a strong contract-safety property.
+
+  - id: rust-036
+    claim: Rust's LLM-specific structured-output ecosystem (rig, langchain-rust, instruct-rs analogues) is younger than Python or TypeScript, with fewer high-level structured-output abstractions and less broad provider coverage.
+    dimension: structured_output_maturity
+    criterion: structured_output_libraries
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: negative
+    source: rust-src-027
+    notes: github.com/0xPlaygrounds/rig and github.com/Abraxas-365/langchain-rust document Rust agent frameworks; structured-output abstractions are present but less mature than Pydantic-Instructor or Vercel AI SDK.
+    counters: [rust-032, rust-033, rust-035]
