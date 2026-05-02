@@ -234,3 +234,10 @@ sources:
     type: official_documentation
     url: https://foundation.rust-lang.org/members/
     notes: "Rust Foundation member roster documents commercial-vendor sponsorship."
+
+  - id: rust-src-033
+    title: "Rust Governance"
+    publisher: "Rust Project"
+    type: official_documentation
+    url: https://www.rust-lang.org/governance
+    notes: "Rust governance documents the Rust project structure; no AI-specific working group ships first-party AI crates."

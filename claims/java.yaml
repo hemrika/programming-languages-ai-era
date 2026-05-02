@@ -352,3 +352,14 @@ claims:
     polarity: positive
     source: java-src-027
     notes: "OpenJDK Groups page documents Oracle, IBM, Red Hat, and others as JEP and runtime stewards."
+
+  - id: java-034
+    claim: "OpenJDK ships no AI-specific module first-party; Java's AI surface depends on commercial-third-party (LangChain4j) and commercial-first-party (Anthropic SDK, ONNX Runtime Java) libraries."
+    dimension: ai_systems_native
+    backer: language_stewards
+    criterion: standard_library_ai_surface
+    evidence_type: official_documentation
+    confidence: high
+    polarity: negative
+    source: java-src-028
+    notes: "OpenJDK projects list does not include an AI/ML-specific working group."

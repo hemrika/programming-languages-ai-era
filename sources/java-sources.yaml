@@ -202,3 +202,10 @@ sources:
     type: official_documentation
     url: https://openjdk.org/groups/
     notes: "OpenJDK Groups page documents Oracle, IBM, Red Hat, and others as JEP and runtime stewards."
+
+  - id: java-src-028
+    title: "OpenJDK Projects"
+    publisher: "OpenJDK Project"
+    type: official_documentation
+    url: https://openjdk.org/projects/
+    notes: "OpenJDK projects list does not include an AI/ML-specific working group."

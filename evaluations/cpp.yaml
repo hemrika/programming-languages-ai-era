@@ -1,53 +1,75 @@
 language: C++
 status: draft
-updated: 2026-04-30
+updated: 2026-05-02
+framework_version: v0.4
 
 scores:
   human_cognition:
     score: 2
     confidence: medium
     justification: >
-      C++ has sharp edges, undefined behavior, and historical complexity; modern subsets are cleaner, but real-world codebases mix many eras and idioms.
+      C++'s syntactic density, undefined-behaviour exposure, and template metaprogramming complexity place a high local-reasoning load.
     supporting_claims: [cpp-003, cpp-016]
 
   machine_cognition:
     score: 3
     confidence: medium
     justification: >
-      Mature analyzers exist, but template metaprogramming, macros, and weak modularity obscure structure from tools and AI systems.
+      Strong static typing and modern C++20 modules and ranges; standard reflection (P2996) is still in progress and module adoption is uneven.
     supporting_claims: [cpp-002, cpp-009, cpp-010, cpp-011, cpp-015]
 
   ai_agent_operability:
     score: 2
     confidence: medium
     justification: >
-      Slow builds, fragmented build systems, and high blast radius for incorrect changes make agent operation costly and risky.
+      cppreference is a strong reference but C++ has no canonical build system; modules adoption is uneven across compilers.
     supporting_claims: [cpp-012]
 
   runtime_ecosystem:
     score: 4
     confidence: medium
     justification: >
-      C++ retains a production-grade compiler toolchain (Clang, GCC, MSVC), ABI stability, deep OS and hardware integration, and broad library availability - all greenfield-relevant ecosystem properties independent of legacy installed-base credit. The dominant accelerator stacks (CUDA, ROCm/HIP, SYCL, oneAPI) primarily target C++ today, extending the forward production-relevance into AI-systems work.
+      Production-grade compiler toolchains (Clang, GCC, MSVC), ABI stability, OS and hardware integration, and the dominant accelerator stacks (CUDA, ROCm/HIP, SYCL, oneAPI) all primarily target C++.
     supporting_claims: [cpp-004, cpp-005, cpp-008, cpp-013, cpp-014]
 
   strategic_viability:
     score: 2
     confidence: medium
     justification: >
-      Under greenfield framing, installed base does not score. The active forward signals are negative: NSA and ONCD guidance explicitly advise against memory-unsafe languages for new projects, while ISO governance is the only meaningful positive. New-project share is shifting toward Rust and other safer alternatives in security-sensitive segments.
+      Memory-safety pressure (NSA, ONCD, MSRC, Chromium, Android) is the dominant active forward signal pushing new projects away.
     supporting_claims: [cpp-001, cpp-006, cpp-007]
 
-  ai_systems_interoperability:
-    score: 3
+  ai_systems_native:
+    score: 2.5
     confidence: medium
     justification: >
-      C++ is the host language for the dominant local-inference runtimes (llama.cpp, ONNX Runtime C++ API) and the major accelerator stacks (CUDA, ROCm/HIP, SYCL, oneAPI), giving it a uniquely strong inference-runtime story. Kafka via librdkafka is production-grade. Agent frameworks and first-party LLM SDKs are essentially absent; integration is mediated through Python bindings.
+      ISO C++ ships no AI-specific facilities. The 2.5 credits CUDA, ROCm, SYCL, and oneAPI as commercial-first-party host runtimes that target C++ as the language-of-the-stack — partial native-ish story without first-party-ISO backing.
+    supporting_claims: [cpp-032]
+
+  ai_systems_ecosystem:
+    score: 3.0
+    confidence: medium
+    justification: >
+      C++ has llama.cpp as the dominant local-inference runtime, ONNX Runtime C++ as a primary binding, CUDA/ROCm/SYCL host runtimes, and librdkafka for streaming. First-party LLM provider SDKs and agent frameworks are essentially absent.
     supporting_claims: [cpp-017, cpp-018, cpp-019, cpp-020, cpp-021]
 
-  structured_output_maturity:
+  structured_output_native:
+    score: 1.0
+    confidence: high
+    justification: >
+      ISO C++ has no native reflection (P2996 still in progress), no schema-validation library in the standard library, and no first-party LLM tool-call typing surface; the structured-output native story is essentially absent.
+    supporting_claims: [cpp-026]
+
+  structured_output_ecosystem:
     score: 2.0
     confidence: medium
     justification: >
-      nlohmann/json is widely used for manual JSON-to-types mapping and llama.cpp ships native GBNF JSON-schema-constrained decoding. Standard C++ has no first-party LLM SDK, no Pydantic-equivalent schema-to-types library, and no native types-to-JSON-Schema generation; reflection (P2996) is still in progress. Type safety after parsing is strong but the schema-definition pipeline is manual.
-    supporting_claims: [cpp-022, cpp-023, cpp-024, cpp-025, cpp-026]
+      nlohmann/json is the most widely used C++ JSON library and supports manual mapping; llama.cpp implements native GBNF JSON-schema-constrained decoding. No Pydantic-equivalent validation framework exists; reflection-based schema generation requires Boost.Describe or hand-written code.
+    supporting_claims: [cpp-022, cpp-023, cpp-024, cpp-025]
+
+  ecosystem_dependency_risk:
+    score: 3.0
+    confidence: medium
+    justification: >
+      C++'s dependency-risk profile mixes strong commercial-first-party backing (CUDA/NVIDIA, ONNX/Microsoft, librdkafka/Confluent) with single-maintainer load-bearing dependencies (llama.cpp/Gerganov, nlohmann/json/Lohmann). The accelerator stack itself is well-funded.
+    supporting_claims: [cpp-027, cpp-028, cpp-029, cpp-030, cpp-031]

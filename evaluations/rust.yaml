@@ -1,53 +1,75 @@
 language: Rust
 status: draft
-updated: 2026-04-30
+updated: 2026-05-02
+framework_version: v0.4
 
 scores:
   human_cognition:
     score: 3
     confidence: medium
     justification: >
-      Rust is explicit and locally rigorous, but ownership, borrowing, and lifetimes impose substantial cognitive load that lowers practical readability for non-expert maintainers.
+      Rust's ownership model carries a real learning curve and the syntactic density of lifetimes, generics, and traits places a higher local-reasoning load than most cohort languages.
     supporting_claims: [rust-005, rust-020]
 
   machine_cognition:
     score: 5
     confidence: high
     justification: >
-      Rust exposes strong static structure through types, ownership, borrowing, lifetimes, and compiler checks.
+      Ownership-checked memory rules without garbage collection, exhaustive match over enums, lifetimes, and the trait system give the strongest verification structure in the cohort.
     supporting_claims: [rust-002, rust-003, rust-006, rust-007, rust-012]
 
   ai_agent_operability:
     score: 4
     confidence: medium
     justification: >
-      Rust has strong compiler feedback, mature tooling, and rust-analyzer's deep semantic-model integration over LSP, though repair loops can be complex.
+      rust-analyzer is the official LSP server with a deep semantic model; Cargo is a single canonical workflow tool. Compile times remain a real friction on large workspaces.
     supporting_claims: [rust-004, rust-009, rust-010, rust-021, rust-025]
 
   runtime_ecosystem:
     score: 4
     confidence: high
     justification: >
-      Rust has strong performance, safety, and tooling, with Tokio as a production-grade async runtime and a growing accelerator/ML ecosystem (wgpu, candle, burn) extending forward production-relevance into AI-systems work.
+      Rust's accelerator/ML ecosystem (wgpu, candle, burn) and Tokio's production-grade async runtime make Rust a credible greenfield choice for AI infrastructure.
     supporting_claims: [rust-001, rust-008, rust-011, rust-017, rust-022, rust-023, rust-026]
 
   strategic_viability:
     score: 5
     confidence: medium
     justification: >
-      Rust is structurally aligned with AI-era safety pressure (ONCD, MSRC, Android, Chromium reports) and increasingly the default for systems, infrastructure, security-sensitive, and AI-adjacent tooling. The RFC process and Project Goals roadmap give a public ecosystem-velocity signal.
+      Regulatory alignment via NSA recommendations and Android telemetry; broad commercial sponsorship via the Rust Foundation; sustained RFC and Project Goals cadence.
     supporting_claims: [rust-013, rust-014, rust-015, rust-016, rust-018, rust-019, rust-024]
 
-  ai_systems_interoperability:
-    score: 3
-    confidence: medium
+  ai_systems_native:
+    score: 1.5
+    confidence: high
     justification: >
-      Rust has an official MCP Rust SDK, the async-openai Rust client, HuggingFace's candle as a native inference runtime, and production-grade Postgres and Kafka clients. The agent-framework ecosystem (Rig, swiftide, langchain-rust) is younger than Python or TypeScript, which keeps the score at 3 despite the strong infrastructure-side integration profile.
-    supporting_claims: [rust-027, rust-028, rust-029, rust-030, rust-031]
+      The Rust project ships no first-party AI-specific crate. Native AI surface is essentially absent — rust-analyzer and the type system support AI-tooling use cases but no first-party AI runtime exists.
+    supporting_claims: [rust-042]
 
-  structured_output_maturity:
+  ai_systems_ecosystem:
     score: 3.5
     confidence: medium
     justification: >
-      Serde is the gold standard for type-safe parsing in Rust, schemars provides JSON Schema generation, and Rust enums with tagged-union deserialization plus exhaustive match give strong compile-time contract safety. async-openai and Rust agent frameworks (rig, langchain-rust) supply structured-output flows but the LLM-specific ergonomics layer is younger than Python or TypeScript.
-    supporting_claims: [rust-032, rust-033, rust-034, rust-035, rust-036]
+      Rust's AI ecosystem is credible but younger: official MCP Rust SDK, async-openai as the de facto OpenAI client, HuggingFace's candle as an inference runtime, and production Postgres/Kafka clients. Agent-framework depth (Rig, swiftide, langchain-rust) trails Python and TypeScript.
+    supporting_claims: [rust-027, rust-028, rust-029, rust-030, rust-031]
+
+  structured_output_native:
+    score: 2.0
+    confidence: medium
+    justification: >
+      Rust's enums + match enforce exhaustive LLM-output discrimination at compile time, which is the strongest pattern-match-exhaustiveness anchor in the cohort. But no schema-validation library ships with the language; Serde is community-multi-maintainer and de facto rather than native.
+    supporting_claims: [rust-035]
+
+  structured_output_ecosystem:
+    score: 4.0
+    confidence: medium
+    justification: >
+      Serde is the dominant Rust serialization framework with derive-macro generated, type-safe parsers; schemars covers JSON Schema generation; async-openai accepts Serde-typed tool-call arguments. LLM-specific ergonomics (rig, langchain-rust) are younger than Python/TS but well-shaped.
+    supporting_claims: [rust-032, rust-033, rust-034, rust-036]
+
+  ecosystem_dependency_risk:
+    score: 3.5
+    confidence: medium
+    justification: >
+      Rust's dependency-risk profile is mixed: the Rust Foundation provides multi-vendor language-layer backing, but Serde, schemars, and Rust agent frameworks are community-multi-maintainer with notable bus-factor concentration. candle's HuggingFace backing is the strongest commercial anchor.
+    supporting_claims: [rust-037, rust-038, rust-039, rust-040, rust-041]

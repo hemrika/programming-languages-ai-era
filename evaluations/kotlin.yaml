@@ -1,53 +1,75 @@
 language: Kotlin
 status: draft
-updated: 2026-04-30
+updated: 2026-05-02
+framework_version: v0.4
 
 scores:
   human_cognition:
     score: 4
     confidence: medium
     justification: >
-      Kotlin is concise, expressive, and ergonomic, with sealed types, data classes, and null safety reducing boilerplate, though some advanced features (delegation, scope functions, coroutine builders) raise local-reasoning cost.
+      Kotlin's null-safety, data classes, and abstraction surface give high readability with less ceremony than Java; some implicit context (extension functions, scope functions) adds cognitive load.
     supporting_claims: [kotlin-004, kotlin-013]
 
   machine_cognition:
     score: 4.5
     confidence: medium
     justification: >
-      Strong static typing with nullable and non-nullable reference types, sealed hierarchies, and exhaustive when expressions over closed hierarchies push Kotlin past the integer-4 line on machine cognition. JetBrains-grade tooling supports refactoring and analysis; type inference complexity and slower compiles still limit the absolute ceiling.
+      Nullable types as a type-system distinction, sealed classes for closed hierarchies, exhaustive when in expression position. Java-interop platform types are a verification gap that holds back the score from 5.
     supporting_claims: [kotlin-001, kotlin-002, kotlin-003, kotlin-010, kotlin-017]
 
   ai_agent_operability:
     score: 4
     confidence: medium
     justification: >
-      Good diagnostics, IDE feedback, and LSP-based language servers exposing the Kotlin semantic model support agent workflows, but slower builds and a smaller training corpus than Java create friction.
+      Both kotlin-language-server and JetBrains' own LSP server expose the Kotlin semantic model; Gradle incremental compilation reduces edit-to-feedback latency.
     supporting_claims: [kotlin-011, kotlin-016]
 
   runtime_ecosystem:
     score: 4
     confidence: high
     justification: >
-      JVM runtime maturity plus full Java interop gives Kotlin access to a deep, production-grade ecosystem; coroutines and Flow provide a coherent concurrency model for backpressure-aware data pipelines.
+      The JVM substrate plus Kotlin Multiplatform stable across JVM/Android/iOS/JS/Native gives Kotlin broad runtime and ecosystem coverage.
     supporting_claims: [kotlin-005, kotlin-006, kotlin-007, kotlin-014, kotlin-018, kotlin-019]
 
   strategic_viability:
     score: 4
     confidence: medium
     justification: >
-      Strong Android adoption and growing server-side use, with Kotlin Multiplatform now stable across JVM/Android/iOS/JS/Native targets expanding the forward cross-platform reach, balanced against single-vendor (JetBrains) roadmap dependence.
+      JetBrains-stewarded language with strong Android-platform alignment via Google; governance dependence on JetBrains is a forward concern.
     supporting_claims: [kotlin-008, kotlin-009, kotlin-012, kotlin-015, kotlin-020]
 
-  ai_systems_interoperability:
-    score: 3
+  ai_systems_native:
+    score: 3.0
     confidence: medium
     justification: >
-      Kotlin has an official MCP Kotlin SDK (co-developed with JetBrains) and inherits the JVM AI stack (LangChain4j, Anthropic Java SDK, ONNX Runtime Java) through Java interop. Kotlin-native AI tooling is thin, but Kotlin Multiplatform extends the AI integration story to mobile and JS targets in a way no other cohort language matches.
-    supporting_claims: [kotlin-021, kotlin-022, kotlin-023, kotlin-024]
+      JetBrains stewards Kotlin and ships kotlinx-serialization and the Kotlin MCP SDK (jointly with the MCP project). Native AI surface beyond serialization and protocol support is thin; Bumblebee/MLX-equivalent first-party Kotlin AI runtimes do not exist.
+    supporting_claims: [kotlin-021, kotlin-023]
 
-  structured_output_maturity:
+  ai_systems_ecosystem:
+    score: 3.0
+    confidence: medium
+    justification: >
+      Kotlin's AI-systems ecosystem is dominated by Java-interop libraries (LangChain4j, Anthropic Java SDK, ONNX Runtime Java); Kotlin-native AI tooling beyond the JVM-interop surface is thin.
+    supporting_claims: [kotlin-022, kotlin-024]
+
+  structured_output_native:
     score: 3.5
     confidence: medium
     justification: >
-      kotlinx.serialization is excellent and the compiler plugin generates type-safe serializers from data classes; sealed classes and exhaustive when give compile-time-checked discriminated unions for LLM-output discrimination. JVM interop opens LangChain4j AI Services and the Anthropic Java SDK to Kotlin projects. The Kotlin-native LLM-tooling layer is thin compared to Python or TypeScript.
-    supporting_claims: [kotlin-025, kotlin-026, kotlin-027, kotlin-028, kotlin-029]
+      kotlinx-serialization is JetBrains-stewarded (compiler-plugin-driven, type-safe) and sealed classes + exhaustive when give closed-hierarchy LLM-output discrimination at compile time. The native surface is strong but lacks a stewarded LLM tool-call typing library.
+    supporting_claims: [kotlin-025, kotlin-026]
+
+  structured_output_ecosystem:
+    score: 3.0
+    confidence: medium
+    justification: >
+      Kotlin consumes LangChain4j AI Services and Anthropic Java SDK via JVM interop. Kotlin-native LLM-specific structured-output libraries (Instructor analogues) are essentially absent; community schema-to-JSON-Schema generation is fragmented.
+    supporting_claims: [kotlin-027, kotlin-028, kotlin-029]
+
+  ecosystem_dependency_risk:
+    score: 4.0
+    confidence: medium
+    justification: >
+      Kotlin's risk profile is strong at the language layer (JetBrains commercial-vendor backing) and via JVM interop (commercial-vendor LangChain4j, OpenJDK). Kotlin-native libraries beyond JetBrains-stewarded ones are thinner and more volatile.
+    supporting_claims: [kotlin-030, kotlin-031, kotlin-032, kotlin-033, kotlin-034]

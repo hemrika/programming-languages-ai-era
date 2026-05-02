@@ -1,6 +1,7 @@
 language: .NET
 status: draft
-updated: 2026-04-30
+updated: 2026-05-02
+framework_version: v0.4
 
 scores:
   human_cognition:
@@ -38,16 +39,37 @@ scores:
       Microsoft's tight alignment between .NET and AI tooling is a structural tailwind, with a predictable annual major-release cadence and LTS designations supporting forward planning. Open-source mindshare remains smaller than the JVM or Node ecosystems.
     supporting_claims: [dotnet-001, dotnet-013, dotnet-015, dotnet-016, dotnet-018]
 
-  ai_systems_interoperability:
-    score: 4
+  ai_systems_native:
+    score: 4.0
     confidence: high
     justification: >
-      .NET has official Anthropic and OpenAI SDKs, Microsoft Semantic Kernel as a first-party agent framework, an official MCP C# SDK, and ONNX Runtime as a Microsoft-shipped inference runtime. Vector-store clients via NuGet are growing; the agent-framework depth trails Python and TypeScript but the Microsoft-backed first-party stack is unique in the cohort.
-    supporting_claims: [dotnet-019, dotnet-020, dotnet-021, dotnet-022, dotnet-023]
+      .NET has the deepest first-party AI surface in the cohort: Microsoft Semantic Kernel as a Microsoft-published agent framework, Microsoft.Extensions.AI as a unified AI surface, ONNX Runtime .NET as a Microsoft-shipped inference runtime, and the OpenAI .NET SDK published by Microsoft. The MCP C# SDK is jointly developed with Microsoft.
+    supporting_claims: [dotnet-020, dotnet-021, dotnet-022, dotnet-023]
 
-  structured_output_maturity:
-    score: 4.0
+  ai_systems_ecosystem:
+    score: 3.5
     confidence: medium
     justification: >
-      .NET has a solid structured-output foundation: System.Text.Json with source generation, records and nullable reference types, JsonSchemaExporter for native types-to-JSON-Schema, Semantic Kernel function calling with attribute-based parameter binding, and Microsoft.Extensions.AI as a unified AI surface. LLM-specific community ergonomics are thinner than the Python or TypeScript ecosystems.
+      Beyond first-party Microsoft tooling, the .NET AI ecosystem includes the Anthropic .NET SDK, third-party vector-store clients on NuGet, and various community wrappers. The non-first-party ecosystem is thinner than Python or TypeScript.
+    supporting_claims: [dotnet-019]
+
+  structured_output_native:
+    score: 4.0
+    confidence: high
+    justification: >
+      .NET's native structured-output surface is strong: System.Text.Json with source generation, JsonSchemaExporter for native types-to-JSON-Schema in .NET 9, Semantic Kernel function calling with attribute-based parameter binding, Microsoft.Extensions.AI structured outputs, and C# nullable reference types + records giving compile-time contract safety.
     supporting_claims: [dotnet-024, dotnet-025, dotnet-026, dotnet-027, dotnet-028]
+
+  structured_output_ecosystem:
+    score: 3.5
+    confidence: medium
+    justification: >
+      The .NET ecosystem structured-output surface includes Newtonsoft.Json (still widely used in legacy codebases though substitutable by System.Text.Json in greenfield), FluentValidation, FastEndpoints, and various community LLM-tooling wrappers. Less LLM-specific ergonomics than Python's Instructor or TypeScript's Vercel AI SDK.
+    supporting_claims: []
+
+  ecosystem_dependency_risk:
+    score: 4.5
+    confidence: high
+    justification: >
+      .NET's ecosystem dependency risk is the lowest in the cohort: nearly the entire load-bearing AI/SO surface is Microsoft-first-party. The Anthropic .NET SDK adds commercial first-party LLM-vendor backing. Newtonsoft.Json's small-maintainer profile is a non-issue because System.Text.Json is a drop-in replacement.
+    supporting_claims: [dotnet-029, dotnet-030, dotnet-031, dotnet-032, dotnet-033]

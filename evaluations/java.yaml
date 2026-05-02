@@ -1,53 +1,75 @@
 language: Java
 status: draft
-updated: 2026-04-30
+updated: 2026-05-02
+framework_version: v0.4
 
 scores:
   human_cognition:
     score: 3
     confidence: medium
     justification: >
-      Modern Java (records, sealed types, pattern matching) is more concise than legacy Java, but the median real-world codebase remains verbose and slow to read at scale.
+      Modern Java with records, sealed classes, and pattern matching is meaningfully more concise, though pre-records boilerplate and configuration-language ceremony remain a real cost.
     supporting_claims: [java-005, java-012, java-013, java-017, java-018]
 
   machine_cognition:
     score: 4
     confidence: high
     justification: >
-      Strong static typing, regular syntax, and mature analyzers make Java highly amenable to tooling and AI reasoning, though the type system is less expressive than Rust or ML-family languages.
+      Java's static type system, records, sealed classes, and pattern matching for switch (JEP 441) extend exhaustive-match reasoning to the JVM.
     supporting_claims: [java-001, java-002, java-003, java-004]
 
   ai_agent_operability:
     score: 3
     confidence: medium
     justification: >
-      Java has rich diagnostics, the Eclipse JDT Language Server exposing the JDT semantic model over LSP, and strong AI-training-corpus density, but build-tool fragmentation, heavier project structure, and slower feedback loops increase agent friction.
+      Eclipse JDT.LS underlies VS Code Java tooling and other editors; the build-tool ecosystem is split between Maven and Gradle which adds project-setup friction.
     supporting_claims: [java-011, java-014]
 
   runtime_ecosystem:
     score: 4.5
     confidence: high
     justification: >
-      The JVM is a uniquely production-grade target: virtual threads (Java 21+) and structured concurrency (JEP 453) collapse the cost of high-concurrency server work, portable bytecode and verifier give predictable deployment, deep observability and profiling tooling are unmatched in the cohort, and Maven Central is a credible greenfield package distribution. These forward-looking ecosystem-viability properties move the score past the integer-4 line.
+      The JVM is one of the most production-grade runtimes in the cohort with virtual threads, structured concurrency JEP 453, and Maven Central as the largest package repository in the cohort.
     supporting_claims: [java-006, java-009, java-010, java-015]
 
   strategic_viability:
     score: 3
     confidence: medium
     justification: >
-      OpenJDK governance and long-term compatibility commitments are forward-looking strengths. Under greenfield framing, the durable adoption premium that previously lifted Java to 4 is not credited; new-project share is shifting toward Kotlin and other languages in many segments.
+      OpenJDK governance is broad and stable; preview features stabilize across multiple LTS cycles which slows adoption.
     supporting_claims: [java-007, java-008, java-016]
 
-  ai_systems_interoperability:
-    score: 3.5
+  ai_systems_native:
+    score: 2.0
     confidence: medium
     justification: >
-      Java has an official Anthropic SDK, LangChain4j as a credible JVM agent framework, an official MCP Java SDK, mature Kafka and JDBC integration, and an official ONNX Runtime Java package. Vector-store SDKs are growing but mostly community-maintained. The infrastructure-grade integration story is strong; the LLM-provider depth trails .NET because Microsoft Semantic Kernel does not have a parallel Java-first agent framework.
+      OpenJDK ships no AI-specific module first-party. The 2.0 credits the JVM as a production-grade substrate for AI workloads (records, sealed classes, virtual threads support AI infra), but no native AI library exists.
+    supporting_claims: [java-034]
+
+  ai_systems_ecosystem:
+    score: 4.0
+    confidence: medium
+    justification: >
+      Java's AI-systems ecosystem is broad and well-funded: official Anthropic Java SDK, LangChain4j as a credible LangChain port, official MCP Java SDK, ONNX Runtime Java published by Microsoft, and the JVM Apache Kafka client as the reference streaming integration.
     supporting_claims: [java-019, java-020, java-021, java-022, java-023]
 
-  structured_output_maturity:
+  structured_output_native:
+    score: 3.0
+    confidence: medium
+    justification: >
+      Java's records and sealed classes give compile-time closed-hierarchy reasoning over deserialized LLM output, with Bean Validation (Jakarta-stewarded) layered on top. The native surface is type-system-strong but lacks an in-box LLM tool-call typing library.
+    supporting_claims: [java-028]
+
+  structured_output_ecosystem:
     score: 3.5
     confidence: medium
     justification: >
-      Java has Records (JEP 395), Jackson with Jakarta Bean Validation as the canonical validated-deserialization stack, LangChain4j AI Services for type-safe LLM-interface binding, and JSON Schema generation via Jackson-driven libraries. The boilerplate and library fragmentation prevent the score from reaching .NET-tier; the ecosystem is solid but verbose and less LLM-optimized.
-    supporting_claims: [java-024, java-025, java-026, java-027, java-028]
+      Jackson is the de-facto JVM JSON library with broad ecosystem support, Bean Validation reference implementation Hibernate Validator is Red-Hat-backed, LangChain4j AI Services bind Java interfaces to LLM tool calls, and mbknor-jackson-jsonSchema covers JSON Schema generation.
+    supporting_claims: [java-024, java-025, java-026, java-027]
+
+  ecosystem_dependency_risk:
+    score: 4.0
+    confidence: medium
+    justification: >
+      Java's dependency-risk profile is strong: OpenJDK is multi-vendor stewarded (Oracle, IBM, Red Hat), Hibernate Validator is Red Hat-backed, and Anthropic ships first-party Java SDK. The mix balances community-multi-maintainer (Jackson) with commercial-first/third-party backing.
+    supporting_claims: [java-029, java-030, java-031, java-032, java-033]

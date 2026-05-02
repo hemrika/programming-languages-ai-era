@@ -191,3 +191,10 @@ sources:
     type: official_documentation
     url: https://github.com/confluentinc/confluent-kafka-go
     notes: "Confluent publishes the Go Kafka client as a commercial OSS project."
+
+  - id: go-src-027
+    title: "Go Standard Library Index"
+    publisher: "The Go Project (Google)"
+    type: official_documentation
+    url: https://pkg.go.dev/std
+    notes: "Go std library index does not include AI-specific packages; golang.org/x experimental tree similarly omits AI tooling."

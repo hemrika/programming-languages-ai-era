@@ -1,53 +1,75 @@
 language: Elixir
 status: draft
-updated: 2026-04-30
+updated: 2026-05-02
+framework_version: v0.4
 
 scores:
   human_cognition:
     score: 4
     confidence: medium
     justification: >
-      Elixir's syntax and functional, immutable-by-default style produce readable, locally reasonable code with consistent idioms.
+      Elixir's pipe operator and pattern-match-driven flow give high readability; OTP and BEAM concepts add domain-specific implicit context.
     supporting_claims: [elixir-012]
 
   machine_cognition:
     score: 3
     confidence: medium
     justification: >
-      Historically dynamic, with Dialyzer providing partial static analysis; set-theoretic types in development could raise this score over time.
+      Dynamically typed with Dialyzer success-typing analysis; set-theoretic typing research is in progress but pre-stable.
     supporting_claims: [elixir-005, elixir-006, elixir-007, elixir-016]
 
   ai_agent_operability:
     score: 3
     confidence: medium
     justification: >
-      Fast feedback loops and clear conventions help agents, but a smaller training corpus and limited example diversity create friction.
+      ElixirLS provides LSP support but the BEAM concurrency model imposes a different mental model that agent priors handle less robustly.
     supporting_claims: [elixir-010]
 
   runtime_ecosystem:
     score: 4.5
     confidence: medium
     justification: >
-      BEAM's concurrency, fault tolerance, and hot-upgrade story are unique and production-proven; Phoenix LiveView's server-driven streaming primitives map cleanly onto real-time AI-augmented UIs; OTP supervision trees provide structured fault tolerance no other cohort runtime matches. The broader library ecosystem is narrower than mainstream alternatives but the runtime properties move the score past the integer-4 line.
+      BEAM concurrency and OTP supervision trees give Elixir a uniquely production-grade fault-tolerance story; Phoenix LiveView is a credible substrate for real-time AI-augmented UIs.
     supporting_claims: [elixir-001, elixir-002, elixir-003, elixir-004, elixir-008, elixir-009, elixir-011, elixir-014, elixir-017, elixir-018]
 
   strategic_viability:
     score: 3
     confidence: medium
     justification: >
-      Niche but durable adoption in fault-tolerant systems and real-time web; not on a mainstream growth trajectory, with steady release cadence as a forward velocity signal.
+      Smaller community than the JVM or Node ecosystems; Elixir-team and Dashbit governance is stable but the user pool is the smallest in the cohort.
     supporting_claims: [elixir-013, elixir-015]
 
-  ai_systems_interoperability:
-    score: 2.5
+  ai_systems_native:
+    score: 3.0
     confidence: medium
     justification: >
-      Elixir has Bumblebee on Nx for native inference, BEAM-native streaming via Phoenix.PubSub and GenStage, and community LLM-provider clients. The first-party LLM-vendor SDK story is thin and the agent-framework ecosystem trails Python and TypeScript. The score reflects strong runtime/streaming primitives offset by a small AI-integration ecosystem.
-    supporting_claims: [elixir-019, elixir-020, elixir-021, elixir-022, elixir-023]
+      Bumblebee (pre-trained transformers on top of Nx) and Nx (numerical-computing library) are Dashbit-stewarded — language-steward-adjacent for the Elixir community. Phoenix.PubSub and GenStage give BEAM-native streaming for AI workloads.
+    supporting_claims: [elixir-019, elixir-020, elixir-021]
 
-  structured_output_maturity:
+  ai_systems_ecosystem:
+    score: 2.0
+    confidence: medium
+    justification: >
+      Elixir's external AI ecosystem is thin: LLM-provider SDKs are mostly community-maintained (anthropic_ex, openai_ex), the agent-framework ecosystem (Instructor port, LangChain Elixir port) is small.
+    supporting_claims: [elixir-022, elixir-023]
+
+  structured_output_native:
+    score: 1.5
+    confidence: medium
+    justification: >
+      Elixir's set-theoretic typing is in research and the dynamic runtime means there is no native compile-time contract safety on the LLM-output boundary; pattern matching at runtime is the only language-level discipline.
+    supporting_claims: []
+
+  structured_output_ecosystem:
     score: 2.5
     confidence: medium
     justification: >
-      Ecto changesets are a strong runtime validation construct and instructor_ex ports the Instructor pattern to Elixir with Ecto-validated structured outputs. The LLM-specific structured-output ecosystem is community-maintained, set-theoretic types research is pre-stable, and JSON Schema autogeneration from Elixir types is less standardized than the Python or TypeScript paths.
+      Ecto changesets cover runtime schema validation, casting, and constraint checking; instructor_ex provides Elixir Instructor-style structured outputs but the LLM-specific ergonomics and provider coverage trail Python/TS.
     supporting_claims: [elixir-024, elixir-025, elixir-026, elixir-027, elixir-028]
+
+  ecosystem_dependency_risk:
+    score: 3.0
+    confidence: medium
+    justification: >
+      Elixir's risk profile is mixed: Bumblebee/Nx and Phoenix are anchored to Dashbit (small commercial steward-adjacent), but instructor_ex is single-maintainer and LLM SDKs are community-multi-maintainer without commercial-first-party backing.
+    supporting_claims: [elixir-029, elixir-030, elixir-031, elixir-032, elixir-033]

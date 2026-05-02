@@ -1,53 +1,75 @@
 language: Swift
 status: draft
-updated: 2026-04-30
+updated: 2026-05-02
+framework_version: v0.4
 
 scores:
   human_cognition:
     score: 4
     confidence: medium
     justification: >
-      Swift is concise and expressive with strong local reasoning, though protocol-with-associated-types and generics complexity can raise cognitive load.
+      Swift is concise and readable with strong protocol-oriented abstractions; some Apple-platform idioms add implicit context.
     supporting_claims: [swift-012]
 
   machine_cognition:
     score: 4
     confidence: medium
     justification: >
-      Strong static typing and value semantics give tools and AI systems good structural visibility, with mature tooling on Apple platforms.
+      Optionals as a type-system distinction, enums with associated values for sum types, exhaustive switch.
     supporting_claims: [swift-001, swift-002, swift-005]
 
   ai_agent_operability:
     score: 3
     confidence: medium
     justification: >
-      Strong diagnostics on Apple platforms and the official sourcekit-lsp language server provide a credible LSP integration, but a smaller training corpus and Xcode/SPM build complexity limit cross-platform agent workflows.
+      sourcekit-lsp exposes the SourceKit semantic model over LSP for Swift, C, and C++ but the canonical IDE remains Xcode which fragments tooling outside the Apple platform.
     supporting_claims: [swift-007, swift-014]
 
   runtime_ecosystem:
     score: 4
     confidence: medium
     justification: >
-      Production-grade on Apple platforms with strong tooling and performance; concurrency primitives include async/await, structured concurrency, actors, and distributed actors (SE-0336/0344). Server-side Swift on Linux (SwiftNIO, Vapor, AWS Lambda runtime) is increasingly viable, though ecosystem depth still lags mainstream backend languages.
+      Swift Concurrency (async/await + actors), structured concurrency, and Apple-platform native deployment give a production-grade runtime, with Linux/server-side Swift trailing Apple-platform feature availability.
     supporting_claims: [swift-003, swift-004, swift-008, swift-009, swift-015, swift-016, swift-018]
 
   strategic_viability:
     score: 3
     confidence: medium
     justification: >
-      Durable demand within Apple's ecosystem, with limited evidence of broad cross-platform adoption to date.
+      Open Swift Evolution process; primary positioning around Apple's own platforms creates platform-aligned governance.
     supporting_claims: [swift-006, swift-010, swift-011, swift-013, swift-017]
 
-  ai_systems_interoperability:
-    score: 2
-    confidence: medium
+  ai_systems_native:
+    score: 4.0
+    confidence: high
     justification: >
-      Swift has strong Apple-platform ML integration via Core ML, Create ML, and MLX, but cross-platform AI integration is thin. There are no first-party Anthropic or OpenAI Swift SDKs, and major agent frameworks do not publish Swift ports. The score reflects an Apple-platform-shaped AI integration story rather than a portable cohort-comparable one.
-    supporting_claims: [swift-019, swift-020, swift-021, swift-022, swift-023]
+      Apple ships Core ML, Create ML, MLX, and the Foundation Models framework as first-party Swift AI runtimes. The Apple-platform native AI surface is the deepest steward-shipped AI surface among the cohort's smaller-cohort languages.
+    supporting_claims: [swift-019, swift-023]
 
-  structured_output_maturity:
-    score: 2.5
+  ai_systems_ecosystem:
+    score: 2.0
     confidence: medium
     justification: >
-      Swift's Codable is solid and enums with associated values give compile-time-checked discriminated unions. The LLM-specific structured-output ecosystem is thin: community Swift OpenAI clients (swift-openai-responses, MacPaw/OpenAI) cover some surface, no first-party Anthropic or OpenAI Swift SDK exists, and schema-from-types automation for LLM tool calls is largely manual.
-    supporting_claims: [swift-024, swift-025, swift-026, swift-027, swift-028]
+      Swift's AI ecosystem outside Apple's first-party stack is thin: no first-party Anthropic or OpenAI Swift SDK, no Swift LangChain or LlamaIndex, and cross-platform Swift agent-framework support is essentially absent.
+    supporting_claims: [swift-020, swift-021, swift-022]
+
+  structured_output_native:
+    score: 3.5
+    confidence: medium
+    justification: >
+      Codable is Swift's standard-library type-safe (de)serialization protocol with auto-synthesized conformances; enums with associated values and exhaustive switch give compile-time-checked discriminated unions for LLM-output handling. Apple-platform Codable and the Apple ML stack provide a strong native foundation.
+    supporting_claims: [swift-024, swift-025, swift-028]
+
+  structured_output_ecosystem:
+    score: 2.0
+    confidence: medium
+    justification: >
+      Swift's LLM-specific structured-output ecosystem is thin; community libraries (MacPaw/OpenAI, swift-openai-responses) provide partial support, and JSON Schema generation from Swift types relies on hand-written or ad-hoc reflection.
+    supporting_claims: [swift-026, swift-027]
+
+  ecosystem_dependency_risk:
+    score: 3.5
+    confidence: medium
+    justification: >
+      Apple's stewardship of Swift, Codable, Core ML, MLX, and Foundation Models gives Swift's Apple-platform surface a strong dependency-risk anchor. Cross-platform Swift AI tooling depends on community-multi-maintainer libraries, which lowers the score below the .NET/Java tier.
+    supporting_claims: [swift-029, swift-030, swift-031, swift-032, swift-033]

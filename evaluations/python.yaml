@@ -1,6 +1,7 @@
 language: Python
 status: draft
-updated: 2026-04-30
+updated: 2026-05-02
+framework_version: v0.4
 
 scores:
   human_cognition:
@@ -38,16 +39,37 @@ scores:
       Python remains the highest-AI-training-corpus-density language, with annual release cadence (PEP 602) and ecosystem velocity in ML/data unmatched. Under greenfield framing the prior 5 reflected partly the installed-base premium, which is no longer scored; the score reduces to 4 with the verification gap counted as a forward concern offset only partially by gradual typing.
     supporting_claims: [python-012, python-013, python-017]
 
-  ai_systems_interoperability:
-    score: 5
+  ai_systems_native:
+    score: 1.5
     confidence: high
     justification: >
-      Python has the most complete AI-systems integration story in the cohort: official Anthropic and OpenAI SDKs, the canonical LangChain Python implementation, an official MCP Python SDK, and first-class clients for every major vector store. Embedding pipelines, inference runtimes, and observability all expose Python as their primary surface.
-    supporting_claims: [python-021, python-022, python-023, python-024, python-025]
+      Python's PSF stewards the language and core stdlib but ships no AI-specific package first-party. The 1.5 reflects a credit for the typing PEP cadence enabling type-safe Python AI code, but the native AI surface is essentially absent; the entire Python AI position rests on ecosystem libraries.
+    supporting_claims: [python-036]
 
-  structured_output_maturity:
+  ai_systems_ecosystem:
     score: 5.0
     confidence: high
     justification: >
-      Python sets the gold standard for structured-output maturity. Pydantic v2 is the dominant schema-validation library, the OpenAI SDK supports Pydantic response_format parsing natively, Instructor wraps both OpenAI and Anthropic with Pydantic-validated structured outputs and retries, and Outlines provides JSON-Schema-, regex-, and grammar-constrained decoding. The runtime-validation posture is the only structural gap.
-    supporting_claims: [python-026, python-027, python-028, python-029, python-030]
+      Python has the most complete external AI-systems ecosystem in the cohort: official Anthropic and OpenAI SDKs, the canonical LangChain Python implementation, the Python MCP SDK, and first-party clients for every major vector store. Embedding pipelines, inference runtimes, and observability all expose Python as their primary surface — but every load-bearing piece is community or commercial-third-party rather than language-steward shipped.
+    supporting_claims: [python-021, python-022, python-023, python-024, python-025]
+
+  structured_output_native:
+    score: 2.5
+    confidence: medium
+    justification: >
+      Python's native structured-output story rests on type hints and dataclasses, with PEP 484 hints not enforced at runtime. The score reflects gradual-typing maturity supporting compile-time-style static-checker validation; the runtime-validation layer that does the actual LLM-output checking is ecosystem.
+    supporting_claims: [python-030]
+
+  structured_output_ecosystem:
+    score: 5.0
+    confidence: high
+    justification: >
+      Python's external structured-output ecosystem is gold-standard: Pydantic v2 as the dominant schema-validation library, OpenAI SDK Pydantic-native response_format support, Instructor wrapping both OpenAI and Anthropic clients with retries, and Outlines for JSON-Schema-/regex-/grammar-constrained decoding.
+    supporting_claims: [python-026, python-027, python-028, python-029]
+
+  ecosystem_dependency_risk:
+    score: 2.5
+    confidence: medium
+    justification: >
+      Python's load-bearing AI/SO dependencies sit on a fragile backer mix: Pydantic is community-multi-maintainer, Instructor is single-maintainer, Outlines is small-commercial. OpenAI's SDK embedding Pydantic anchors part of the surface in commercial first-party backing, but the overall risk profile is high relative to .NET or Java.
+    supporting_claims: [python-031, python-032, python-033, python-034, python-035]

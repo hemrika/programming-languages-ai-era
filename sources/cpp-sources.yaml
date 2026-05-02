@@ -197,3 +197,10 @@ sources:
     type: official_documentation
     url: https://github.com/confluentinc/librdkafka
     notes: "Confluent maintains librdkafka as a commercial OSS project."
+
+  - id: cpp-src-027
+    title: "ISO C++ Committee"
+    publisher: "ISO C++ Committee"
+    type: official_documentation
+    url: https://isocpp.org/std/the-committee
+    notes: "WG21 papers list does not include AI/ML-specific proposals beyond accelerator-host generic concerns."

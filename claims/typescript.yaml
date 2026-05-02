@@ -352,3 +352,14 @@ claims:
     polarity: positive
     source: typescript-src-028
     notes: "Anthropic maintains the official TypeScript SDK as part of its commercial API offering."
+
+  - id: typescript-034
+    claim: "Microsoft stewards TypeScript and the TypeScript Language Service but does not ship any AI-specific package as part of the TypeScript distribution; AI surface depends entirely on external SDKs and community libraries."
+    dimension: ai_systems_native
+    backer: language_stewards
+    criterion: standard_library_ai_surface
+    evidence_type: official_documentation
+    confidence: high
+    polarity: negative
+    source: typescript-src-029
+    notes: "TypeScript distribution README enumerates compiler and language service; no AI-specific tooling is bundled."

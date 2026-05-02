@@ -363,3 +363,14 @@ claims:
     polarity: neutral
     source: go-src-026
     notes: "Confluent publishes the Go Kafka client as a commercial OSS project."
+
+  - id: go-035
+    claim: "The Go team does not ship any AI-specific package as part of the Go standard library or golang.org/x experimental modules; Go's AI surface is fully ecosystem-dependent."
+    dimension: ai_systems_native
+    backer: language_stewards
+    criterion: standard_library_ai_surface
+    evidence_type: official_documentation
+    confidence: high
+    polarity: negative
+    source: go-src-027
+    notes: "Go std library index does not include AI-specific packages; golang.org/x experimental tree similarly omits AI tooling."

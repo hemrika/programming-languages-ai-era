@@ -215,3 +215,10 @@ sources:
     type: official_documentation
     url: https://www.python.org/psf/
     notes: "PSF mission documents PSF's role; PSF does not publish AI-specific packages."
+
+  - id: python-src-030
+    title: "PEP Index"
+    publisher: "Python Software Foundation"
+    type: official_documentation
+    url: https://www.python.org/dev/peps/
+    notes: "PEP index lists active proposals; no AI-specific package proposal is part of the language steward roadmap."

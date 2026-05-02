@@ -334,3 +334,14 @@ claims:
     polarity: positive
     source: cpp-src-026
     notes: "Confluent maintains librdkafka as a commercial OSS project."
+
+  - id: cpp-032
+    claim: "ISO C++ ships no AI-specific facilities; C++ AI work depends on external commercial-vendor toolchains (CUDA, ONNX, ROCm) and community projects (llama.cpp, nlohmann/json)."
+    dimension: ai_systems_native
+    backer: language_stewards
+    criterion: standard_library_ai_surface
+    evidence_type: official_documentation
+    confidence: high
+    polarity: negative
+    source: cpp-src-027
+    notes: "WG21 papers list does not include AI/ML-specific proposals beyond accelerator-host generic concerns."

@@ -1,53 +1,75 @@
 language: TypeScript
 status: draft
-updated: 2026-04-30
+updated: 2026-05-02
+framework_version: v0.4
 
 scores:
   human_cognition:
     score: 4
     confidence: medium
     justification: >
-      TypeScript improves JavaScript maintainability through explicit types and editor support.
+      TypeScript inherits JavaScript's expressiveness while adding gradual static typing; readability is high and the strict-mode bundle produces clean local reasoning.
     supporting_claims: [typescript-014]
 
   machine_cognition:
     score: 4
     confidence: medium
     justification: >
-      TypeScript provides strong tooling and static analysis, with the satisfies operator and ongoing type-system improvements continuing to advance verification velocity, though JavaScript runtime semantics remain.
+      Structural type system over JavaScript with discriminated unions, strict mode, and the `satisfies` operator gives strong static analyzability. The type system is intentionally not sound and types are erased at compile time.
     supporting_claims: [typescript-001, typescript-002, typescript-003, typescript-004, typescript-005, typescript-010, typescript-016, typescript-017]
 
   ai_agent_operability:
     score: 5
     confidence: medium
     justification: >
-      TypeScript has excellent language-server support with an incremental semantic model, fast feedback, mature test tooling, and abundant examples.
+      Microsoft-maintained TypeScript Language Service over the LSP standard Microsoft itself originated; strict-mode discipline plus discriminated unions makes TypeScript one of the most agent-friendly substrates in the cohort.
     supporting_claims: [typescript-006, typescript-007, typescript-015]
 
   runtime_ecosystem:
     score: 4
     confidence: high
     justification: >
-      The npm distribution channel is broad and active, with mature deployment options across browser, Node, Deno, Bun, and edge runtimes. Under greenfield framing the legacy JavaScript inheritance is not credited as an ecosystem advantage; what remains is a high-velocity package distribution channel suitable for new projects.
+      Node.js as the runtime and npm as the package manager give TypeScript a production-grade ecosystem with broad library coverage and edge/serverless deployment paths.
     supporting_claims: [typescript-008, typescript-009, typescript-018]
 
   strategic_viability:
     score: 4
     confidence: high
     justification: >
-      Strong forward signals: most-admired developer-sentiment results, top-tier AI-training-corpus density, and active Microsoft stewardship. Under greenfield framing the prior 5 partly reflected legacy JavaScript ecosystem gravity, which is no longer scored; the score reduces to 4 with the modern-typed-language credit retained.
+      Microsoft-stewarded language with sustained release cadence, broad TC39/ECMA alignment, and high AI-training-corpus density.
     supporting_claims: [typescript-011, typescript-012, typescript-013]
 
-  ai_systems_interoperability:
-    score: 4.5
+  ai_systems_native:
+    score: 1.5
     confidence: high
     justification: >
-      TypeScript has official Anthropic and OpenAI SDKs, an official MCP TypeScript SDK, LangChain.js as a canonical JS/TS port, and a TypeScript LlamaIndex distribution. Vector-store clients are well represented across npm. The ecosystem trails Python only on agent-framework depth and embedding-pipeline tooling.
-    supporting_claims: [typescript-019, typescript-020, typescript-021, typescript-022, typescript-023]
+      Microsoft stewards TypeScript and the TypeScript Language Service but ships no AI-specific package as part of the TypeScript distribution. The 1.5 credits the language-service surface that AI tooling consumes; native AI capability is absent.
+    supporting_claims: [typescript-034]
 
-  structured_output_maturity:
+  ai_systems_ecosystem:
     score: 5.0
     confidence: high
     justification: >
-      TypeScript matches Python's structured-output maturity from a different angle: Zod is the dominant ecosystem standard, TypeScript's structural type system gives end-to-end compile-time inference via z.infer, the OpenAI Node SDK and Vercel AI SDK accept Zod natively, and zod-to-json-schema converts schemas for any LLM tool definition. ArkType is emerging as a faster alternative on the same model.
-    supporting_claims: [typescript-024, typescript-025, typescript-026, typescript-027, typescript-028]
+      TypeScript's AI-systems ecosystem is tier-leading: official Anthropic TypeScript SDK, OpenAI Node SDK, LangChain.js as the canonical TypeScript LangChain port, the official MCP TypeScript SDK, and TypeScript LlamaIndex. Vercel AI SDK extends the structured-output surface.
+    supporting_claims: [typescript-019, typescript-020, typescript-021, typescript-022, typescript-023]
+
+  structured_output_native:
+    score: 2.5
+    confidence: medium
+    justification: >
+      TypeScript's structural type system gives compile-time inference over schemas defined in user space, but no schema-validation library ships with the TypeScript distribution; the structural type erasure at runtime means contract safety must be defended at the boundary by an ecosystem library.
+    supporting_claims: [typescript-028]
+
+  structured_output_ecosystem:
+    score: 5.0
+    confidence: high
+    justification: >
+      Zod is the dominant ecosystem schema library with end-to-end z.infer-based type inference; the OpenAI Node SDK and Anthropic TypeScript SDK accept Zod schemas natively for tool typing, Vercel AI SDK exposes generateObject/streamObject with Zod, and zod-to-json-schema covers schema export.
+    supporting_claims: [typescript-024, typescript-025, typescript-026, typescript-027]
+
+  ecosystem_dependency_risk:
+    score: 3.0
+    confidence: medium
+    justification: >
+      TypeScript's dependency risk profile mixes Microsoft language stewardship at the language level with a fragile structured-output anchor (Zod is single-maintainer) and well-funded commercial third parties for the agent/SDK surface (Vercel, Anthropic, OpenAI, LangChain Inc.).
+    supporting_claims: [typescript-029, typescript-030, typescript-031, typescript-032, typescript-033]

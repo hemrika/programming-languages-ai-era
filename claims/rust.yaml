@@ -433,3 +433,14 @@ claims:
     polarity: positive
     source: rust-src-032
     notes: "Rust Foundation member roster documents commercial-vendor sponsorship."
+
+  - id: rust-042
+    claim: "The Rust project ships no first-party AI-specific crate; Rust's AI surface depends entirely on external community crates (candle is HuggingFace, async-openai is community)."
+    dimension: ai_systems_native
+    backer: language_stewards
+    criterion: standard_library_ai_surface
+    evidence_type: official_documentation
+    confidence: high
+    polarity: negative
+    source: rust-src-033
+    notes: "Rust governance documents the Rust project structure; no AI-specific working group ships first-party AI crates."

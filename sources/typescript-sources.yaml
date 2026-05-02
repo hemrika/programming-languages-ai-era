@@ -212,3 +212,10 @@ sources:
     type: official_documentation
     url: https://github.com/anthropics/anthropic-sdk-typescript
     notes: "Anthropic maintains the official TypeScript SDK as part of its commercial API offering."
+
+  - id: typescript-src-029
+    title: "TypeScript Repository README"
+    publisher: "Microsoft"
+    type: official_documentation
+    url: https://github.com/microsoft/TypeScript/blob/main/README.md
+    notes: "TypeScript distribution README enumerates compiler and language service; no AI-specific tooling is bundled."
