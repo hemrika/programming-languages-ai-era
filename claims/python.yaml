@@ -494,3 +494,15 @@ claims:
     polarity: positive
     source: python-src-012
     notes: "Octoverse 2024 reports Python overtaking JavaScript; under reachability framing this is read as a self-reinforcing trajectory signal."
+
+  - id: python-042
+    claim: "CPython's Global Interpreter Lock prevents multiple native threads from executing Python bytecode simultaneously, which constrains inference-serving concurrency at scale; production deployments commonly proxy LLM workloads through Go/Rust/Triton servers, an architectural cost that the AIE=5.0 ecosystem score does not internalize."
+    dimension: ai_systems_ecosystem
+    backer: language_stewards
+    criterion: concurrency_at_scale
+    evidence_type: official_documentation
+    confidence: high
+    polarity: negative
+    source: python-src-008
+    notes: "The CPython threading documentation states the GIL constraint explicitly; in production AI-systems deployments, Python LLM-serving frequently sits behind a non-Python concurrency layer (Go, Rust, Triton, vLLM's C++ scheduler) to recover throughput, so the ecosystem-side AIE strength is partly underwritten by non-Python infrastructure."
+    counters: [python-023]

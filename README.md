@@ -51,13 +51,13 @@ Four cross-cutting lenses overlay the dimensions: verification, agentic operabil
 | 3 | .NET (C#) | 3.99 |
 | 4 | Kotlin | 3.85 |
 | 5 | Python | 3.71 |
-| 6 | Rust | 3.67 |
-| 7 | Swift | 3.40 |
-| 7 | Java | 3.40 |
+| 5 | Rust | 3.71 |
+| 7 | Java | 3.50 |
+| 8 | Swift | 3.40 |
 | 9 | Elixir | 3.10 |
 | 10 | C++ | 2.46 |
 
-TypeScript and Go tie at the top. .NET sits at 3.99 with the cohort's strongest forward bet (EDR=4.5, Reach=4.5 — both highest). Python's score is held back by its AI-systems-native gap and high dependency-risk profile. See `comparisons/overview.md` for the per-cell reasoning.
+TypeScript and Go tie at the top. .NET sits at 3.99 with the cohort's strongest forward bet (EDR=4.5, Reach=4.5 — both highest). Python and Rust tie at 3.71: Python's AI-systems-native gap and high dependency-risk profile hold it down despite tier-leading ecosystem halves; Rust's MC=5 / SV=5 verification ceiling combines with AIE=4.0 (production Postgres/Kafka, candle, async-openai, MCP Rust SDK, the maturing Rig/swiftide/langchain-rust cohort) and SOE=4.0 (Serde + schemars), capped by AIN=1.5. Java holds solo #7 at 3.50, lifted by AO=3.5 on Eclipse JDT.LS maturity and AI-training-corpus density. See `comparisons/overview.md` for the per-cell reasoning.
 
 ## Repository structure
 

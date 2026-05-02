@@ -417,3 +417,15 @@ claims:
     polarity: negative
     source: kotlin-src-027
     notes: "Kotlin Community Page and contributor history show JetBrains-anchored development with slower external community lift than Java's."
+
+  - id: kotlin-040
+    claim: "Kotlin's structured-output ecosystem (kotlinx-serialization, OkHttp, Retrofit) is solid for general schema validation, but the LLM-specific ergonomics layer — equivalents to Python's Pydantic+Instructor or TypeScript's Zod+Vercel-AI-SDK — is thin. JVM interop reaches LangChain4j AI Services, but no Kotlin-native LLM-structured-output library has reached the same maturity tier."
+    dimension: structured_output_ecosystem
+    backer: language_stewards
+    criterion: llm_tool_call_typing
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: negative
+    source: kotlin-src-029
+    notes: "Kotlin LLM-structured-output ergonomics: kotlinx-serialization handles general schema validation; the LLM-specific layer (constrained generation, retry-on-validation-failure, Kotlin-native Instructor analogues) routes through LangChain4j JVM interop rather than a Kotlin-native library at the Pydantic+Instructor or Zod+Vercel-AI maturity tier."
+    counters: [kotlin-027]

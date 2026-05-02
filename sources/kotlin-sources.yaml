@@ -204,3 +204,10 @@ sources:
     type: official_documentation
     url: https://blog.jetbrains.com/kotlin/
     notes: "JetBrains publishes Kotlin product roadmaps; the language is a JetBrains commercial product."
+
+  - id: kotlin-src-029
+    title: "LangChain4j AI Services - Kotlin usage"
+    publisher: "LangChain4j project"
+    type: official_tooling_documentation
+    url: https://docs.langchain4j.dev/tutorials/ai-services
+    notes: "LangChain4j AI Services bind Java/Kotlin interfaces to LLM tool calls and structured outputs; the canonical JVM path for LLM-structured-output ergonomics is via Java-interop rather than a Kotlin-native Instructor/Zod-equivalent."

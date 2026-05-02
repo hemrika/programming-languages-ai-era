@@ -19,10 +19,10 @@ scores:
     supporting_claims: [java-001, java-002, java-003, java-004]
 
   ai_agent_operability:
-    score: 3
+    score: 3.5
     confidence: medium
     justification: >
-      Eclipse JDT.LS underlies VS Code Java tooling and other editors; the build-tool ecosystem is split between Maven and Gradle which adds project-setup friction.
+      Eclipse JDT Language Server is mature and underlies VS Code Java tooling and other editors, exposing a deep semantic model to AI agents; Java's AI-training-corpus density is among the highest in the cohort, which lifts code-generation quality. These argue past the 3.0 anchor. Build-tool fragmentation between Maven and Gradle and heavier project structure remain real friction at the AO layer, so the credit lands at 3.5 rather than 4.
     supporting_claims: [java-011, java-014]
 
   runtime_ecosystem:

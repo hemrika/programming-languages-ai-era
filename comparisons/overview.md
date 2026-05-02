@@ -37,9 +37,9 @@ Standalone documents not in the original track list:
 | .NET (C#)   | 4   | 4   | 4   | 4   | 4   | 4.0 | 3.5 | 4.0 | 3.5 | 4.5 | 4.5 | 3.99 |
 | Kotlin      | 4   | 4.5 | 4   | 4   | 4   | 3.0 | 3.0 | 3.5 | 3.0 | 4.0 | 4.0 | 3.85 |
 | Python      | 4   | 3   | 4   | 5   | 4   | 1.5 | 5.0 | 2.5 | 5.0 | 2.5 | 3.5 | 3.71 |
-| Rust        | 3   | 5   | 4   | 4   | 5   | 1.5 | 3.5 | 2.0 | 4.0 | 3.5 | 3.5 | 3.67 |
+| Rust        | 3   | 5   | 4   | 4   | 5   | 1.5 | 4.0 | 2.0 | 4.0 | 3.5 | 3.5 | 3.71 |
+| Java        | 3   | 4   | 3.5 | 4.5 | 3   | 2.0 | 4.0 | 3.0 | 3.5 | 4.0 | 3.5 | 3.50 |
 | Swift       | 4   | 4   | 3   | 4   | 3   | 4.0 | 2.0 | 3.5 | 2.0 | 3.5 | 3.0 | 3.40 |
-| Java        | 3   | 4   | 3   | 4.5 | 3   | 2.0 | 4.0 | 3.0 | 3.5 | 4.0 | 3.5 | 3.40 |
 | Elixir      | 4   | 3   | 3   | 4.5 | 3   | 3.0 | 2.0 | 1.5 | 2.5 | 3.0 | 2.5 | 3.10 |
 | C++         | 2   | 3   | 2   | 4   | 2   | 2.5 | 3.0 | 1.0 | 2.0 | 3.0 | 2.0 | 2.46 |
 
@@ -51,7 +51,7 @@ Three clusters emerge.
 
 **Top tier (≥3.85 weighted).** TypeScript, Go, .NET, Kotlin. The ranking compresses sharply at the top: TypeScript 4.01, Go 4.01, .NET 3.99, Kotlin 3.85. **TypeScript and Go tie at the top** — TypeScript's AIE=5.0 / SOE=5.0 ecosystem strength matched by Reach=4.0 (Microsoft stewardship plus commercial-vendor velocity) lifts it level with Go's HC=5 / AO=5 lead. **.NET** ranks third — Microsoft's first-party AI surface (Semantic Kernel, Microsoft.Extensions.AI, ONNX Runtime .NET) and EDR=4.5 (highest in the cohort) are now joined by Reach=4.5 (also highest), making .NET's forward bet the strongest in the cohort even as its present-state weighted total trails the leaders.
 
-**Middle tier (3.40–3.85 weighted).** Python, Rust, Swift, Java. **Python at 3.71** — AI-systems profile remains bimodal (AIN=1.5 because PSF ships no AI packages; AIE=5.0 best in cohort) and EDR=2.5 holds the weighted total below the leaders despite tier-leading ecosystem halves; Reach=3.5 reflects sustained typing-PEP cadence offset by structural AIN absence. **Rust at 3.67** anchors on MC=5 / SV=5 with SOE=4.0 via Serde + schemars; Reach=3.5 reflects verification ceiling already at top while AIN closing path is steward-absent. **Swift's** AIN=4.0 reflects Apple's first-party AI surface, but Reach=3.0 records the Apple-locked trajectory.
+**Middle tier (3.40–3.85 weighted).** Python, Rust, Java, Swift. **Python and Rust tie at 3.71.** Python's AI-systems profile remains bimodal (AIN=1.5 because PSF ships no AI packages; AIE=5.0 best in cohort) and EDR=2.5 holds the weighted total below the leaders despite tier-leading ecosystem halves; Reach=3.5 reflects sustained typing-PEP cadence offset by structural AIN absence. **Rust at 3.71** anchors on MC=5 / SV=5 with AIE=4.0 (production Postgres/Kafka, candle, async-openai, MCP Rust SDK, the maturing Rig/swiftide/langchain-rust agent-framework cohort) and SOE=4.0 via Serde + schemars; Reach=3.5 reflects verification ceiling already at top while AIN closing path is steward-absent. **Java at 3.50** — AO=3.5 reflects Eclipse JDT.LS maturity and high AI-training-corpus density past the build-tool fragmentation friction; AIE=4.0 (LangChain4j, Anthropic Java SDK, MCP Java SDK) plus EDR=4.0 (OpenJDK multi-vendor stewardship) pull Java into solo #7. **Swift at 3.40** — AIN=4.0 reflects Apple's first-party AI surface, but Reach=3.0 records the Apple-locked trajectory.
 
 **Lower tier (<3.40 weighted).** Elixir, C++. Elixir at 3.10 keeps the BEAM-driven RE=4.5 but Reach=2.5 records the wide gap-size and slow-velocity outlook. C++ at 2.46 is the only language under 3.0; Reach=2.0 compounds the present-state gap with low closing-path plausibility.
 
@@ -69,7 +69,7 @@ Three clusters emerge.
 
 6. **Apple's first-party Swift AI surface is correctly credited on the native half.** Swift's AIN=4.0 reflects Core ML + MLX + Foundation Models as language-steward-shipped, while AIE=2.0 reflects the thin cross-platform ecosystem and Reach=3.0 records the Apple-locked trajectory.
 
-7. **Verification advantage does not automatically translate to overall ranking.** Rust (MC=5, SV=5) leads on machine cognition and strategic viability but trails the top tier (3.67) because its agent-framework and structured-output ecosystem layers are younger than Python or TypeScript and its AIN=1.5 reflects the absence of a first-party Rust AI runtime. Reach=3.5 records the tradeoff: verification ceiling at top, AIN structurally absent.
+7. **Verification advantage does not automatically translate to overall ranking.** Rust (MC=5, SV=5) leads on machine cognition and strategic viability but at 3.71 still ties with Python rather than overtaking the top tier; AIE=4.0 (third-party agent-framework cohort plus production Postgres/Kafka and candle inference) and SOE=4.0 (Serde + schemars) leave AIN=1.5 as the structural ceiling — no first-party Rust AI runtime, and Reach=3.5 records the tradeoff: verification ceiling at top, AIN structurally absent.
 
 ## How to use this document
 

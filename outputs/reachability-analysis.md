@@ -55,9 +55,9 @@ The framework score on this dimension is one cell of the v0.5 matrix; this docum
 
 **Verdict:** Kotlin's reachability is favorable. The language-design layer is already at top-tier in MC (4.5) with sealed types and null safety, and JetBrains has the capacity to close the remaining language-design cells. The AI/SO ecosystem cells are the weakest, and Kotlin-first AI tooling has not materialized at meaningful velocity (most JVM AI work uses Java's LangChain4j with Kotlin wrappers). Trajectory: up on language-design, mixed on AI/SO ecosystems.
 
-### Java (Reach = 3.5, weighted 3.40)
+### Java (Reach = 3.5, weighted 3.50)
 
-**Below-5 cells:** HC=3 (2.0), MC=4 (1.0), AO=3 (2.0), RE=4.5 (0.5), SV=3 (2.0), AIN=2.0 (3.0), AIE=4.0 (1.0), SON=3.0 (2.0), SOE=3.5 (1.5), EDR=4.0 (1.0).
+**Below-5 cells:** HC=3 (2.0), MC=4 (1.0), AO=3.5 (1.5), RE=4.5 (0.5), SV=3 (2.0), AIN=2.0 (3.0), AIE=4.0 (1.0), SON=3.0 (2.0), SOE=3.5 (1.5), EDR=4.0 (1.0).
 
 **In-motion signals:**
 - Sustained JEP cadence shipping records (JEP 395), sealed classes (JEP 409), virtual threads (JEP 444), and structured concurrency (JEP 453) [java-035].
@@ -85,9 +85,9 @@ The framework score on this dimension is one cell of the v0.5 matrix; this docum
 
 **Verdict:** Go's MC gap won't close — type-system minimalism is intentional, defended explicitly in the Go FAQ. AIE/SOE ecosystem gaps are investible and Anthropic + OpenAI's first-party SDKs evidence ongoing commercial commitment. AIN remains the structural blocker: Google is the only entity with the steward standing to ship a first-party Go AI surface, and there has been no public signal of intent. Trajectory: stable around 3.5–4.0, unlikely to break into top tier without language design changes that contradict its design philosophy.
 
-### Rust (Reach = 3.5, weighted 3.67)
+### Rust (Reach = 3.5, weighted 3.71)
 
-**Below-5 cells:** HC=3 (2.0), AO=4 (1.0), RE=4 (1.0), AIN=1.5 (3.5), AIE=3.5 (1.5), SON=2.0 (3.0), SOE=4.0 (1.0), EDR=3.5 (1.5).
+**Below-5 cells:** HC=3 (2.0), AO=4 (1.0), RE=4 (1.0), AIN=1.5 (3.5), AIE=4.0 (1.0), SON=2.0 (3.0), SOE=4.0 (1.0), EDR=3.5 (1.5).
 
 **In-motion signals:**
 - MC=5 and SV=5 already sit at top-tier; verification advantage compounds rather than degrades [rust-043].
@@ -158,4 +158,4 @@ The framework score on this dimension is one cell of the v0.5 matrix; this docum
 - ISO three-yearly revisions trail vendor-stewarded competitors' cadence [cpp-036].
 - Single-maintainer load-bearing libraries (llama.cpp, nlohmann/json) constrain ecosystem-half forward trajectory [cpp-037].
 
-**Verdict:** C++ has the lowest reachability in the cohort. Compounding pressure is the dominant signal — regulatory and platform-vendor preference is moving away from C++, and the language's structural barriers (memory-safety, lack of native reflection, no exhaustive matching) cannot be remedied within 3–5 years even with continued WG21 work. P2996 reflection would lift SON if it lands, but SON moving from 1.0 to 3.0 still leaves C++ outside top tier. Trajectory: bounded; top-tier is functionally out of reach inside a meaningful planning horizon.
+**Verdict:** C++ has the lowest reachability in the cohort. Compounding pressure is the dominant signal — regulatory and platform-vendor preference is moving away from C++, and the language's structural barriers (memory-safety, lack of native reflection, no exhaustive matching) cannot be remedied within 3–5 years even with continued WG21 work. P2996 reflection would lift SON if it lands, but SON moving from 1.0 to 3.0 still leaves C++ outside top tier. Trajectory: bounded; top-tier is functionally out of reach inside a meaningful planning horizon

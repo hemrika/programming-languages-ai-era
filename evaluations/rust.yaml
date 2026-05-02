@@ -47,10 +47,10 @@ scores:
     supporting_claims: [rust-042]
 
   ai_systems_ecosystem:
-    score: 3.5
+    score: 4.0
     confidence: medium
     justification: >
-      Rust's AI ecosystem is credible but younger: official MCP Rust SDK, async-openai as the de facto OpenAI client, HuggingFace's candle as an inference runtime, and production Postgres/Kafka clients. Agent-framework depth (Rig, swiftide, langchain-rust) trails Python and TypeScript.
+      Rust's third-party AI-systems ecosystem has matured to a 4.0: production-grade Postgres clients (sqlx, tokio-postgres) and Kafka via rdkafka anchor the data layer; HuggingFace's candle ships a credible Rust inference runtime; async-openai is the de-facto OpenAI client; the official MCP Rust SDK lands the protocol surface; and the Rig / swiftide / langchain-rust agent-framework cohort has matured into usable production options. Depth still trails Python and TypeScript on framework breadth, which keeps the score below 4.5.
     supporting_claims: [rust-027, rust-028, rust-029, rust-030, rust-031]
 
   structured_output_native:
