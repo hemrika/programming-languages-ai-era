@@ -73,3 +73,10 @@ scores:
     justification: >
       C++'s dependency-risk profile mixes strong commercial-first-party backing (CUDA/NVIDIA, ONNX/Microsoft, librdkafka/Confluent) with single-maintainer load-bearing dependencies (llama.cpp/Gerganov, nlohmann/json/Lohmann). The accelerator stack itself is well-funded.
     supporting_claims: [cpp-027, cpp-028, cpp-029, cpp-030, cpp-031]
+
+  reachability_to_top_tier:
+    score: 2.0
+    confidence: medium
+    justification: >
+      The only material in-motion signal is P2996 Reflection for C++26, which would lift SON if it lands inside the planning horizon [cpp-034]. Structural blockers dominate: memory-safety regulatory pressure (NSA, ONCD, Microsoft, Chromium) compounds against C++ rather than for it, moving trajectory the other way [cpp-033]; most below-5 cells (HC, AO, SON, AIN) are structural to the language's design and will not close within the planning horizon [cpp-035]; ISO three-yearly revisions trail vendor-stewarded competitors' cadence [cpp-036]; single-maintainer load-bearing libraries (llama.cpp, nlohmann/json) constrain ecosystem trajectory [cpp-037]. Top-tier is functionally out of reach inside a 3–5-year horizon.
+    supporting_claims: [cpp-033, cpp-034, cpp-035, cpp-036, cpp-037]

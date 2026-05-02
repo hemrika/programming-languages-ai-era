@@ -73,3 +73,10 @@ scores:
     justification: >
       Java's dependency-risk profile is strong: OpenJDK is multi-vendor stewarded (Oracle, IBM, Red Hat), Hibernate Validator is Red Hat-backed, and Anthropic ships first-party Java SDK. The mix balances community-multi-maintainer (Jackson) with commercial-first/third-party backing.
     supporting_claims: [java-029, java-030, java-031, java-032, java-033]
+
+  reachability_to_top_tier:
+    score: 3.5
+    confidence: medium
+    justification: >
+      In-motion signals are strong: sustained JEP cadence shipping records, sealed classes, virtual threads, and structured concurrency [java-035]; OpenJDK multi-vendor stewardship (Oracle, IBM, Red Hat, Microsoft, Amazon) anchors capacity to ship closing paths [java-036]; commercial-third-party LangChain4j and Anthropic Java SDK provide an investible AIE closing path on JVM [java-039]. Structural blockers: OpenJDK ships no AI-specific module first-party and signals no intent, so AIN closing path is steward-blocked [java-037]; preview-feature pipeline introduces multi-release lag that caps Java's reachability velocity relative to Kotlin/.NET [java-038].
+    supporting_claims: [java-035, java-036, java-037, java-038, java-039]

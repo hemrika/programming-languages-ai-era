@@ -73,3 +73,10 @@ scores:
     justification: >
       Python's load-bearing AI/SO dependencies sit on a fragile backer mix: Pydantic is community-multi-maintainer, Instructor is single-maintainer, Outlines is small-commercial. OpenAI's SDK embedding Pydantic anchors part of the surface in commercial first-party backing, but the overall risk profile is high relative to .NET or Java.
     supporting_claims: [python-031, python-032, python-033, python-034, python-035]
+
+  reachability_to_top_tier:
+    score: 3.5
+    confidence: medium
+    justification: >
+      Python's strongest in-motion signals are the sustained typing-PEP cadence lifting MC over time [python-037] and the commercial-vendor velocity of Astral (uv, ruff) reducing the dependency-risk profile [python-038], both compounding with Python's top GitHub corpus density that AI-coding-assistants amplify each model generation [python-041]. Structural blockers: PSF does not ship first-party AI packages and signals no intent to do so [python-039], leaving AIN structurally bounded; Instructor's single-maintainer concentration caps how much SOE compounds into trajectory [python-040].
+    supporting_claims: [python-037, python-038, python-039, python-040, python-041]

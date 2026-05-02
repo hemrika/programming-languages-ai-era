@@ -73,3 +73,10 @@ scores:
     justification: >
       Elixir's risk profile is mixed: Bumblebee/Nx and Phoenix are anchored to Dashbit (small commercial steward-adjacent), but instructor_ex is single-maintainer and LLM SDKs are community-multi-maintainer without commercial-first-party backing.
     supporting_claims: [elixir-029, elixir-030, elixir-031, elixir-032, elixir-033]
+
+  reachability_to_top_tier:
+    score: 2.5
+    confidence: medium
+    justification: >
+      In-motion signals exist: set-theoretic types are in active research at the Elixir core team, providing a typing closing path that is upward but slow [elixir-034]; Dashbit/Plataformatec stewards Bumblebee and Nx as a small commercial-third-party investment with the AIN closing path in motion but capacity-bounded [elixir-036]. Structural blockers: small ecosystem footprint means closing AIE/SOE half-cells requires sustained community work that has not consistently materialized [elixir-035]; aggregate gap-size to top-tier across MC/AIN/AIE/SON/SOE is wide and unlikely to close inside the planning horizon [elixir-037]; instructor_ex remains a small-maintainer port [elixir-038]. Net trajectory is positive but slow.
+    supporting_claims: [elixir-034, elixir-035, elixir-036, elixir-037, elixir-038]

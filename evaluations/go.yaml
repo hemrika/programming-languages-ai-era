@@ -73,3 +73,10 @@ scores:
     justification: >
       Go's risk profile is anchored at the language layer by Google's stewardship and by commercial-first-party SDKs from Anthropic and OpenAI. The validation-library landscape is community-multi-maintainer and fragmented, and LangChainGo is community-only.
     supporting_claims: [go-030, go-031, go-032, go-033, go-034]
+
+  reachability_to_top_tier:
+    score: 3.5
+    confidence: medium
+    justification: >
+      Go's AO already sits at top-tier and Google's predictable release cadence anchors steward capacity [go-037]; Anthropic and OpenAI ship first-party Go SDKs, providing a credible AIE closing path without requiring Google to ship anything [go-038]. Structural blockers: type-system minimalism (no sum types, no exhaustive enums, late generics) is a stated language-design philosophy that won't change, so the MC half-cell gap is structural not investible [go-036]; without Google sponsoring an AI-Go-SDK initiative, AIN closing path is unlikely to compound [go-039]; below-5 cells span MC/AIN/AIE/SOE in a mixed pattern [go-040]. Trajectory is mixed, not unambiguously up.
+    supporting_claims: [go-036, go-037, go-038, go-039, go-040]

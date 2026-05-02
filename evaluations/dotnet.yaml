@@ -73,3 +73,10 @@ scores:
     justification: >
       .NET's ecosystem dependency risk is the lowest in the cohort: nearly the entire load-bearing AI/SO surface is Microsoft-first-party. The Anthropic .NET SDK adds commercial first-party LLM-vendor backing. Newtonsoft.Json's small-maintainer profile is a non-issue because System.Text.Json is a drop-in replacement.
     supporting_claims: [dotnet-029, dotnet-030, dotnet-031, dotnet-032, dotnet-033]
+
+  reachability_to_top_tier:
+    score: 4.5
+    confidence: medium
+    justification: >
+      Microsoft is actively investing across nearly every below-5 cell — Microsoft.Extensions.AI for AIN [dotnet-034], Semantic Kernel and ONNX Runtime .NET and MCP C# SDK across AIN/AIE [dotnet-036], JsonSchemaExporter for SON — and the annual major release cadence with predictable LTS designations supports forward-trajectory bets [dotnet-035]. The HC/MC/AO/RE/SV cells already sit at 4 with small concentrated gaps to top-tier [dotnet-038]. Structural blocker: open-source mindshare smaller than JVM/Node ecosystems caps how much community follow-on lifts the AIE half-cell [dotnet-037]. Net trajectory is unambiguously up.
+    supporting_claims: [dotnet-034, dotnet-035, dotnet-036, dotnet-037, dotnet-038]

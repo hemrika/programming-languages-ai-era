@@ -73,3 +73,10 @@ scores:
     justification: >
       Apple's stewardship of Swift, Codable, Core ML, MLX, and Foundation Models gives Swift's Apple-platform surface a strong dependency-risk anchor. Cross-platform Swift AI tooling depends on community-multi-maintainer libraries, which lowers the score below the .NET/Java tier.
     supporting_claims: [swift-029, swift-030, swift-031, swift-032, swift-033]
+
+  reachability_to_top_tier:
+    score: 3.0
+    confidence: medium
+    justification: >
+      Apple's first-party AI surface (Core ML, MLX, Foundation Models) on Apple platforms compounds the AIN half-cell [swift-034]; Swift Evolution provides an open language-design process so structural language gaps are not the primary blocker — ecosystem gaps are [swift-038]. Structural blockers: Apple is the only entity investing materially in Swift, and cross-platform Swift AI ecosystem advances depend on Apple choosing to invest there, which has not been signaled [swift-035]; first-party Anthropic and OpenAI Swift SDKs do not exist and the cross-platform AIE closing path is not in motion [swift-036]; Apple's investment is durable on Apple platforms but Apple-locked, capping cross-platform reachability [swift-037].
+    supporting_claims: [swift-034, swift-035, swift-036, swift-037, swift-038]

@@ -41,3 +41,5 @@ def main():
     for language, score in sorted(rows, key=lambda item: item[1], reverse=True):
         print(f"{language}: {score}")
 
+if __name__ == "__main__":
+    main()

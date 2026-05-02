@@ -73,3 +73,10 @@ scores:
     justification: >
       Kotlin's risk profile is strong at the language layer (JetBrains commercial-vendor backing) and via JVM interop (commercial-vendor LangChain4j, OpenJDK). Kotlin-native libraries beyond JetBrains-stewarded ones are thinner and more volatile.
     supporting_claims: [kotlin-030, kotlin-031, kotlin-032, kotlin-033, kotlin-034]
+
+  reachability_to_top_tier:
+    score: 4.0
+    confidence: medium
+    justification: >
+      JetBrains stewardship anchors Kotlin as a commercial product with sustained KEEP cadence [kotlin-035]; Kotlin Multiplatform stable provides a credible cross-platform ecosystem path [kotlin-036]; null-safety, sealed types, and pattern-match exhaustiveness already sit at top-tier so remaining gaps concentrate in the (more investible) ecosystem halves rather than language design [kotlin-037]. Structural blockers: Kotlin-native AI ecosystem is materially smaller than JVM-interop projects, so closing AIE on a Kotlin-first basis requires sustained community pickup that is not in motion [kotlin-038]; commercial-vendor governance is durable but tied to a single steward [kotlin-039].
+    supporting_claims: [kotlin-035, kotlin-036, kotlin-037, kotlin-038, kotlin-039]

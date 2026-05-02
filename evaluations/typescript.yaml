@@ -73,3 +73,10 @@ scores:
     justification: >
       TypeScript's dependency risk profile mixes Microsoft language stewardship at the language level with a fragile structured-output anchor (Zod is single-maintainer) and well-funded commercial third parties for the agent/SDK surface (Vercel, Anthropic, OpenAI, LangChain Inc.).
     supporting_claims: [typescript-029, typescript-030, typescript-031, typescript-032, typescript-033]
+
+  reachability_to_top_tier:
+    score: 4.0
+    confidence: medium
+    justification: >
+      TypeScript's in-motion signals are strong: Microsoft stewardship anchors trajectory with predictable release cadence aligned to VS Code investment [typescript-036]; the satisfies operator and ongoing Language Service refinements ship each release [typescript-035]; commercial-third-party Vercel investment continues to close AIE/SOE half-cell gaps without language-design changes [typescript-039]. Structural blockers: TypeScript's type system is intentionally not sound and won't change in any planned release, capping MC trajectory [typescript-037]; Zod's single-maintainer concentration caps the SOE-ecosystem half-cell [typescript-038].
+    supporting_claims: [typescript-035, typescript-036, typescript-037, typescript-038, typescript-039]

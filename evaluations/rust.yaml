@@ -73,3 +73,10 @@ scores:
     justification: >
       Rust's dependency-risk profile is mixed: the Rust Foundation provides multi-vendor language-layer backing, but Serde, schemars, and Rust agent frameworks are community-multi-maintainer with notable bus-factor concentration. candle's HuggingFace backing is the strongest commercial anchor.
     supporting_claims: [rust-037, rust-038, rust-039, rust-040, rust-041]
+
+  reachability_to_top_tier:
+    score: 3.5
+    confidence: medium
+    justification: >
+      Rust's MC=5 and SV=5 already sit at top-tier and verification advantage compounds rather than degrades [rust-043]; Rust Foundation's multi-vendor backing (AWS, Microsoft, Google, Mozilla, Huawei) provides durable steward capacity [rust-046]; the AI ecosystem (candle, async-openai, MCP Rust SDK) is maturing slowly but in motion [rust-045]. Structural blockers: compile-time gap is structural to the borrow-check model and unlikely to close materially within 5 years, capping AO trajectory [rust-044]; Rust ships no first-party AI runtime and Rust Foundation does not signal intent to invest in AI tooling, so AIN closing path is steward-absent [rust-047].
+    supporting_claims: [rust-043, rust-044, rust-045, rust-046, rust-047]
