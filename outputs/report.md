@@ -140,4 +140,23 @@ Strongest forward case: ISO standardization with three-yearly revisions [cpp-001
 
 The framework weights (HC 15%, MC 15%, AO 20%, RE 10%, SV 5%, AIN 7.5%, AIE 7.5%, SON 5%, SOE 5%, EDR 5%, Reach 5%) are working assumptions. A reasonable reader could weight runtime/ecosystem higher (favouring Python and the JVM languages), AI-agent operability higher (favouring Go and TypeScript), dependency-risk higher (favouring .NET and Java), or reachability higher (favouring .NET and the vendor-stewarded languages). The matrix is robust to small weight perturbations but not to large ones.
 
-The snapshot date is **2026-05-02**. The AI-systems and structured-output ecosystems and the dependency-risk profile are the most volatile axes: MCP adoption is broadening, first-party SDKs are landing, structured-output libraries are converging on Pydantic/Zod-shaped patterns, and commercial vendors are increasingly publishing first-party SDKs that displace single-maintainer pr
+The snapshot date is **2026-05-02**. The AI-systems and structured-output ecosystems and the dependency-risk profile are the most volatile axes: MCP adoption is broadening, first-party SDKs are landing, structured-output libraries are converging on Pydantic/Zod-shaped patterns, and commercial vendors are increasingly publishing first-party SDKs that displace single-maintainer projects. Expect EDR scores to move first.
+
+The greenfield framing is itself a deliberate choice. Teams whose primary task is *maintaining* large incumbent estates should re-weight: legacy gravity reappears as an advantage in that question, and this matrix will under-credit Java, Python, and C++ for that purpose.
+
+The native/ecosystem split is sensitive to how "language steward" is defined. The framework draws the line at the entity that ships the canonical language toolchain. Edge cases (CUDA as the language-of-the-stack for accelerators; Dashbit's relationship to Elixir governance) are documented in `framework/dimensions.md`.
+
+Finally, the scores are single-rater author judgments grounded in atomic claims with primary-source citations, not the average of an independent expert panel. Each cell traces through Insight → Evaluation → Claim → Source.
+
+## Reading and Reproducibility
+
+The corpus is structured for traceability:
+
+- **Framework** — `framework/dimensions.md` (criteria), `framework/evaluation-framework.md` (weights and lenses), `framework/scoring-rubric.md` (1.0–5.0 rubric in 0.5-point increments).
+- **Claims** — `claims/<language>.yaml`, ~390 atomic claims across 10 languages, each with a primary-source citation, explicit polarity, and (since v0.4) `backer:` tag.
+- **Sources** — `sources/<language>-sources.yaml`, ~280 source entries with publication metadata.
+- **Evaluations** — `evaluations/<language>.yaml`, per-language eleven-dimension scores with `supporting_claims:` traceability into the claim corpus.
+- **Comparisons** — `comparisons/overview.md`, `comparisons/lens-analysis.md`, `comparisons/agent-friendly-languages.md`, `comparisons/dynamic-vs-static.md`.
+- **Insights** — `insights/agentic-feedback-loops.md`, `insights/ai-favors-verifiability.md`, `insights/safety-pressure.md`, `insights/incumbent-risk.md`.
+
+The matrix is reproducible via `scripts/score_summary.py`, which reads `evaluations/*.yaml` and emits the table in `comparisons/overview.md`. The full methodology is documented in `outputs/evidence-backed-research-execution-plan.md`.

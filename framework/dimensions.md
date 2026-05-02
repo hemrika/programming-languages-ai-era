@@ -144,3 +144,23 @@ Criteria:
 - funding_durability (commercial backing, foundation hosting, or paid-maintenance plans)
 - single_points_of_failure (specific load-bearing dependencies with one primary maintainer)
 - substitutability (whether a load-bearing dependency could be replaced without rewriting the AI/SO surface)
+
+## Reachability to top tier
+
+Measures forward trajectory: given each below-5 cell in a language's row, how plausible is it that the gap can be closed within a meaningful planning horizon (3–5 years)? **Higher = more reachable.** The score weighs aggregate gap size, the credibility of in-motion closing paths (steward/vendor investment, active proposals, sustained release cadence), and the structural-vs-ecosystem nature of each gap. A language whose below-5 cells have credible closing paths backed by stewards or commercial vendors with active investment scores high; a language whose gaps are mostly structural language-design concerns unlikely to move within five years scores low.
+
+Anchors:
+
+- 5.0 — most below-5 cells have credible closing paths backed by stewards or commercial vendors with active investment; trajectory is unambiguously up.
+- 4.0 — several below-5 cells have plausible closing paths; some structural gaps remain but the bet is favorable.
+- 3.0 — mixed: ecosystem gaps closable, language-design gaps mostly bounded.
+- 2.0 — most gaps are structural and require language-design changes unlikely within 5 years.
+- 1.0 — top-tier is functionally out of reach inside a meaningful planning horizon.
+
+Criteria:
+
+- gap_size (aggregate distance from current scores to 5.0 across below-5 cells)
+- in_motion_signals (active PEPs, JEPs, RFCs, KEEPs, vendor roadmaps, language-team commitments)
+- steward_investment (language-steward capacity to ship the closing path: commercial vendor, foundation, OSS)
+- structural_vs_ecosystem (whether the gap is language-design — slower — or ecosystem — investible)
+- compounding_pressure (countervailing forces such as regulatory or security pressure that move trajectory the other way)

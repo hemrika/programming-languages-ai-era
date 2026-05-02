@@ -93,4 +93,6 @@ No single language is a default for everything. AI-era language choice becomes m
 
 ## Slide 14 — Limitations and closing
 
-**Limitations.** Framework weights are working assumptions. Snapshot date 2026-05-02 — EDR is the most volatile present-state axis; Reach captures the forward-trajectory axis (commercial vendors increasingly ship first-party SDKs that displace si
+**Limitations.** Framework weights are working assumptions. Snapshot date 2026-05-02 — EDR is the most volatile present-state axis; Reach captures the forward-trajectory axis (commercial vendors increasingly ship first-party SDKs that displace single-maintainer projects). Greenfield framing is a deliberate choice; maintenance-estate teams should re-weight. Single-rater judgment grounded in primary-source citations.
+
+**Closing thesis.** AI raises the price of cheap verification, ergonomic agentic operability, structural safety, structured-output ergonomics, resilient dependency anchoring, and forward-trajectory plausibility. The languages that pay all six taxes win the next decade — and the framework shows that the leaders on the resilient-dependency axis (Go, .NET, Kotlin, Java) overlap only partly with the leaders on the ecosystem-ergonomics axis (TypeScript, Python, .NET) and only partly with the leaders on reachability (.NET, TypeScript, Kotlin). The greenfield default is no longer a single language; it is a portfolio.

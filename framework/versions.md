@@ -32,3 +32,19 @@ Restructured the AI-era dimensions to separate native (language-steward-shipped)
 - SON 5% (split from structured-output maturity 10%)
 - SOE 5% (split from structured-output maturity 10%)
 - EDR 5% (new — funded from RE)
+
+## v0.5
+
+Added `reachability_to_top_tier` as the 11th dimension, scoring forward-trajectory plausibility — how reachable is 5.0 on each below-5 cell within a 3–5-year horizon. Dimension count: 10 → 11. The 5% for Reach is pulled from Strategic viability (10% → 5%) — SV previously absorbed forward-trajectory signal implicitly. New weighting:
+
+- HC 15%
+- MC 15%
+- AO 20%
+- RE 10%
+- SV 5% (was 10)
+- AIN 7.5%
+- AIE 7.5%
+- SON 5%
+- SOE 5%
+- EDR 5%
+- Reach 5% (new — funded from SV)
