@@ -444,3 +444,58 @@ claims:
     polarity: negative
     source: rust-src-033
     notes: "Rust governance documents the Rust project structure; no AI-specific working group ships first-party AI crates."
+
+  - id: rust-043
+    claim: "Rust's memory-safety guarantees and verification ceiling already sit at MC=5/SV=5; the structural language-design ceiling is at top-tier, so reachability gaps concentrate in ecosystem halves rather than language design."
+    dimension: reachability_to_top_tier
+    backer: language_stewards
+    criterion: gap_size
+    evidence_type: language_specification
+    confidence: high
+    polarity: positive
+    source: rust-src-033
+    notes: "Rust Governance documents the project structure; MC and SV anchor the verification advantage that already sits at top-tier."
+
+  - id: rust-044
+    claim: "Rust's compile-time gap (slow builds, learning curve) is structural to the borrow-check model and unlikely to close materially within a 5-year horizon, capping the AO half-cell trajectory."
+    dimension: reachability_to_top_tier
+    backer: language_stewards
+    criterion: structural_vs_ecosystem
+    evidence_type: language_specification
+    confidence: high
+    polarity: negative
+    source: rust-src-001
+    notes: "Rust Reference documents ownership model; compile-time cost is structural to the safety guarantee."
+
+  - id: rust-045
+    claim: "Rust's AI-systems ecosystem (candle, async-openai, MCP Rust SDK, Rig) is maturing slowly via commercial-third-party and community investment; in-motion signals exist but velocity trails Python and TypeScript."
+    dimension: reachability_to_top_tier
+    backer: commercial_third_party
+    criterion: in_motion_signals
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: positive
+    source: rust-src-031
+    notes: "candle Repository documents continuing HuggingFace investment; AIE closing path is in motion but slow."
+
+  - id: rust-046
+    claim: "Rust Foundation provides multi-vendor backing (AWS, Microsoft, Google, Mozilla, Huawei) that anchors the language layer, supplying durable steward investment for closing paths."
+    dimension: reachability_to_top_tier
+    backer: language_stewards
+    criterion: steward_investment
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: rust-src-032
+    notes: "Rust Foundation Members list multi-vendor backing; capacity to ship closing paths is durable."
+
+  - id: rust-047
+    claim: "Rust ships no first-party AI runtime or agent-framework module; Rust Foundation does not signal intent to invest in language-steward AI tooling, so AIN closing path is structurally absent."
+    dimension: reachability_to_top_tier
+    backer: language_stewards
+    criterion: structural_vs_ecosystem
+    evidence_type: official_documentation
+    confidence: high
+    polarity: negative
+    source: rust-src-033
+    notes: "Rust Governance documents working groups; no AI-specific working group exists, so AIN is steward-absent."

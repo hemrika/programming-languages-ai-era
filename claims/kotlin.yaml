@@ -362,3 +362,58 @@ claims:
     polarity: positive
     source: kotlin-src-028
     notes: "JetBrains publishes Kotlin product roadmaps; the language is a JetBrains commercial product."
+
+  - id: kotlin-035
+    claim: "JetBrains stewards Kotlin as a commercial product with sustained release cadence, KEEPs (Kotlin Evolution and Enhancement Proposals), and dedicated language-team capacity to ship closing paths on below-5 cells."
+    dimension: reachability_to_top_tier
+    backer: language_stewards
+    criterion: steward_investment
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: kotlin-src-028
+    notes: "JetBrains Kotlin Blog evidences sustained product investment and language-roadmap publication."
+
+  - id: kotlin-036
+    claim: "Kotlin Multiplatform is stable and JetBrains continues investing across iOS/JS/Native targets, providing a credible path to lift the cross-platform ecosystem-half cells without language-design changes."
+    dimension: reachability_to_top_tier
+    backer: language_stewards
+    criterion: in_motion_signals
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: kotlin-src-013
+    notes: "Kotlin Multiplatform is Stable announcement (JetBrains) provides direct in-motion signal."
+
+  - id: kotlin-037
+    claim: "Kotlin's null-safety, sealed types, and pattern-match exhaustiveness already sit at top-tier; the remaining gaps are primarily ecosystem-side (AIN, AIE, SOE) rather than language-design, which makes the trajectory bet favorable."
+    dimension: reachability_to_top_tier
+    backer: language_stewards
+    criterion: gap_size
+    evidence_type: language_specification
+    confidence: high
+    polarity: positive
+    source: kotlin-src-001
+    notes: "Kotlin's null-safety + sealed-types language design sits at top-tier MC; below-5 cells concentrate in ecosystem halves."
+
+  - id: kotlin-038
+    claim: "Kotlin-native AI ecosystem is materially smaller than JVM-interop projects (LangChain4j); closing the AIE half-cell on a Kotlin-first basis (rather than via Java interop) requires sustained community pickup that is not in motion."
+    dimension: reachability_to_top_tier
+    backer: community_multi_maintainer
+    criterion: structural_vs_ecosystem
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: kotlin-src-018
+    notes: "Kotlin AI ecosystem state notes show Kotlin-native AI tooling thinner than JVM-interop options."
+
+  - id: kotlin-039
+    claim: "JetBrains' commercial-vendor governance is durable but Kotlin's trajectory remains tied to a single steward; sustained external community contribution to closing paths is uneven."
+    dimension: reachability_to_top_tier
+    backer: language_stewards
+    criterion: structural_vs_ecosystem
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: kotlin-src-027
+    notes: "Kotlin Community Page and contributor history show JetBrains-anchored development with slower external community lift than Java's."

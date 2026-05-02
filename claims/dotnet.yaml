@@ -352,3 +352,58 @@ claims:
     polarity: positive
     source: dotnet-src-027
     notes: "Microsoft publishes .NET LTS schedules and supports the platform commercially."
+
+  - id: dotnet-034
+    claim: "Microsoft.Extensions.AI introduces a unified AI surface refreshed with each .NET release; the AIN closing path is steward-driven and compounding through release cadence."
+    dimension: reachability_to_top_tier
+    backer: language_stewards
+    criterion: in_motion_signals
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: dotnet-src-020
+    notes: "Microsoft.Extensions.AI docs document the unified AI surface shipping in alignment with .NET's annual release cadence."
+
+  - id: dotnet-035
+    claim: ".NET has an annual major release cadence (.NET 9 → 10 → 11) with predictable LTS designations, supporting forward-trajectory bets across language-runtime-ecosystem cells."
+    dimension: reachability_to_top_tier
+    backer: language_stewards
+    criterion: steward_investment
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: dotnet-src-027
+    notes: "Microsoft .NET support policy documents the annual cadence and LTS schedule."
+
+  - id: dotnet-036
+    claim: "Microsoft is actively investing across nearly every below-5 cell — Semantic Kernel for AIN/AIE, JsonSchemaExporter for SON, ONNX Runtime .NET for AIN, MCP C# SDK for AIN — and these efforts compound rather than substitute."
+    dimension: reachability_to_top_tier
+    backer: language_stewards
+    criterion: steward_investment
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: dotnet-src-014
+    notes: "Microsoft Semantic Kernel repository signals active multi-front investment by the language steward."
+
+  - id: dotnet-037
+    claim: ".NET's open-source mindshare is smaller than JVM/Node ecosystems; the ecosystem-half closing path depends on community follow-on, not steward alone, capping forward AIE trajectory."
+    dimension: reachability_to_top_tier
+    backer: commercial_first_party
+    criterion: structural_vs_ecosystem
+    evidence_type: developer_survey
+    confidence: medium
+    polarity: negative
+    source: dotnet-src-028
+    notes: "Stack Overflow Developer Survey shows C# professional usage trailing TypeScript/Python/Java; ecosystem-half community lift requires sustained external investment."
+
+  - id: dotnet-038
+    claim: ".NET's HC, MC, AO, RE, SV cells already sit at 4 — the gap-size to top-tier is small and concentrated; closing those gaps requires only modest steward investment that Microsoft has signaled appetite for."
+    dimension: reachability_to_top_tier
+    backer: language_stewards
+    criterion: gap_size
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: dotnet-src-027
+    notes: ".NET Support Policy and release cadence; aggregate gap to 5.0 across language-design cells is small."

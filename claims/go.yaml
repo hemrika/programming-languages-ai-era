@@ -374,3 +374,58 @@ claims:
     polarity: negative
     source: go-src-027
     notes: "Go std library index does not include AI-specific packages; golang.org/x experimental tree similarly omits AI tooling."
+
+  - id: go-036
+    claim: "Go's deliberate type-system minimalism — no sum types, no exhaustive enums, late generics — is a stated language-design philosophy expressed in the Go FAQ; the MC half-cell gap will not close because closing it contradicts Go's design."
+    dimension: reachability_to_top_tier
+    backer: language_stewards
+    criterion: structural_vs_ecosystem
+    evidence_type: language_specification
+    confidence: high
+    polarity: negative
+    source: go-src-011
+    notes: "Go FAQ explicitly defends omissions; the MC gap is structural, not investible."
+
+  - id: go-037
+    claim: "Google stewards the Go language and ships the canonical toolchain; release cadence is predictable and the language team has capacity to ship closing paths if it chooses to invest in AI tooling."
+    dimension: reachability_to_top_tier
+    backer: language_stewards
+    criterion: steward_investment
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: go-src-022
+    notes: "Go Release Notes evidence sustained predictable cadence; Google language stewardship anchors capacity."
+
+  - id: go-038
+    claim: "Anthropic and OpenAI ship first-party Go SDKs; commercial-vendor investment in Go AI tooling is in motion and provides a credible closing path for the AIE half-cell without requiring Google to ship anything."
+    dimension: reachability_to_top_tier
+    backer: commercial_first_party
+    criterion: in_motion_signals
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: go-src-023
+    notes: "Anthropic Go SDK Repository documents commercial-first-party investment in Go AI tooling."
+
+  - id: go-039
+    claim: "Google has not shipped any first-party Go AI/ML package; without Google sponsoring an AI-Go-SDK initiative, the AIN half-cell closing path is unlikely to compound, leaving AIN structurally bounded."
+    dimension: reachability_to_top_tier
+    backer: language_stewards
+    criterion: structural_vs_ecosystem
+    evidence_type: official_documentation
+    confidence: high
+    polarity: negative
+    source: go-src-027
+    notes: "Go Standard Library Index does not include AI-specific packages; AIN closing path depends on Google investment that has not been signaled."
+
+  - id: go-040
+    claim: "Go's AO=5 sits at top tier already; below-5 cells concentrate in MC (structural), AIN (steward absence), AIE (in motion via commercial vendors), and SOE (community-fragmented). The trajectory is mixed, not unambiguously up."
+    dimension: reachability_to_top_tier
+    backer: language_stewards
+    criterion: gap_size
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: neutral
+    source: go-src-008
+    notes: "Go Developer Survey shows steady ecosystem growth but limited AI-tool-specific traction within the Go community itself."

@@ -363,3 +363,58 @@ claims:
     polarity: negative
     source: java-src-028
     notes: "OpenJDK projects list does not include an AI/ML-specific working group."
+
+  - id: java-035
+    claim: "OpenJDK has a sustained JEP cadence shipping records, sealed classes, virtual threads, and structured concurrency across recent releases — a credible language-design closing path for several below-5 cells."
+    dimension: reachability_to_top_tier
+    backer: language_stewards
+    criterion: in_motion_signals
+    evidence_type: language_specification
+    confidence: high
+    polarity: positive
+    source: java-src-006
+    notes: "JEP 444 (Virtual Threads) plus the records / sealed classes / structured concurrency pipeline evidences sustained JEP cadence."
+
+  - id: java-036
+    claim: "OpenJDK multi-vendor stewardship (Oracle, IBM, Red Hat, Microsoft, Amazon) provides durable funding and capacity to ship closing paths across the language layer; trajectory is anchored at the steward layer."
+    dimension: reachability_to_top_tier
+    backer: language_stewards
+    criterion: steward_investment
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: java-src-027
+    notes: "OpenJDK Group Memberships document the multi-vendor stewardship pattern; closing-path capacity is high."
+
+  - id: java-037
+    claim: "OpenJDK ships no AI-specific module first-party and JEP roadmap signals no intent to do so; Java's AIN closing path is structural at the steward level."
+    dimension: reachability_to_top_tier
+    backer: language_stewards
+    criterion: structural_vs_ecosystem
+    evidence_type: official_documentation
+    confidence: high
+    polarity: negative
+    source: java-src-028
+    notes: "OpenJDK Projects list does not include an AI/ML-specific working group; AIN closing path requires external action."
+
+  - id: java-038
+    claim: "Java's preview-feature pipeline introduces multi-release lag between language proposal and stable shipping (e.g., pattern matching for switch went through multiple previews); closing paths land but slower than Kotlin/.NET equivalents."
+    dimension: reachability_to_top_tier
+    backer: language_stewards
+    criterion: compounding_pressure
+    evidence_type: language_specification
+    confidence: medium
+    polarity: negative
+    source: java-src-005
+    notes: "JEP 427 (Third Preview) demonstrates the preview-cycle delay that caps Java's reachability velocity."
+
+  - id: java-039
+    claim: "Commercial-third-party LangChain4j and Anthropic Java SDK provide an investible AIE closing path on JVM, but that does not lift Java's language-design surface."
+    dimension: reachability_to_top_tier
+    backer: commercial_third_party
+    criterion: structural_vs_ecosystem
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: positive
+    source: java-src-024
+    notes: "LangChain4j Repository documents continued external investment; closing AIE without language-design changes."

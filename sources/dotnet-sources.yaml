@@ -197,3 +197,11 @@ sources:
     type: official_documentation
     url: https://dotnet.microsoft.com/platform/support/policy/dotnet-core
     notes: "Microsoft publishes .NET LTS schedules and supports the platform commercially."
+
+  - id: dotnet-src-028
+    title: "Stack Overflow Developer Survey 2024 - Most Popular Technologies"
+    publisher: "Stack Overflow"
+    type: developer_survey
+    year: 2024
+    url: https://survey.stackoverflow.co/2024/technology
+    notes: "Reports C# professional usage; signal that .NET community mindshare trails TypeScript/Python/Java for ecosystem-half lift."

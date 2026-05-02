@@ -384,3 +384,58 @@ claims:
     polarity: negative
     source: python-src-030
     notes: "PEP index lists active proposals; no AI-specific package proposal is part of the language steward roadmap."
+
+  - id: python-037
+    claim: "Python's sustained typing-PEP cadence (PEPs 484, 526, 544, 612, 646, 692, 695, with PEP 750 t-strings and ongoing typing PEPs continuing) provides a concrete in-motion path to lifting MC over time without breaking backwards compatibility."
+    dimension: reachability_to_top_tier
+    backer: language_stewards
+    criterion: in_motion_signals
+    evidence_type: language_specification
+    confidence: high
+    polarity: positive
+    source: python-src-013
+    notes: "The Python Typing topic guide and the PEP index together evidence a continuing typing-PEP pipeline; trajectory on machine-cognition is upward."
+
+  - id: python-038
+    claim: "uv (Astral) demonstrates that a vendor-backed Rust-implemented Python toolchain can ship at velocity, materially reducing the dependency-risk profile and improving operability feedback loops on the EDR and AO half-cells."
+    dimension: reachability_to_top_tier
+    backer: commercial_third_party
+    criterion: steward_investment
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: positive
+    source: python-src-010
+    notes: "uv documentation describes Astral's commercial-third-party backing; recent release cadence (uv, ruff) demonstrates capacity to displace single-maintainer projects."
+
+  - id: python-039
+    claim: "PSF does not ship first-party AI packages and has signaled no intent to do so; Python's AIN gap is structural at the steward level and cannot close inside the planning horizon."
+    dimension: reachability_to_top_tier
+    backer: language_stewards
+    criterion: structural_vs_ecosystem
+    evidence_type: official_documentation
+    confidence: high
+    polarity: negative
+    source: python-src-029
+    notes: "PSF mission statement scopes the Foundation to language-stewardship, not vendor-style AI investment; AIN closing path is steward-blocked."
+
+  - id: python-040
+    claim: "Instructor remains primarily single-maintainer; Python's structured-output ecosystem-half is fragile until maintainership broadens, capping how much Python's SOE half can compound into trajectory."
+    dimension: reachability_to_top_tier
+    backer: community_single_maintainer
+    criterion: structural_vs_ecosystem
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: python-src-026
+    notes: "Instructor contributor history is dominated by Jason Liu; bus-factor risk constrains forward trajectory on the SOE half."
+
+  - id: python-041
+    claim: "Python ranks consistently as the top language by GitHub activity and corpus density, ensuring that AI-coding-assistant generation quality continues improving with each model generation; this compounds the ecosystem-half advantage."
+    dimension: reachability_to_top_tier
+    backer: community_multi_maintainer
+    criterion: in_motion_signals
+    evidence_type: developer_survey
+    confidence: medium
+    polarity: positive
+    source: python-src-012
+    notes: "Octoverse 2024 reports Python overtaking JavaScript; under reachability framing this is read as a self-reinforcing trajectory signal."

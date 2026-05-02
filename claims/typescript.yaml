@@ -363,3 +363,58 @@ claims:
     polarity: negative
     source: typescript-src-029
     notes: "TypeScript distribution README enumerates compiler and language service; no AI-specific tooling is bundled."
+
+  - id: typescript-035
+    claim: "TypeScript's incremental Language Service improvements — the satisfies operator, const type parameters, and continuing semantic-model refinements — ship each release on a predictable Microsoft-stewarded cadence."
+    dimension: reachability_to_top_tier
+    backer: language_stewards
+    criterion: in_motion_signals
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: typescript-src-013
+    notes: "The satisfies operator (TS 4.9) demonstrates the Language Service's velocity; subsequent releases continue the same cadence."
+
+  - id: typescript-036
+    claim: "Microsoft stewardship anchors TypeScript trajectory; releases ship on a predictable cadence aligned with VS Code investment, and the language service surface is a load-bearing Microsoft commercial product."
+    dimension: reachability_to_top_tier
+    backer: commercial_first_party
+    criterion: steward_investment
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: typescript-src-001
+    notes: "TypeScript handbook + Microsoft language stewardship anchor the forward bet; VS Code's market share underwrites continuing investment."
+
+  - id: typescript-037
+    claim: "TypeScript's type system is intentionally not sound; this is a deliberate design choice that won't change in any planned release, structurally capping the MC half-cell trajectory."
+    dimension: reachability_to_top_tier
+    backer: commercial_first_party
+    criterion: structural_vs_ecosystem
+    evidence_type: language_specification
+    confidence: high
+    polarity: negative
+    source: typescript-src-008
+    notes: "The any-type Handbook entry (and TypeScript's longstanding non-goals) document non-soundness as deliberate; closing path on full soundness is structurally absent."
+
+  - id: typescript-038
+    claim: "Zod is single-maintainer; TypeScript's structured-output-ecosystem half-cell forward trajectory depends on Zod maintainership continuing or commercial vendors taking over the schema layer."
+    dimension: reachability_to_top_tier
+    backer: community_single_maintainer
+    criterion: structural_vs_ecosystem
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: typescript-src-024
+    notes: "Zod governance and contributor history; bus-factor risk caps how much SOE compounds into trajectory."
+
+  - id: typescript-039
+    claim: "Vercel and other commercial actors continue to invest in the TypeScript AI ecosystem (Vercel AI SDK, structured outputs); commercial-third-party investment is closing AIE-and-SOE half-cell gaps without requiring language-design changes."
+    dimension: reachability_to_top_tier
+    backer: commercial_third_party
+    criterion: in_motion_signals
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: positive
+    source: typescript-src-025
+    notes: "Vercel AI SDK documentation shows sustained commercial investment in TypeScript-first structured outputs."

@@ -352,3 +352,58 @@ claims:
     polarity: neutral
     source: elixir-src-025
     notes: "Hex.pm catalogs Elixir packages; manual review confirms the community/language-steward split."
+
+  - id: elixir-034
+    claim: "Set-theoretic types are in active research at the Elixir core team; the typing closing path is in motion but the timeline is uncertain and likely outside a 5-year horizon for full top-tier MC."
+    dimension: reachability_to_top_tier
+    backer: language_stewards
+    criterion: in_motion_signals
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: elixir-src-020
+    notes: "Elixir set-theoretic types research documents the work; trajectory is upward but slow."
+
+  - id: elixir-035
+    claim: "Elixir's small ecosystem footprint (Hex.pm) means closing AIE/SOE half-cells requires sustained community work that has not consistently materialized."
+    dimension: reachability_to_top_tier
+    backer: community_multi_maintainer
+    criterion: structural_vs_ecosystem
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: elixir-src-025
+    notes: "Hex.pm Package Repository volume trails npm/pypi by orders of magnitude; AIE/SOE community lift is slow."
+
+  - id: elixir-036
+    claim: "Dashbit/Plataformatec stewards Bumblebee and Nx as a small commercial-third-party investment; the AIN closing path is in motion but capacity is limited compared to Microsoft or Apple."
+    dimension: reachability_to_top_tier
+    backer: commercial_third_party
+    criterion: steward_investment
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: positive
+    source: elixir-src-021
+    notes: "Nx Repository documents continued Dashbit investment; capacity-bounded."
+
+  - id: elixir-037
+    claim: "Elixir's BEAM-platform strengths (RE=4.5, concurrency model) already sit high; below-5 cells concentrate in MC, AIN, AIE, SON, SOE — a wide gap-size spread that the trajectory cannot close inside the planning horizon."
+    dimension: reachability_to_top_tier
+    backer: language_stewards
+    criterion: gap_size
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: elixir-src-024
+    notes: "Phoenix Framework Repository evidences strong RE; aggregate gap on the AI/SO surface remains wide."
+
+  - id: elixir-038
+    claim: "instructor_ex remains a small-maintainer port; Elixir's structured-output ecosystem half-cell is fragile and trajectory depends on a small set of community contributors."
+    dimension: reachability_to_top_tier
+    backer: community_single_maintainer
+    criterion: structural_vs_ecosystem
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: elixir-src-022
+    notes: "instructor_ex Repository contributor history shows small bus-factor; SOE trajectory limited."

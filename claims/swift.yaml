@@ -350,3 +350,58 @@ claims:
     polarity: neutral
     source: swift-src-027
     notes: "SSWG documents Apple's involvement in cross-platform Swift but Apple-platform tooling is the funded surface."
+
+  - id: swift-034
+    claim: "Apple invests in Swift's first-party AI surface (Core ML, MLX, Foundation Models) on Apple platforms; the AIN half-cell already sits high and continued investment compounds it."
+    dimension: reachability_to_top_tier
+    backer: language_stewards
+    criterion: in_motion_signals
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: swift-src-025
+    notes: "MLX Repository documents continued Apple investment in the Apple-platform AI surface."
+
+  - id: swift-035
+    claim: "Apple is the only entity investing materially in Swift; cross-platform Swift AI ecosystem advances depend on Apple choosing to invest there, which has not been signaled."
+    dimension: reachability_to_top_tier
+    backer: language_stewards
+    criterion: structural_vs_ecosystem
+    evidence_type: official_documentation
+    confidence: high
+    polarity: negative
+    source: swift-src-027
+    notes: "Swift Server Workgroup documents Apple's involvement in cross-platform Swift; AI investment there is thin."
+
+  - id: swift-036
+    claim: "First-party Anthropic and OpenAI Swift SDKs do not exist; cross-platform AIE closing path requires either Apple or a commercial vendor to take the work, neither of which is in motion."
+    dimension: reachability_to_top_tier
+    backer: commercial_first_party
+    criterion: in_motion_signals
+    evidence_type: official_documentation
+    confidence: high
+    polarity: negative
+    source: swift-src-016
+    notes: "Community Swift OpenAI/Anthropic clients are not first-party; AIE closing path is not in motion."
+
+  - id: swift-037
+    claim: "Apple's AI-platform investment is durable on Apple platforms but Apple-locked; the trajectory is positive on the AIN half but bounded on AIE without changes in Apple strategy."
+    dimension: reachability_to_top_tier
+    backer: language_stewards
+    criterion: structural_vs_ecosystem
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: neutral
+    source: swift-src-023
+    notes: "About Swift evidences Apple's commitment; the platform-locked nature caps cross-platform reachability."
+
+  - id: swift-038
+    claim: "Swift Evolution provides an open language-design process; structural language gaps are not the primary blocker for Swift's reachability — ecosystem gaps are."
+    dimension: reachability_to_top_tier
+    backer: language_stewards
+    criterion: gap_size
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: swift-src-006
+    notes: "Swift Evolution is an open process; below-5 cells concentrate in cross-platform ecosystem rather than language design."

@@ -345,3 +345,58 @@ claims:
     polarity: negative
     source: cpp-src-027
     notes: "WG21 papers list does not include AI/ML-specific proposals beyond accelerator-host generic concerns."
+
+  - id: cpp-033
+    claim: "Memory-safety regulatory pressure (NSA, ONCD, Microsoft, Chromium) compounds against C++ rather than for it; safety pressure moves trajectory the other way relative to memory-safe alternatives."
+    dimension: reachability_to_top_tier
+    backer: language_stewards
+    criterion: compounding_pressure
+    evidence_type: official_documentation
+    confidence: high
+    polarity: negative
+    source: cpp-src-027
+    notes: "ISO C++ Committee documents the WG21 process; safety remediation roadmap is slower than the regulatory pressure timeline."
+
+  - id: cpp-034
+    claim: "P2996 Reflection for C++26 is in progress and would lift the SON half-cell by enabling types-to-schema generation; landing inside the planning horizon depends on continued WG21 momentum."
+    dimension: reachability_to_top_tier
+    backer: language_stewards
+    criterion: in_motion_signals
+    evidence_type: language_specification
+    confidence: medium
+    polarity: positive
+    source: cpp-src-021
+    notes: "P2996 paper documents reflection proposal; in motion but slow."
+
+  - id: cpp-035
+    claim: "Most C++ below-5 cells (HC, AO, SON, AIN) are structural to the language's design and will not close within the planning horizon; trajectory is bounded by language-design constraints."
+    dimension: reachability_to_top_tier
+    backer: language_stewards
+    criterion: structural_vs_ecosystem
+    evidence_type: language_specification
+    confidence: high
+    polarity: negative
+    source: cpp-src-019
+    notes: "ISO C++ Standards process is slow; structural gaps cannot close on the planning horizon."
+
+  - id: cpp-036
+    claim: "ISO three-yearly revisions provide a steady cadence but are slow relative to vendor-stewarded competitors; C++ steward investment exists but compounds slowly."
+    dimension: reachability_to_top_tier
+    backer: language_stewards
+    criterion: steward_investment
+    evidence_type: language_specification
+    confidence: high
+    polarity: negative
+    source: cpp-src-001
+    notes: "C++ Standards process publishes a major revision every three years; cadence trails .NET/Java JEP/release cadence."
+
+  - id: cpp-037
+    claim: "Single-maintainer load-bearing libraries (llama.cpp, nlohmann/json) constrain forward trajectory of ecosystem halves; commercial-vendor takeover would be required to close EDR/SOE on a credible horizon."
+    dimension: reachability_to_top_tier
+    backer: community_single_maintainer
+    criterion: structural_vs_ecosystem
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: cpp-src-022
+    notes: "llama.cpp GitHub Insights shows concentration on Georgi Gerganov; closing path on EDR depends on commercial-vendor pickup."
