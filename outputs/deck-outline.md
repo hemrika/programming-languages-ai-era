@@ -31,47 +31,43 @@ Greenfield framing: no credit for legacy installed base, code volume, or incumbe
 
 AIN/AIE = AI-systems native (7.5%) and ecosystem (7.5%). SON/SOE = Structured-output native (5%) and ecosystem (5%). EDR = Ecosystem dependency risk (5%) — higher = lower risk. Three tiers: top (≥3.85) Go, TypeScript, .NET, Kotlin. Middle (3.40–3.84) Rust, Python, Swift. Lower (<3.40) Java, Elixir, C++.
 
-## Slide 5 — The v0.4 ranking shake-up
+## Slide 5 — Finding 1: Go takes the top slot
 
-Under v0.4, **Go (4.04) takes the top slot**. v0.3 had TypeScript at #1 (4.38) and Python at #2 (4.25); under v0.4 Python falls to #6 (3.74) — the largest movement in the cohort. Mechanical drivers: AI-systems and structured-output dimensions split into native + ecosystem halves, and a new dependency-risk axis records the backer-mix of load-bearing libraries. Python's v0.3 score implicitly credited Pydantic, Instructor, Outlines, and the LangChain Python ecosystem at full weight; v0.4 splits this into AIN=1.5 (PSF ships no AI packages) plus AIE=5.0 (best in cohort), and adds EDR=2.5 reflecting Pydantic-multi-maintainer + Instructor-single-maintainer + Outlines-small-commercial. The same split exposes that .NET's Microsoft-first-party AI surface was under-credited at v0.3: AIN=4.0, EDR=4.5, weighted 3.96 (up from 4.00 with a different shape).
+Go (4.04) leads the matrix on a HC=5 / AO=5 profile that carries at full weight (35% combined). TypeScript (4.01) sits 0.03 below in a near-tie: AIE=5.0 and SOE=5.0 are best-in-class on the ecosystem halves but AIN=1.5 / SON=2.5 cap the lift. Go ranks 0.30 above Python (3.74) on the strength of operability and human cognition combined with a stable EDR=3.5 anchored by Google language stewardship and commercial-first-party Anthropic and OpenAI Go SDKs.
 
-## Slide 6 — Finding 1: Go takes the top slot
+## Slide 6 — Finding 2: Python's structural exposure
 
-v0.3 ranked TypeScript #1 (4.38). v0.4 reweights — operability stays at 20%, but the AI-systems and structured-output dimensions now split native vs ecosystem. Go's HC=5 / AO=5 lead carries through unchanged at full weight, while TypeScript's AIE=5 / SOE=5 gains are diluted by AIN=1.5 / SON=2.5. The 0.03-point gap between Go (4.04) and TypeScript (4.01) reads as a near-tie at the top, not a clear winner. The Python/Go swap from v0.3 reverses: Go now sits 0.30 above Python.
+Python (3.74, #6) carries a bimodal AI-systems profile — strong ecosystem, weak native, dependency-risk-exposed. AIE=5.0 [python-021..025] and SOE=5.0 [python-026..029] are tier-leading on the ecosystem halves. AIN=1.5 (PSF ships no AI packages [python-036]), SON=2.5 (PEP 484 hints advisory at runtime [python-030]), and EDR=2.5 (Pydantic community-multi-maintainer [python-031], Instructor single-maintainer [python-032], Outlines small-commercial [python-033]) hold the weighted total below Go and TypeScript despite the tier-leading ecosystem halves.
 
-## Slide 7 — Finding 2: Python's structural exposure
-
-Under v0.3, Python's 4.25 was lifted by AI=5 + SO=5 at a combined 25% weight. v0.4 splits both into native + ecosystem and adds dependency-risk. Python earns AIE=5.0 [python-021..025] and SOE=5.0 [python-026..029] — still tier-leading on ecosystem halves. But AIN=1.5 (PSF ships no AI packages [python-036]), SON=2.5 (PEP 484 hints advisory at runtime [python-030]), and EDR=2.5 (Pydantic community-multi-maintainer [python-031], Instructor single-maintainer [python-032], Outlines small-commercial [python-033]) reflect dependencies v0.3 absorbed implicitly. Net: -0.51 points and four positions.
-
-## Slide 8 — Finding 3: Dependency-risk rewards Microsoft, JetBrains, OpenJDK stewardship
+## Slide 7 — Finding 3: Dependency-risk rewards Microsoft, JetBrains, OpenJDK stewardship
 
 EDR=4.5 (.NET), 4.0 (Java), 4.0 (Kotlin) anchor the middle of the table. Microsoft funds the .NET runtime and the in-box AI surface as a single commercial-vendor strategy [dotnet-020, dotnet-022, dotnet-029]. OpenJDK's multi-vendor stewardship anchors the JVM [java-033]. JetBrains stewardship anchors Kotlin at language and serialization layers [kotlin-030]. Languages with single-maintainer load-bearing dependencies score lower — Python 2.5 [python-031, python-032], TypeScript 3.0 [typescript-029], C++ 3.0 [cpp-027, cpp-028]. The dependency-risk axis is the one most likely to move next.
 
-## Slide 9 — Finding 4: AI-agent operability still the most discriminating
+## Slide 8 — Finding 4: AI-agent operability is the most discriminating dimension
 
-Operability separates Go and TypeScript (AO=5) from C++ (AO=2). Under v0.4 with AO at 20% weight, this axis alone contributes ±0.6 points to the ranking — larger than any AI-era dimension's individual contribution. The pattern tracks toolchain unification and LSP-exposed semantic models [go-003, go-015, typescript-006, typescript-007, dotnet-006, dotnet-014], not type-system depth.
+Operability separates Go and TypeScript (AO=5) from C++ (AO=2). With AO at 20% weight, this axis alone contributes ±0.6 points to the ranking — larger than any AI-era dimension's individual contribution. The pattern tracks toolchain unification and LSP-exposed semantic models [go-003, go-015, typescript-006, typescript-007, dotnet-006, dotnet-014], not type-system depth.
 
-## Slide 10 — Finding 5: Safety pressure and verification advantage hold
+## Slide 9 — Finding 5: Safety pressure and verification advantage hold
 
-Memory-safety pressure has crossed from technical preference into regulatory criterion. Microsoft Security Response Center: ~70% of CVEs are memory-safety [cpp-004]. Chromium: ~70% of high-severity bugs [cpp-005]. NSA Software Memory Safety names C and C++ [cpp-006]. ONCD's Back to the Building Blocks repeats the recommendation [cpp-007]. Memory-safe languages (Rust [rust-001], Kotlin/JVM [kotlin-001], Swift [swift-004], Elixir/BEAM [elixir-002, elixir-004], .NET [dotnet-002, dotnet-003]) align with the pressure; C++ is alone in the exposed tier. AI raises the value of cheap verification — agents write more code than humans can read — and v0.4 introduces a third verification axis via SON: schema-validated boundaries between LLM output and program logic.
+Memory-safety pressure has crossed from technical preference into regulatory criterion. Microsoft Security Response Center: ~70% of CVEs are memory-safety [cpp-004]. Chromium: ~70% of high-severity bugs [cpp-005]. NSA Software Memory Safety names C and C++ [cpp-006]. ONCD's Back to the Building Blocks repeats the recommendation [cpp-007]. Memory-safe languages (Rust [rust-001], Kotlin/JVM [kotlin-001], Swift [swift-004], Elixir/BEAM [elixir-002, elixir-004], .NET [dotnet-002, dotnet-003]) align with the pressure; C++ is alone in the exposed tier. AI raises the value of cheap verification — agents write more code than humans can read — and the structured-output-native dimension extends the verification surface to schema-validated boundaries between LLM output and program logic.
 
-## Slide 11 — Top-tier verdicts
+## Slide 10 — Top-tier verdicts
 
 - **Go (4.04)** — default for backend services where deliberate minimalism is acceptable. Operability breadth [go-003, go-015]; AI-systems coverage with Anthropic [go-020], OpenAI [go-021], MCP [go-022] SDKs at AIE=3.5; SON=3.0 via encoding/json + struct tags. EDR=3.5 from Google language stewardship and commercial-first-party SDKs.
 - **TypeScript (4.01)** — default for application work in the JavaScript-shaped world. Strict-mode discipline [typescript-004] plus AI-systems breadth: LangChain.js [typescript-021], official MCP TS SDK [typescript-022], Anthropic and OpenAI SDKs [typescript-019, typescript-020], Zod-led structured-output ergonomics [typescript-026, typescript-027]. AIE=5.0 and SOE=5.0 (best in cohort). EDR=3.0 — Zod single-maintainer concentration offset by Microsoft language stewardship.
 - **.NET / C# (3.96)** — default for Microsoft-shop application and service work. Roslyn as public compiler-platform API [dotnet-006, dotnet-014]; AIN=4.0 with Semantic Kernel [dotnet-020], MCP C# SDK [dotnet-021], ONNX Runtime .NET [dotnet-022]; SON=4.0 via System.Text.Json + JsonSchemaExporter. **EDR=4.5 — highest in the cohort.**
-- **Kotlin (3.85)** — default for JVM application work and increasingly cross-platform [kotlin-015]; v0.2 lifted MC to 4.5 on null-safety + sealed types + when exhaustiveness [kotlin-001, kotlin-002, kotlin-003]; AIN=3.0 via JetBrains-shipped MCP Kotlin SDK [kotlin-021]. SON=3.5 via kotlinx-serialization (JetBrains). EDR=4.0 with JetBrains commercial-vendor anchoring.
+- **Kotlin (3.85)** — default for JVM application work and increasingly cross-platform [kotlin-015]; MC=4.5 on null-safety + sealed types + when exhaustiveness [kotlin-001, kotlin-002, kotlin-003]; AIN=3.0 via JetBrains-shipped MCP Kotlin SDK [kotlin-021]. SON=3.5 via kotlinx-serialization (JetBrains). EDR=4.0 with JetBrains commercial-vendor anchoring.
 
-## Slide 12 — Other notable verdicts
+## Slide 11 — Other notable verdicts
 
 - **Rust (3.75)** — default for systems, infrastructure, security-sensitive work. Ownership rules [rust-001] plus regulatory alignment [rust-015, rust-016]; AIE=3.5 (MCP Rust SDK [rust-027], async-openai [rust-028], candle [rust-029]) trailing Python and TypeScript on agent-framework depth [rust-030]. SOE=4.0 via Serde + schemars. EDR=3.5 — Rust Foundation multi-vendor backing offset by Serde bus-factor.
-- **Python (3.74)** — falls from #2 to #6. AIE=5.0 with Anthropic [python-021], OpenAI [python-022], LangChain [python-023], MCP [python-024], universal vector stores [python-025]; SOE=5.0 with Pydantic [python-026], Instructor [python-028], Outlines [python-029]. AIN=1.5 (PSF ships no AI packages [python-036]). EDR=2.5 — single-maintainer Instructor [python-032], small-commercial Outlines [python-033].
-- **Swift (3.40)** — Apple-platform default. AIN=4.0 (Core ML, MLX, Foundation Models) [swift-019, swift-023]; AIE=2.0 (no first-party Anthropic/OpenAI Swift SDK [swift-021]). SON=3.5 via Codable. v0.4 split correctly credits Apple's first-party stack for the first time.
+- **Python (3.74)** — ranks #6. AIE=5.0 with Anthropic [python-021], OpenAI [python-022], LangChain [python-023], MCP [python-024], universal vector stores [python-025]; SOE=5.0 with Pydantic [python-026], Instructor [python-028], Outlines [python-029]. AIN=1.5 (PSF ships no AI packages [python-036]). EDR=2.5 — single-maintainer Instructor [python-032], small-commercial Outlines [python-033].
+- **Swift (3.40)** — Apple-platform default. AIN=4.0 (Core ML, MLX, Foundation Models) [swift-019, swift-023]; AIE=2.0 (no first-party Anthropic/OpenAI Swift SDK [swift-021]). SON=3.5 via Codable. The native/ecosystem split credits Apple's first-party stack on the native half while recording the thin cross-platform ecosystem on the ecosystem half.
 - **Java (3.38)** — virtual threads [java-006], structured concurrency JEP 453 [java-015], AIE=4.0 with LangChain4j [java-020] and Anthropic Java SDK [java-019]. EDR=4.0 with OpenJDK multi-vendor stewardship.
 - **Elixir (3.13)** — BEAM concurrency and OTP supervision [elixir-001, elixir-002]; Phoenix LiveView [elixir-009]. AIN=3.0 via Bumblebee/Nx (Dashbit-stewarded) [elixir-019, elixir-020]. SOE=2.5 via Ecto + instructor_ex.
 - **C++ (2.46)** — default only for accelerator host code. AIN=2.5 via CUDA/ROCm/SYCL [cpp-019]; AIE=3.0 via llama.cpp [cpp-017], ONNX C++ [cpp-018]. SON=1.0; safety pressure dominates [cpp-004, cpp-005, cpp-006, cpp-007, cpp-008].
 
-## Slide 13 — Recommendations by domain
+## Slide 12 — Recommendations by domain
 
 | Domain | Primary | Alternatives |
 |---|---|---|
@@ -89,8 +85,9 @@ Memory-safety pressure has crossed from technical preference into regulatory cri
 
 No single language is a default for everything. AI-era language choice becomes more domain-sensitive, not less. Most organizations will run two or three of these in parallel; the polyglot interaction surface is part of the work.
 
-## Slide 14 — Limitations and closing
+## Slide 13 — Limitations and closing
 
 **Limitations.** Framework weights are working assumptions. Snapshot date 2026-05-02 — EDR is the most volatile axis (commercial vendors increasingly ship first-party SDKs that displace single-maintainer projects). Greenfield framing is a deliberate choice; maintenance-estate teams should re-weight. Single-rater judgment grounded in primary-source citations.
 
-**Closing thesis.** AI raises the price of cheap verification, ergonomic agentic operability, structural safety, structured-output ergonomics, and resilient dependency anchoring. The languages that pay all five taxes win the next decade — and the v0.4 framework reveals that the leaders on the resilient-dependency axis (Go, .NET, Kotlin, Java) overlap only partly with the leaders on the ecosystem-ergonomics axis (TypeScript, Python, .NET). The greenfield default is no longer a single language; it is a portfolio.
+**Closing thesis.** AI raises the price of cheap verification, ergonomic agentic operability, structural safety, structured-output ergonomics, and resilient dependency anchoring. The languages that pay all five taxes win the next decade — and the framework shows that the leaders on the resilient-dependency axis (Go, .NET, Kotlin, Java) overlap only partly with the leaders on the ecosystem-ergonomics axis (TypeScript, Python, .NET). The greenfield default is no longer a single language; it is a portfolio.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
