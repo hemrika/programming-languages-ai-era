@@ -506,3 +506,51 @@ claims:
     source: python-src-008
     notes: "The CPython threading documentation states the GIL constraint explicitly; in production AI-systems deployments, Python LLM-serving frequently sits behind a non-Python concurrency layer (Go, Rust, Triton, vLLM's C++ scheduler) to recover throughput, so the ecosystem-side AIE strength is partly underwritten by non-Python infrastructure."
     counters: [python-023]
+
+  - id: python-043
+    claim: "The Model Context Protocol Python SDK and the MCP specification itself remain pre-1.0 with frequent breaking changes between revisions; greenfield Python integrations against MCP carry ongoing migration cost until the protocol stabilizes."
+    dimension: ai_systems_ecosystem
+    backer: commercial_third_party
+    criterion: protocol_support
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: negative
+    source: python-src-019
+    notes: "The MCP Python SDK changelog and modelcontextprotocol/specification revision history document a sequence of revisions with breaking transport, capability, and schema changes through 2024-2026; Python clients track this churn directly."
+    counters: [python-024]
+
+  - id: python-044
+    claim: "Outlines' constrained-decoding approach requires direct access to model token logits, which is only available for self-hosted open-weight models; production Python projects that target hosted closed-weight models (Claude, GPT-4 family, Gemini) cannot use Outlines and fall back to retry-until-valid validation through Pydantic/Instructor."
+    dimension: structured_output_ecosystem
+    backer: commercial_third_party
+    criterion: deployment_constraints
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: negative
+    source: python-src-024
+    notes: "Outlines documentation states the library wraps inference engines (transformers, vLLM, llama.cpp, MLX) that expose logits; hosted API models from OpenAI/Anthropic/Google do not expose token-level logits, so guided generation is structurally unavailable for those backends in Python."
+    counters: [python-029]
+
+  - id: python-045
+    claim: "Pydantic v2 is a near-rewrite of v1 with deliberate API breaking changes; teams with existing v1 codebases carry a non-trivial migration cost (validators, model_config, generic models, JSON-Schema output shape) that does not show up in greenfield SOE strength but reappears the moment a project depends on a v1-only library."
+    dimension: structured_output_ecosystem
+    backer: community_multi_maintainer
+    criterion: migration_cost
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: negative
+    source: python-src-031
+    notes: "The Pydantic v2 migration guide enumerates breaking changes in validators, configuration, root validators, generic models, and JSON Schema output; libraries pinned to v1 (notably FastAPI integrations and older internal codebases) gate adoption of v2-only features."
+    counters: [python-026]
+
+  - id: python-046
+    claim: "Python's vector-store SDK landscape is broad but unstandardized: Pinecone, Weaviate, Qdrant, Chroma, Milvus, and pgvector each ship their own client semantics, filter dialect, and metadata model with no PEP-style or community-shared abstraction; greenfield projects either pick one early or pay an integration tax to remain portable."
+    dimension: ai_systems_ecosystem
+    backer: community_multi_maintainer
+    criterion: data_layer_integration
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: negative
+    source: python-src-020
+    notes: "Each vector-store project ships its own Python client with divergent query, filter, and indexing APIs; LangChain and LlamaIndex provide adapter layers but the adapters lag native client features and add their own dependency footprint."
+    counters: [python-025]

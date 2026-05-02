@@ -407,3 +407,62 @@ claims:
     polarity: positive
     source: dotnet-src-027
     notes: ".NET Support Policy and release cadence; aggregate gap to 5.0 across language-design cells is small."
+
+  - id: dotnet-039
+    claim: "C# pattern matching is comprehensive over existing types but the language still lacks first-class discriminated unions / sum types; modeling closed LLM-output variants requires class hierarchies plus pattern switches with no compile-time exhaustiveness over the closed set, a gap that Kotlin sealed classes, Rust enums, Swift enums, and TypeScript discriminated unions all fill natively."
+    dimension: machine_cognition
+    criterion: type_system_strength
+    evidence_type: language_specification
+    confidence: high
+    polarity: negative
+    source: dotnet-src-029
+    notes: "The dotnet/csharplang proposal for discriminated unions (proposals/TypeUnions.md) has been an active discussion since 2024 without landing in a shipped C# release; until it ships, sum-type modeling in C# uses class hierarchies that the compiler cannot exhaustiveness-check the way enum/sealed-based unions can."
+    counters: [dotnet-004]
+
+  - id: dotnet-040
+    claim: "Microsoft Semantic Kernel reached its 1.0 .NET release in late 2024 but its agent-framework surface (process framework, agent framework, multi-agent orchestration) has remained alpha/preview through 2025-2026 with breaking changes between minor versions; agent-depth feature parity with Python LangGraph or CrewAI is not yet there."
+    dimension: ai_systems_native
+    backer: language_stewards
+    criterion: agent_framework_support
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: negative
+    source: dotnet-src-030
+    notes: "Semantic Kernel GitHub release notes mark agent-framework and process-framework packages as alpha/preview during 2025; the .NET SK core SDK is 1.0+ but the higher-level agent abstractions ship behind preview flags and have changed shape between releases."
+    counters: [dotnet-020]
+
+  - id: dotnet-041
+    claim: "JsonSchemaExporter shipped in .NET 9 as a new API; its current surface emits draft 2020-12 schemas with limited control over keyword selection, no built-in support for Pydantic-style discriminator/oneOf annotations, and constraints around recursive-type emission. Greenfield .NET projects targeting strict OpenAI structured-output schemas may need post-processing to match Pydantic's output shape."
+    dimension: structured_output_native
+    backer: language_stewards
+    criterion: json_schema_generation
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: dotnet-src-021
+    notes: "The Microsoft Learn JsonSchemaExporter documentation enumerates supported features and limitations; the API shipped in .NET 9 and is still evolving relative to Pydantic's mature JSON Schema output, including OpenAPI-discriminator semantics commonly assumed by LLM tool-calling frameworks."
+    counters: [dotnet-027]
+
+  - id: dotnet-042
+    claim: "Microsoft is the sole production-grade vendor of the .NET runtime; Mono/Wine and community forks exist but do not constitute an independent second source for the platform, language, BCL, or AI surface. The same single-vendor concentration that makes EDR low-risk also means a Microsoft strategic shift would have no comparable backstop."
+    dimension: ecosystem_dependency_risk
+    backer: language_stewards
+    criterion: backer_mix
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: dotnet-src-007
+    notes: "The .NET introduction documents Microsoft as the runtime publisher; .NET Foundation governance exists but Microsoft funds the runtime, language, JIT, BCL, and AI extensions. There is no second-source production-grade .NET implementation comparable to OpenJDK relative to Oracle JDK."
+    counters: [dotnet-029, dotnet-033]
+
+  - id: dotnet-043
+    claim: "Microsoft.Extensions.AI shipped its 9.0 stable release in early 2025 but several key packages (Microsoft.Extensions.AI.Evaluation, agent-framework integrations, vector-store abstractions) remained preview through 2025-2026; the unified AI surface that anchors AIN=4.0 carries an ongoing preview-API risk on its periphery."
+    dimension: ai_systems_native
+    backer: language_stewards
+    criterion: api_stability
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: negative
+    source: dotnet-src-020
+    notes: "Microsoft.Extensions.AI release notes show the core abstractions stable from 9.0 onward, with adjacent packages (evaluation, vector data, agents) shipping under -preview tags; AIN strength rests on a mix of stable-core and preview-edge surface."
+    counters: [dotnet-034]

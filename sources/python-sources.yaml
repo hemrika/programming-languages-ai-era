@@ -222,3 +222,10 @@ sources:
     type: official_documentation
     url: https://www.python.org/dev/peps/
     notes: "PEP index lists active proposals; no AI-specific package proposal is part of the language steward roadmap."
+
+  - id: python-src-031
+    title: "Pydantic v2 Migration Guide"
+    publisher: "Pydantic"
+    type: official_tooling_documentation
+    url: https://docs.pydantic.dev/latest/migration/
+    notes: "Documents breaking changes from Pydantic v1 to v2 across validators, configuration, root validators, generic models, and JSON Schema output."

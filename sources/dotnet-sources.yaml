@@ -205,3 +205,17 @@ sources:
     year: 2024
     url: https://survey.stackoverflow.co/2024/technology
     notes: "Reports C# professional usage; signal that .NET community mindshare trails TypeScript/Python/Java for ecosystem-half lift."
+
+  - id: dotnet-src-029
+    title: "csharplang - Type Unions / Discriminated Unions Proposal"
+    publisher: "Microsoft / .NET Foundation"
+    type: language_specification
+    url: https://github.com/dotnet/csharplang/blob/main/proposals/TypeUnions.md
+    notes: "Active csharplang proposal for discriminated unions in C#; tracks the design discussion that has not yet landed in a shipped C# release."
+
+  - id: dotnet-src-030
+    title: "Semantic Kernel - .NET Release Notes"
+    publisher: "Microsoft"
+    type: official_tooling_documentation
+    url: https://github.com/microsoft/semantic-kernel/releases
+    notes: "Semantic Kernel GitHub releases for the .NET SDK; documents 1.0 stable core plus alpha/preview agent-framework, process-framework, and orchestration packages."
