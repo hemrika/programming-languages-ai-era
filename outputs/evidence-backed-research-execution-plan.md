@@ -495,4 +495,17 @@ A project conclusion is done when:
 
 - it is stated as an insight
 - supporting evaluations are listed
-- supporting c
+- supporting claims are listed
+- sources are traceable
+- counterclaims are listed (and reach the positive claim via `counters:`)
+- confidence is assigned
+- limitations are explicit
+
+## Immediate next actions
+
+1. **Re-upload `outputs/programming-languages-ai-era.pptx`** once the FUSE-mount issue is resolved (the deck currently lags the v0.3 outline).
+2. **Refresh `outputs/deck-outline.md`** to reflect the 7-dimension framework, current 10-language ranking, the Python/Go swap as a story beat, and the structured-output dimension as a load-bearing concept.
+3. **Generate `outputs/confidence-heatmap.md`** via `scripts/confidence_heatmap.py` and commit both.
+4. **Walk the Phase 7 review checklist** (greenfield-inverted) and capture results in `outputs/v0.3-review-pass.md`. Any score adjustments surfaced are documented but not made in the same commit.
+5. **Re-pass the four insight files** for the Python/Go swap and 7-dimension framework; update `agentic-feedback-loops.md` substantively, mark the others "Verified under v0.3" if they hold structurally.
+6. **Add a "Track coverage" section** to `comparisons/overview.md` mapping the original 8 plan tracks to current artifacts.
