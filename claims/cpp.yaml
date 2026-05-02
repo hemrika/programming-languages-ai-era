@@ -279,3 +279,58 @@ claims:
     polarity: positive
     source: cpp-src-018
     notes: Once a struct is populated via nlohmann/json the C++ type system enforces shape; the manual upstream definition is the bottleneck rather than type-level safety.
+
+  - id: cpp-027
+    claim: "llama.cpp is primarily single-maintainer (Georgi Gerganov) although the project has a wider contributor pool; a load-bearing dependency for C++ local-inference and constrained-decoding workflows."
+    dimension: ecosystem_dependency_risk
+    backer: community_single_maintainer
+    criterion: single_points_of_failure
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: cpp-src-022
+    notes: "llama.cpp contributor graph shows Georgi Gerganov as the dominant committer despite hundreds of contributors."
+
+  - id: cpp-028
+    claim: "nlohmann/json is primarily single-maintainer (Niels Lohmann); the de-facto C++ JSON library and a load-bearing structured-output dependency."
+    dimension: ecosystem_dependency_risk
+    backer: community_single_maintainer
+    criterion: single_points_of_failure
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: cpp-src-023
+    notes: "nlohmann/json contributor history shows Niels Lohmann as the dominant maintainer."
+
+  - id: cpp-029
+    claim: "CUDA, ROCm, oneAPI, and SYCL host-runtimes are commercial-first-party projects from NVIDIA, AMD, and Intel; the accelerator host stack underlying C++ AI work has strong commercial backing."
+    dimension: ecosystem_dependency_risk
+    backer: commercial_first_party
+    criterion: funding_durability
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: cpp-src-024
+    notes: "CUDA is NVIDIA-stewarded as a commercial-first-party platform."
+
+  - id: cpp-030
+    claim: "ONNX Runtime is published by Microsoft; in C++ context this is commercial-first-party rather than language-steward backed since C++ has no centralized language steward beyond ISO."
+    dimension: ecosystem_dependency_risk
+    backer: commercial_first_party
+    criterion: funding_durability
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: cpp-src-025
+    notes: "ONNX Runtime is Microsoft-shipped; for C++ as a language ecosystem it counts as commercial-first-party."
+
+  - id: cpp-031
+    claim: "librdkafka (the basis for confluent-kafka-cpp) is maintained by Confluent (commercial-third-party); strong commercial backing for the streaming surface."
+    dimension: ecosystem_dependency_risk
+    backer: commercial_third_party
+    criterion: funding_durability
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: cpp-src-026
+    notes: "Confluent maintains librdkafka as a commercial OSS project."

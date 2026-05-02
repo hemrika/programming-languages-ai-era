@@ -169,3 +169,38 @@ sources:
     type: official_tooling_documentation
     url: https://kotlinlang.org/docs/data-science-overview.html
     notes: Kotlin data-science overview indicates LLM-tooling primarily flows through JVM/Java ecosystem rather than Kotlin-native libraries.
+
+  - id: kotlin-src-024
+    title: "kotlinx.serialization Repository"
+    publisher: "JetBrains / Kotlin"
+    type: official_documentation
+    url: https://github.com/Kotlin/kotlinx.serialization
+    notes: "JetBrains owns the Kotlin/kotlinx.serialization repo."
+
+  - id: kotlin-src-025
+    title: "MCP Kotlin SDK Repository"
+    publisher: "Model Context Protocol project / JetBrains"
+    type: official_documentation
+    url: https://github.com/modelcontextprotocol/kotlin-sdk
+    notes: "Repo README documents JetBrains co-maintenance."
+
+  - id: kotlin-src-026
+    title: "LangChain4j Repository (Kotlin via JVM interop)"
+    publisher: "LangChain Inc."
+    type: official_documentation
+    url: https://github.com/langchain4j/langchain4j
+    notes: "Kotlin code consumes LangChain4j directly; substitutability is high but inherits LangChain Inc. funding-durability profile."
+
+  - id: kotlin-src-027
+    title: "Kotlin Community Page"
+    publisher: "Kotlin Community"
+    type: official_documentation
+    url: https://kotlinlang.org/community/
+    notes: "Kotlin community-maintained AI libraries are smaller than JVM-interop libraries and have thinner contributor pools."
+
+  - id: kotlin-src-028
+    title: "JetBrains Kotlin Blog"
+    publisher: "JetBrains"
+    type: official_documentation
+    url: https://blog.jetbrains.com/kotlin/
+    notes: "JetBrains publishes Kotlin product roadmaps; the language is a JetBrains commercial product."

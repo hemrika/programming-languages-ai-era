@@ -297,3 +297,58 @@ claims:
     polarity: positive
     source: typescript-src-020
     notes: A Zod schema produces both a runtime validator and a TypeScript type via z.infer; downstream code that consumes the parsed result is checked at compile time against the same shape that the runtime validator enforces.
+
+  - id: typescript-029
+    claim: "Zod's primary maintainer is Colin McDonnell, with a smaller pool of regular contributors; Zod is the de-facto TypeScript schema-validation library and a load-bearing dependency for the structured-output surface."
+    dimension: ecosystem_dependency_risk
+    backer: community_single_maintainer
+    criterion: single_points_of_failure
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: typescript-src-024
+    notes: "Zod's contributor graph shows Colin McDonnell as the dominant committer."
+
+  - id: typescript-030
+    claim: "The Vercel AI SDK is published by Vercel, a well-funded commercial vendor; structured-output and tool-typing helpers in many TypeScript AI projects depend on it."
+    dimension: ecosystem_dependency_risk
+    backer: commercial_third_party
+    criterion: funding_durability
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: typescript-src-025
+    notes: "Vercel maintains the AI SDK as part of its commercial product strategy; backer durability is high."
+
+  - id: typescript-031
+    claim: "Microsoft stewards both TypeScript and the TypeScript Language Service; the language and tooling surface is funded and maintained by a major commercial vendor, anchoring the dependency-risk profile at the language layer."
+    dimension: ecosystem_dependency_risk
+    backer: language_stewards
+    criterion: funding_durability
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: typescript-src-026
+    notes: "Microsoft owns the TypeScript repository and ships the language service."
+
+  - id: typescript-032
+    claim: "LangChain.js, MCP TypeScript SDK, and LlamaIndex TypeScript are commercial-third-party projects (LangChain Inc., MCP project, LlamaIndex Inc.) — better-funded than typical OSS but not language-steward backed."
+    dimension: ecosystem_dependency_risk
+    backer: commercial_third_party
+    criterion: backer_mix
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: neutral
+    source: typescript-src-027
+    notes: "LangChain Inc. publishes LangChain.js as a commercial-product OSS project."
+
+  - id: typescript-033
+    claim: "Anthropic and OpenAI ship first-party TypeScript SDKs as part of their commercial vendor strategy, embedding the LLM provider into the dependency stack at vendor-grade durability."
+    dimension: ecosystem_dependency_risk
+    backer: commercial_first_party
+    criterion: funding_durability
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: typescript-src-028
+    notes: "Anthropic maintains the official TypeScript SDK as part of its commercial API offering."

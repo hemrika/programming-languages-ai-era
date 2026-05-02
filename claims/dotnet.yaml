@@ -297,3 +297,58 @@ claims:
     polarity: positive
     source: dotnet-src-022
     notes: Records, init-only properties, and nullable reference types make the deserialized shape statically checkable; LLM-specific community ergonomics remain thinner than Python or TypeScript.
+
+  - id: dotnet-029
+    claim: "Microsoft stewards the .NET runtime, C# language, System.Text.Json, Semantic Kernel, Microsoft.Extensions.AI, ONNX Runtime .NET, and the OpenAI .NET SDK; near the entire AI/SO stack is first-party from a major commercial vendor."
+    dimension: ecosystem_dependency_risk
+    backer: language_stewards
+    criterion: backer_mix
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: dotnet-src-023
+    notes: "Microsoft Learn documents the .NET AI stack; nearly all components are Microsoft-shipped."
+
+  - id: dotnet-030
+    claim: "Newtonsoft.Json (Json.NET) remains widely used in legacy .NET codebases but is now under a small group of maintainers; greenfield .NET projects can substitute System.Text.Json (in-box) without ecosystem rewrite, giving the dependency low single-point-of-failure risk."
+    dimension: ecosystem_dependency_risk
+    backer: community_multi_maintainer
+    criterion: substitutability
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: neutral
+    source: dotnet-src-024
+    notes: "Newtonsoft.Json maintainer graph shows a small group of active contributors with James Newton-King as primary; substitutability via System.Text.Json is high."
+
+  - id: dotnet-031
+    claim: "The Anthropic .NET SDK is published by Anthropic, the LLM provider — first-party commercial backing for that piece of the stack."
+    dimension: ecosystem_dependency_risk
+    backer: commercial_first_party
+    criterion: funding_durability
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: dotnet-src-025
+    notes: "Anthropic publishes the .NET SDK as a first-party client."
+
+  - id: dotnet-032
+    claim: "MCP .NET SDK is jointly maintained by the Model Context Protocol project and Microsoft, giving it both standards-body and language-steward backing."
+    dimension: ecosystem_dependency_risk
+    backer: language_stewards
+    criterion: funding_durability
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: dotnet-src-026
+    notes: "MCP C# SDK README documents Microsoft co-maintenance."
+
+  - id: dotnet-033
+    claim: ".NET ecosystem dependency risk is among the lowest in the cohort because Microsoft funds the language, runtime, and the in-box AI surface as a single commercial-vendor strategy."
+    dimension: ecosystem_dependency_risk
+    backer: language_stewards
+    criterion: funding_durability
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: dotnet-src-027
+    notes: "Microsoft publishes .NET LTS schedules and supports the platform commercially."

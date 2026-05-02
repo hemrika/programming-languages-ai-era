@@ -308,3 +308,58 @@ claims:
     polarity: positive
     source: go-src-018
     notes: encoding/json gives type-checked struct-typed access to LLM JSON; Go's lack of sum types and the fragmented validation ecosystem keep the score moderate.
+
+  - id: go-030
+    claim: "The Go team at Google stewards the language, encoding/json, and the standard library, anchoring Go's structured-output native surface to a major commercial vendor with sustained investment."
+    dimension: ecosystem_dependency_risk
+    backer: language_stewards
+    criterion: funding_durability
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: go-src-022
+    notes: "Go release notes confirm Google's stewardship of the language and standard library."
+
+  - id: go-031
+    claim: "Anthropic, OpenAI, and the MCP project ship first-party Go SDKs, providing commercial-vendor backing for Go's AI-systems ecosystem surface."
+    dimension: ecosystem_dependency_risk
+    backer: commercial_first_party
+    criterion: backer_mix
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: go-src-023
+    notes: "Anthropic publishes the Go SDK as a first-party client."
+
+  - id: go-032
+    claim: "Go's validation library landscape (go-playground/validator, ozzo-validation, asaskevich/govalidator) is fragmented across community-multi-maintainer projects without a clear language-steward-shipped equivalent of Pydantic or Zod."
+    dimension: ecosystem_dependency_risk
+    backer: community_multi_maintainer
+    criterion: single_points_of_failure
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: go-src-024
+    notes: "go-playground/validator is the most-used Go validator but is community-maintained without a dominant single steward."
+
+  - id: go-033
+    claim: "LangChainGo is community-multi-maintainer; the Go agent-framework surface depends on community capacity rather than commercial-vendor backing."
+    dimension: ecosystem_dependency_risk
+    backer: community_multi_maintainer
+    criterion: single_points_of_failure
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: go-src-025
+    notes: "LangChainGo is a community-maintained Go LangChain port; LangChain Inc. does not officially publish it."
+
+  - id: go-034
+    claim: "Confluent publishes confluent-kafka-go as a commercial-third-party project; pgx is community-multi-maintainer with a large active contributor base. Go's data-layer dependency risk is moderate, anchored by commercial backing where it exists."
+    dimension: ecosystem_dependency_risk
+    backer: commercial_third_party
+    criterion: funding_durability
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: neutral
+    source: go-src-026
+    notes: "Confluent publishes the Go Kafka client as a commercial OSS project."

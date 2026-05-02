@@ -177,3 +177,38 @@ sources:
     type: official_tooling_documentation
     url: https://github.com/StefanTerdell/zod-to-json-schema
     notes: Converts Zod schemas to JSON Schema for use with LLM tool calls and other JSON-Schema consumers.
+
+  - id: typescript-src-024
+    title: "Zod GitHub Insights"
+    publisher: "Zod / Colin McDonnell"
+    type: official_documentation
+    url: https://github.com/colinhacks/zod/graphs/contributors
+    notes: "Zod's contributor graph shows Colin McDonnell as the dominant committer."
+
+  - id: typescript-src-025
+    title: "Vercel AI SDK Documentation"
+    publisher: "Vercel"
+    type: official_documentation
+    url: https://sdk.vercel.ai/docs
+    notes: "Vercel maintains the AI SDK as part of its commercial product strategy; backer durability is high."
+
+  - id: typescript-src-026
+    title: "TypeScript GitHub Repository"
+    publisher: "Microsoft"
+    type: official_documentation
+    url: https://github.com/microsoft/TypeScript
+    notes: "Microsoft owns the TypeScript repository and ships the language service."
+
+  - id: typescript-src-027
+    title: "LangChain.js Documentation"
+    publisher: "LangChain Inc."
+    type: official_documentation
+    url: https://js.langchain.com
+    notes: "LangChain Inc. publishes LangChain.js as a commercial-product OSS project."
+
+  - id: typescript-src-028
+    title: "Anthropic TypeScript SDK Repository"
+    publisher: "Anthropic"
+    type: official_documentation
+    url: https://github.com/anthropics/anthropic-sdk-typescript
+    notes: "Anthropic maintains the official TypeScript SDK as part of its commercial API offering."

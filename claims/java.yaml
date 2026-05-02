@@ -297,3 +297,58 @@ claims:
     polarity: positive
     source: java-src-022
     notes: Records (JEP 395) and sealed classes (JEP 409) give closed-shape, type-safe LLM-output handling on the JVM, though boilerplate and library fragmentation lag the TS/Python LLM ergonomics.
+
+  - id: java-029
+    claim: "Jackson is the de-facto JVM JSON library, maintained by FasterXML with a multi-maintainer community; load-bearing for nearly every Java AI/SO use case."
+    dimension: ecosystem_dependency_risk
+    backer: community_multi_maintainer
+    criterion: backer_mix
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: neutral
+    source: java-src-023
+    notes: "Jackson is multi-maintainer under FasterXML; bus-factor risk is moderate."
+
+  - id: java-030
+    claim: "LangChain4j is published by LangChain Inc., a commercial OSS company; a load-bearing dependency for Java agent-framework code."
+    dimension: ecosystem_dependency_risk
+    backer: commercial_third_party
+    criterion: funding_durability
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: neutral
+    source: java-src-024
+    notes: "LangChain4j is the JVM port of LangChain published by LangChain Inc."
+
+  - id: java-031
+    claim: "Anthropic, OpenAI, and Microsoft (ONNX Runtime, the Java OpenAI client through Azure) all ship first-party Java SDKs, anchoring the AI-systems ecosystem to commercial-vendor backing rather than community capacity."
+    dimension: ecosystem_dependency_risk
+    backer: commercial_first_party
+    criterion: backer_mix
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: java-src-025
+    notes: "Anthropic publishes the Java SDK as a first-party client."
+
+  - id: java-032
+    claim: "Hibernate Validator, the de-facto Bean Validation reference implementation, is maintained by Red Hat (commercial backer) — funding durability for the JVM validation surface is high."
+    dimension: ecosystem_dependency_risk
+    backer: commercial_first_party
+    criterion: funding_durability
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: java-src-026
+    notes: "Hibernate Validator is the reference Bean Validation implementation, hosted under Red Hat-backed Hibernate."
+
+  - id: java-033
+    claim: "OpenJDK is stewarded by Oracle, IBM, Red Hat, and the OpenJDK Vulnerability Group with commercial-grade investment; the JVM core itself is one of the lowest-dependency-risk substrates in the cohort."
+    dimension: ecosystem_dependency_risk
+    backer: language_stewards
+    criterion: funding_durability
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: java-src-027
+    notes: "OpenJDK Groups page documents Oracle, IBM, Red Hat, and others as JEP and runtime stewards."

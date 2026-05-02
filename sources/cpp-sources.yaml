@@ -162,3 +162,38 @@ sources:
     type: language_specification
     url: https://wg21.link/P2996
     notes: Documents the in-progress reflection proposal for C++; standard C++ has no native runtime/compile-time reflection today.
+
+  - id: cpp-src-022
+    title: "llama.cpp GitHub Insights"
+    publisher: "llama.cpp / Georgi Gerganov"
+    type: official_documentation
+    url: https://github.com/ggerganov/llama.cpp/graphs/contributors
+    notes: "llama.cpp contributor graph shows Georgi Gerganov as the dominant committer despite hundreds of contributors."
+
+  - id: cpp-src-023
+    title: "nlohmann/json GitHub Insights"
+    publisher: "nlohmann/json / Niels Lohmann"
+    type: official_documentation
+    url: https://github.com/nlohmann/json/graphs/contributors
+    notes: "nlohmann/json contributor history shows Niels Lohmann as the dominant maintainer."
+
+  - id: cpp-src-024
+    title: "NVIDIA CUDA Documentation"
+    publisher: "NVIDIA"
+    type: official_documentation
+    url: https://docs.nvidia.com/cuda/
+    notes: "CUDA is NVIDIA-stewarded as a commercial-first-party platform."
+
+  - id: cpp-src-025
+    title: "ONNX Runtime Repository"
+    publisher: "Microsoft"
+    type: official_documentation
+    url: https://github.com/microsoft/onnxruntime
+    notes: "ONNX Runtime is Microsoft-shipped; for C++ as a language ecosystem it counts as commercial-first-party."
+
+  - id: cpp-src-026
+    title: "librdkafka Repository"
+    publisher: "Confluent"
+    type: official_documentation
+    url: https://github.com/confluentinc/librdkafka
+    notes: "Confluent maintains librdkafka as a commercial OSS project."

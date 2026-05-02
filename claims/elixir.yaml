@@ -297,3 +297,58 @@ claims:
     polarity: positive
     source: elixir-src-019
     notes: instructor_ex documents schema-to-JSON-Schema conversion for OpenAI tool calls; the Elixir ecosystem lacks a dominant equivalent of zod-to-json-schema or Pydantic.
+
+  - id: elixir-029
+    claim: "Bumblebee and Nx are stewarded by Dashbit (José Valim's company, Elixir-steward-adjacent); the AI-systems native surface is funded by a small commercial outfit closely tied to language stewardship."
+    dimension: ecosystem_dependency_risk
+    backer: language_stewards
+    criterion: funding_durability
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: elixir-src-021
+    notes: "Dashbit drives Nx and Bumblebee development; José Valim leads."
+
+  - id: elixir-030
+    claim: "instructor_ex is single-maintainer (thmsmlr); a load-bearing dependency for Elixir LLM-output validation."
+    dimension: ecosystem_dependency_risk
+    backer: community_single_maintainer
+    criterion: single_points_of_failure
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: elixir-src-022
+    notes: "instructor_ex contributor graph shows thmsmlr as the dominant maintainer."
+
+  - id: elixir-031
+    claim: "Anthropic and OpenAI do not publish first-party Elixir SDKs; LLM access in Elixir relies on community-multi-maintainer libraries (anthropic_ex, openai_ex) without commercial-vendor backing."
+    dimension: ecosystem_dependency_risk
+    backer: community_multi_maintainer
+    criterion: backer_mix
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: elixir-src-023
+    notes: "Hex.pm shows community Elixir LLM clients; no first-party SDK."
+
+  - id: elixir-032
+    claim: "Phoenix and Phoenix.PubSub are stewarded by Dashbit and Plataformatec-adjacent maintainers; Elixir's BEAM-native streaming surface is anchored to language-steward-adjacent commercial backing."
+    dimension: ecosystem_dependency_risk
+    backer: language_stewards
+    criterion: funding_durability
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: elixir-src-024
+    notes: "Phoenix is led by Chris McCord with Dashbit and contributors; closely tied to Elixir stewardship."
+
+  - id: elixir-033
+    claim: "Elixir's load-bearing AI dependencies are split: Bumblebee/Nx language-steward-backed, but instructor_ex and LLM client libraries are community-single or community-multi-maintainer, giving an overall mixed dependency-risk profile."
+    dimension: ecosystem_dependency_risk
+    backer: community_multi_maintainer
+    criterion: backer_mix
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: neutral
+    source: elixir-src-025
+    notes: "Hex.pm catalogs Elixir packages; manual review confirms the community/language-steward split."

@@ -161,3 +161,38 @@ sources:
     type: official_tooling_documentation
     url: https://github.com/ml-explore/mlx-swift
     notes: Documents the Swift bindings for MLX, Apple's array framework for machine learning.
+
+  - id: swift-src-023
+    title: "About Swift"
+    publisher: "Apple / Swift project"
+    type: official_documentation
+    url: https://swift.org/about/
+    notes: "swift.org documents Apple's role as Swift steward."
+
+  - id: swift-src-024
+    title: "MacPaw OpenAI Swift Client"
+    publisher: "MacPaw / community"
+    type: official_documentation
+    url: https://github.com/MacPaw/OpenAI
+    notes: "MacPaw maintains a community Swift OpenAI client; no first-party Anthropic/OpenAI Swift SDK exists."
+
+  - id: swift-src-025
+    title: "MLX Repository"
+    publisher: "Apple"
+    type: official_documentation
+    url: https://github.com/ml-explore/mlx
+    notes: "Apple publishes MLX with strong Apple Silicon focus; cross-platform Swift AI tooling is thinner."
+
+  - id: swift-src-026
+    title: "Swift Server work group"
+    publisher: "Swift Server work group"
+    type: official_documentation
+    url: https://swift.org/server/
+    notes: "Swift Server work group docs do not list a commercial agent-framework project as supported."
+
+  - id: swift-src-027
+    title: "Swift Server Workgroup"
+    publisher: "Swift Server Workgroup"
+    type: official_documentation
+    url: https://swift.org/sswg/
+    notes: "SSWG documents Apple's involvement in cross-platform Swift but Apple-platform tooling is the funded surface."

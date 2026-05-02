@@ -180,3 +180,38 @@ sources:
     type: official_tooling_documentation
     url: https://dottxt-ai.github.io/outlines/
     notes: Documents Outlines as a Python library for JSON-schema-, regex-, and grammar-constrained LLM decoding.
+
+  - id: python-src-025
+    title: "Pydantic GitHub Insights"
+    publisher: "Pydantic GitHub"
+    type: official_documentation
+    url: https://github.com/pydantic/pydantic/graphs/contributors
+    notes: "Pydantic governance and contributor count visible in the project's GitHub Insights pages."
+
+  - id: python-src-026
+    title: "Instructor GitHub Insights"
+    publisher: "Instructor / Jason Liu"
+    type: official_documentation
+    url: https://github.com/instructor-ai/instructor/graphs/contributors
+    notes: "Contributor history shows Jason Liu as the dominant committer; bus-factor risk is material."
+
+  - id: python-src-027
+    title: "Outlines / dottxt-ai"
+    publisher: "dottxt-ai"
+    type: official_documentation
+    url: https://dottxt-ai.github.io/outlines/
+    notes: "Outlines is published by .txt (Outlines AI), a small commercial entity; backer durability is moderate."
+
+  - id: python-src-028
+    title: "OpenAI Python SDK README"
+    publisher: "OpenAI"
+    type: official_documentation
+    url: https://github.com/openai/openai-python
+    notes: "The OpenAI SDK README documents .parse() with Pydantic models, embedding Pydantic into a vendor SDK."
+
+  - id: python-src-029
+    title: "Python Software Foundation - Mission"
+    publisher: "Python Software Foundation"
+    type: official_documentation
+    url: https://www.python.org/psf/
+    notes: "PSF mission documents PSF's role; PSF does not publish AI-specific packages."

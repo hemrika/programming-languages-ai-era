@@ -162,3 +162,38 @@ sources:
     type: official_documentation
     url: https://learn.microsoft.com/en-us/dotnet/csharp/nullable-references
     notes: Documents nullable reference types as a compile-time null-state analysis feature.
+
+  - id: dotnet-src-023
+    title: "Microsoft .NET AI Overview"
+    publisher: "Microsoft Learn"
+    type: official_documentation
+    url: https://learn.microsoft.com/dotnet/ai/
+    notes: "Microsoft Learn documents the .NET AI stack; nearly all components are Microsoft-shipped."
+
+  - id: dotnet-src-024
+    title: "Newtonsoft.Json GitHub Insights"
+    publisher: "Newtonsoft.Json / James Newton-King"
+    type: official_documentation
+    url: https://github.com/JamesNK/Newtonsoft.Json/graphs/contributors
+    notes: "Newtonsoft.Json maintainer graph shows a small group of active contributors with James Newton-King as primary; substitutability via System.Text.Json is high."
+
+  - id: dotnet-src-025
+    title: "Anthropic .NET SDK Repository"
+    publisher: "Anthropic"
+    type: official_documentation
+    url: https://github.com/anthropics/anthropic-sdk-dotnet
+    notes: "Anthropic publishes the .NET SDK as a first-party client."
+
+  - id: dotnet-src-026
+    title: "MCP C# SDK Repository"
+    publisher: "Model Context Protocol project (with Microsoft)"
+    type: official_documentation
+    url: https://github.com/modelcontextprotocol/csharp-sdk
+    notes: "MCP C# SDK README documents Microsoft co-maintenance."
+
+  - id: dotnet-src-027
+    title: ".NET Support Policy"
+    publisher: "Microsoft"
+    type: official_documentation
+    url: https://dotnet.microsoft.com/platform/support/policy/dotnet-core
+    notes: "Microsoft publishes .NET LTS schedules and supports the platform commercially."

@@ -148,3 +148,38 @@ sources:
     type: official_documentation
     url: https://elixir-lang.org/blog/2023/06/22/type-system-updates-research-dev/
     notes: Documents the set-theoretic types work as ongoing research, not a stable language-level type system.
+
+  - id: elixir-src-021
+    title: "Nx Repository"
+    publisher: "Dashbit / elixir-nx"
+    type: official_documentation
+    url: https://github.com/elixir-nx/nx
+    notes: "Dashbit drives Nx and Bumblebee development; José Valim leads."
+
+  - id: elixir-src-022
+    title: "instructor_ex Repository"
+    publisher: "Thomas Millar (thmsmlr)"
+    type: official_documentation
+    url: https://github.com/thmsmlr/instructor_ex
+    notes: "instructor_ex contributor graph shows thmsmlr as the dominant maintainer."
+
+  - id: elixir-src-023
+    title: "openai_ex on Hex.pm"
+    publisher: "Elixir community"
+    type: official_documentation
+    url: https://hex.pm/packages/openai
+    notes: "Hex.pm shows community Elixir LLM clients; no first-party SDK."
+
+  - id: elixir-src-024
+    title: "Phoenix Framework Repository"
+    publisher: "Phoenix core team / Dashbit"
+    type: official_documentation
+    url: https://github.com/phoenixframework/phoenix
+    notes: "Phoenix is led by Chris McCord with Dashbit and contributors; closely tied to Elixir stewardship."
+
+  - id: elixir-src-025
+    title: "Hex.pm Package Repository"
+    publisher: "Hex.pm"
+    type: official_documentation
+    url: https://hex.pm/
+    notes: "Hex.pm catalogs Elixir packages; manual review confirms the community/language-steward split."

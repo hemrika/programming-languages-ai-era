@@ -318,3 +318,58 @@ claims:
     source: python-src-002
     notes: PEP 484 type hints are advisory; the Pydantic boundary is enforced at runtime, so an unchecked path through dynamic Python can still produce structurally invalid LLM-output handling.
     counters: [python-026, python-028]
+
+  - id: python-031
+    claim: "Pydantic is community-maintained with a small group of active maintainers; widely adopted but governance is community-driven, not language-steward backed, leaving the canonical Python LLM-output validator dependent on community capacity."
+    dimension: ecosystem_dependency_risk
+    backer: community_multi_maintainer
+    criterion: backer_mix
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: python-src-025
+    notes: "Pydantic governance and contributor count visible in the project's GitHub Insights pages."
+
+  - id: python-032
+    claim: "Instructor is primarily single-maintainer (Jason Liu); a load-bearing dependency for Pydantic-validated LLM structured outputs in the Python ecosystem."
+    dimension: ecosystem_dependency_risk
+    backer: community_single_maintainer
+    criterion: single_points_of_failure
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: python-src-026
+    notes: "Contributor history shows Jason Liu as the dominant committer; bus-factor risk is material."
+
+  - id: python-033
+    claim: "Outlines is published by .txt (Outlines AI), a small commercial outfit; a load-bearing dependency for constrained generation in Python."
+    dimension: ecosystem_dependency_risk
+    backer: commercial_third_party
+    criterion: funding_durability
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: neutral
+    source: python-src-027
+    notes: "Outlines is published by .txt (Outlines AI), a small commercial entity; backer durability is moderate."
+
+  - id: python-034
+    claim: "OpenAI's Python SDK ships Pydantic-native response_format support, embedding the community library directly into a commercial first-party SDK and partially insulating Python's structured-output position from upstream Pydantic risk."
+    dimension: ecosystem_dependency_risk
+    backer: commercial_first_party
+    criterion: substitutability
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: python-src-028
+    notes: "The OpenAI SDK README documents .parse() with Pydantic models, embedding Pydantic into a vendor SDK."
+
+  - id: python-035
+    claim: "Python's PSF stewards the language and core stdlib but does not ship any AI-specific packages first-party, leaving the AI-systems and structured-output surfaces fully dependent on community and commercial-third-party libraries."
+    dimension: ecosystem_dependency_risk
+    backer: language_stewards
+    criterion: backer_mix
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: python-src-029
+    notes: "PSF mission documents PSF's role; PSF does not publish AI-specific packages."

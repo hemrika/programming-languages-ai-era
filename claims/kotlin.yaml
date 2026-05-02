@@ -307,3 +307,58 @@ claims:
     source: kotlin-src-023
     notes: github.com search and kotlinlang community indices show LLM-specific structured-output libraries primarily routed through LangChain4j JVM rather than Kotlin-native projects.
     counters: [kotlin-025, kotlin-027]
+
+  - id: kotlin-030
+    claim: "kotlinx-serialization is JetBrains-stewarded — a language-team-shipped library backing Kotlin's structured-output surface, anchoring SO dependency risk to a major commercial vendor."
+    dimension: ecosystem_dependency_risk
+    backer: language_stewards
+    criterion: funding_durability
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: kotlin-src-024
+    notes: "JetBrains owns the Kotlin/kotlinx.serialization repo."
+
+  - id: kotlin-031
+    claim: "MCP Kotlin SDK is jointly developed with JetBrains; the protocol surface is language-steward-backed."
+    dimension: ecosystem_dependency_risk
+    backer: language_stewards
+    criterion: funding_durability
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: kotlin-src-025
+    notes: "Repo README documents JetBrains co-maintenance."
+
+  - id: kotlin-032
+    claim: "Kotlin's AI-systems integration leans heavily on Java-interop libraries (LangChain4j, Anthropic Java SDK, ONNX Runtime Java), inheriting the JVM ecosystem's mixed commercial/community backer profile."
+    dimension: ecosystem_dependency_risk
+    backer: commercial_third_party
+    criterion: substitutability
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: neutral
+    source: kotlin-src-026
+    notes: "Kotlin code consumes LangChain4j directly; substitutability is high but inherits LangChain Inc. funding-durability profile."
+
+  - id: kotlin-033
+    claim: "Native Kotlin AI tooling beyond Java-interop is largely community-multi-maintainer; the Kotlin-only surface is thinner and more volatile than the JVM-interop surface."
+    dimension: ecosystem_dependency_risk
+    backer: community_multi_maintainer
+    criterion: single_points_of_failure
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: kotlin-src-027
+    notes: "Kotlin community-maintained AI libraries are smaller than JVM-interop libraries and have thinner contributor pools."
+
+  - id: kotlin-034
+    claim: "JetBrains funds the Kotlin language, compiler, kotlinx libraries, and IDE tooling as a commercial product, giving the language layer itself a strong dependency-risk anchor."
+    dimension: ecosystem_dependency_risk
+    backer: language_stewards
+    criterion: funding_durability
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: kotlin-src-028
+    notes: "JetBrains publishes Kotlin product roadmaps; the language is a JetBrains commercial product."

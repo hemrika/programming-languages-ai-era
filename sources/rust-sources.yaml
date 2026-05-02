@@ -199,3 +199,38 @@ sources:
     type: official_tooling_documentation
     url: https://github.com/0xPlaygrounds/rig
     notes: Documents Rig as a Rust LLM agent framework with structured-output support.
+
+  - id: rust-src-028
+    title: "Serde GitHub Insights"
+    publisher: "Serde / David Tolnay"
+    type: official_documentation
+    url: https://github.com/serde-rs/serde/graphs/contributors
+    notes: "Serde contributor graph shows David Tolnay as the dominant committer despite a multi-contributor profile."
+
+  - id: rust-src-029
+    title: "schemars Repository"
+    publisher: "schemars / Graham Esau"
+    type: official_documentation
+    url: https://github.com/GREsau/schemars
+    notes: "schemars contributor graph is small with Graham Esau as primary maintainer."
+
+  - id: rust-src-030
+    title: "async-openai Repository"
+    publisher: "async-openai (community)"
+    type: official_documentation
+    url: https://github.com/64bit/async-openai
+    notes: "async-openai is a community-maintained Rust OpenAI client; no first-party SDK exists."
+
+  - id: rust-src-031
+    title: "candle Repository"
+    publisher: "HuggingFace"
+    type: official_documentation
+    url: https://github.com/huggingface/candle
+    notes: "HuggingFace publishes candle as part of its commercial OSS strategy."
+
+  - id: rust-src-032
+    title: "Rust Foundation Members"
+    publisher: "Rust Foundation"
+    type: official_documentation
+    url: https://foundation.rust-lang.org/members/
+    notes: "Rust Foundation member roster documents commercial-vendor sponsorship."

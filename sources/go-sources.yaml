@@ -156,3 +156,38 @@ sources:
     type: official_tooling_documentation
     url: https://github.com/invopop/jsonschema
     notes: Documents JSON Schema generation from Go structs via reflection.
+
+  - id: go-src-022
+    title: "Go Release Notes"
+    publisher: "The Go Project (Google)"
+    type: official_documentation
+    url: https://go.dev/doc/devel/release
+    notes: "Go release notes confirm Google's stewardship of the language and standard library."
+
+  - id: go-src-023
+    title: "Anthropic Go SDK Repository"
+    publisher: "Anthropic"
+    type: official_documentation
+    url: https://github.com/anthropics/anthropic-sdk-go
+    notes: "Anthropic publishes the Go SDK as a first-party client."
+
+  - id: go-src-024
+    title: "go-playground/validator"
+    publisher: "go-playground / community"
+    type: official_documentation
+    url: https://github.com/go-playground/validator
+    notes: "go-playground/validator is the most-used Go validator but is community-maintained without a dominant single steward."
+
+  - id: go-src-025
+    title: "LangChainGo Repository"
+    publisher: "tmc / community"
+    type: official_documentation
+    url: https://github.com/tmc/langchaingo
+    notes: "LangChainGo is a community-maintained Go LangChain port; LangChain Inc. does not officially publish it."
+
+  - id: go-src-026
+    title: "confluent-kafka-go Repository"
+    publisher: "Confluent"
+    type: official_documentation
+    url: https://github.com/confluentinc/confluent-kafka-go
+    notes: "Confluent publishes the Go Kafka client as a commercial OSS project."

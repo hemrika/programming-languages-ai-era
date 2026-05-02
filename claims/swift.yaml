@@ -295,3 +295,58 @@ claims:
     polarity: positive
     source: swift-src-022
     notes: developer.apple.com/documentation/coreml and ml-explore/mlx-swift document type-safe Apple ML APIs distinct from the LLM-text structured-output ecosystem.
+
+  - id: swift-029
+    claim: "Apple stewards Swift, Codable, Core ML, MLX, Create ML, and the Foundation Models framework; the Apple-platform AI/SO surface is anchored to a major commercial vendor."
+    dimension: ecosystem_dependency_risk
+    backer: language_stewards
+    criterion: funding_durability
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: swift-src-023
+    notes: "swift.org documents Apple's role as Swift steward."
+
+  - id: swift-030
+    claim: "Swift has no first-party Anthropic or OpenAI SDK; LLM access depends on community-multi-maintainer Swift packages (MacPaw/OpenAI, AnthropicSwiftSDK), making the cross-platform AI surface fragile."
+    dimension: ecosystem_dependency_risk
+    backer: community_multi_maintainer
+    criterion: single_points_of_failure
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: swift-src-024
+    notes: "MacPaw maintains a community Swift OpenAI client; no first-party Anthropic/OpenAI Swift SDK exists."
+
+  - id: swift-031
+    claim: "Apple's AI-platform investment (MLX, Foundation Models, Core ML) is durable but Apple-platform-bound; Linux/server-side Swift AI dependencies remain community-multi-maintainer."
+    dimension: ecosystem_dependency_risk
+    backer: language_stewards
+    criterion: substitutability
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: neutral
+    source: swift-src-025
+    notes: "Apple publishes MLX with strong Apple Silicon focus; cross-platform Swift AI tooling is thinner."
+
+  - id: swift-032
+    claim: "Cross-platform Swift agent-framework support is essentially absent; LangChain, LlamaIndex, and Semantic Kernel do not publish Swift implementations, so the agent-framework dependency risk is structural rather than per-library."
+    dimension: ecosystem_dependency_risk
+    backer: community_single_maintainer
+    criterion: single_points_of_failure
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: swift-src-026
+    notes: "Swift Server work group docs do not list a commercial agent-framework project as supported."
+
+  - id: swift-033
+    claim: "Apple's Swift Server Workgroup and Apple-platform-aligned governance give Swift a strong native dependency-risk anchor on Apple platforms but leave server-side Swift exposed to community capacity."
+    dimension: ecosystem_dependency_risk
+    backer: language_stewards
+    criterion: substitutability
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: neutral
+    source: swift-src-027
+    notes: "SSWG documents Apple's involvement in cross-platform Swift but Apple-platform tooling is the funded surface."

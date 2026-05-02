@@ -167,3 +167,38 @@ sources:
     type: language_specification
     url: https://openjdk.org/jeps/395
     notes: Documents Java records as a closed-shape immutable data carrier suited to LLM-output deserialization.
+
+  - id: java-src-023
+    title: "Jackson FasterXML GitHub Insights"
+    publisher: "FasterXML / Jackson"
+    type: official_documentation
+    url: https://github.com/FasterXML/jackson/graphs/contributors
+    notes: "Jackson is multi-maintainer under FasterXML; bus-factor risk is moderate."
+
+  - id: java-src-024
+    title: "LangChain4j Repository"
+    publisher: "LangChain Inc."
+    type: official_documentation
+    url: https://github.com/langchain4j/langchain4j
+    notes: "LangChain4j is the JVM port of LangChain published by LangChain Inc."
+
+  - id: java-src-025
+    title: "Anthropic Java SDK Repository"
+    publisher: "Anthropic"
+    type: official_documentation
+    url: https://github.com/anthropics/anthropic-sdk-java
+    notes: "Anthropic publishes the Java SDK as a first-party client."
+
+  - id: java-src-026
+    title: "Hibernate Validator project"
+    publisher: "Red Hat / Hibernate"
+    type: official_documentation
+    url: https://hibernate.org/validator/
+    notes: "Hibernate Validator is the reference Bean Validation implementation, hosted under Red Hat-backed Hibernate."
+
+  - id: java-src-027
+    title: "OpenJDK Group Memberships"
+    publisher: "OpenJDK Project"
+    type: official_documentation
+    url: https://openjdk.org/groups/
+    notes: "OpenJDK Groups page documents Oracle, IBM, Red Hat, and others as JEP and runtime stewards."

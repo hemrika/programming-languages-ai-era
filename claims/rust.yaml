@@ -378,3 +378,58 @@ claims:
     source: rust-src-027
     notes: github.com/0xPlaygrounds/rig and github.com/Abraxas-365/langchain-rust document Rust agent frameworks; structured-output abstractions are present but less mature than Pydantic-Instructor or Vercel AI SDK.
     counters: [rust-032, rust-033, rust-035]
+
+  - id: rust-037
+    claim: "Serde is community-multi-maintainer with David Tolnay as the dominant committer; load-bearing for the entire Rust SO surface but with non-trivial single-point-of-failure exposure."
+    dimension: ecosystem_dependency_risk
+    backer: community_multi_maintainer
+    criterion: single_points_of_failure
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: rust-src-028
+    notes: "Serde contributor graph shows David Tolnay as the dominant committer despite a multi-contributor profile."
+
+  - id: rust-038
+    claim: "schemars is community-multi-maintainer; a load-bearing dependency for Rust types-to-JSON-Schema generation but smaller-pool than Serde."
+    dimension: ecosystem_dependency_risk
+    backer: community_multi_maintainer
+    criterion: single_points_of_failure
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: rust-src-029
+    notes: "schemars contributor graph is small with Graham Esau as primary maintainer."
+
+  - id: rust-039
+    claim: "async-openai is the de facto Rust OpenAI client and is community-multi-maintainer; OpenAI does not publish a first-party Rust SDK."
+    dimension: ecosystem_dependency_risk
+    backer: community_multi_maintainer
+    criterion: backer_mix
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: rust-src-030
+    notes: "async-openai is a community-maintained Rust OpenAI client; no first-party SDK exists."
+
+  - id: rust-040
+    claim: "candle is published by HuggingFace (commercial-third-party) and Rust agent frameworks (Rig, swiftide) are community projects; the Rust AI runtime layer mixes commercial backing with community surface."
+    dimension: ecosystem_dependency_risk
+    backer: commercial_third_party
+    criterion: backer_mix
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: neutral
+    source: rust-src-031
+    notes: "HuggingFace publishes candle as part of its commercial OSS strategy."
+
+  - id: rust-041
+    claim: "The Rust Foundation and major-vendor sponsors (Microsoft, AWS, Google, Huawei) fund the language and toolchain; the language layer dependency risk is low even though many AI/SO libraries are community-multi-maintainer."
+    dimension: ecosystem_dependency_risk
+    backer: language_stewards
+    criterion: funding_durability
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: rust-src-032
+    notes: "Rust Foundation member roster documents commercial-vendor sponsorship."
