@@ -72,6 +72,7 @@ TypeScript and Go tie at the top. .NET sits at 3.99 with the cohort's strongest 
 | `insights/` | Higher-order theses (agentic feedback loops, AI favors verifiability, safety pressure, incumbent risk) |
 | `outputs/` | Report, story-driven report, deck outline, execution plan, confidence heatmap, review pass, deliverable PPTX |
 | `scripts/` | `validate_evaluations.py`, `score_summary.py`, `confidence_heatmap.py` |
+| `research/` | Out-of-cohort language profiles (Haskell, Julia, Mojo, Zig) at the v0.1 schema; reference material only, not part of the validated cohort |
 
 ## Workflow
 
@@ -101,8 +102,4 @@ The validator checks: 11 dimensions present per language, half-point scores in `
 - `outputs/reachability-analysis.md` — per-language gap walk: what would close each below-5 cell, plausibility verdict
 - `outputs/confidence-heatmap.md` — per-cell rater confidence, regenerable
 - `outputs/v0.3-review-pass.md` — formal Phase-7 review pass against v0.3
-- `outputs/v0.5-review-pass.md` — formal Phase-7 review pass against v0.5
-
-## Status
-
-Single-rater draft, anchored in ~390 atomic claims with primary-source citations. Scores are intended to be falsifiable through the u
+- `outputs/v0.5-review-pass.md` — formal Phase-7 review pass ag
