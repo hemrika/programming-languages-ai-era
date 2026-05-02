@@ -1,16 +1,25 @@
 ## Version
 
-v0.4 (2026-05-02) — current. Prior versions (v0.1 5-dimension, v0.2 6-dimension, v0.3 7-dimension) are visible in git history.
+v0.5 (2026-05-02) — current. Prior versions (v0.1 5-dimension, v0.2 6-dimension, v0.3 7-dimension, v0.4 10-dimension with native/ecosystem split + dependency-risk) are visible in git history.
+
+## v0.4 → v0.5 changelog
+
+v0.5 adds an eleventh dimension — `reachability_to_top_tier` (5%) — scoring forward-trajectory plausibility: how reachable is 5.0 on each below-5 cell within a 3–5-year horizon. The new dimension is funded by reducing `strategic_viability` from 10% to 5%, since SV had implicitly absorbed some forward-trajectory signal that the new axis captures explicitly.
+
+- New: `reachability_to_top_tier` (5%) — anchored on gap_size + in_motion_signals + steward_investment + structural_vs_ecosystem + compounding_pressure
+- `strategic_viability` 10% → 5%
+
+The ranking compresses at the top under v0.5: TypeScript and Go tie at 4.01 (TypeScript catches Go via Reach=4.0); .NET sits at 3.99 with the cohort's strongest forward bet (EDR=4.5, Reach=4.5 — both highest). Per-language gap analysis lives in `outputs/reachability-analysis.md`.
 
 ## v0.3 → v0.4 changelog
 
-v0.3 conflated language-native AI capability with ecosystem-package AI capability and applied inclusion rules asymmetrically (Pydantic credited to Python's structured-output score; Newtonsoft.Json was omitted from .NET's). v0.4 splits the two AI-era dimensions into native + ecosystem halves and introduces an ecosystem-dependency-risk axis:
+v0.3 conflated language-native AI capability with ecosystem-package AI capability and applied inclusion rules asymmetrically (Pydantic credited to Python's structured-output score; Newtonsoft.Json was omitted from .NET's). v0.4 split the two AI-era dimensions into native + ecosystem halves and introduced an ecosystem-dependency-risk axis:
 
 - `ai_systems_interoperability` (15%) → `ai_systems_native` (7.5%) + `ai_systems_ecosystem` (7.5%)
 - `structured_output_maturity` (10%) → `structured_output_native` (5%) + `structured_output_ecosystem` (5%)
 - New: `ecosystem_dependency_risk` (5%) — funded by reducing `runtime_ecosystem` from 15% to 10%
 
-Combined AI-systems weight (15%) and combined structured-output weight (10%) are unchanged from v0.3. Every claim about a specific library now carries a `backer:` field. The native/ecosystem split is documented in `framework/dimensions.md`. The ranking shift is substantial: Go (4.04) takes the top slot, Python falls from #2 to #6 (3.74), .NET climbs to #3 (3.96).
+Combined AI-systems weight (15%) and combined structured-output weight (10%) were unchanged from v0.3. Every claim about a specific library carries a `backer:` field. The native/ecosystem split is documented in `framework/dimensions.md`.
 
 # Evidence-Backed Research Execution Plan
 
@@ -459,53 +468,4 @@ Use pull requests for reviewable changes:
 
 - source additions
 - claim additions (including counters: links)
-- score changes
-- comparison updates
-- insight promotion or re-check
-
-### Labels
-
-```text
-evaluation
-language
-source
-claim
-counterclaim
-comparison
-insight
-needs-evidence
-review
-v0.3
-final
-```
-
-## Definition of done
-
-A language evaluation is done when:
-
-- evaluation YAML exists with all 7 dimensions scored
-- at least 20 atomic claims exist
-- every dimension has at least 2 supporting claims
-- every high-confidence positive claim has a `counters:` link from a counterclaim where one exists in evidence
-- the per-language source registry `sources/<lang>-sources.yaml` is populated
-- `validate_evaluations.py` passes for that language
-- comparison notes reference at least one of the language's claims
-
-A project conclusion is done when:
-
-- it is stated as an insight
-- supporting evaluations are listed
-- supporting claims are listed
-- sources are traceable
-- counterclaims are listed (and reach the positive claim via `counters:`)
-- confidence is assigned
-- limitations are explicit
-
-## Immediate next actions
-
-1. **Re-upload `outputs/programming-languages-ai-era.pptx`** once the FUSE-mount issue is resolved (the deck currently lags the v0.3 outline).
-2. **Refresh `outputs/deck-outline.md`** to reflect the 7-dimension framework, current 10-language ranking, the Python/Go swap as a story beat, and the structured-output dimension as a load-bearing concept.
-3. **Generate `outputs/confidence-heatmap.md`** via `scripts/confidence_heatmap.py` and commit both.
-4. **Walk the Phase 7 review checklist** (greenfield-inverted) and capture results in `outputs/v0.3-review-pass.md`. Any score adjustments surfaced are documented but not made in the same commit.
-5. **Re-pass the four insight files** for the Python/Go swap and 7-dimension framework; update `agentic-feedback-loops.md` substantively, mark the others "Verified under v0.3" if they hold structurally.
-6. **Add a "Track coverage" section** to `comparisons/overview.md` mapping the original 8 plan tracks to current artifacts.
+- score chang
