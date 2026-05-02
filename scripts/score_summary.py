@@ -14,12 +14,13 @@ WEIGHTS = {
     "machine_cognition": 0.15,
     "ai_agent_operability": 0.20,
     "runtime_ecosystem": 0.10,
-    "strategic_viability": 0.10,
+    "strategic_viability": 0.05,
     "ai_systems_native": 0.075,
     "ai_systems_ecosystem": 0.075,
     "structured_output_native": 0.05,
     "structured_output_ecosystem": 0.05,
     "ecosystem_dependency_risk": 0.05,
+    "reachability_to_top_tier": 0.05,
 }
 
 def weighted_score(data):
@@ -40,5 +41,3 @@ def main():
     for language, score in sorted(rows, key=lambda item: item[1], reverse=True):
         print(f"{language}: {score}")
 
-if __name__ == "__main__":
-    main()

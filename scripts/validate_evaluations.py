@@ -17,6 +17,7 @@ REQUIRED_DIMENSIONS = {
     "structured_output_native",
     "structured_output_ecosystem",
     "ecosystem_dependency_risk",
+    "reachability_to_top_tier",
 }
 
 ALLOWED_BACKERS = {
@@ -182,7 +183,7 @@ def main():
                 print(f"  - {error}")
         else:
             rel = path.relative_to(ROOT).as_posix()
-            print(f"{rel}: {dims_validated}/10 dimensions, {claim_refs_valid} claim refs valid")
+            print(f"{rel}: {dims_validated}/11 dimensions, {claim_refs_valid} claim refs valid")
 
     if failed:
         sys.exit(1)
