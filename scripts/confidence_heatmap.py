@@ -124,4 +124,8 @@ The matrix in `comparisons/overview.md` and the per-language scores in `evaluati
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUT_PATH.write_text(output, encoding="utf-8")
     print(f"Wrote {OUT_PATH.relative_to(ROOT).as_posix()}")
-    print(f"  high={n_high} medium={n_m
+    print(f"  high={n_high} medium={n_medium} low={n_low} total={total}")
+
+
+if __name__ == "__main__":
+    main()
