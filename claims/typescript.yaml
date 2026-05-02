@@ -191,7 +191,8 @@ claims:
 
   - id: typescript-019
     claim: The Anthropic TypeScript SDK is the official client for the Claude API and is published by Anthropic.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_ecosystem
+    backer: commercial_first_party
     criterion: llm_provider_support
     evidence_type: official_tooling_documentation
     confidence: high
@@ -201,7 +202,8 @@ claims:
 
   - id: typescript-020
     claim: The OpenAI Node SDK is the official TypeScript/JavaScript client for the OpenAI API.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_ecosystem
+    backer: commercial_first_party
     criterion: llm_provider_support
     evidence_type: official_tooling_documentation
     confidence: high
@@ -211,7 +213,8 @@ claims:
 
   - id: typescript-021
     claim: LangChain.js is the canonical JavaScript/TypeScript port of LangChain, with broad LLM, vector-store, and tool integrations.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_ecosystem
+    backer: commercial_third_party
     criterion: agent_framework_support
     evidence_type: official_tooling_documentation
     confidence: high
@@ -221,7 +224,8 @@ claims:
 
   - id: typescript-022
     claim: The Model Context Protocol TypeScript SDK is the official TypeScript implementation of MCP, maintained by the Model Context Protocol project.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_ecosystem
+    backer: commercial_third_party
     criterion: protocol_support
     evidence_type: official_tooling_documentation
     confidence: high
@@ -231,7 +235,8 @@ claims:
 
   - id: typescript-023
     claim: LlamaIndex publishes a TypeScript implementation in addition to its primary Python edition, giving TypeScript projects a first-class RAG/indexing framework.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_ecosystem
+    backer: commercial_third_party
     criterion: agent_framework_support
     evidence_type: official_tooling_documentation
     confidence: medium
@@ -241,7 +246,8 @@ claims:
 
   - id: typescript-024
     claim: Zod is the dominant TypeScript schema-validation library, defining schemas in TypeScript that produce both runtime validators and inferred TypeScript types from a single declaration.
-    dimension: structured_output_maturity
+    dimension: structured_output_ecosystem
+    backer: community_single_maintainer
     criterion: schema_validation
     evidence_type: official_tooling_documentation
     confidence: high
@@ -251,7 +257,8 @@ claims:
 
   - id: typescript-025
     claim: The OpenAI Node SDK and Anthropic TypeScript SDK accept Zod schemas natively for tool-call argument typing and structured outputs, returning parsed TypeScript-typed objects.
-    dimension: structured_output_maturity
+    dimension: structured_output_ecosystem
+    backer: commercial_first_party
     criterion: llm_tool_call_typing
     evidence_type: official_tooling_documentation
     confidence: high
@@ -261,7 +268,8 @@ claims:
 
   - id: typescript-026
     claim: The Vercel AI SDK exposes generateObject and streamObject helpers that accept a Zod schema and return Zod-validated TypeScript-typed structured output from any supported LLM provider.
-    dimension: structured_output_maturity
+    dimension: structured_output_ecosystem
+    backer: commercial_third_party
     criterion: structured_output_libraries
     evidence_type: official_tooling_documentation
     confidence: high
@@ -271,7 +279,8 @@ claims:
 
   - id: typescript-027
     claim: zod-to-json-schema converts Zod schemas to JSON Schema, allowing TypeScript projects to derive provider-agnostic JSON Schema definitions directly from native Zod types.
-    dimension: structured_output_maturity
+    dimension: structured_output_ecosystem
+    backer: community_multi_maintainer
     criterion: json_schema_generation
     evidence_type: official_tooling_documentation
     confidence: high
@@ -281,7 +290,7 @@ claims:
 
   - id: typescript-028
     claim: TypeScript's structural type system combined with Zod's type-inference pattern provides compile-time contract safety from LLM-output parsing through application logic, with the parse boundary enforced at runtime.
-    dimension: structured_output_maturity
+    dimension: structured_output_native
     criterion: compile_time_contract_safety
     evidence_type: official_documentation
     confidence: high

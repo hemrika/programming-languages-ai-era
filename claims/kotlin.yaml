@@ -210,7 +210,8 @@ claims:
 
   - id: kotlin-021
     claim: The Model Context Protocol Kotlin SDK is the official Kotlin implementation of MCP, providing first-class Kotlin/JVM bindings.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_native
+    backer: language_stewards
     criterion: protocol_support
     evidence_type: official_tooling_documentation
     confidence: high
@@ -220,7 +221,8 @@ claims:
 
   - id: kotlin-022
     claim: Kotlin can consume LangChain4j and the Anthropic Java SDK directly through Java interop, inheriting the JVM agent-framework and LLM-provider stack.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_ecosystem
+    backer: commercial_third_party
     criterion: agent_framework_support
     evidence_type: official_tooling_documentation
     confidence: high
@@ -230,7 +232,8 @@ claims:
 
   - id: kotlin-023
     claim: Kotlin Multiplatform allows shared LLM-client and agent code to target JVM, Android, iOS, and JS from a single source set, which is unique among the cohort for mobile-and-server AI integration.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_native
+    backer: language_stewards
     criterion: agent_framework_support
     evidence_type: official_documentation
     confidence: medium
@@ -240,7 +243,8 @@ claims:
 
   - id: kotlin-024
     claim: Native Kotlin AI tooling (Kotlin-only LLM SDKs, agent frameworks) is thin compared to Python and TypeScript; most Kotlin AI integration relies on Java-interop libraries rather than Kotlin-first APIs.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_ecosystem
+    backer: community_multi_maintainer
     criterion: agent_framework_support
     evidence_type: official_tooling_documentation
     confidence: medium
@@ -250,7 +254,8 @@ claims:
 
   - id: kotlin-025
     claim: kotlinx.serialization is the official JetBrains-maintained Kotlin serialization framework with a compiler plugin that generates type-safe serializers from @Serializable Kotlin data classes.
-    dimension: structured_output_maturity
+    dimension: structured_output_native
+    backer: language_stewards
     criterion: schema_validation
     evidence_type: official_tooling_documentation
     confidence: high
@@ -260,7 +265,8 @@ claims:
 
   - id: kotlin-026
     claim: Kotlin sealed classes and sealed interfaces with exhaustive when expressions provide closed-hierarchy modeling of LLM-output discriminated unions, statically checked at compile time.
-    dimension: structured_output_maturity
+    dimension: structured_output_native
+    backer: language_stewards
     criterion: compile_time_contract_safety
     evidence_type: language_specification
     confidence: high
@@ -270,7 +276,8 @@ claims:
 
   - id: kotlin-027
     claim: LangChain4j AI Services and the Anthropic Java SDK are usable from Kotlin via JVM interop, giving Kotlin projects type-safe LLM tool-call argument binding to Kotlin data classes.
-    dimension: structured_output_maturity
+    dimension: structured_output_ecosystem
+    backer: commercial_third_party
     criterion: llm_tool_call_typing
     evidence_type: official_tooling_documentation
     confidence: medium
@@ -280,7 +287,8 @@ claims:
 
   - id: kotlin-028
     claim: kotlinx-serialization-json-schema and community projects generate JSON Schema documents from @Serializable Kotlin types, but the LLM-specific structured-output layer is thinner than Python or TypeScript.
-    dimension: structured_output_maturity
+    dimension: structured_output_ecosystem
+    backer: community_multi_maintainer
     criterion: json_schema_generation
     evidence_type: official_tooling_documentation
     confidence: medium
@@ -290,7 +298,8 @@ claims:
 
   - id: kotlin-029
     claim: Kotlin's LLM-specific structured-output ecosystem (Kotlin-native Instructor analogues, Kotlin-only structured-output libraries) is thin compared to Python and TypeScript, with most tooling reused from the JVM stack.
-    dimension: structured_output_maturity
+    dimension: structured_output_ecosystem
+    backer: community_multi_maintainer
     criterion: structured_output_libraries
     evidence_type: official_tooling_documentation
     confidence: medium

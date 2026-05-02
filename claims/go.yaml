@@ -201,7 +201,8 @@ claims:
 
   - id: go-020
     claim: The Anthropic Go SDK is an official client for the Claude API published by Anthropic.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_ecosystem
+    backer: commercial_first_party
     criterion: llm_provider_support
     evidence_type: official_tooling_documentation
     confidence: high
@@ -211,7 +212,8 @@ claims:
 
   - id: go-021
     claim: The OpenAI Go SDK is an official Go client for the OpenAI API.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_ecosystem
+    backer: commercial_first_party
     criterion: llm_provider_support
     evidence_type: official_tooling_documentation
     confidence: high
@@ -221,7 +223,8 @@ claims:
 
   - id: go-022
     claim: The Model Context Protocol Go SDK is the official Go implementation of MCP.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_ecosystem
+    backer: commercial_third_party
     criterion: protocol_support
     evidence_type: official_tooling_documentation
     confidence: high
@@ -231,7 +234,8 @@ claims:
 
   - id: go-023
     claim: confluent-kafka-go and the Sarama client provide production-grade Go Kafka support; pgx is the canonical Postgres driver and supports pgvector via type extensions.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_ecosystem
+    backer: commercial_third_party
     criterion: streaming_messaging
     evidence_type: official_tooling_documentation
     confidence: high
@@ -241,7 +245,8 @@ claims:
 
   - id: go-024
     claim: The Go agent-framework ecosystem (LangChainGo and similar) lags the Python and TypeScript implementations in feature breadth and integration count.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_ecosystem
+    backer: community_multi_maintainer
     criterion: agent_framework_support
     evidence_type: official_tooling_documentation
     confidence: medium
@@ -251,7 +256,8 @@ claims:
 
   - id: go-025
     claim: Go's encoding/json standard-library package provides struct-tag-driven JSON parsing into typed Go structs, the canonical structured-data parsing path on the Go standard library.
-    dimension: structured_output_maturity
+    dimension: structured_output_native
+    backer: language_stewards
     criterion: schema_validation
     evidence_type: language_specification
     confidence: high
@@ -261,7 +267,8 @@ claims:
 
   - id: go-026
     claim: The openai-go SDK generates JSON Schema for tool calls from Go struct definitions and parses LLM responses into typed Go structs.
-    dimension: structured_output_maturity
+    dimension: structured_output_ecosystem
+    backer: commercial_first_party
     criterion: llm_tool_call_typing
     evidence_type: official_tooling_documentation
     confidence: high
@@ -271,7 +278,8 @@ claims:
 
   - id: go-027
     claim: Go's validation library landscape is fragmented across go-playground/validator, ozzo-validation, and others, with no single canonical schema-validation library equivalent to Pydantic or Zod.
-    dimension: structured_output_maturity
+    dimension: structured_output_ecosystem
+    backer: community_multi_maintainer
     criterion: schema_validation
     evidence_type: official_tooling_documentation
     confidence: medium
@@ -282,7 +290,8 @@ claims:
 
   - id: go-028
     claim: jsonschema-go and invopop/jsonschema generate JSON Schema documents from Go structs, supporting LLM tool-input definitions.
-    dimension: structured_output_maturity
+    dimension: structured_output_ecosystem
+    backer: community_multi_maintainer
     criterion: json_schema_generation
     evidence_type: official_tooling_documentation
     confidence: medium
@@ -292,7 +301,7 @@ claims:
 
   - id: go-029
     claim: Go's static type system protects the boundary between LLM output and program code at compile time once the JSON has been parsed into a typed struct, but the structured-output ecosystem lacks the LLM-specific ergonomics of Python or TypeScript.
-    dimension: structured_output_maturity
+    dimension: structured_output_native
     criterion: compile_time_contract_safety
     evidence_type: official_documentation
     confidence: medium

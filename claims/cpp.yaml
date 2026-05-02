@@ -175,7 +175,8 @@ claims:
 
   - id: cpp-017
     claim: llama.cpp is the dominant open-source local-inference runtime for LLMs and is implemented primarily in C/C++, making C++ the canonical host for high-performance local inference.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_ecosystem
+    backer: community_single_maintainer
     criterion: inference_runtime_support
     evidence_type: official_tooling_documentation
     confidence: high
@@ -185,7 +186,8 @@ claims:
 
   - id: cpp-018
     claim: ONNX Runtime is implemented primarily in C++ and exposes a first-class C++ API as one of its principal language bindings.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_ecosystem
+    backer: commercial_first_party
     criterion: inference_runtime_support
     evidence_type: official_tooling_documentation
     confidence: high
@@ -195,7 +197,8 @@ claims:
 
   - id: cpp-019
     claim: The dominant accelerator host APIs (CUDA, ROCm/HIP, SYCL, oneAPI) primarily target C++, giving C++ unique access to GPU and accelerator runtimes used in AI-systems pipelines.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_ecosystem
+    backer: commercial_first_party
     criterion: inference_runtime_support
     evidence_type: official_documentation
     confidence: high
@@ -205,7 +208,7 @@ claims:
 
   - id: cpp-020
     claim: C++ has effectively no first-party agent-framework or LLM-provider SDK ecosystem; LLM and agent integration in C++ is achieved by binding to Python/Node libraries or invoking external services.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_ecosystem
     criterion: agent_framework_support
     evidence_type: official_tooling_documentation
     confidence: high
@@ -215,7 +218,8 @@ claims:
 
   - id: cpp-021
     claim: confluent-kafka-cpp (librdkafka) is the production-grade C++ Kafka client and is widely used in C++ streaming infrastructure.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_ecosystem
+    backer: commercial_third_party
     criterion: streaming_messaging
     evidence_type: official_tooling_documentation
     confidence: high
@@ -225,7 +229,8 @@ claims:
 
   - id: cpp-022
     claim: nlohmann/json is the most widely used C++ JSON library and supports manual mapping between JSON and C++ types via to_json/from_json overloads.
-    dimension: structured_output_maturity
+    dimension: structured_output_ecosystem
+    backer: community_single_maintainer
     criterion: schema_validation
     evidence_type: official_tooling_documentation
     confidence: high
@@ -235,7 +240,7 @@ claims:
 
   - id: cpp-023
     claim: C++ has no first-party LLM provider SDK, no broadly adopted LLM-specific structured-output library, and no Pydantic-equivalent schema-to-types validation framework.
-    dimension: structured_output_maturity
+    dimension: structured_output_ecosystem
     criterion: structured_output_libraries
     evidence_type: official_tooling_documentation
     confidence: high
@@ -246,7 +251,8 @@ claims:
 
   - id: cpp-024
     claim: llama.cpp implements native JSON-schema-constrained decoding via GBNF grammars, giving C++ projects in-process JSON-Schema-guided generation that other ecosystems often consume via FFI.
-    dimension: structured_output_maturity
+    dimension: structured_output_ecosystem
+    backer: community_single_maintainer
     criterion: constrained_generation
     evidence_type: official_tooling_documentation
     confidence: high
@@ -256,7 +262,7 @@ claims:
 
   - id: cpp-025
     claim: C++ projects must hand-write or adopt third-party reflection libraries to convert C++ types to JSON Schema; standard C++ has no native types-to-JSON-Schema autogeneration.
-    dimension: structured_output_maturity
+    dimension: structured_output_ecosystem
     criterion: json_schema_generation
     evidence_type: language_specification
     confidence: high
@@ -266,7 +272,7 @@ claims:
 
   - id: cpp-026
     claim: C++'s strong static type system gives compile-time contract safety once JSON has been parsed into typed structs, but the lack of an LLM-tooling layer means schema definition, JSON Schema generation, and validation are largely manual.
-    dimension: structured_output_maturity
+    dimension: structured_output_native
     criterion: compile_time_contract_safety
     evidence_type: language_specification
     confidence: medium

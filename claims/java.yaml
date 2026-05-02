@@ -191,7 +191,8 @@ claims:
 
   - id: java-019
     claim: The Anthropic Java SDK is an official client for the Claude API published by Anthropic.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_ecosystem
+    backer: commercial_first_party
     criterion: llm_provider_support
     evidence_type: official_tooling_documentation
     confidence: high
@@ -201,7 +202,8 @@ claims:
 
   - id: java-020
     claim: LangChain4j is a Java port of LangChain with broad LLM-provider, vector-store, and tool-integration coverage on the JVM.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_ecosystem
+    backer: commercial_third_party
     criterion: agent_framework_support
     evidence_type: official_tooling_documentation
     confidence: high
@@ -211,7 +213,8 @@ claims:
 
   - id: java-021
     claim: The Model Context Protocol Java SDK is the official Java implementation of MCP.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_ecosystem
+    backer: commercial_third_party
     criterion: protocol_support
     evidence_type: official_tooling_documentation
     confidence: high
@@ -221,7 +224,8 @@ claims:
 
   - id: java-022
     claim: The JVM Kafka client (org.apache.kafka:kafka-clients) is the reference implementation of the Kafka protocol and is the canonical streaming integration on the JVM.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_ecosystem
+    backer: community_multi_maintainer
     criterion: streaming_messaging
     evidence_type: official_tooling_documentation
     confidence: high
@@ -231,7 +235,8 @@ claims:
 
   - id: java-023
     claim: ONNX Runtime ships an official Java package, providing a production-grade inference runtime for JVM applications.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_ecosystem
+    backer: commercial_first_party
     criterion: inference_runtime_support
     evidence_type: official_tooling_documentation
     confidence: high
@@ -241,7 +246,8 @@ claims:
 
   - id: java-024
     claim: Jackson is the de-facto JVM JSON library and combines with Java Bean Validation (Jakarta Validation, JSR 380) to validate deserialized Java records against declarative annotations.
-    dimension: structured_output_maturity
+    dimension: structured_output_ecosystem
+    backer: community_multi_maintainer
     criterion: schema_validation
     evidence_type: official_tooling_documentation
     confidence: high
@@ -251,7 +257,8 @@ claims:
 
   - id: java-025
     claim: LangChain4j AI Services bind a Java interface declaration to LLM tool calls, generating JSON Schemas from Java method signatures and parsing LLM responses back into typed Java records.
-    dimension: structured_output_maturity
+    dimension: structured_output_ecosystem
+    backer: commercial_third_party
     criterion: llm_tool_call_typing
     evidence_type: official_tooling_documentation
     confidence: high
@@ -261,7 +268,8 @@ claims:
 
   - id: java-026
     claim: LangChain4j and the Anthropic Java SDK provide structured-output ergonomics including automatic Java-record deserialization of LLM-generated JSON.
-    dimension: structured_output_maturity
+    dimension: structured_output_ecosystem
+    backer: commercial_third_party
     criterion: structured_output_libraries
     evidence_type: official_tooling_documentation
     confidence: medium
@@ -271,7 +279,8 @@ claims:
 
   - id: java-027
     claim: The mbknor-jackson-jsonSchema project and Jackson JSON Schema modules generate JSON Schema documents from Java POJOs and records, supporting LLM tool-input definitions.
-    dimension: structured_output_maturity
+    dimension: structured_output_ecosystem
+    backer: community_multi_maintainer
     criterion: json_schema_generation
     evidence_type: official_tooling_documentation
     confidence: medium
@@ -281,7 +290,7 @@ claims:
 
   - id: java-028
     claim: Java's static type system, records, and sealed classes give compile-time contract safety from Jackson deserialization through downstream code, but the type-to-schema layer is more verbose and less LLM-native than Pydantic or Zod.
-    dimension: structured_output_maturity
+    dimension: structured_output_native
     criterion: compile_time_contract_safety
     evidence_type: official_documentation
     confidence: medium

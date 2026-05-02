@@ -271,7 +271,8 @@ claims:
 
   - id: rust-027
     claim: The Model Context Protocol Rust SDK is the official Rust implementation of MCP.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_ecosystem
+    backer: commercial_third_party
     criterion: protocol_support
     evidence_type: official_tooling_documentation
     confidence: high
@@ -281,7 +282,8 @@ claims:
 
   - id: rust-028
     claim: async-openai is the de facto async Rust client for the OpenAI API and is widely used in production.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_ecosystem
+    backer: community_multi_maintainer
     criterion: llm_provider_support
     evidence_type: official_tooling_documentation
     confidence: medium
@@ -291,7 +293,8 @@ claims:
 
   - id: rust-029
     claim: candle is HuggingFace's official minimalist machine-learning framework for Rust, providing a native inference runtime for transformer models.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_ecosystem
+    backer: commercial_third_party
     criterion: inference_runtime_support
     evidence_type: official_tooling_documentation
     confidence: high
@@ -301,7 +304,8 @@ claims:
 
   - id: rust-030
     claim: Rust agent-framework support (Rig, swiftide, langchain-rust) is younger and thinner than Python and TypeScript equivalents, with fewer first-class integrations.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_ecosystem
+    backer: community_multi_maintainer
     criterion: agent_framework_support
     evidence_type: official_tooling_documentation
     confidence: medium
@@ -311,7 +315,8 @@ claims:
 
   - id: rust-031
     claim: Rust's Postgres ecosystem (sqlx, tokio-postgres) and rdkafka client provide production-grade data-layer and streaming integrations that align well with AI-systems infrastructure.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_ecosystem
+    backer: community_multi_maintainer
     criterion: data_layer_integration
     evidence_type: official_tooling_documentation
     confidence: high
@@ -321,7 +326,8 @@ claims:
 
   - id: rust-032
     claim: Serde is the dominant Rust serialization framework, generating zero-cost type-safe parsers and serializers from #[derive(Serialize, Deserialize)] on Rust structs and enums.
-    dimension: structured_output_maturity
+    dimension: structured_output_ecosystem
+    backer: community_multi_maintainer
     criterion: schema_validation
     evidence_type: official_tooling_documentation
     confidence: high
@@ -331,7 +337,8 @@ claims:
 
   - id: rust-033
     claim: schemars generates JSON Schema documents from Rust types annotated with #[derive(JsonSchema)], enabling provider-agnostic schema export for LLM tool definitions.
-    dimension: structured_output_maturity
+    dimension: structured_output_ecosystem
+    backer: community_multi_maintainer
     criterion: json_schema_generation
     evidence_type: official_tooling_documentation
     confidence: high
@@ -341,7 +348,8 @@ claims:
 
   - id: rust-034
     claim: async-openai and the Anthropic Rust SDKs accept Rust types deserialized via Serde for tool-call arguments and structured outputs, but the LLM-specific structured-output layer is younger than Python or TypeScript.
-    dimension: structured_output_maturity
+    dimension: structured_output_ecosystem
+    backer: community_multi_maintainer
     criterion: llm_tool_call_typing
     evidence_type: official_tooling_documentation
     confidence: medium
@@ -351,7 +359,7 @@ claims:
 
   - id: rust-035
     claim: Rust's enums combined with Serde's tagged-union deserialization provide compile-time-checked discriminated unions for LLM-output discrimination, with exhaustive match enforced by the compiler.
-    dimension: structured_output_maturity
+    dimension: structured_output_native
     criterion: compile_time_contract_safety
     evidence_type: language_specification
     confidence: high
@@ -361,7 +369,8 @@ claims:
 
   - id: rust-036
     claim: Rust's LLM-specific structured-output ecosystem (rig, langchain-rust, instruct-rs analogues) is younger than Python or TypeScript, with fewer high-level structured-output abstractions and less broad provider coverage.
-    dimension: structured_output_maturity
+    dimension: structured_output_ecosystem
+    backer: community_multi_maintainer
     criterion: structured_output_libraries
     evidence_type: official_tooling_documentation
     confidence: medium

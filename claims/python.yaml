@@ -211,7 +211,8 @@ claims:
 
   - id: python-021
     claim: The Anthropic Python SDK is the official client for Anthropic's Claude API and the canonical integration entry point for Anthropic's models from Python.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_ecosystem
+    backer: commercial_first_party
     criterion: llm_provider_support
     evidence_type: official_tooling_documentation
     confidence: high
@@ -221,7 +222,8 @@ claims:
 
   - id: python-022
     claim: The OpenAI Python SDK is the official client library for the OpenAI API and a canonical Python integration for GPT-family models.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_ecosystem
+    backer: commercial_first_party
     criterion: llm_provider_support
     evidence_type: official_tooling_documentation
     confidence: high
@@ -231,7 +233,8 @@ claims:
 
   - id: python-023
     claim: LangChain ships its primary Python implementation with first-class integrations across LLM providers, vector stores, and tool runtimes, making Python the most fully featured target for agent-framework code.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_ecosystem
+    backer: commercial_third_party
     criterion: agent_framework_support
     evidence_type: official_tooling_documentation
     confidence: high
@@ -241,7 +244,8 @@ claims:
 
   - id: python-024
     claim: The Model Context Protocol Python SDK is the official Python implementation of MCP, published by the Model Context Protocol project.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_ecosystem
+    backer: commercial_third_party
     criterion: protocol_support
     evidence_type: official_tooling_documentation
     confidence: high
@@ -251,7 +255,8 @@ claims:
 
   - id: python-025
     claim: Python has official client SDKs for all major vector stores (Pinecone, Weaviate, Qdrant, Chroma, pgvector via psycopg) plus first-party embedding pipelines through OpenAI/Anthropic/HuggingFace clients.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_ecosystem
+    backer: commercial_third_party
     criterion: data_layer_integration
     evidence_type: official_tooling_documentation
     confidence: high
@@ -261,7 +266,8 @@ claims:
 
   - id: python-026
     claim: Pydantic v2 is the de-facto Python schema-validation library, generating JSON Schema from declarative Python models and validating LLM-produced JSON against typed shapes.
-    dimension: structured_output_maturity
+    dimension: structured_output_ecosystem
+    backer: community_multi_maintainer
     criterion: schema_validation
     evidence_type: official_tooling_documentation
     confidence: high
@@ -271,7 +277,8 @@ claims:
 
   - id: python-027
     claim: The OpenAI Python SDK supports passing a Pydantic BaseModel as the response_format, parsing tool calls and structured outputs into typed Python instances.
-    dimension: structured_output_maturity
+    dimension: structured_output_ecosystem
+    backer: commercial_first_party
     criterion: llm_tool_call_typing
     evidence_type: official_tooling_documentation
     confidence: high
@@ -281,7 +288,8 @@ claims:
 
   - id: python-028
     claim: The Instructor library wraps LLM clients to return Pydantic-validated structured outputs, with retry-on-validation-failure and patching of the OpenAI/Anthropic clients.
-    dimension: structured_output_maturity
+    dimension: structured_output_ecosystem
+    backer: community_single_maintainer
     criterion: structured_output_libraries
     evidence_type: official_tooling_documentation
     confidence: high
@@ -291,7 +299,8 @@ claims:
 
   - id: python-029
     claim: Outlines is a Python library for guided generation that constrains LLM decoding to JSON Schema, regular expressions, or context-free grammars at the token level.
-    dimension: structured_output_maturity
+    dimension: structured_output_ecosystem
+    backer: commercial_third_party
     criterion: constrained_generation
     evidence_type: official_tooling_documentation
     confidence: high
@@ -301,7 +310,7 @@ claims:
 
   - id: python-030
     claim: Python's structured-output safety relies on runtime validation rather than static type checking, so contract violations surface only when Pydantic validates a response, not at compile time.
-    dimension: structured_output_maturity
+    dimension: structured_output_native
     criterion: compile_time_contract_safety
     evidence_type: language_specification
     confidence: high

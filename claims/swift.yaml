@@ -190,7 +190,8 @@ claims:
 
   - id: swift-019
     claim: Apple's Core ML and Create ML frameworks are the canonical on-device inference and training stacks for Swift on Apple platforms, providing first-party model deployment for iOS, macOS, watchOS, and tvOS.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_native
+    backer: language_stewards
     criterion: inference_runtime_support
     evidence_type: official_documentation
     confidence: high
@@ -200,7 +201,7 @@ claims:
 
   - id: swift-020
     claim: Apple platforms expose Core ML and the new Foundation Models framework, but cross-platform Swift AI integration (Linux, server-side) is significantly thinner than Apple-platform tooling.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_ecosystem
     criterion: inference_runtime_support
     evidence_type: official_documentation
     confidence: high
@@ -210,7 +211,8 @@ claims:
 
   - id: swift-021
     claim: First-party Anthropic and OpenAI SDKs for Swift do not exist; LLM access in Swift relies on community packages such as MacPaw/OpenAI and AnthropicSwiftSDK.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_ecosystem
+    backer: community_multi_maintainer
     criterion: llm_provider_support
     evidence_type: official_tooling_documentation
     confidence: medium
@@ -220,7 +222,7 @@ claims:
 
   - id: swift-022
     claim: Cross-platform Swift agent-framework support is essentially absent; LangChain, LlamaIndex, and Semantic Kernel do not publish Swift implementations.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_ecosystem
     criterion: agent_framework_support
     evidence_type: official_tooling_documentation
     confidence: medium
@@ -230,7 +232,8 @@ claims:
 
   - id: swift-023
     claim: Apple's MLX framework targets Apple Silicon for high-performance ML and exposes Swift bindings, but its model and integration ecosystem is younger than ONNX Runtime or candle.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_native
+    backer: language_stewards
     criterion: inference_runtime_support
     evidence_type: official_documentation
     confidence: medium
@@ -240,7 +243,8 @@ claims:
 
   - id: swift-024
     claim: Swift's Codable protocol with auto-synthesized conformances provides type-safe JSON parsing into Swift structs and enums via the standard-library JSONEncoder/JSONDecoder.
-    dimension: structured_output_maturity
+    dimension: structured_output_native
+    backer: language_stewards
     criterion: schema_validation
     evidence_type: language_specification
     confidence: high
@@ -250,7 +254,8 @@ claims:
 
   - id: swift-025
     claim: Swift enums with associated values and exhaustive switch statements give compile-time-checked discriminated unions for LLM-output discrimination.
-    dimension: structured_output_maturity
+    dimension: structured_output_native
+    backer: language_stewards
     criterion: compile_time_contract_safety
     evidence_type: language_specification
     confidence: high
@@ -260,7 +265,8 @@ claims:
 
   - id: swift-026
     claim: Swift's LLM-specific structured-output ecosystem is thin, with community libraries such as swift-openai-responses and MacPaw/OpenAI providing some structured-output support but no first-party Anthropic or OpenAI Swift SDK.
-    dimension: structured_output_maturity
+    dimension: structured_output_ecosystem
+    backer: community_multi_maintainer
     criterion: structured_output_libraries
     evidence_type: official_tooling_documentation
     confidence: medium
@@ -270,7 +276,7 @@ claims:
 
   - id: swift-027
     claim: Swift's LLM tool-call typing relies on user-defined Codable structs and manually-supplied JSON Schemas; no Swift equivalent to Zod-to-JSON-Schema or Pydantic-driven schema generation is broadly adopted.
-    dimension: structured_output_maturity
+    dimension: structured_output_ecosystem
     criterion: llm_tool_call_typing
     evidence_type: official_tooling_documentation
     confidence: medium
@@ -281,7 +287,8 @@ claims:
 
   - id: swift-028
     claim: Swift's structured-output integration with first-party Apple ML stacks (Core ML, MLX) is solid for on-device inference but separate from the cross-platform LLM-output validation ecosystem.
-    dimension: structured_output_maturity
+    dimension: structured_output_native
+    backer: language_stewards
     criterion: structured_output_libraries
     evidence_type: official_tooling_documentation
     confidence: medium

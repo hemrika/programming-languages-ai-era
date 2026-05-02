@@ -190,7 +190,8 @@ claims:
 
   - id: elixir-019
     claim: Bumblebee provides pre-trained transformer models on top of Nx and EXLA, giving Elixir a native inference path for HuggingFace-style models.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_native
+    backer: language_stewards
     criterion: inference_runtime_support
     evidence_type: official_tooling_documentation
     confidence: high
@@ -200,7 +201,8 @@ claims:
 
   - id: elixir-020
     claim: Nx is the Elixir numerical-computing library that underpins Bumblebee and provides a native tensor stack with EXLA (XLA) and Torchx backends.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_native
+    backer: language_stewards
     criterion: inference_runtime_support
     evidence_type: official_tooling_documentation
     confidence: high
@@ -210,7 +212,8 @@ claims:
 
   - id: elixir-021
     claim: BEAM-native streaming via Phoenix.PubSub and GenStage gives Elixir a strong runtime story for streaming and event-driven AI workloads, independent of external messaging systems.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_native
+    backer: language_stewards
     criterion: streaming_messaging
     evidence_type: official_documentation
     confidence: high
@@ -220,7 +223,8 @@ claims:
 
   - id: elixir-022
     claim: Elixir LLM-provider SDKs are mostly community-maintained, with libraries such as anthropic_ex and openai_ex providing API access but trailing official-vendor SDK support found in Python, TypeScript, and .NET.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_ecosystem
+    backer: community_multi_maintainer
     criterion: llm_provider_support
     evidence_type: official_tooling_documentation
     confidence: medium
@@ -230,7 +234,8 @@ claims:
 
   - id: elixir-023
     claim: Elixir agent-framework support (Instructor, LangChain Elixir port) is small in scope compared to the Python and TypeScript ecosystems, with fewer integrations and a thinner connector library.
-    dimension: ai_systems_interoperability
+    dimension: ai_systems_ecosystem
+    backer: community_multi_maintainer
     criterion: agent_framework_support
     evidence_type: official_tooling_documentation
     confidence: medium
@@ -240,7 +245,8 @@ claims:
 
   - id: elixir-024
     claim: Ecto changesets provide runtime schema validation, casting, and constraint checking for Elixir maps, with declarative validators that compose over data shapes.
-    dimension: structured_output_maturity
+    dimension: structured_output_ecosystem
+    backer: community_multi_maintainer
     criterion: schema_validation
     evidence_type: official_tooling_documentation
     confidence: high
@@ -250,7 +256,8 @@ claims:
 
   - id: elixir-025
     claim: instructor_ex is the Elixir port of the Instructor pattern, returning Ecto-validated structured outputs from LLM calls with retry-on-validation-failure.
-    dimension: structured_output_maturity
+    dimension: structured_output_ecosystem
+    backer: community_single_maintainer
     criterion: structured_output_libraries
     evidence_type: official_tooling_documentation
     confidence: medium
@@ -260,7 +267,8 @@ claims:
 
   - id: elixir-026
     claim: Elixir's LLM-specific structured-output ecosystem is thin, with community libraries (instructor_ex, langchain_elixir) maintained outside the major LLM provider organizations.
-    dimension: structured_output_maturity
+    dimension: structured_output_ecosystem
+    backer: community_multi_maintainer
     criterion: structured_output_libraries
     evidence_type: official_tooling_documentation
     confidence: medium
@@ -271,7 +279,7 @@ claims:
 
   - id: elixir-027
     claim: Elixir's set-theoretic typing research is pre-stable and runtime validation through Ecto changesets remains the practical contract-safety mechanism for LLM-output handling.
-    dimension: structured_output_maturity
+    dimension: structured_output_ecosystem
     criterion: compile_time_contract_safety
     evidence_type: official_documentation
     confidence: medium
@@ -281,7 +289,8 @@ claims:
 
   - id: elixir-028
     claim: instructor_ex and Ecto schema introspection provide a path from Elixir schema definitions to JSON Schema for LLM tool definitions, but native types-to-JSON-Schema autogeneration is less standardized than in Python or TypeScript.
-    dimension: structured_output_maturity
+    dimension: structured_output_ecosystem
+    backer: community_single_maintainer
     criterion: json_schema_generation
     evidence_type: official_tooling_documentation
     confidence: low
