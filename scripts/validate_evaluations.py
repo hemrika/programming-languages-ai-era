@@ -12,8 +12,20 @@ REQUIRED_DIMENSIONS = {
     "ai_agent_operability",
     "runtime_ecosystem",
     "strategic_viability",
-    "ai_systems_interoperability",
-    "structured_output_maturity",
+    "ai_systems_native",
+    "ai_systems_ecosystem",
+    "structured_output_native",
+    "structured_output_ecosystem",
+    "ecosystem_dependency_risk",
+}
+
+ALLOWED_BACKERS = {
+    "language_stewards",
+    "commercial_first_party",
+    "commercial_third_party",
+    "community_multi_maintainer",
+    "community_single_maintainer",
+    "research",
 }
 
 COHORT = {
@@ -46,10 +58,18 @@ def validate_claims_counters(lang: str) -> tuple[list[str], int]:
     ids = {c.get("id") for c in (data.get("claims", []) or []) if c.get("id")}
     links = 0
     for claim in data.get("claims", []) or []:
+        cid = claim.get("id")
+        # Validate backer field if present (introduced in v0.4)
+        if "backer" in claim:
+            backer = claim["backer"]
+            if backer not in ALLOWED_BACKERS:
+                errors.append(
+                    f"claims/{lang}.yaml::{cid}: backer must be one of "
+                    f"{sorted(ALLOWED_BACKERS)}, got {backer!r}"
+                )
         if "counters" not in claim:
             continue
         counters = claim["counters"]
-        cid = claim.get("id")
         if not isinstance(counters, list):
             errors.append(f"claims/{lang}.yaml::{cid}: counters must be a list")
             continue
@@ -162,7 +182,7 @@ def main():
                 print(f"  - {error}")
         else:
             rel = path.relative_to(ROOT).as_posix()
-            print(f"{rel}: {dims_validated}/7 dimensions, {claim_refs_valid} claim refs valid")
+            print(f"{rel}: {dims_validated}/10 dimensions, {claim_refs_valid} claim refs valid")
 
     if failed:
         sys.exit(1)
