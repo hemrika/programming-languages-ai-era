@@ -84,4 +84,10 @@ The AI-application boundary — the type/data layer between LLM output and progr
 | Accelerator host code where C++ is forced | C++ | Rust (where accelerator support exists) |
 | JVM application work needing AI integration | Java (LangChain4j, Anthropic Java SDK) | Kotlin |
 
-No single language is a default for everything. AI-era language choice becomes more domain-sensitive, not less. Most organizations will run two or three of these in parallel; the polyglot interaction surface
+No single language is a default for everything. AI-era language choice becomes more domain-sensitive, not less. Most organizations will run two or three of these in parallel; the polyglot interaction surface is part of the work.
+
+## Slide 14 — Limitations and closing
+
+**Limitations.** Framework weights are working assumptions, not a calibrated multi-rater output; small weight perturbations are absorbed, large ones are not. Snapshot date 2026-04-30 — Elixir's set-theoretic types [elixir-007] could move that language's verification score before its next major release; Python's typing PEP cadence [python-016] continues to land each release. Greenfield framing is a deliberate choice; maintenance-estate teams should re-weight. Single-rater judgment grounded in primary-source citations — every cell traces through Insight → Evaluation → Claim → Source and is intended to be falsifiable.
+
+**Closing thesis.** AI raises the price of cheap verification, ergonomic agentic operability, structural safety, and structured-output ergonomics. The languages that pay all four taxes win the next decade — none of them by default.

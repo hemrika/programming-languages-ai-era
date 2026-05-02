@@ -21,4 +21,33 @@ The v0.3 ranking has Python (4.25) overtaking Go (4.17) by 0.08 points. Mechanic
 The narrative shift is sharper than the numeric one. The prior agentic-feedback-loops insight emphasized Go's tooling lead as the "agent-friendly default." Under v0.3 framing, "agent-friendly" splits into two profiles:
 
 - **Backend-service agent-friendly**: Go remains best-in-class. Single canonical toolchain, fast compilation, runtime simplicity, deployment cleanliness. If the agent's job is to ship a stateless service, fix a CI pipeline, refactor a Kubernetes operator, or write a CLI, Go's combination of HC=5, AO=5, RE=4.5 is unmatched.
-- **AI-application agent-friendly**: Python (4.25) and TypeScript (4.38) lead. The agent's job here includes calling LLMs, parsing structured outputs, running prompt evaluations, integrating with vector stores, and stitching together tool calls. Pydantic and Zod are not tooling conveniences — they are load-bearing infrastructure for the boundary between LLM output
+- **AI-application agent-friendly**: Python (4.25) and TypeScript (4.38) lead. The agent's job here includes calling LLMs, parsing structured outputs, running prompt evaluations, integrating with vector stores, and stitching together tool calls. Pydantic and Zod are not tooling conveniences — they are load-bearing infrastructure for the boundary between LLM output and program logic.
+
+TypeScript is the cleanest cross-dimension winner: AO=5, AI-sys=4.5, SO=5.0, weighted 4.38 — the only language scoring at or near the top on all three of the agent-relevant axes simultaneously.
+
+## Counter-positions
+
+The strongest counter is that gradual typing closes much of the dynamic-language gap without requiring a fully static type system: TypeScript's structural typing layered over JavaScript [typescript-001], Python's sustained typing-PEP cadence [python-016] and PEP 484 hints [python-003], and Pydantic's runtime validation [python-008] all give agents enough signal to operate effectively. The counter holds for the bridge between dynamic and gradually-typed languages, but does not invalidate the thesis: gradual typing matters because it feeds the same LSP/analyzer pipeline that drives operability in static languages. The point is the toolchain plumbing, not where the types originate.
+
+A second counter for the v0.3 swap: the structured-output dimension is weighted at only 10% and the gap between Python (4.25) and Go (4.17) is small. A team that values long-run runtime efficiency, deployment simplicity, and the absence of GIL contention may rationally prefer Go for AI-orchestration services even if Python wins the weighted score. The framework treats the swap as a narrative shift, not a determinative one — Go still ranks third, ahead of .NET, Rust, and Kotlin.
+
+## Implications
+
+For greenfield AI-era language choice:
+
+- For **backend services**, default to Go. Operability + runtime simplicity + deployment cleanliness still wins.
+- For **AI-application work** (LLM-calling apps, agent frameworks, RAG pipelines, prompt-engineered services), default to TypeScript or Python. TypeScript when the front-end and back-end share a runtime; Python when the data-science / ML ecosystem is the binding constraint.
+- For **systems and security-critical code**, Rust's verification advantage outweighs its operability cost.
+- The agentic lens favors toolchain unification at the operability axis, but the v0.3 framing shows that operability alone is necessary, not sufficient, when the agent's domain is AI itself.
+
+## Reading
+
+- `comparisons/agent-friendly-languages.md` — per-language operability deep dive
+- `comparisons/lens-analysis.md` — agentic lens placed alongside verification, safety, and abstraction
+- `comparisons/overview.md` — v0.3 weighted-score matrix
+- `framework/dimensions.md` — AI-agent operability and structured_output_maturity criteria
+- `claims/go.yaml`, `claims/typescript.yaml`, `claims/python.yaml` — source claims for the v0.3 swap
+
+## Verified under v0.3 (2026-04-30)
+
+Re-passed against 10-language cohort, 7-dimension framework, half-point scoring. Python/Go swap incorporated. References to dropped languages (Haskell, Julia, Mojo, Zig) removed.

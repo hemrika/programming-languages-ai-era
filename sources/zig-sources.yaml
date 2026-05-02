@@ -1,0 +1,88 @@
+language: Zig
+description: >
+  Source registry for atomic claims in claims/zig.yaml. Each entry resolves a
+  zig-src-NNN identifier referenced by an atomic claim's `source` field to a
+  primary source: the Zig Language Reference, Zig release notes, or Zig
+  Software Foundation announcements. Per the methodology in
+  outputs/evidence-backed-research-execution-plan.md.
+
+sources:
+  - id: zig-src-001
+    title: Zig Language Reference (master)
+    publisher: Zig Software Foundation
+    type: language_specification
+    url: https://ziglang.org/documentation/master/
+    notes: Reference documentation for the Zig language, currently pre-1.0.
+
+  - id: zig-src-002
+    title: Zig Language Reference - Why Zig When There Is Already C++, D, and Rust?
+    publisher: Zig Software Foundation
+    type: language_specification
+    url: https://ziglang.org/learn/why_zig_rust_d_cpp/
+    notes: Documents Zig's design principles including no hidden control flow and explicit allocators.
+
+  - id: zig-src-003
+    title: Zig 0.11.0 Release Notes
+    publisher: Zig Software Foundation
+    type: official_documentation
+    year: 2023
+    url: https://ziglang.org/download/0.11.0/release-notes.html
+    notes: Documents changes shipped in Zig 0.11.0, including self-hosted compiler progress.
+
+  - id: zig-src-004
+    title: Zig 0.12.0 Release Notes
+    publisher: Zig Software Foundation
+    type: official_documentation
+    year: 2024
+    url: https://ziglang.org/download/0.12.0/release-notes.html
+    notes: Documents changes shipped in Zig 0.12.0, including the new build system and package manager work.
+
+  - id: zig-src-005
+    title: Zig 0.13.0 Release Notes
+    publisher: Zig Software Foundation
+    type: official_documentation
+    year: 2024
+    url: https://ziglang.org/download/0.13.0/release-notes.html
+    notes: Documents changes shipped in Zig 0.13.0.
+
+  - id: zig-src-006
+    title: Zig Language Reference - comptime
+    publisher: Zig Software Foundation
+    type: language_specification
+    url: https://ziglang.org/documentation/master/#comptime
+    notes: Documents Zig's compile-time evaluation feature comptime, used as a unifying metaprogramming mechanism.
+
+  - id: zig-src-007
+    title: Zig Language Reference - C interop
+    publisher: Zig Software Foundation
+    type: language_specification
+    url: https://ziglang.org/documentation/master/#C
+    notes: Documents Zig's first-class C interop, including @cImport and ABI compatibility.
+
+  - id: zig-src-008
+    title: Zig Language Reference - Cross-compiling
+    publisher: Zig Software Foundation
+    type: language_specification
+    url: https://ziglang.org/learn/overview/#cross-compiling-is-a-first-class-use-case
+    notes: Documents Zig's first-class cross-compilation support as a design priority.
+
+  - id: zig-src-009
+    title: Zig Language Reference - Allocators
+    publisher: Zig Software Foundation
+    type: language_specification
+    url: https://ziglang.org/documentation/master/#Choosing-an-Allocator
+    notes: Documents Zig's explicit allocator pattern requiring memory allocation to be passed explicitly.
+
+  - id: zig-src-010
+    title: Zig Software Foundation - About
+    publisher: Zig Software Foundation
+    type: official_governance_documentation
+    url: https://ziglang.org/zsf/
+    notes: Documents the non-profit foundation that stewards Zig's development.
+
+  - id: zig-src-011
+    title: Zig Roadmap and Release Notes Index
+    publisher: Zig Software Foundation
+    type: official_governance_documentation
+    url: https://ziglang.org/download/
+    notes: Aggregates Zig release notes documenting steady pre-1.0 evolution toward 1.0; complements the per-release notes already cited.

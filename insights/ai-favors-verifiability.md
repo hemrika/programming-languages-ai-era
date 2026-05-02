@@ -24,4 +24,10 @@ For greenfield AI-era language choice, languages should be evaluated on verifica
 
 ## Reading
 
-- `comparisons/lens-analysis.md` — 
+- `comparisons/lens-analysis.md` — the verification-advantage lens
+- `comparisons/dynamic-vs-static.md` — the gradual-typing bridge
+- `framework/dimensions.md` — machine-cognition and structured_output_maturity criteria
+
+## Verified under v0.3 (2026-04-30)
+
+Re-passed against 10-language cohort, 7-dimension framework, half-point scoring. References to dropped languages (Haskell, Julia, Mojo) removed. Structured-output dimension added as a third verification axis.

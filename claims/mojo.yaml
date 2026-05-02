@@ -1,0 +1,180 @@
+language: Mojo
+status: draft
+updated: 2026-04-30
+verification_status: web_verified_initial_pass
+
+claims:
+  - id: mojo-001
+    claim: Mojo is designed as a programming language for AI development with stated goals of Python compatibility.
+    dimension: strategic_viability
+    criterion: future_fit
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: mojo-src-001
+    notes: The Mojo Manual introduction frames Mojo as an AI-native language with Python compatibility goals.
+
+  - id: mojo-002
+    claim: Mojo is built on the MLIR compiler infrastructure to target heterogeneous hardware including CPUs, GPUs, and accelerators.
+    dimension: runtime_ecosystem
+    criterion: performance_ceiling
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: mojo-src-002
+    notes: The Why Mojo page documents MLIR-based compilation as a foundational design choice.
+
+  - id: mojo-003
+    claim: MLIR is a multi-level intermediate representation framework introduced to support domain-specific compiler construction.
+    dimension: machine_cognition
+    criterion: formal_reasoning_potential
+    evidence_type: academic_paper
+    confidence: high
+    polarity: positive
+    source: mojo-src-007
+    notes: The CGO 2021 MLIR paper defines MLIR's multi-level IR architecture.
+
+  - id: mojo-004
+    claim: Mojo supports compile-time parameters used for generic programming and metaprogramming.
+    dimension: machine_cognition
+    criterion: type_system_strength
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: mojo-src-005
+    notes: The Mojo parameters chapter documents parameterized types and functions evaluated at compile time.
+
+  - id: mojo-005
+    claim: Mojo defines argument conventions and ownership-based memory management with explicit borrowed and owned argument forms.
+    dimension: runtime_ecosystem
+    criterion: security_posture
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: mojo-src-004
+    notes: The Ownership chapter documents the borrowed, inout, and owned argument conventions.
+
+  - id: mojo-006
+    claim: Mojo provides interoperability with the CPython ecosystem so Python libraries can be called from Mojo programs.
+    dimension: runtime_ecosystem
+    criterion: interop
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: mojo-src-009
+    notes: The Python integration chapter documents calling CPython modules from Mojo.
+
+  - id: mojo-007
+    claim: Modular's MAX engine compiles machine-learning graphs through MLIR for inference and serving.
+    dimension: runtime_ecosystem
+    criterion: performance_ceiling
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: mojo-src-006
+    notes: The MAX documentation describes the MLIR-based compilation pipeline for ML inference.
+
+  - id: mojo-008
+    claim: Mojo is governed by a single primary vendor, Modular, raising single-vendor concentration risk.
+    dimension: strategic_viability
+    criterion: governance_quality
+    evidence_type: official_governance_documentation
+    confidence: high
+    polarity: negative
+    source: mojo-src-008
+    notes: The Modular blog announces standard-library open-sourcing while Modular remains the sole governing entity.
+    counters: [mojo-001, mojo-007, mojo-009, mojo-015]
+
+  - id: mojo-009
+    claim: Modular open-sourced the Mojo standard library while retaining the compiler under proprietary terms.
+    dimension: strategic_viability
+    criterion: institutional_support
+    evidence_type: official_governance_documentation
+    confidence: high
+    polarity: positive
+    source: mojo-src-008
+    notes: The blog post announces standard-library open-sourcing as a step toward broader openness.
+
+  - id: mojo-010
+    claim: Mojo is pre-1.0 and the official documentation maintains a roadmap describing known limitations and missing features.
+    dimension: strategic_viability
+    criterion: backward_compatibility
+    evidence_type: official_documentation
+    confidence: high
+    polarity: negative
+    source: mojo-src-010
+    notes: The Mojo roadmap and sharp edges page documents pre-1.0 instability and unfinished features.
+    counters: [mojo-001, mojo-015]
+
+  - id: mojo-011
+    claim: The Mojo language tour walks through value semantics and parameterized types as core constructs.
+    dimension: human_cognition
+    criterion: conceptual_economy
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: mojo-src-003
+    notes: The basics tour documents Mojo's value-semantics-by-default model.
+
+  - id: mojo-012
+    claim: Mojo is too new and small for substantial AI-training-data representation in pre-existing model corpora.
+    dimension: ai_agent_operability
+    criterion: code_generation_robustness
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: mojo-src-001
+    notes: The Mojo Manual's recent introduction implies a small training-data footprint relative to incumbent languages.
+    counters: [mojo-001]
+
+  - id: mojo-013
+    claim: Mojo's MLIR-based compilation pipeline targets heterogeneous hardware with explicit GPU primitives, supporting portable kernels across NVIDIA, AMD, and other accelerator backends through Modular's MAX engine.
+    dimension: runtime_ecosystem
+    criterion: ecosystem_viability
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: mojo-src-011
+    notes: The Mojo GPU programming documentation describes hardware-portable kernels and MAX-engine integration; under greenfield framing, accelerator-portability is a forward production-relevance property.
+
+  - id: mojo-014
+    claim: Mojo combines compile-time parameters with explicit ownership conventions, giving the language an unusual greenfield posture for compile-time proof and static-analysis tooling on AI kernels.
+    dimension: machine_cognition
+    criterion: formal_reasoning_potential
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: mojo-src-005
+    notes: The combination of parameter-driven metaprogramming and ownership semantics is documented in the Mojo Manual; treated as a forward verification-velocity signal under greenfield framing.
+
+  - id: mojo-015
+    claim: Modular ships frequent Mojo and MAX releases with a public changelog documenting language and toolchain evolution at a fast cadence.
+    dimension: strategic_viability
+    criterion: ecosystem_velocity
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: positive
+    source: mojo-src-012
+    notes: The Mojo changelog documents the rate of language and standard-library changes; reframed under greenfield framing as forward ecosystem velocity, balanced against pre-1.0 stability concerns recorded in mojo-010.
+
+  - id: mojo-016
+    claim: Mojo's MLIR-targeted hardware portability depends on Modular's MAX engine and proprietary compiler components; vendor concentration limits portability assurances under greenfield framing where alternative MLIR-targeting compilers cannot fully substitute.
+    dimension: runtime_ecosystem
+    criterion: ecosystem_viability
+    evidence_type: official_documentation
+    confidence: high
+    polarity: negative
+    source: mojo-src-008
+    notes: Modular's open-sourcing announcement covers the standard library while the compiler and MAX engine remain proprietary; portability claims are conditional on Modular continuing to ship and support backends.
+    counters: [mojo-002, mojo-007, mojo-013]
+
+  - id: mojo-017
+    claim: "Mojo's Python compatibility is partial: many CPython idioms (dynamic class manipulation, metaclasses, monkey patching) interact with Mojo's compile-time and ownership model in ways the documentation flags as still-evolving, undermining the drop-in Python-superset framing for greenfield projects."
+    dimension: runtime_ecosystem
+    criterion: interop
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: mojo-src-010
+    notes: The Mojo roadmap and sharp-edges document enumerates current Python compatibility gaps; some Python features are not yet implemented or behave differently, so cross-language code reuse is not seamless today.
+    counters: [mojo-001, mojo-006]

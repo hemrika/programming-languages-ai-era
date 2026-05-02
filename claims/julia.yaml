@@ -1,0 +1,170 @@
+language: Julia
+status: draft
+updated: 2026-04-30
+verification_status: web_verified_initial_pass
+
+claims:
+  - id: julia-001
+    claim: Julia is designed as a high-level, high-performance dynamic language for technical computing.
+    dimension: runtime_ecosystem
+    criterion: performance_ceiling
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: julia-src-001
+    notes: The Julia introduction frames the language's design goal of bridging high-level expressiveness and performance.
+
+  - id: julia-002
+    claim: Julia uses multiple dispatch as the central abstraction for selecting method implementations based on the runtime types of all arguments.
+    dimension: human_cognition
+    criterion: expressiveness
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: julia-src-002
+    notes: The Methods chapter documents multiple dispatch on argument types.
+
+  - id: julia-003
+    claim: The Julia foundational paper describes multiple dispatch combined with type inference as enabling generic library composition with high-performance specialized code.
+    dimension: runtime_ecosystem
+    criterion: library_maturity
+    evidence_type: academic_paper
+    confidence: high
+    polarity: positive
+    source: julia-src-003
+    notes: The 2017 SIAM Review paper articulates the Julia design rationale and its consequences for ecosystem composition.
+
+  - id: julia-004
+    claim: Julia 1.9 introduced native code caching that reduces time-to-first-execution for many packages.
+    dimension: ai_agent_operability
+    criterion: fast_feedback_loops
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: julia-src-004
+    notes: The Julia 1.9 highlights blog explicitly documents native code caching and TTFX improvements.
+
+  - id: julia-005
+    claim: Julia 1.10 shipped a Julia-based parser rewrite and additional performance improvements.
+    dimension: runtime_ecosystem
+    criterion: tooling_maturity
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: julia-src-005
+    notes: The Julia 1.10 highlights blog documents the parser rewrite and other improvements.
+
+  - id: julia-006
+    claim: Julia's standard performance guidance emphasizes writing type-stable functions whose return types depend only on argument types.
+    dimension: machine_cognition
+    criterion: static_analyzability
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: julia-src-006
+    notes: The performance tips chapter documents type stability as a central idiom for optimization.
+
+  - id: julia-007
+    claim: Julia is dynamically typed at the language level, with optional type annotations consumed by inference.
+    dimension: machine_cognition
+    criterion: type_system_strength
+    evidence_type: official_documentation
+    confidence: high
+    polarity: negative
+    source: julia-src-007
+    notes: The Types chapter documents that Julia is dynamic and that annotations are optional.
+    counters: [julia-006, julia-013]
+
+  - id: julia-008
+    claim: Julia ships a built-in package manager Pkg with project-based environments and reproducible manifests.
+    dimension: ai_agent_operability
+    criterion: dependency_clarity
+    evidence_type: official_tooling_documentation
+    confidence: high
+    polarity: positive
+    source: julia-src-008
+    notes: The Pkg documentation describes project files, manifest files, and environment activation.
+
+  - id: julia-009
+    claim: Julia supports first-class foreign function interface calls to C and Fortran libraries.
+    dimension: runtime_ecosystem
+    criterion: interop
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: julia-src-009
+    notes: The Calling C and Fortran Code chapter documents direct ccall semantics for native library interop.
+
+  - id: julia-010
+    claim: Julia provides task-based multi-threading for shared-memory parallelism.
+    dimension: runtime_ecosystem
+    criterion: concurrency_model
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: julia-src-010
+    notes: The Multi-threading chapter documents Julia's task-parallel model.
+
+  - id: julia-011
+    claim: Julia historically suffered noticeable time-to-first-execution latency from its just-in-time compilation pipeline.
+    dimension: ai_agent_operability
+    criterion: fast_feedback_loops
+    evidence_type: official_documentation
+    confidence: high
+    polarity: negative
+    source: julia-src-004
+    notes: The Julia 1.9 highlights post explicitly motivates native code caching as a remedy to TTFX latency.
+    counters: [julia-004]
+
+  - id: julia-012
+    claim: Julia's central numerical-computing focus narrows its general-purpose future fit relative to broader-domain languages such as Python.
+    dimension: strategic_viability
+    criterion: future_fit
+    evidence_type: academic_paper
+    confidence: medium
+    polarity: negative
+    source: julia-src-003
+    notes: The SIAM Review paper foregrounds technical computing as Julia's primary domain; reframed under greenfield framing as a constraint on future general-purpose fit rather than an installed-base claim.
+    counters: [julia-001, julia-003]
+
+  - id: julia-013
+    claim: Julia treats type annotations as inputs to its inference and dispatch system rather than as enforcement boundaries.
+    dimension: machine_cognition
+    criterion: semantic_clarity
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: julia-src-007
+    notes: The Types chapter describes annotations as optional inputs to dispatch and inference.
+
+  - id: julia-014
+    claim: Julia's accelerator ecosystem - CUDA.jl, AMDGPU.jl, Metal.jl, and oneAPI.jl - provides first-class GPU backends maintained under the JuliaGPU organization, supporting portable kernel programming in greenfield numerical and ML projects.
+    dimension: runtime_ecosystem
+    criterion: ecosystem_viability
+    evidence_type: official_documentation
+    confidence: high
+    polarity: positive
+    source: julia-src-011
+    notes: The JuliaGPU site documents CUDA.jl, AMDGPU.jl, Metal.jl, and oneAPI.jl as first-class accelerator backends.
+
+  - id: julia-015
+    claim: Julia's multiple-dispatch composition can produce method ambiguity errors and unexpected dispatch through package interactions; debugging tools (such as Test.detect_ambiguities and method tables) lag the language complexity, raising operability cost in package-heavy graphs.
+    dimension: human_cognition
+    criterion: local_reasoning
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: julia-src-002
+    notes: The Julia Manual chapter on Methods documents method ambiguity warnings and dispatch resolution; cross-package method definitions can produce surprising dispatch behavior that requires manual ambiguity detection.
+    counters: [julia-002, julia-003]
+
+  - id: julia-016
+    claim: Julia's type-stability discipline must be hand-maintained because the language permits methods that return different concrete types depending on argument values; performance regressions from accidental type instability are not reported by the compiler as errors.
+    dimension: machine_cognition
+    criterion: static_analyzability
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: julia-src-006
+    notes: The Julia Performance Tips chapter recommends @code_warntype and @inferred for type-stability checking; the language does not statically reject type-unstable code, so performance correctness depends on disciplined profiling.
+    counters: [julia-006, julia-013]

@@ -333,4 +333,166 @@ The 4 insight files in `insights/`:
 
 ### v0.3 review note
 
-Under v0.3 framing, **every insight should be re-checked when ranking changes.** The most rece
+Under v0.3 framing, **every insight should be re-checked when ranking changes.** The most recent reshuffle (Python +1 over Go on structured-output) required updating `agentic-feedback-loops.md` because the prior narrative emphasized Go's tooling lead as the agent-friendly default. The other three insights held structurally and were marked "Verified under v0.3."
+
+### Exit criteria
+
+- Every insight has traceability.
+- Every prediction has explicit uncertainty.
+- Every major thesis has counterclaims.
+- After every ranking change, each insight is re-checked and either updated or marked "Verified under v0.3" at the bottom.
+
+## Phase 7 — Review and challenge
+
+### Goal
+
+Reduce bias, unsupported reasoning, and premature conclusions.
+
+### Review checklist (v0.3)
+
+- Are sources current enough?
+- Are official claims overtrusted?
+- Are ecosystem claims separated from language-design claims?
+- Are AI-era assumptions explicit?
+- Are dynamic-language advantages fairly represented?
+- **Are legacy advantages improperly credited?** (inverted from prior "Are legacy-language advantages fairly represented?" to reflect the greenfield-framing constraint)
+- Are safety claims scoped correctly?
+- Are scores comparable across languages?
+
+The formal v0.3 walk of this checklist lives in `outputs/v0.3-review-pass.md`.
+
+### Tasks
+
+- Walk the checklist against current scores.
+- Stress-test top-ranked languages.
+- Add counterclaims where positive claims lack qualification.
+- Lower confidence where evidence is weak.
+- Mark unresolved claims clearly.
+
+### Exit criteria
+
+- No final conclusion depends only on speculative reasoning.
+- No language is evaluated only by strengths or only by weaknesses.
+- Every major conclusion has passed one explicit challenge pass.
+
+## Phase 8 — Final outputs
+
+### Goal
+
+Produce usable outputs from the research base.
+
+### Current outputs
+
+- `outputs/report.md` — full evidence-backed report.
+- `outputs/report-story.md` — story-driven sibling of the report (Stories That Explain + Man In A Hole).
+- `outputs/deck-outline.md` — slide outline for presentation.
+- `outputs/programming-languages-ai-era.pptx` — generated deck (re-upload pending FUSE issue).
+- `outputs/evidence-backed-research-execution-plan.md` — this document.
+- `outputs/confidence-heatmap.md` — language × dimension confidence grid (new in v0.3).
+- `outputs/v0.3-review-pass.md` — formal Phase 7 review against current scores (new in v0.3).
+
+### v0.3 backlog (deferred deliverables)
+
+- Executive summary — short-form derivative of `report.md`.
+- Decision memo — opinionated recommendation by domain.
+- Research backlog — open-question and counterclaim-gap list.
+
+These are not currently real deliverables; they are listed here as v0.3 backlog so future passes can either produce them or formally drop them.
+
+### Tasks
+
+- Keep `outputs/report.md` and `outputs/deck-outline.md` synchronized when scores shift.
+- Re-upload `programming-languages-ai-era.pptx` when FUSE workspace permits.
+- Generate `confidence-heatmap.md` from current evaluations after every score change.
+- Run a fresh v0.3 review pass after major ranking changes.
+
+### Exit criteria
+
+- Every report claim links back to an insight, evaluation, claim, or source.
+- Limitations are explicit.
+- Scores and confidence levels are visible.
+
+## Cadence
+
+Research now runs in **dimension-wide passes** rather than per-language batches. The 10-language cohort is small enough, and the dimension count high enough, that scoring one dimension across all 10 languages in a single pass produces more comparable results than going language-by-language. (The prior per-language order list was retired with the move to v0.3.)
+
+A typical pass:
+
+1. Read or refresh sources for the dimension being scored.
+2. Update or add claims in `claims/<lang>.yaml` for each cohort language.
+3. Update the dimension's cell in each `evaluations/<lang>.yaml`.
+4. Run `validate_evaluations.py` and `score_summary.py`.
+5. Update `comparisons/overview.md` matrix.
+6. Re-check insight files; update or mark "Verified under v0.3."
+7. Refresh `report.md`, `deck-outline.md`, `confidence-heatmap.md`.
+
+## GitHub workflow
+
+### Branches
+
+Use short-lived branches:
+
+```text
+research/<lang>-sources
+research/<lang>-claims
+research/<dimension>-pass
+comparison/<topic>
+insight/<topic>
+```
+
+### Pull requests
+
+Use pull requests for reviewable changes:
+
+- source additions
+- claim additions (including counters: links)
+- score changes
+- comparison updates
+- insight promotion or re-check
+
+### Labels
+
+```text
+evaluation
+language
+source
+claim
+counterclaim
+comparison
+insight
+needs-evidence
+review
+v0.3
+final
+```
+
+## Definition of done
+
+A language evaluation is done when:
+
+- evaluation YAML exists with all 7 dimensions scored
+- at least 20 atomic claims exist
+- every dimension has at least 2 supporting claims
+- every high-confidence positive claim has a `counters:` link from a counterclaim where one exists in evidence
+- the per-language source registry `sources/<lang>-sources.yaml` is populated
+- `validate_evaluations.py` passes for that language
+- comparison notes reference at least one of the language's claims
+
+A project conclusion is done when:
+
+- it is stated as an insight
+- supporting evaluations are listed
+- supporting claims are listed
+- sources are traceable
+- counterclaims are listed (and reach the positive claim via `counters:`)
+- confidence is assigned
+- limitations are explicit
+
+## Immediate next actions
+
+1. **Re-upload `outputs/programming-languages-ai-era.pptx`** once the FUSE-mount issue is resolved (the deck currently lags the v0.3 outline).
+2. **Refresh `outputs/deck-outline.md`** to reflect the 7-dimension framework, current 10-language ranking, the Python/Go swap as a story beat, and the structured-output dimension as a load-bearing concept.
+3. **Generate `outputs/confidence-heatmap.md`** via `scripts/confidence_heatmap.py` and commit both.
+4. **Walk the Phase 7 review checklist** (greenfield-inverted) and capture results in `outputs/v0.3-review-pass.md`. Any score adjustments surfaced are documented but not made in the same commit.
+5. **Re-pass the four insight files** for the Python/Go swap and 7-dimension framework; update `agentic-feedback-loops.md` substantively, mark the others "Verified under v0.3" if they hold structurally.
+6. **Add a "Track coverage" section** to `comparisons/overview.md` mapping the original 8 plan tracks to current artifacts.

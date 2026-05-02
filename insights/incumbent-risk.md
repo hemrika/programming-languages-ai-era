@@ -24,4 +24,8 @@ For greenfield AI-era language choice, incumbent gravity should not drive select
 
 - `comparisons/overview.md` - matrix and headline findings on greenfield reshuffling
 - `comparisons/lens-analysis.md` - safety pressure and verification advantage lenses
-- `claims/cpp.yaml`, `claims/java.yaml`, `claims/python.yaml` - source cl
+- `claims/cpp.yaml`, `claims/java.yaml`, `claims/python.yaml` - source claims
+
+## Verified under v0.3 (2026-04-30)
+
+Re-passed against 10-language cohort, 7-dimension framework, half-point scoring. Python's v0.3 standing is more nuanced than the original "boundary" framing — Pydantic-led structured-output dominance (SO=5.0) and AI-systems interoperability lead (5.0) lift Python to #2 weighted (4.25), so the incumbent-risk thesis on Python should be read as: Python's *greenfield case is strong for AI-application work* despite verification weakness; the boundary status applies to non-AI domains where verification gaps would be more visible. C++ weighted total updated 2.65 → 2.60.

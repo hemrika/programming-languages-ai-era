@@ -30,4 +30,4 @@ For greenfield AI-era language choice, memory safety is no longer optional in re
 
 ## Verified under v0.3 (2026-04-30)
 
-Re-passed aga
+Re-passed against 10-language cohort, 7-dimension framework, half-point scoring. References to dropped Haskell removed. C++ weighted total updated from 2.65 to 2.60 to reflect 7-dim recalc. Thesis and evidence pillars unchanged — the regulatory pressure does not depend on which dimensions are in the framework.

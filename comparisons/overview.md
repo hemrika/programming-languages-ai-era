@@ -69,4 +69,20 @@ Three clusters emerge.
 
 5. **Verification advantage does not automatically translate to overall ranking.** Rust (MC=5) leads on machine cognition but trails the top tier because its agent-framework and structured-output layers are younger than Python or TypeScript. The framework's weighting reflects that verification, operability, AI-systems integration, and structured-output maturity must all be present for top-tier AI-era position.
 
-6. **The dynamic-static gap is narrowing where gradual typing and runtime validation co-exist.** TypeScript and Python both reach SO=5.0 because Zod and Pydantic combine schema-as
+6. **The dynamic-static gap is narrowing where gradual typing and runtime validation co-exist.** TypeScript and Python both reach SO=5.0 because Zod and Pydantic combine schema-as-code with type inference (TypeScript) or runtime validation (Python). The boundary between LLM output and program logic is now defended at runtime even where the host type system is dynamic.
+
+## How to use this document
+
+For the reasoning behind any cell:
+
+- Per-language detail: `claims/<language>.yaml` and `evaluations/<language>.yaml`.
+- Dimension definitions and weights: `framework/evaluation-framework.md` and `framework/dimensions.md`.
+- Cross-cutting reads: `lens-analysis.md` (four lenses) and `agent-friendly-languages.md` (operability deep dive).
+- Dynamic vs static comparison: `dynamic-vs-static.md`.
+
+## Limitations
+
+- v0.3 scores are author-judgment grounded in claims, not a calibrated multi-rater process.
+- Weights are working assumptions. A reasonable reader could reweight runtime/ecosystem higher (favoring Python and the JVM languages) or AI-agent operability higher (favoring Go and TypeScript). The matrix is robust to small weight perturbations but not to large ones.
+- Greenfield framing is itself a deliberate choice. Teams whose primary task is *maintaining* large incumbent estates should re-weight: legacy gravity reappears as an advantage in that question, and the matrix above will under-credit Java, Python, and C++ for that purpose.
+- The AI-systems interoperability and Structured-output maturity dimensions are recent additions; the underlying ecosystems are evolving rapidly. Expect scores on both axes to shift as MCP adoption broadens, additional first-party SDKs land, and constrained-generation tooling matures.
