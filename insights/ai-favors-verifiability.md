@@ -31,3 +31,10 @@ For greenfield AI-era language choice, languages should be evaluated on verifica
 ## Verified under v0.3 (2026-04-30)
 
 Re-passed against 10-language cohort, 7-dimension framework, half-point scoring. References to dropped languages (Haskell, Julia, Mojo) removed. Structured-output dimension added as a third verification axis.
+
+
+## Verified under v0.4 (2026-05-02)
+
+Re-passed against 10-language cohort, 10-dimension framework. The verification-advantage thesis holds. Under v0.4 the structured-output dimension splits into native (5%) and ecosystem (5%), exposing a sharper distinction: **native** structured-output capability (closed-hierarchy reasoning at the language level, type-system protection on the LLM-output boundary) is what does the verification work, while **ecosystem** capability (Pydantic, Zod, Instructor, Outlines) provides runtime validation that catches errors but does not prevent them at compile time. Languages with strong native structured-output (.NET SON=4.0, Kotlin SON=3.5, Java SON=3.0, Swift SON=3.5) extend the within-program verification surface across the LLM interface. Languages whose structured-output position rests on ecosystem libraries alone (Python SON=2.5, TypeScript SON=2.5, Rust SON=2.0, Go SON=3.0) defend the boundary at runtime but not at compile time.
+
+The new ecosystem-dependency-risk axis (5%) introduces a fourth verification-adjacent property: **dependency resilience**. A verification gain delivered by a single-maintainer library (Python's Instructor, TypeScript's Zod, C++'s nlohmann/json) is structurally fragile in a way that a verification gain delivered by a language-steward-shipped facility (kotlinx-serialization, System.Text.Json, encoding/json) is not. EDR records this directly: .NET 4.5, Java 4.0, Kotlin 4.0 anchor the top of this axis; Python 2.5 and TypeScript 3.0 sit lower because their load-bearing verification dependencies are community or single-maintainer. The verification trajectory is still toward more verification — but v0.4 shows that verification-via-ecosystem and verification-via-language-steward are not interchangeable forms of forward-fitness.

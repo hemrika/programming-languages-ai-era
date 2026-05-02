@@ -51,3 +51,15 @@ For greenfield AI-era language choice:
 ## Verified under v0.3 (2026-04-30)
 
 Re-passed against 10-language cohort, 7-dimension framework, half-point scoring. Python/Go swap incorporated. References to dropped languages (Haskell, Julia, Mojo, Zig) removed.
+
+
+## Verified under v0.4 (2026-05-02)
+
+Re-passed against 10-language cohort, 10-dimension framework. Under v0.4 the agent-friendliness story holds at the operability axis (Go and TypeScript both AO=5) but the cross-dimension picture has shifted again. v0.3 had Python (4.25) overtaking Go (4.17) by 0.08 points on the strength of structured-output maturity at full 10% weight; v0.4 splits structured-output into native (5%) and ecosystem (5%) and adds an ecosystem-dependency-risk axis at 5%, funded by reducing runtime/ecosystem from 15% to 10%. Mechanically, this disadvantages languages whose AI position rests entirely on community-multi-maintainer + single-maintainer + small-commercial libraries. Python's AIE=5 / SOE=5 are still tier-leading; AIN=1.5 (PSF ships no AI packages) and EDR=2.5 (Pydantic community-multi, Instructor single-maintainer, Outlines small-commercial) drag the weighted total down to 3.74. **Go (4.04) takes the top slot** and **Python falls from #2 to #6**.
+
+The "agent-friendly default for end-to-end AI-application work" continues to split:
+
+- **Backend-service agent-friendly**: Go remains best-in-class. Single canonical toolchain, fast compilation, runtime simplicity, deployment cleanliness. EDR=3.5 anchored by Google language stewardship plus Anthropic and OpenAI commercial-first-party Go SDKs.
+- **AI-application agent-friendly**: TypeScript (4.01) is now nearly tied with Go for the top spot — AO=5 plus AIE=5 and SOE=5 remain the cleanest cross-dimension AI-application profile. Python (3.74) drops because its v0.3 score did not separate ecosystem capability from native capability or score dependency-risk; the v0.4 split exposes the structural exposure that earlier versions absorbed.
+
+The implication for AI-application work specifically: TypeScript is the single best joint operability + AI-systems-ecosystem profile. Python remains the deepest AI-systems ecosystem but carries higher dependency-risk than its rank-2-in-v0.3 position suggested. .NET (3.96) is now the clearest vendor-anchored AI-application choice — Microsoft Semantic Kernel + Microsoft.Extensions.AI + ONNX Runtime .NET at AIN=4.0 + EDR=4.5 (highest in cohort) gives it a unique resilience profile that matters for teams whose risk model values vendor-backed stewardship over ecosystem breadth.

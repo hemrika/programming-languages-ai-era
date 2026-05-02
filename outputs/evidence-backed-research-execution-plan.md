@@ -1,6 +1,16 @@
 ## Version
 
-v0.3 (2026-04-30) — current. Prior versions (v0.1 5-dimension, v0.2 6-dimension) are visible in git history.
+v0.4 (2026-05-02) — current. Prior versions (v0.1 5-dimension, v0.2 6-dimension, v0.3 7-dimension) are visible in git history.
+
+## v0.3 → v0.4 changelog
+
+v0.3 conflated language-native AI capability with ecosystem-package AI capability and applied inclusion rules asymmetrically (Pydantic credited to Python's structured-output score; Newtonsoft.Json was omitted from .NET's). v0.4 splits the two AI-era dimensions into native + ecosystem halves and introduces an ecosystem-dependency-risk axis:
+
+- `ai_systems_interoperability` (15%) → `ai_systems_native` (7.5%) + `ai_systems_ecosystem` (7.5%)
+- `structured_output_maturity` (10%) → `structured_output_native` (5%) + `structured_output_ecosystem` (5%)
+- New: `ecosystem_dependency_risk` (5%) — funded by reducing `runtime_ecosystem` from 15% to 10%
+
+Combined AI-systems weight (15%) and combined structured-output weight (10%) are unchanged from v0.3. Every claim about a specific library now carries a `backer:` field. The native/ecosystem split is documented in `framework/dimensions.md`. The ranking shift is substantial: Go (4.04) takes the top slot, Python falls from #2 to #6 (3.74), .NET climbs to #3 (3.96).
 
 # Evidence-Backed Research Execution Plan
 
@@ -64,17 +74,20 @@ Cohort languages (10):
 
 The cohort was reduced from 13 to 10 by dropping Mojo and Zig (pre-1.0), Julia (narrowly numerical), and Haskell (a verification reference rather than a default). The remaining 10 cover the languages a greenfield team is actually deciding between.
 
-Evaluation dimensions (7) and current weights:
+Evaluation dimensions (10) and current weights:
 
 | Dimension | Weight |
 |---|---:|
 | Human cognition (HC) | 15% |
 | Machine cognition (MC) | 15% |
 | AI-agent operability (AO) | 20% |
-| Runtime and ecosystem (RE) | 15% |
+| Runtime and ecosystem (RE) | 10% |
 | Strategic viability (SV) | 10% |
-| AI-systems interoperability (AI-sys) | 15% |
-| Structured-output maturity (StructOut) | 10% |
+| AI-systems native (AIN) | 7.5% |
+| AI-systems ecosystem (AIE) | 7.5% |
+| Structured-output native (SON) | 5% |
+| Structured-output ecosystem (SOE) | 5% |
+| Ecosystem dependency risk (EDR) | 5% |
 
 Greenfield framing is an explicit constraint: forward-looking properties (governance, future fit, AI-training representation, ecosystem velocity, ecosystem viability for new projects) are credited; legacy installed base is not.
 
@@ -482,17 +495,4 @@ A project conclusion is done when:
 
 - it is stated as an insight
 - supporting evaluations are listed
-- supporting claims are listed
-- sources are traceable
-- counterclaims are listed (and reach the positive claim via `counters:`)
-- confidence is assigned
-- limitations are explicit
-
-## Immediate next actions
-
-1. **Re-upload `outputs/programming-languages-ai-era.pptx`** once the FUSE-mount issue is resolved (the deck currently lags the v0.3 outline).
-2. **Refresh `outputs/deck-outline.md`** to reflect the 7-dimension framework, current 10-language ranking, the Python/Go swap as a story beat, and the structured-output dimension as a load-bearing concept.
-3. **Generate `outputs/confidence-heatmap.md`** via `scripts/confidence_heatmap.py` and commit both.
-4. **Walk the Phase 7 review checklist** (greenfield-inverted) and capture results in `outputs/v0.3-review-pass.md`. Any score adjustments surfaced are documented but not made in the same commit.
-5. **Re-pass the four insight files** for the Python/Go swap and 7-dimension framework; update `agentic-feedback-loops.md` substantively, mark the others "Verified under v0.3" if they hold structurally.
-6. **Add a "Track coverage" section** to `comparisons/overview.md` mapping the original 8 plan tracks to current artifacts.
+- supporting c
