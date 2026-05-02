@@ -1,6 +1,6 @@
 # Evaluation Framework
 
-**Version: v0.5** (2026-05-02). v0.3 (2026-04-30) added structured-output maturity as a 7th dimension. v0.4 split the two AI-era dimensions into native + ecosystem halves and introduced an ecosystem-dependency-risk dimension. v0.5 adds an 11th dimension scoring forward trajectory — `reachability_to_top_tier` — and rebalances 5% from Strategic viability into the new dimension.
+**Version: v0.6 (schema-locked, 2026-05-02).** The schema is now stable; additions follow SemVer (v0.x for unreleased prep work, v0.6 for the first locked draft, v1.0 for calibrated and externally reviewed). v0.6 stamps `framework_version: v0.6` on every evaluation file, makes `source` mandatory on every claim, requires `backer` on positive claims that name a specific library (validator heuristic), and warns when a cell at score >= 4.0 lacks a same-dimension counterclaim. v0.5 (2026-05-02) added an 11th dimension scoring forward trajectory — `reachability_to_top_tier` — and rebalanced 5% from Strategic viability. v0.4 split the two AI-era dimensions into native + ecosystem halves and introduced ecosystem-dependency-risk. v0.3 (2026-04-30) added structured-output maturity as a 7th dimension.
 
 ## Objective
 

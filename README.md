@@ -2,7 +2,9 @@
 
 Research repository for evaluating programming languages against the demands of AI-assisted and AI-agentic software development.
 
-**Framework version:** v0.5 (2026-05-02). Snapshot below; see `framework/evaluation-framework.md` for the full version history.
+**Framework version:** v0.6 (schema-locked, 2026-05-02). Snapshot below; see `framework/evaluation-framework.md` for the full version history.
+
+**Status:** v0.6 schema-locked draft, anchored in ~390 atomic claims with primary-source citations and 173 counter-links. Pending Phase 2 (multi-rater calibration) and Phase 4 (external review) before v1.0. See `outputs/road-to-1.0.md` for the path.
 
 ## Core thesis
 
@@ -102,4 +104,5 @@ The validator checks: 11 dimensions present per language, half-point scores in `
 - `outputs/reachability-analysis.md` — per-language gap walk: what would close each below-5 cell, plausibility verdict
 - `outputs/confidence-heatmap.md` — per-cell rater confidence, regenerable
 - `outputs/v0.3-review-pass.md` — formal Phase-7 review pass against v0.3
-- `outputs/v0.5-review-pass.md` — formal Phase-7 review pass ag
+- `outputs/v0.5-review-pass.md` — formal Phase-7 review pass against v0.5
+- `outputs/road-to-1.0.md` — five-phase v1.0 ship plan with sandbox-executable vs user-action phases

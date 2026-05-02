@@ -230,6 +230,7 @@ claims:
   - id: rust-023
     claim: Tokio is the dominant async runtime for Rust, providing a production-grade work-stealing scheduler, IO reactor, and timer wheel for async/await code.
     dimension: runtime_ecosystem
+    backer: community_multi_maintainer
     criterion: concurrency_model
     evidence_type: official_documentation
     confidence: high

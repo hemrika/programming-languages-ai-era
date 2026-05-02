@@ -79,6 +79,7 @@ claims:
   - id: python-008
     claim: Pydantic provides runtime data validation for Python based on type hints.
     dimension: runtime_ecosystem
+    backer: community_multi_maintainer
     criterion: library_maturity
     evidence_type: official_tooling_documentation
     confidence: high
