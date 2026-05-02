@@ -115,7 +115,7 @@ The framework score on this dimension is one cell of the v0.5 matrix; this docum
 
 **Verdict:** Python's typing PEPs are lifting MC steadily, but PEP 484's runtime non-enforcement is the structural blocker — full top-tier MC requires either a sound static checker as a default tool (which the PSF has not committed to) or a runtime-enforced typing layer (which contradicts Python's gradual-typing philosophy). The EDR cell may improve as commercial vendors (Astral, Anthropic, OpenAI) absorb load-bearing responsibilities from single-maintainer projects. AIE and SOE are already at 5.0 — there's no further upside on those cells. AIN is steward-blocked and effectively bounded at 1.5–2.0 inside the planning horizon. Trajectory: positive but bounded by PSF non-investment in AI surface.
 
-### Swift (Reach = 3.0, weighted 3.40)
+### Swift (Reach = 3.0, weighted 3.42)
 
 **Below-5 cells:** HC=4 (1.0), MC=4 (1.0), AO=3 (2.0), RE=4 (1.0), SV=3 (2.0), AIN=4.0 (1.0), AIE=2.0 (3.0), SON=3.5 (1.5), SOE=2.0 (3.0), EDR=3.5 (1.5).
 

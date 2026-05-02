@@ -291,6 +291,7 @@ claims:
   - id: dotnet-028
     claim: C# nullable reference types and records combined with System.Text.Json source generation give .NET projects compile-time contract safety from LLM-output deserialization through application code.
     dimension: structured_output_native
+    backer: language_stewards
     criterion: compile_time_contract_safety
     evidence_type: official_documentation
     confidence: medium
@@ -466,3 +467,15 @@ claims:
     source: dotnet-src-020
     notes: "Microsoft.Extensions.AI release notes show the core abstractions stable from 9.0 onward, with adjacent packages (evaluation, vector data, agents) shipping under -preview tags; AIN strength rests on a mix of stable-core and preview-edge surface."
     counters: [dotnet-034]
+
+  - id: dotnet-044
+    claim: "MSBuild project-system ceremony adds local-reasoning load relative to the C# language alone; SDK-style csproj files and dotnet CLI templates reduced the ceremony but the MSBuild model (targets, properties, item groups, conditionals) remains a separate concept layer that onboarding paths must surface."
+    dimension: human_cognition
+    backer: language_stewards
+    criterion: cognitive_load
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: dotnet-src-031
+    notes: "Microsoft Learn documents MSBuild concepts as a distinct mental model from the C# language; the SDK-style migration helped but did not eliminate the cognitive surface."
+    counters: [dotnet-005]

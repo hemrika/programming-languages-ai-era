@@ -1,7 +1,7 @@
 language: Java
 status: draft
 updated: 2026-05-02
-framework_version: v0.4
+framework_version: v0.5
 
 scores:
   human_cognition:
@@ -58,14 +58,14 @@ scores:
     confidence: medium
     justification: >
       Java's records and sealed classes give compile-time closed-hierarchy reasoning over deserialized LLM output, with Bean Validation (Jakarta-stewarded) layered on top. The native surface is type-system-strong but lacks an in-box LLM tool-call typing library.
-    supporting_claims: [java-028]
+    supporting_claims: [java-040]
 
   structured_output_ecosystem:
     score: 3.5
     confidence: medium
     justification: >
       Jackson is the de-facto JVM JSON library with broad ecosystem support, Bean Validation reference implementation Hibernate Validator is Red-Hat-backed, LangChain4j AI Services bind Java interfaces to LLM tool calls, and mbknor-jackson-jsonSchema covers JSON Schema generation.
-    supporting_claims: [java-024, java-025, java-026, java-027]
+    supporting_claims: [java-024, java-025, java-026, java-027, java-028]
 
   ecosystem_dependency_risk:
     score: 4.0

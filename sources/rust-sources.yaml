@@ -241,3 +241,10 @@ sources:
     type: official_documentation
     url: https://www.rust-lang.org/governance
     notes: "Rust governance documents the Rust project structure; no AI-specific working group ships first-party AI crates."
+
+  - id: rust-src-034
+    title: "Rust Foundation 2023 Trademark Policy and Leadership Transitions"
+    publisher: "Rust Foundation"
+    type: official_documentation
+    url: https://foundation.rust-lang.org/news/
+    notes: "Rust Foundation news archive documents the 2023 trademark-policy controversy and subsequent leadership transitions (Executive Director changes, board reorganization) that the Foundation worked through; governance is on a stable footing now but the transition pattern is a real forward concern relative to mature-foundation analogues."

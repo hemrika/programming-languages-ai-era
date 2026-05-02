@@ -209,3 +209,17 @@ sources:
     type: official_documentation
     url: https://openjdk.org/projects/
     notes: "OpenJDK projects list does not include an AI/ML-specific working group."
+
+  - id: java-src-029
+    title: "LangChain4j vs LangChain Python Comparison"
+    publisher: "LangChain4j Project"
+    type: official_tooling_documentation
+    url: https://github.com/langchain4j/langchain4j
+    notes: "LangChain4j repository documents its scope as a Java/Kotlin port of LangChain Python; agent-graph features (LangGraph), evaluation tooling, and the breadth of provider integrations trail Python LangChain at any given snapshot."
+
+  - id: java-src-030
+    title: "FasterXML Jackson Maintainer Activity"
+    publisher: "FasterXML / Tatu Saloranta"
+    type: official_documentation
+    url: https://github.com/FasterXML/jackson-databind/graphs/contributors
+    notes: "Jackson contributor graph shows Tatu Saloranta as the dominant primary maintainer of jackson-databind; while the FasterXML org includes additional maintainers across Jackson modules, primary-maintainer concentration on the core databind module is a real single-point-of-failure within the JVM JSON stack."

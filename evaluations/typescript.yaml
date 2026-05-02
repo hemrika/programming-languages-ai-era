@@ -1,7 +1,7 @@
 language: TypeScript
 status: draft
 updated: 2026-05-02
-framework_version: v0.4
+framework_version: v0.5
 
 scores:
   human_cognition:
@@ -58,14 +58,14 @@ scores:
     confidence: medium
     justification: >
       TypeScript's structural type system gives compile-time inference over schemas defined in user space, but no schema-validation library ships with the TypeScript distribution; the structural type erasure at runtime means contract safety must be defended at the boundary by an ecosystem library.
-    supporting_claims: [typescript-028]
+    supporting_claims: [typescript-040]
 
   structured_output_ecosystem:
     score: 5.0
     confidence: high
     justification: >
       Zod is the dominant ecosystem schema library with end-to-end z.infer-based type inference; the OpenAI Node SDK and Anthropic TypeScript SDK accept Zod schemas natively for tool typing, Vercel AI SDK exposes generateObject/streamObject with Zod, and zod-to-json-schema covers schema export.
-    supporting_claims: [typescript-024, typescript-025, typescript-026, typescript-027]
+    supporting_claims: [typescript-024, typescript-025, typescript-026, typescript-027, typescript-028]
 
   ecosystem_dependency_risk:
     score: 3.0

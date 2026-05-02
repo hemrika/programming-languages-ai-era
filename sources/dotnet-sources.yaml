@@ -219,3 +219,10 @@ sources:
     type: official_tooling_documentation
     url: https://github.com/microsoft/semantic-kernel/releases
     notes: "Semantic Kernel GitHub releases for the .NET SDK; documents 1.0 stable core plus alpha/preview agent-framework, process-framework, and orchestration packages."
+
+  - id: dotnet-src-031
+    title: "MSBuild Concepts Documentation"
+    publisher: "Microsoft Learn"
+    type: official_documentation
+    url: https://learn.microsoft.com/en-us/visualstudio/msbuild/msbuild-concepts
+    notes: "MSBuild documentation describes the project-system, target, task, and property surfaces; SDK-style projects in modern .NET reduce ceremony but the MSBuild model remains a layer of local-reasoning load distinct from the C# language."

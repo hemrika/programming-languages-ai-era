@@ -84,7 +84,7 @@ claims:
     polarity: negative
     source: typescript-src-009
     notes: ECMA-262 defines the runtime semantics that persist after TypeScript type erasure.
-    counters: [typescript-001]
+    counters: [typescript-001, typescript-009]
 
   - id: typescript-009
     claim: The npm registry distributes TypeScript packages and is the largest software package distribution channel by package count.
@@ -187,7 +187,7 @@ claims:
     polarity: negative
     source: typescript-src-001
     notes: The TypeScript Handbook describes type erasure during compilation; runtime data validation requires libraries such as zod or io-ts that re-encode the type at runtime.
-    counters: [typescript-001, typescript-003]
+    counters: [typescript-001, typescript-003, typescript-009]
 
   - id: typescript-019
     claim: The Anthropic TypeScript SDK is the official client for the Claude API and is published by Anthropic.
@@ -289,14 +289,15 @@ claims:
     notes: github.com/StefanTerdell/zod-to-json-schema documents conversion of Zod schemas to JSON Schema for LLM tool definitions.
 
   - id: typescript-028
-    claim: TypeScript's structural type system combined with Zod's type-inference pattern provides compile-time contract safety from LLM-output parsing through application logic, with the parse boundary enforced at runtime.
-    dimension: structured_output_native
+    claim: Zod's z.infer pattern combined with TypeScript's structural type system provides compile-time contract safety from LLM-output parsing through application logic, with the parse boundary enforced at runtime by the Zod ecosystem library.
+    dimension: structured_output_ecosystem
+    backer: community_single_maintainer
     criterion: compile_time_contract_safety
     evidence_type: official_documentation
     confidence: high
     polarity: positive
     source: typescript-src-020
-    notes: A Zod schema produces both a runtime validator and a TypeScript type via z.infer; downstream code that consumes the parsed result is checked at compile time against the same shape that the runtime validator enforces.
+    notes: A Zod schema produces both a runtime validator and a TypeScript type via z.infer; Zod is community-single-maintainer, so the contract-safety bridge belongs on the ecosystem axis even though TypeScript's structural type system is the steward-shipped anchor.
 
   - id: typescript-029
     claim: "Zod's primary maintainer is Colin McDonnell, with a smaller pool of regular contributors; Zod is the de-facto TypeScript schema-validation library and a load-bearing dependency for the structured-output surface."
@@ -396,6 +397,7 @@ claims:
     polarity: negative
     source: typescript-src-008
     notes: "The any-type Handbook entry (and TypeScript's longstanding non-goals) document non-soundness as deliberate; closing path on full soundness is structurally absent."
+    counters: [typescript-035, typescript-036, typescript-039]
 
   - id: typescript-038
     claim: "Zod is single-maintainer; TypeScript's structured-output-ecosystem half-cell forward trajectory depends on Zod maintainership continuing or commercial vendors taking over the schema layer."
@@ -407,6 +409,7 @@ claims:
     polarity: negative
     source: typescript-src-024
     notes: "Zod governance and contributor history; bus-factor risk caps how much SOE compounds into trajectory."
+    counters: [typescript-035, typescript-036, typescript-039]
 
   - id: typescript-039
     claim: "Vercel and other commercial actors continue to invest in the TypeScript AI ecosystem (Vercel AI SDK, structured outputs); commercial-third-party investment is closing AIE-and-SOE half-cell gaps without requiring language-design changes."
@@ -418,3 +421,62 @@ claims:
     polarity: positive
     source: typescript-src-025
     notes: "Vercel AI SDK documentation shows sustained commercial investment in TypeScript-first structured outputs."
+
+  - id: typescript-040
+    claim: "TypeScript's structural type system, discriminated unions via tagged literal members, and the satisfies operator give a steward-shipped, compile-time inference surface for LLM-output shapes; types are erased at runtime so contract enforcement requires an ecosystem validator at the parse boundary."
+    dimension: structured_output_native
+    backer: language_stewards
+    criterion: compile_time_contract_safety
+    evidence_type: language_specification
+    confidence: high
+    polarity: positive
+    source: typescript-src-020
+    notes: "The TypeScript Handbook documents discriminated unions, exhaustiveness checking via never, and the satisfies operator. Microsoft ships the type-system surface; no schema-validation library ships with the TypeScript distribution, which keeps the SON cell at 2.5."
+
+  - id: typescript-041
+    claim: "tsserver and tsc memory pressure on large monorepos and slow cold-start on first compile remain a real agent-loop friction even with strict mode and project references; gopls-class instant feedback is not the steady state for 100k+-LoC TS codebases."
+    dimension: ai_agent_operability
+    backer: language_stewards
+    criterion: language_service_quality
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: typescript-src-030
+    notes: "TypeScript Performance wiki documents the workspace-scale friction; project references and incremental builds mitigate but do not eliminate the pressure on monorepos."
+    counters: [typescript-006, typescript-007, typescript-015]
+
+  - id: typescript-042
+    claim: "ESM/CommonJS interop friction is a sustained forward-velocity tax for TypeScript libraries that target both module systems; require(esm) in Node 22 and ongoing TC39/Node coordination reduce but do not eliminate the dual-package boundary cost."
+    dimension: strategic_viability
+    backer: language_stewards
+    criterion: forward_planning_horizon
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: typescript-src-031
+    notes: "Node.js ESM documentation and the dual-package-hazard advisory describe the interop boundary; library authors continue to ship dual-bundle CJS+ESM packages as the steady-state mitigation."
+    counters: [typescript-011, typescript-012, typescript-013]
+
+  - id: typescript-043
+    claim: "npm has a recurring supply-chain attack surface (event-stream 2018, ua-parser-js 2021, colors/faker self-sabotage 2022) that the AI-systems ecosystem inherits; agent-tool dependencies via npm carry single-maintainer-takeover risk that the Anthropic, OpenAI, MCP, and Vercel SDKs do not eliminate."
+    dimension: ai_systems_ecosystem
+    backer: community_multi_maintainer
+    criterion: ai_systems_ecosystem_quality
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: typescript-src-032
+    notes: "GitHub Advisory Database catalogues npm supply-chain incidents including event-stream, ua-parser-js, and the colors/faker self-sabotage; the AI tooling surface inherits the npm trust boundary."
+    counters: [typescript-019, typescript-020, typescript-021, typescript-022, typescript-023]
+
+  - id: typescript-044
+    claim: "Zod's runtime-validation model imposes bundle-size and per-parse runtime overhead relative to compile-time-only validators (ArkType, typia); for high-throughput LLM-pipeline parsing the overhead is measurable and the trade is structural rather than incidental."
+    dimension: structured_output_ecosystem
+    backer: community_single_maintainer
+    criterion: structured_output_libraries
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: typescript-src-033
+    notes: "Public Zod issue-tracker discussion documents bundle-size and runtime-overhead concerns; Zod v4 work targets these but compile-time-only alternatives like ArkType and typia exist precisely because the trade is real."
+    counters: [typescript-024, typescript-025, typescript-026, typescript-027]

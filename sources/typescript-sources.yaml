@@ -219,3 +219,31 @@ sources:
     type: official_documentation
     url: https://github.com/microsoft/TypeScript/blob/main/README.md
     notes: "TypeScript distribution README enumerates compiler and language service; no AI-specific tooling is bundled."
+
+  - id: typescript-src-030
+    title: "TypeScript Performance Wiki - Large Codebases"
+    publisher: "Microsoft / TypeScript Project"
+    type: official_documentation
+    url: https://github.com/microsoft/TypeScript/wiki/Performance
+    notes: "TypeScript Performance wiki documents tsserver and tsc compile-time and memory pressure on large monorepos, including project-references and incremental builds as mitigations that do not eliminate the friction."
+
+  - id: typescript-src-031
+    title: "Node.js ESM/CommonJS Interop Documentation"
+    publisher: "Node.js Project / OpenJS Foundation"
+    type: official_documentation
+    url: https://nodejs.org/api/esm.html
+    notes: "Node.js ESM documentation describes the ESM/CJS dual-package boundary; require(esm) was added in Node 22 but interop friction remains a real forward-velocity tax for TypeScript libraries that target both module systems."
+
+  - id: typescript-src-032
+    title: "GitHub Advisory Database - npm supply-chain incidents"
+    publisher: "GitHub"
+    type: official_documentation
+    url: https://github.com/advisories?query=ecosystem%3Anpm
+    notes: "GitHub Advisory Database catalogues npm supply-chain incidents including event-stream (2018), ua-parser-js (2021), and the colors/faker self-sabotage (2022); documents the recurring single-maintainer-takeover risk for the npm dependency surface."
+
+  - id: typescript-src-033
+    title: "Zod Bundle Size Discussion"
+    publisher: "Zod / Colin McDonnell"
+    type: official_documentation
+    url: https://github.com/colinhacks/zod/issues/2241
+    notes: "Public Zod issue tracker discussions document Zod bundle-size and runtime-overhead concerns relative to compile-time-only validators (typia, ArkType); Zod v4 work targets these but the trade-off is structural rather than incidental."

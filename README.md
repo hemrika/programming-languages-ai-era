@@ -53,7 +53,7 @@ Four cross-cutting lenses overlay the dimensions: verification, agentic operabil
 | 5 | Python | 3.71 |
 | 5 | Rust | 3.71 |
 | 7 | Java | 3.50 |
-| 8 | Swift | 3.40 |
+| 8 | Swift | 3.42 |
 | 9 | Elixir | 3.10 |
 | 10 | C++ | 2.46 |
 

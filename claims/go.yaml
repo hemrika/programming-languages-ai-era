@@ -429,3 +429,27 @@ claims:
     polarity: neutral
     source: go-src-008
     notes: "Go Developer Survey shows steady ecosystem growth but limited AI-tool-specific traction within the Go community itself."
+
+  - id: go-041
+    claim: "gopls workspace-scale latency on very large repos and Go's slow generic-type-system maturation (generics landed in 1.18 with type-set constraints and limited stdlib expansion since) are real agent-iteration frictions even given Go's tooling reputation; on generic-heavy code the agent-loop ergonomics lag Rust or TypeScript."
+    dimension: ai_agent_operability
+    backer: language_stewards
+    criterion: agent_feedback_loop_speed
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: negative
+    source: go-src-028
+    notes: "gopls performance settings page documents workspace-scale memory and latency trade-offs; Go generics proposal history documents the long maturation of the type-parameters feature."
+    counters: [go-003, go-004, go-012, go-015]
+
+  - id: go-042
+    claim: "Go has a single steward (Google) with no second-source language-team analogue to OpenJDK's multi-vendor structure; Google retains final authority on language and stdlib changes through the proposal process, which is a strategic-viability concentration risk distinct from .NET or Java."
+    dimension: strategic_viability
+    backer: language_stewards
+    criterion: governance_durability
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: go-src-030
+    notes: "The Go proposal process documents Google's core-team final authority on language and stdlib decisions; the language has no second-source steward analogous to OpenJDK's multi-vendor structure."
+    counters: [go-013]

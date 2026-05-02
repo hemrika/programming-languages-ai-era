@@ -358,14 +358,15 @@ claims:
     notes: github.com/64bit/async-openai documents tool/function call types defined via Serde structs; the layer relies on user-supplied JSON Schemas more than Python/TS.
 
   - id: rust-035
-    claim: Rust's enums combined with Serde's tagged-union deserialization provide compile-time-checked discriminated unions for LLM-output discrimination, with exhaustive match enforced by the compiler.
-    dimension: structured_output_native
+    claim: Serde's tagged-union deserialization combined with Rust's enums and exhaustive match provides compile-time-checked discriminated unions for LLM-output discrimination at the ecosystem deserialization layer.
+    dimension: structured_output_ecosystem
+    backer: community_multi_maintainer
     criterion: compile_time_contract_safety
     evidence_type: language_specification
     confidence: high
     polarity: positive
     source: rust-src-024
-    notes: serde.rs documents tagged enum representations (internally, externally, adjacently tagged); combined with exhaustive match this is a strong contract-safety property.
+    notes: serde.rs documents tagged enum representations (internally, externally, adjacently tagged); Serde is community-multi-maintainer, so the bridge belongs on the ecosystem axis even though enum + exhaustive match is the steward-shipped anchor.
 
   - id: rust-036
     claim: Rust's LLM-specific structured-output ecosystem (rig, langchain-rust, instruct-rs analogues) is younger than Python or TypeScript, with fewer high-level structured-output abstractions and less broad provider coverage.
@@ -499,3 +500,26 @@ claims:
     polarity: negative
     source: rust-src-033
     notes: "Rust Governance documents working groups; no AI-specific working group exists, so AIN is steward-absent."
+
+  - id: rust-048
+    claim: "Rust enums plus exhaustive match are the steward-shipped, compile-time-checked discriminated-union anchor; the language guarantees pattern-match exhaustiveness at compile time, which is the strongest native contract-safety primitive in the cohort."
+    dimension: structured_output_native
+    backer: language_stewards
+    criterion: compile_time_contract_safety
+    evidence_type: language_specification
+    confidence: high
+    polarity: positive
+    source: rust-src-024
+    notes: "The Rust Reference documents enums and the match-exhaustiveness check; this is steward-shipped. No schema-validation library ships with the language, which keeps the SON cell at 2.0."
+
+  - id: rust-049
+    claim: "The Rust Foundation worked through trademark-policy controversy in 2023 and a sequence of leadership transitions; governance is on a stable footing now but the transition pattern is a real forward concern relative to mature-foundation analogues, capping the SV ceiling rather than confirming an unblemished governance record."
+    dimension: strategic_viability
+    backer: language_stewards
+    criterion: governance_durability
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: rust-src-034
+    notes: "Rust Foundation news archive documents the 2023 trademark-policy controversy and subsequent leadership transitions; the Foundation has stabilized but the SV=5 placement should record the governance-transition pattern as a residual concern."
+    counters: [rust-013, rust-014, rust-015, rust-016, rust-018, rust-019, rust-024]

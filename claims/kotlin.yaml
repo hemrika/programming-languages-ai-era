@@ -429,3 +429,15 @@ claims:
     source: kotlin-src-029
     notes: "Kotlin LLM-structured-output ergonomics: kotlinx-serialization handles general schema validation; the LLM-specific layer (constrained generation, retry-on-validation-failure, Kotlin-native Instructor analogues) routes through LangChain4j JVM interop rather than a Kotlin-native library at the Pydantic+Instructor or Zod+Vercel-AI maturity tier."
     counters: [kotlin-027]
+
+  - id: kotlin-041
+    claim: "JetBrains is a privately-held single-vendor steward for Kotlin with no second commercial backer of comparable scale; the JetBrains-concentration mirrors the Microsoft-stewarded .NET single-vendor concern (dotnet-042) and is a structural EDR consideration even though commercial-vendor backing is durable."
+    dimension: ecosystem_dependency_risk
+    backer: language_stewards
+    criterion: backer_mix
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: kotlin-src-030
+    notes: "JetBrains company profile documents Kotlin as a JetBrains-stewarded language; the EDR cell at 4.0 reflects strong commercial-vendor backing, but the single-vendor concentration is a structural concern that parallels dotnet-042."
+    counters: [kotlin-030, kotlin-031, kotlin-034]

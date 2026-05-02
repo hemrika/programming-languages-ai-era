@@ -198,3 +198,24 @@ sources:
     type: official_documentation
     url: https://pkg.go.dev/std
     notes: "Go std library index does not include AI-specific packages; golang.org/x experimental tree similarly omits AI tooling."
+
+  - id: go-src-028
+    title: "gopls Performance and Settings Documentation"
+    publisher: "The Go Project (Google)"
+    type: official_tooling_documentation
+    url: https://github.com/golang/tools/blob/master/gopls/doc/settings.md
+    notes: "gopls documentation describes performance trade-offs and memory pressure on large workspaces; `expandWorkspaceToModule` and related settings exist to mitigate workspace-scale latency that recurs as projects grow."
+
+  - id: go-src-029
+    title: "Go Generics Proposal History"
+    publisher: "The Go Project (Google)"
+    type: official_documentation
+    url: https://go.googlesource.com/proposal/+/refs/heads/master/design/43651-type-parameters.md
+    notes: "Go's type-parameters proposal landed in Go 1.18 (2022) after roughly a decade of design iteration; type-set constraints, the absence of variance, and the slow expansion of generic stdlib utilities are documented language-design trade-offs that constrain agent-iteration ergonomics on generic-heavy code."
+
+  - id: go-src-030
+    title: "Go Project Governance"
+    publisher: "The Go Project (Google)"
+    type: official_documentation
+    url: https://go.dev/s/proposal-process
+    notes: "Go proposal process documents that the Go core team at Google retains final authority on language and stdlib changes; the language has no second-source steward analogous to the JVM's OpenJDK multi-vendor structure."

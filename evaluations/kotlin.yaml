@@ -1,7 +1,7 @@
 language: Kotlin
 status: draft
 updated: 2026-05-02
-framework_version: v0.4
+framework_version: v0.5
 
 scores:
   human_cognition:

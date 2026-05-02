@@ -4,7 +4,7 @@
 
 ## TL;DR
 
-Across 10 languages scored on **eleven** weighted dimensions and read through four cross-cutting lenses, the top tier is **TypeScript (4.01)**, **Go (4.01)**, **.NET / C# (3.99)**, **Kotlin (3.85)**. **Python and Rust tie at 3.71** in the middle tier. **Java (3.50)** holds solo #7. Swift sits at 3.40, with Elixir and C++ in the lower tier.
+Across 10 languages scored on **eleven** weighted dimensions and read through four cross-cutting lenses, the top tier is **TypeScript (4.01)**, **Go (4.01)**, **.NET / C# (3.99)**, **Kotlin (3.85)**. **Python and Rust tie at 3.71** in the middle tier. **Java (3.50)** holds solo #7. Swift sits at 3.42, with Elixir and C++ in the lower tier.
 
 **TypeScript and Go tie at the top** — TypeScript's AIE=5 / SOE=5 ecosystem strength combined with Reach=4.0 (Microsoft stewardship + commercial-vendor velocity) lifts it level with Go's HC=5 / AO=5 lead. **Python ranks #5 at 3.71**: its AI-systems profile is bimodal — AIE=5.0 (best in cohort) on the ecosystem half against AIN=1.5 on the native half because PSF ships no AI packages — and the EDR=2.5 score reflects Pydantic community-multi-maintainer, Instructor single-maintainer, and Outlines small-commercial backing. **.NET ranks third at 3.99** because Microsoft's first-party Semantic Kernel + Microsoft.Extensions.AI + ONNX Runtime .NET stack delivers AIN=4.0; EDR=4.5 (highest in cohort) and Reach=4.5 (also highest) make .NET's forward bet the strongest in the cohort even as its present-state weighted total trails the leaders.
 
@@ -48,11 +48,11 @@ What this report does credit: forward governance, future fit under AI-era pressu
 | Python      | 4   | 3   | 4   | 5   | 4   | 1.5 | 5.0 | 2.5 | 5.0 | 2.5 | 3.5 | 3.71 |
 | Rust        | 3   | 5   | 4   | 4   | 5   | 1.5 | 4.0 | 2.0 | 4.0 | 3.5 | 3.5 | 3.71 |
 | Java        | 3   | 4   | 3.5 | 4.5 | 3   | 2.0 | 4.0 | 3.0 | 3.5 | 4.0 | 3.5 | 3.50 |
-| Swift       | 4   | 4   | 3   | 4   | 3   | 4.0 | 2.0 | 3.5 | 2.0 | 3.5 | 3.0 | 3.40 |
+| Swift       | 4   | 4   | 3   | 4   | 3   | 4.0 | 2.0 | 4.0 | 2.0 | 3.5 | 3.0 | 3.42 |
 | Elixir      | 4   | 3   | 3   | 4.5 | 3   | 3.0 | 2.0 | 1.5 | 2.5 | 3.0 | 2.5 | 3.10 |
 | C++         | 2   | 3   | 2   | 4   | 2   | 2.5 | 3.0 | 1.0 | 2.0 | 3.0 | 2.0 | 2.46 |
 
-Three clusters emerge. **Top tier (>=3.85).** TypeScript, Go, .NET, Kotlin. **Middle tier (3.40–3.84).** Python and Rust tied at 3.71, Java 3.50, Swift 3.40. **Lower tier (<3.40).** Elixir, C++. The script `scripts/score_summary.py` regenerates this table from the per-language evaluations.
+Three clusters emerge. **Top tier (>=3.85).** TypeScript, Go, .NET, Kotlin. **Middle tier (3.42–3.84).** Python and Rust tied at 3.71, Java 3.50, Swift 3.42. **Lower tier (<3.42).** Elixir, C++. The script `scripts/score_summary.py` regenerates this table from the per-language evaluations.
 
 ## Six Findings
 
@@ -106,9 +106,9 @@ Strongest forward case: top GitHub language by activity [python-012], sustained 
 
 Strongest forward case: ownership-checked memory rules without garbage collection [rust-001, rust-002, rust-003], exhaustive `match` over enums [rust-006, rust-007], external regulatory alignment via NSA recommendations and Android telemetry [rust-015, rust-016, rust-017]. AIE=4.0: production Postgres clients sqlx and tokio-postgres plus Kafka via rdkafka [rust-031], HuggingFace's candle inference runtime [rust-029], async-openai as the de-facto OpenAI client [rust-028], official MCP Rust SDK [rust-027], and the maturing Rig / swiftide / langchain-rust agent-framework cohort [rust-030]. SON=2.0 reflects no first-party Rust schema-validation library; SOE=4.0 with Serde [rust-032] + schemars [rust-033] + Rust-enum tagged unions [rust-035]. **EDR=3.5** [rust-037, rust-038, rust-039, rust-040, rust-041] balances the Rust Foundation's multi-vendor backing against Serde and schemars community-multi-maintainer profiles. **Reach=3.5** [rust-043, rust-044, rust-045, rust-046, rust-047] — verification ceiling already at top; AIN closing path is steward-absent. **Load-bearing risk:** AIN=1.5 (no first-party Rust AI runtime [rust-042]); agent-framework breadth still trails Python and TypeScript even after the recent maturation [rust-030].
 
-### Swift — 3.40 — *Default for Apple-platform application work; native-AI credit reflects Apple's first-party stack.*
+### Swift — 3.42 — *Default for Apple-platform application work; native-AI credit reflects Apple's first-party stack.*
 
-Strongest forward case: optionals as a type-system distinction [swift-001], memory-safety rules with conflicting-access detection [swift-004], language-level async/await and actors [swift-003], an open Swift Evolution process [swift-006]. **AIN=4.0** for Apple's first-party ML stack via Core ML / Create ML [swift-019] and MLX [swift-023]. SON=3.5 with Codable [swift-024] and enum + exhaustive switch [swift-025]. **Reach=3.0** [swift-034, swift-035, swift-036, swift-037, swift-038] — Apple-locked trajectory caps cross-platform reachability. **Load-bearing risk:** AIE=2.0 (no first-party Anthropic or OpenAI Swift SDKs [swift-021], cross-platform agent-framework support essentially absent [swift-022]). EDR=3.5 strong on Apple-platform AI; weaker on cross-platform Swift surface [swift-031, swift-032].
+Strongest forward case: optionals as a type-system distinction [swift-001], memory-safety rules with conflicting-access detection [swift-004], language-level async/await and actors [swift-003], an open Swift Evolution process [swift-006]. **AIN=4.0** for Apple's first-party ML stack via Core ML / Create ML [swift-019] and MLX [swift-023]. SON=4.0 with Codable [swift-024] and enum + exhaustive switch [swift-025] giving compile-time discriminated unions on the steward surface. **Reach=3.0** [swift-034, swift-035, swift-036, swift-037, swift-038] — Apple-locked trajectory caps cross-platform reachability. **Load-bearing risk:** AIE=2.0 (no first-party Anthropic or OpenAI Swift SDKs [swift-021], cross-platform agent-framework support essentially absent [swift-022]). EDR=3.5 strong on Apple-platform AI; weaker on cross-platform Swift surface [swift-031, swift-032].
 
 ### Java — 3.50 — *Solo #7; AO lift on Eclipse JDT.LS maturity and AI-training-corpus density.*
 

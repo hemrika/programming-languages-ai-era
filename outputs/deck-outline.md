@@ -25,11 +25,11 @@ Greenfield framing: no credit for legacy installed base, code volume, or incumbe
 | Python      | 4   | 3   | 4   | 5   | 4   | 1.5 | 5.0 | 2.5 | 5.0 | 2.5 | 3.5 | 3.71 |
 | Rust        | 3   | 5   | 4   | 4   | 5   | 1.5 | 4.0 | 2.0 | 4.0 | 3.5 | 3.5 | 3.71 |
 | Java        | 3   | 4   | 3.5 | 4.5 | 3   | 2.0 | 4.0 | 3.0 | 3.5 | 4.0 | 3.5 | 3.50 |
-| Swift       | 4   | 4   | 3   | 4   | 3   | 4.0 | 2.0 | 3.5 | 2.0 | 3.5 | 3.0 | 3.40 |
+| Swift       | 4   | 4   | 3   | 4   | 3   | 4.0 | 2.0 | 4.0 | 2.0 | 3.5 | 3.0 | 3.42 |
 | Elixir      | 4   | 3   | 3   | 4.5 | 3   | 3.0 | 2.0 | 1.5 | 2.5 | 3.0 | 2.5 | 3.10 |
 | C++         | 2   | 3   | 2   | 4   | 2   | 2.5 | 3.0 | 1.0 | 2.0 | 3.0 | 2.0 | 2.46 |
 
-AIN/AIE = AI-systems native (7.5%) and ecosystem (7.5%). SON/SOE = Structured-output native (5%) and ecosystem (5%). EDR = Ecosystem dependency risk (5%) — higher = lower risk. RCH = Reachability to top tier (5%) — higher = more reachable. Three tiers: top (≥3.85) TypeScript, Go, .NET, Kotlin. Middle (3.40–3.84) Python and Rust tied at 3.71, Java 3.50, Swift 3.40. Lower (<3.40) Elixir, C++.
+AIN/AIE = AI-systems native (7.5%) and ecosystem (7.5%). SON/SOE = Structured-output native (5%) and ecosystem (5%). EDR = Ecosystem dependency risk (5%) — higher = lower risk. RCH = Reachability to top tier (5%) — higher = more reachable. Three tiers: top (≥3.85) TypeScript, Go, .NET, Kotlin. Middle (3.42–3.84) Python and Rust tied at 3.71, Java 3.50, Swift 3.42. Lower (<3.42) Elixir, C++.
 
 ## Slide 5 — Finding 1: TypeScript and Go tie at the top
 
@@ -68,7 +68,7 @@ Memory-safety pressure has crossed from technical preference into regulatory cri
 
 - **Python (3.71)** — ranks #5. AIE=5.0 with Anthropic [python-021], OpenAI [python-022], LangChain [python-023], MCP [python-024], universal vector stores [python-025]; SOE=5.0 with Pydantic [python-026], Instructor [python-028], Outlines [python-029]. AIN=1.5 (PSF ships no AI packages [python-036]). EDR=2.5 — single-maintainer Instructor [python-032], small-commercial Outlines [python-033]. Reach=3.5 — typing PEPs lifting MC.
 - **Rust (3.71)** — default for systems, infrastructure, security-sensitive work; tied with Python at #5/6. Ownership rules [rust-001] plus regulatory alignment [rust-015, rust-016]; AIE=4.0 (production Postgres/Kafka [rust-031], candle inference runtime [rust-029], async-openai [rust-028], MCP Rust SDK [rust-027], maturing Rig/swiftide/langchain-rust agent-framework cohort [rust-030]). SOE=4.0 via Serde + schemars. EDR=3.5 — Rust Foundation multi-vendor backing offset by Serde bus-factor. Reach=3.5 — verification at top, AIN steward-absent.
-- **Swift (3.40)** — Apple-platform default. AIN=4.0 (Core ML, MLX, Foundation Models) [swift-019, swift-023]; AIE=2.0 (no first-party Anthropic/OpenAI Swift SDK [swift-021]). SON=3.5 via Codable. Reach=3.0 — Apple-locked trajectory.
+- **Swift (3.42)** — Apple-platform default. AIN=4.0 (Core ML, MLX, Foundation Models) [swift-019, swift-023]; AIE=2.0 (no first-party Anthropic/OpenAI Swift SDK [swift-021]). SON=4.0 via Codable plus enum-with-associated-values native discriminated unions. Reach=3.0 — Apple-locked trajectory.
 - **Java (3.50)** — solo #7. Virtual threads [java-006], structured concurrency JEP 453 [java-015], AIE=4.0 with LangChain4j [java-020] and Anthropic Java SDK [java-019]. AO=3.5 reflects Eclipse JDT.LS maturity and high AI-training-corpus density past the Maven/Gradle build-tool fragmentation friction [java-011, java-014]. EDR=4.0 with OpenJDK multi-vendor stewardship. Reach=3.5 — sustained JEP cadence offset by AIN steward-absence.
 - **Elixir (3.10)** — BEAM concurrency and OTP supervision [elixir-001, elixir-002]; Phoenix LiveView [elixir-009]. AIN=3.0 via Bumblebee/Nx (Dashbit-stewarded) [elixir-019, elixir-020]. SOE=2.5 via Ecto + instructor_ex. Reach=2.5 — wide aggregate gap, slow velocity.
 - **C++ (2.46)** — default only for accelerator host code. AIN=2.5 via CUDA/ROCm/SYCL [cpp-019]; AIE=3.0 via llama.cpp [cpp-017], ONNX C++ [cpp-018]. SON=1.0; safety pressure dominates [cpp-004, cpp-005, cpp-006, cpp-007, cpp-008]. Reach=2.0 — lowest in cohort; structural blockers dominate.

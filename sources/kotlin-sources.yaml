@@ -211,3 +211,10 @@ sources:
     type: official_tooling_documentation
     url: https://docs.langchain4j.dev/tutorials/ai-services
     notes: "LangChain4j AI Services bind Java/Kotlin interfaces to LLM tool calls and structured outputs; the canonical JVM path for LLM-structured-output ergonomics is via Java-interop rather than a Kotlin-native Instructor/Zod-equivalent."
+
+  - id: kotlin-src-030
+    title: "JetBrains Company Profile"
+    publisher: "JetBrains"
+    type: official_documentation
+    url: https://www.jetbrains.com/company/
+    notes: "JetBrains is a privately-held commercial software company headquartered in the Czech Republic; Kotlin is a JetBrains-stewarded language with no second commercial backer of comparable scale, which is a single-vendor concentration that mirrors Microsoft's role for .NET and parallels dotnet-042 in the EDR dimension."

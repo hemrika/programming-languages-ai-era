@@ -289,14 +289,15 @@ claims:
     notes: github.com/mbknor/mbknor-jackson-jsonSchema documents Jackson-driven JSON Schema generation for Java types; Jackson also ships first-party JSON Schema modules.
 
   - id: java-028
-    claim: Java's static type system, records, and sealed classes give compile-time contract safety from Jackson deserialization through downstream code, but the type-to-schema layer is more verbose and less LLM-native than Pydantic or Zod.
-    dimension: structured_output_native
+    claim: Jackson combined with Java records and sealed classes provides compile-time contract safety from Jackson deserialization through downstream code, but the type-to-schema layer is more verbose and less LLM-native than Pydantic or Zod.
+    dimension: structured_output_ecosystem
+    backer: community_multi_maintainer
     criterion: compile_time_contract_safety
     evidence_type: official_documentation
     confidence: medium
     polarity: positive
     source: java-src-022
-    notes: Records (JEP 395) and sealed classes (JEP 409) give closed-shape, type-safe LLM-output handling on the JVM, though boilerplate and library fragmentation lag the TS/Python LLM ergonomics.
+    notes: Jackson is FasterXML community-multi-maintainer; the contract-safety chain depends on records (JEP 395) plus sealed classes (JEP 409) on the language side and Jackson on the deserialization side, so the bridge belongs on the ecosystem axis even though the type-system anchor is steward-shipped.
 
   - id: java-029
     claim: "Jackson is the de-facto JVM JSON library, maintained by FasterXML with a multi-maintainer community; load-bearing for nearly every Java AI/SO use case."
@@ -418,3 +419,38 @@ claims:
     polarity: positive
     source: java-src-024
     notes: "LangChain4j Repository documents continued external investment; closing AIE without language-design changes."
+
+  - id: java-040
+    claim: "Java records (JEP 395) and sealed classes (JEP 409) give a steward-shipped, compile-time-checked closed-hierarchy surface for LLM-output discrimination; Jakarta Bean Validation provides a steward-adjacent declarative validation layer on top."
+    dimension: structured_output_native
+    backer: language_stewards
+    criterion: compile_time_contract_safety
+    evidence_type: language_specification
+    confidence: medium
+    polarity: positive
+    source: java-src-022
+    notes: "Records and sealed classes are OpenJDK-shipped per JEP 395 and JEP 409; Bean Validation is Jakarta-stewarded. This native surface is type-system-strong but lacks an in-box LLM tool-call typing library, so the SON cell remains at 3.0."
+
+  - id: java-041
+    claim: "LangChain4j scope still trails Python LangChain at any given snapshot; agent-graph parity (LangGraph), evaluation tooling, and breadth of provider integrations are catching up but the JVM agent-framework surface has not closed the gap to Python LangChain or LangGraph."
+    dimension: ai_systems_ecosystem
+    backer: community_multi_maintainer
+    criterion: ai_systems_ecosystem_quality
+    evidence_type: official_tooling_documentation
+    confidence: medium
+    polarity: negative
+    source: java-src-029
+    notes: "LangChain4j repository scopes itself as a Java/Kotlin port of LangChain Python; agent-graph features and provider breadth lag Python LangChain at any given snapshot."
+    counters: [java-019, java-020, java-021, java-022, java-023]
+
+  - id: java-042
+    claim: "Jackson primary-maintainer concentration is a real single-point-of-failure within the JVM JSON stack; while FasterXML hosts multiple maintainers across Jackson modules, jackson-databind primary-maintainer concentration on Tatu Saloranta is a load-bearing dependency-risk for nearly every Java AI/SO use case."
+    dimension: ecosystem_dependency_risk
+    backer: community_multi_maintainer
+    criterion: single_points_of_failure
+    evidence_type: official_documentation
+    confidence: medium
+    polarity: negative
+    source: java-src-030
+    notes: "FasterXML Jackson contributor graph documents the primary-maintainer concentration on jackson-databind; this is a real bus-factor concern for the JVM JSON layer that the JVM AI ecosystem rests on."
+    counters: [java-031, java-032, java-033]
