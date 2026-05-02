@@ -2,39 +2,18 @@
 
 Research repository for evaluating programming languages against the demands of AI-assisted and AI-agentic software development.
 
+**Framework version:** v0.4 (2026-05-02). Snapshot below; see `framework/evaluation-framework.md` for the full version history.
+
 ## Core thesis
 
-The AI era will favor languages that are not merely easy to write, but easy to analyze, verify, refactor, test, and operate by both humans and machines.
+The AI era will favor languages that are not merely easy to write, but easy to analyze, verify, refactor, test, and operate by both humans and machines — and whose load-bearing dependencies are resilient enough to underwrite that promise.
 
-## Repository model
+## Framing
 
-- `framework/` — evaluation framework, dimensions, scoring model, version history
-- `criteria/` — detailed definitions of evaluation dimensions
-- `languages/` — language profiles and hypotheses
-- `claims/` — atomic evidence claims by language
-- `evaluations/` — structured language scoring
-- `comparisons/` — cross-language analysis
-- `sources/` — source notes, references, reading list
-- `insights/` — higher-order conclusions
-- `outputs/` — report and deck material
-- `scripts/` — validation and scoring helpers
+**Greenfield.** Installed base, existing code volume, and incumbent gravity are not scored as advantages. Languages are credited for forward-looking properties (governance, future fit, AI-training-corpus representation, ecosystem velocity, library maturity for new projects). Maintenance-estate teams should re-weight.
 
-## Evaluation dimensions
+**Native vs ecosystem.** AI-systems and structured-output capability are scored separately for what the language/runtime/stewards ship directly versus what the third-party ecosystem provides. A 5.0 backed by Microsoft does not read identical to a 5.0 backed by three OSS volunteers — the dependency-risk dimension records the difference.
 
-| Dimension | Weight |
-|---|---:|
-| Human cognition | 20% |
-| Machine cognition | 25% |
-| AI-agent operability | 25% |
-| Runtime and ecosystem | 20% |
-| Strategic viability | 10% |
+## Cohort
 
-## Workflow
-
-```text
-Source → Claim → Criterion → Evaluation → Comparison → Insight → Output
-```
-
-## Status
-
-Initial scaffold.
+Te
